@@ -64,7 +64,7 @@ async function build() {
   const out = { date, status: result ? 'built' : 'skipped', post: result, rejected: tried };
   await mkdir(new URL('out/', ROOT), { recursive: true });
   await saveJson(TODAY, out);
-  console.log(result ? `✓ 오늘 게시물: ${result.id} (${format}, ${result.files.length}개 파일)` : '✗ 올릴 수 있는 게시물 없음');
+  console.log(result ? `✓ 오늘 게시물: ${result.id} (${result.format}, ${result.files.length}개 파일)` : '✗ 올릴 수 있는 게시물 없음');
   for (const t of tried) console.log(`  거절 ${t.id}: ${t.errors.slice(0, 3).join(' / ')}`);
 }
 
