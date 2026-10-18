@@ -4,7 +4,19 @@
 //  · 스코어카드: 언더파 라운드는 금색 동그라미(LPGA 스코어카드 방식)
 //  · 표지에 '넘겨 보기 →', 마지막 장은 '저장·팔로우' 한 가지 행동만
 //  · 사진은 여전히 쓰지 않는다(저작권) — 대신 글자·숫자·도형으로 채운다
-import { brand, esc } from '../util.mjs';
+import { readFileSync } from 'node:fs';
+import { ROOT, brand, esc, readJson } from '../util.mjs';
+
+// 표지 배경 사진(config/photos.json). 글자가 잘 읽히게 아래로 갈수록 짙은 초록을 덮는다.
+const PHOTOS = readJson(new URL('config/photos.json', ROOT));
+const photoCache = {};
+export function photoFor({ category, tourId } = {}) {
+  let name = category ? PHOTOS.byCategory[category] : null;
+  if (!name && tourId) name = PHOTOS.tour[Number(String(tourId).replace(/D/g, '').slice(-4) || 0) % PHOTOS.tour.length];
+  if (!name) return null;
+  photoCache[name] ??= readFileSync(new URL(`assets/photos/${name}.jpg`, ROOT)).toString('base64');
+  return { name, data: `data:image/jpeg;base64,${photoCache[name]}` };
+}
 
 export const W = 1080, H = 1350;
 
@@ -35,9 +47,9 @@ tr.ko td{color:var(--gold)}tr.ko td.nm b:after{content:'KOR';font-size:18px;font
 td .en{font-size:22px;color:var(--muted);margin-left:10px}
 `;
 
-export function page({ n, total, date, source, body, swipe = '' }) {
+export function page({ n, total, date, source, body, swipe = '', photo = null }) {
   return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>${CSS}</style></head><body>
-<div class="card"><div class="hd"><span class="brand"><i></i>ATL골프기어${brand.handle ? ` <span style="color:var(--muted);font-weight:500">@${esc(brand.handle)}</span>` : ''}</span><span class="pg">${n}/${total}</span></div>
+<div class="card"${photo ? ` style="background:linear-gradient(180deg,rgba(11,47,32,.50) 0%,rgba(11,47,32,.72) 32%,rgba(11,47,32,.94) 58%,#0b2f20 78%),url(${photo.data}) center top/cover"` : ''}><div class="hd"><span class="brand"><i></i>ATL골프기어${brand.handle ? ` <span style="color:var(--muted);font-weight:500">@${esc(brand.handle)}</span>` : ''}</span><span class="pg">${n}/${total}</span></div>
 ${body}
 ${swipe ? `<div class="swipe">${esc(swipe)} →</div>` : ''}
 <div class="ft"><span>자료: ${esc(source)} · ${esc(date)} 기준</span><span>${esc(brand.site)}</span></div>
@@ -45,9 +57,9 @@ ${swipe ? `<div class="swipe">${esc(swipe)} →</div>` : ''}
 }
 
 // 표지: 후킹 문구 2줄(둘째 줄 일부 금색) + 핵심 숫자 + 아래 띠 2칸
-export function tourCoverV2(o, ev, { kicker, line1, line2, hl, bigNum, bigLabel, stats }) {
+export function tourCoverV2(o, ev, { kicker, line1, line2, hl, bigNum, bigLabel, stats, photo }) {
   const l2 = hl && line2.includes(hl) ? esc(line2).replace(esc(hl), `<span class="hl">${esc(hl)}</span>`) : esc(line2);
-  return page({ ...o, source: 'ESPN', swipe: '넘겨서 전체 순위', body: `
+  return page({ ...o, photo, source: 'ESPN', swipe: '넘겨서 전체 순위', body: `
 <div style="margin-top:56px"><span class="chip">${esc(kicker)}</span></div>
 <div class="disp" style="margin-top:34px;font-size:${line1.length > 9 ? 100 : 124}px">${esc(line1)}</div>
 <div class="disp" style="margin-top:10px;font-size:112px">${l2}</div>
@@ -111,9 +123,9 @@ ${disclosure ? `<div style="margin:auto 0 150px;font-size:24px;line-height:1.6;c
 }
 
 // 용품 가격 비교 표지: "최저가와 최고가 차이 N원" 후킹
-export function compareCoverV2(o, { kicker, line1, line2, hl, low, high, checkedText }) {
+export function compareCoverV2(o, { kicker, line1, line2, hl, low, high, checkedText, photo }) {
   const l2 = hl && line2.includes(hl) ? esc(line2).replace(esc(hl), `<span class="hl">${esc(hl)}</span>`) : esc(line2);
-  return page({ ...o, source: '쿠팡 판매가(ATL골프기어 확인)', swipe: '넘겨서 모델별 가격', body: `
+  return page({ ...o, photo, source: '쿠팡 판매가(ATL골프기어 확인)', swipe: '넘겨서 모델별 가격', body: `
 <div style="margin-top:56px"><span class="chip">${esc(kicker)}</span></div>
 <div class="disp" style="margin-top:34px;font-size:112px">${esc(line1)}</div>
 <div class="disp" style="margin-top:10px;font-size:104px">${l2}</div>
@@ -137,8 +149,8 @@ ${rocket ? '<span class="chip o">로켓배송</span>' : ''}</div>
 }
 
 // 고르는 법 표지: "{분류}, 이것만 보고 고르세요" + 기준 개수 크게
-export function tipsCoverV2(o, { name, intro, count }) {
-  return page({ ...o, source: 'ATL골프기어', swipe: '넘겨서 기준 보기', body: `
+export function tipsCoverV2(o, { name, intro, count, photo }) {
+  return page({ ...o, photo, source: 'ATL골프기어', swipe: '넘겨서 기준 보기', body: `
 <div style="margin-top:56px"><span class="chip">골퍼를 위한 장비 가이드</span></div>
 <div class="disp" style="margin-top:34px;font-size:118px">${esc(name)},</div>
 <div class="disp" style="margin-top:10px;font-size:104px"><span class="hl">이것만</span> 보고 고르세요</div>

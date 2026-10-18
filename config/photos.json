@@ -1,0 +1,34 @@
+{
+  "_설명": "표지 배경 사진(assets/photos/). 모두 Unsplash 무료 라이선스(상업 이용 가능, 출처 표기 의무 없음) — Unsplash+ 아닌 것만, 사람·선수·로고 없는 코스·장비 사진만. 2026-10-18 사장님 승인 후 받음. 새 사진도 같은 기준으로만 추가한다. 브랜드 로고가 보이는 사진(공 로고 등)은 쓰지 않는다 — 여러 브랜드를 비교하는 게시물이 특정 브랜드 광고처럼 보이지 않게(ball-tee, ball-green, balls-pile 은 2026-10-18 제외·삭제).",
+  "credits": {
+    "course-aerial": "https://unsplash.com/photos/3MdsHe3IIOk",
+    "course-sunset": "https://unsplash.com/photos/emPraEVIh-E",
+    "course-flag": "https://unsplash.com/photos/0KmACspzIFc",
+    "iron-ball": "https://unsplash.com/photos/pI6IaynZQ_I",
+    "wedge-ball": "https://unsplash.com/photos/U5HMj5J6Opg",
+    "ball-grass": "https://unsplash.com/photos/ufcDM0ApEBs",
+    "fairway": "https://unsplash.com/photos/RI5g7U0kwpM"
+  },
+  "tour": [
+    "course-aerial",
+    "course-sunset",
+    "course-flag",
+    "fairway"
+  ],
+  "byCategory": {
+    "driver": "fairway",
+    "wood": "course-sunset",
+    "utility": "course-flag",
+    "iron": "iron-ball",
+    "wedge": "wedge-ball",
+    "putter": "course-flag",
+    "ball": "ball-grass",
+    "shoes": "fairway",
+    "rangefinder": "course-flag",
+    "gps": "course-aerial",
+    "launch": "ball-grass",
+    "bag": "course-sunset",
+    "glove": "ball-grass",
+    "practice": "course-aerial"
+  }
+}

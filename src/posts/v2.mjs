@@ -2,7 +2,7 @@
 // 후킹 문구도 템플릿 + 데이터(순위, 타수 차이, 가격 차이)로만 만든다 — 숫자는 checks 에서 원본으로 다시 계산해 대조.
 import { brand, displayName, isKorean, koName, md, posLabel, usd, won, daysBetween } from '../util.mjs';
 import { country, roundsText } from '../cards/tour.mjs';
-import { compareCoverV2, endV2, koreansV2, leaderboardV2, productV2, scorecardV2, tipV2, tipsCoverV2, tourCoverV2 } from '../cards/v2.mjs';
+import { photoFor, compareCoverV2, endV2, koreansV2, leaderboardV2, productV2, scorecardV2, tipV2, tipsCoverV2, tourCoverV2 } from '../cards/v2.mjs';
 import { DISCLOSURE, splitTip, tipText } from '../cards/gear.mjs';
 import { LEAGUES } from '../espn.mjs';
 import { freshItems } from './gear.mjs';
@@ -56,7 +56,7 @@ export function tourPostV2(ev, src) {
     { name: 'cover', make: (o) => tourCoverV2(o, e, {
         kicker: `${ev.league.toUpperCase()} · ${ev.name} · 최종`, line1: hook.line1, line2: hook.line2, hl: hook.hl,
         bigNum: hero.toParText, bigLabel: `${displayName(hero)} 최종 합계`,
-        stats: [{ label: '우승', value: `${displayName(winner)} ${winner.toParText}` }, { label: '한국 선수 TOP 10', value: `${koTop10}명` }] }),
+        stats: [{ label: '우승', value: `${displayName(winner)} ${winner.toParText}` }, { label: '한국 선수 TOP 10', value: `${koTop10}명` }], photo: photoFor({ tourId: ev.id }) }),
       facts: [P(hero, 'toParText', hero.toParText), P(winner, 'toParText', winner.toParText), P(winner, 'name', winner.name, { shown: !koName(winner) }), { src, path: ['name'], value: ev.name }] },
     { name: 'scorecard', make: (o) => scorecardV2(o, e, hero, displayName(hero), ev.course?.par, posLabel(hero.pos)),
       facts: [P(hero, 'total', hero.total), P(hero, 'pos', posLabel(hero.pos), { expect: posLabel }),
@@ -121,7 +121,7 @@ export function comparePostV2(gear, catId, date, src = 'gear') {
   const F = (p, path, value, extra = {}) => ({ src, path: ['products', { id: p.id }, ...path], value, ...extra });
   const cards = [
     { name: 'cover', make: (o) => compareCoverV2(o, { kicker: `${cat.name} ${items.length}종 · 쿠팡 판매가`, line1: `${cat.name} 가격,`,
-        line2: `최대 ${gapMan}만원 차이`, hl: `${gapMan}만원`, low: won(low.pick.price), high: won(high.pick.price), checkedText: `${md(checked)} 확인 가격 · 옵션·시기에 따라 다를 수 있음` }),
+        line2: `최대 ${gapMan}만원 차이`, hl: `${gapMan}만원`, low: won(low.pick.price), high: won(high.pick.price), checkedText: `${md(checked)} 확인 가격 · 옵션·시기에 따라 다를 수 있음`, photo: photoFor({ category: catId }) }),
       facts: [F(low, ['pick', 'price'], won(low.pick.price), { expect: won }), F(high, ['pick', 'price'], won(high.pick.price), { expect: won })] },
     ...items.map((p, i) => ({ name: `item-${i + 1}`, make: (o) => productV2(o, { index: i + 1, count: items.length, name: p.name, price: won(p.pick.price), rocket: p.pick.rocket,
         checkedText: `${md(p.pick.checked)} 쿠팡 판매가`, summary: p.summary, points: p.points.slice(0, 2), rankLabel: i === 0 ? '가장 싼 모델' : i === items.length - 1 ? '가장 비싼 모델' : '' }),
@@ -164,7 +164,7 @@ export function tipsPostV2(gear, catId, date, src = 'gear') {
   const tips = cat.tips.slice(0, 8);
   const C = (path, value, extra = {}) => ({ src, path: ['categories', { id: catId }, ...path], value, ...extra });
   const cards = [
-    { name: 'cover', make: (o) => tipsCoverV2(o, { name: cat.name, intro: cat.intro, count: tips.length }), facts: [C(['intro'], cat.intro)] },
+    { name: 'cover', make: (o) => tipsCoverV2(o, { name: cat.name, intro: cat.intro, count: tips.length, photo: photoFor({ category: catId }) }), facts: [C(['intro'], cat.intro)] },
     ...tips.map((t, i) => {
       const s = splitTip(t);
       return { name: `tip-${i + 1}`, make: (o) => tipV2(o, { name: cat.name, index: i + 1, count: tips.length, head: s?.head, body: s?.body, text: t }),
