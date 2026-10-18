@@ -84,6 +84,15 @@ async function publish() {
   if (!cfg || !base || process.env.DRY_RUN === '1') {
     today.status = 'dry-run';
     today.dryRunReason = !cfg ? '인스타 키 없음(IG_USER_ID·IG_ACCESS_TOKEN)' : !base ? 'MEDIA_BASE_URL 없음' : 'DRY_RUN=1';
+    if (cfg) {
+      // 키가 있으면 게시만 빼고 연결 점검: 공개 URL, 계정, 게시 권한(게시 한도 조회)
+      const check = {};
+      try { await waitUrl(urls[0], 60e3); check.media = '공개 URL 접근 됨'; } catch (e) { check.media = e.message; }
+      try { const a = await accountInsights(cfg); check.account = a.username ? `@${a.username} (팔로워 ${a.followers})` : a.profileError; } catch (e) { check.account = e.message; }
+      try { const l = await publishLimit(cfg); check.publish = `게시 권한 있음 (오늘 ${l.used ?? 0}/${l.total ?? '?'})`; } catch (e) { check.publish = `게시 권한 확인 실패: ${e.message}`; }
+      today.check = check;
+      console.log('연결 점검:', JSON.stringify(check));
+    }
     await saveJson(TODAY, today);
     console.log(`미리보기만(${today.dryRunReason}): ${p.id} ${p.format}`);
     return;
@@ -135,6 +144,7 @@ async function report() {
   const lines = [
     `# 인스타 매일 작업 ${date}: ${statusText}`,
     '',
+    ...(t.check ? Object.entries(t.check).map(([k, v]) => `- 점검 ${k}: ${v}`) : []),
     p ? `- 게시물: **${p.series}** (\`${p.id}\`, ${p.format === 'reel' ? '릴스' : `캐러셀 ${p.files.length}장`})` : '- 게시물: 없음',
     t.permalink ? `- 링크: ${t.permalink}` : '',
     ...(p?.warnings || []).map((w) => `- 주의: ${w}`),
