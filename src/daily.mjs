@@ -61,7 +61,9 @@ async function build() {
       } catch (e) { tried.push({ id: post.id, errors: [e.message] }); }
     }
   } finally { await browser.close(); }
-  const out = { date, status: result ? 'built' : 'skipped', post: result, rejected: tried };
+  // 오늘 한도(DAILY_MAX)를 이미 채웠으면 '쉬어 감'이 아니라 정상(capped) — 오류로 보고하지 않는다
+  const capped = !result && postedToday(state, date).length >= DAILY_MAX;
+  const out = { date, status: result ? 'built' : capped ? 'capped' : 'skipped', post: result, rejected: tried };
   await mkdir(new URL('out/', ROOT), { recursive: true });
   await saveJson(TODAY, out);
   console.log(result ? `✓ 오늘 게시물: ${result.id} (${result.format}, ${result.files.length}개 파일)` : '✗ 올릴 수 있는 게시물 없음');
@@ -178,7 +180,7 @@ async function report() {
   const insFile = new URL(`data/insights/${date}.json`, ROOT);
   const ins = existsSync(insFile) ? readJson(insFile) : null;
   const p = t.post;
-  const statusText = { published: '게시 완료', 'dry-run': `미리보기만 (${t.dryRunReason})`, built: '만들었지만 게시 단계 미실행', skipped: '올릴 수 있는 게시물 없음 — 쉬어 감', none: '실행 기록 없음' }[t.status] || t.status;
+  const statusText = { published: '게시 완료', 'dry-run': `미리보기만 (${t.dryRunReason})`, built: '만들었지만 게시 단계 미실행', skipped: '올릴 수 있는 게시물 없음 — 쉬어 감', capped: `오늘 한도(${DAILY_MAX}개) 채움`, none: '실행 기록 없음' }[t.status] || t.status;
   const lines = [
     `# 인스타 매일 작업 ${date}: ${statusText}`,
     '',
