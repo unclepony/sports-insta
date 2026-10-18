@@ -1,65 +1,56 @@
-// 최신 원본으로 게시물을 만들고 검증한 뒤 JPEG 로 렌더링한다(게시는 하지 않음).
-// 결과: out/preview/<게시물>/NN.jpg, caption.txt, 그리고 out/preview/index.html (한눈에 보기)
-// 사용: node src/preview.mjs [data/raw/날짜]
-import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
-import { chromium } from 'playwright-core';
-import { W, H } from './cards/templates.mjs';
-import { billsPost, plenaryPost } from './posts.mjs';
+// 미리보기: 최신 원본으로 만들 수 있는 게시물을 모두 만들고 검증·렌더링한다(게시하지 않음).
+// 결과: out/preview/<게시물 id>/NN.jpg, caption.txt, (--reel 이면) reel.mp4, 그리고 out/preview/index.html
+// 사용: node src/preview.mjs [--reel] [--limit=N]
+import { mkdir, readdir, rm, writeFile } from 'node:fs/promises';
+import { ROOT, esc, today } from './util.mjs';
+import { candidates, choose, isReelDay, loadRaw } from './plan.mjs';
 import { validatePost } from './validate.mjs';
-import { esc } from './util.mjs';
+import { openBrowser, renderCards, renderReel } from './render.mjs';
 
-const root = new URL('../', import.meta.url);
-const rawRoot = new URL('data/raw/', root);
-const day = process.argv[2]?.split(/[\\/]/).filter(Boolean).at(-1) || (await readdir(rawRoot)).sort().at(-1);
+const args = process.argv.slice(2);
+const withReel = args.includes('--reel');
+const limit = Number(args.find((a) => a.startsWith('--limit='))?.split('=')[1] || 99);
+
+const rawRoot = new URL('data/raw/', ROOT);
+const day = (await readdir(rawRoot)).sort().at(-1);
 const rawDir = new URL(`${day}/`, rawRoot);
-const raw = {};
-for (const name of ['bills', 'plenary', 'members']) raw[name] = JSON.parse(await readFile(new URL(`${name}.json`, rawDir), 'utf8'));
+const raw = loadRaw(rawDir);
+const date = today();
 
-const outRoot = new URL('out/preview/', root);
+const list = candidates(raw, date).slice(0, limit);
+const pick = choose(list, { posted: {} }, date);
+const outRoot = new URL('out/preview/', ROOT);
 await rm(outRoot, { recursive: true, force: true });
 await mkdir(outRoot, { recursive: true });
 
-// 로컬은 설치된 Chrome/Edge, GitHub Actions 는 러너에 깔린 Chrome 을 쓴다.
-async function launch() {
-  for (const channel of ['chrome', 'msedge']) {
-    try { return await chromium.launch({ channel }); } catch {}
-  }
-  throw new Error('Chrome 또는 Edge 를 찾을 수 없습니다');
-}
-const browser = await launch();
-const page = await browser.newPage({ viewport: { width: W, height: H } });
-
+const browser = await openBrowser();
 const results = [];
-for (const post of [billsPost(raw), plenaryPost(raw)].filter(Boolean)) {
-  const errors = validatePost(post, raw);
-  if (errors.length) {
-    console.error(`✗ ${post.id} 검증 실패 — 만들지 않음\n  ${errors.join('\n  ')}`);
-    results.push({ post, errors, files: [] });
+for (const post of list) {
+  const errors = validatePost(post, rawDir);
+  const r = { post, errors, files: [], reel: null };
+  results.push(r);
+  if (errors.length) { console.error(`✗ ${post.id} 검증 실패\n  ${errors.join('\n  ')}`); continue; }
+  const dir = new URL(`${post.id}/`, outRoot);
+  try {
+    r.files = (await renderCards(browser, post, dir)).map((f) => `${post.id}/${f}`);
+  } catch (e) {
+    r.errors.push(e.message);
+    console.error(`✗ ${post.id} ${e.message}`);
     continue;
   }
-  const dir = new URL(`${post.id}/`, outRoot);
-  await mkdir(dir, { recursive: true });
-  const files = [];
-  for (const [i, card] of post.cards.entries()) {
-    await page.setContent(card.html, { waitUntil: 'networkidle' });
-    await page.evaluate(() => document.fonts.ready);
-    const file = `${String(i + 1).padStart(2, '0')}-${card.name}.jpg`;
-    await page.screenshot({ path: fileURLToPath(new URL(file, dir)), type: 'jpeg', quality: 92 });
-    files.push(`${post.id}/${file}`);
-  }
-  await writeFile(new URL('caption.txt', dir), post.caption);
-  console.log(`✓ ${post.id}: ${files.length}장, 검증 통과`);
-  results.push({ post, errors, files });
+  if (withReel && (post === pick || post.kind === 'tour')) r.reel = `${post.id}/${await renderReel(dir, r.files.map((f) => f.split('/')[1]))}`;
+  console.log(`✓ ${post.id}: ${r.files.length}장${r.reel ? ' + 릴스' : ''}${post.warnings.length ? ` (주의: ${post.warnings.join('; ')})` : ''}`);
 }
 await browser.close();
 
-const gallery = `<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>카드 미리보기 ${esc(day)}</title>
-<style>body{font-family:sans-serif;background:#ddd;margin:24px}h2{margin:32px 0 8px}.row{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px}
-img{width:320px;height:400px;flex:none;box-shadow:0 1px 4px #0003}pre{background:#fff;padding:12px;white-space:pre-wrap;max-width:720px}.err{color:#b00}</style></head><body>
-<h1>카드 미리보기 · 원본 ${esc(day)}</h1>
-${results.map(({ post, errors, files }) => `<h2>${esc(post.series)} (${esc(post.date)})</h2>
-${errors.length ? `<pre class="err">검증 실패 — 게시하지 않음\n${esc(errors.join('\n'))}</pre>` : `<div class="row">${files.map((f) => `<img src="${f}">`).join('')}</div><pre>${esc(post.caption)}</pre>`}`).join('')}
+const gallery = `<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>인스타 미리보기 ${esc(date)}</title>
+<style>body{font-family:sans-serif;background:#ddd;margin:24px}h2{margin:36px 0 6px}.row{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px}
+img{width:288px;height:360px;flex:none;box-shadow:0 1px 4px #0003}video{height:512px;flex:none}pre{background:#fff;padding:12px;white-space:pre-wrap;max-width:760px}.err{color:#b00}.today{background:#1f7a4d;color:#fff;padding:2px 8px;font-size:14px;margin-left:8px}</style></head><body>
+<h1>인스타 미리보기 · ${esc(date)} (원본 ${esc(day)})</h1>
+<p>오늘 계획: <b>${esc(pick?.id || '없음')}</b> — ${isReelDay(date) ? '릴스 요일' : '캐러셀 요일'}</p>
+${results.map(({ post, errors, files, reel }) => `<h2>${esc(post.series)} <small>${esc(post.id)}</small>${post === pick ? '<span class="today">오늘 게시 후보</span>' : ''}</h2>
+${post.warnings.length ? `<p class="err">${esc(post.warnings.join(' / '))}</p>` : ''}
+${errors.length ? `<pre class="err">검증 실패 — 게시하지 않음\n${esc(errors.join('\n'))}</pre>` : `<div class="row">${reel ? `<video src="${reel}" controls muted></video>` : ''}${files.map((f) => `<img src="${f}">`).join('')}</div><pre>${esc(post.caption)}</pre>`}`).join('')}
 </body></html>`;
 await writeFile(new URL('index.html', outRoot), gallery);
 if (results.some((r) => r.errors.length)) process.exitCode = 1;

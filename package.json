@@ -1,16 +1,18 @@
 {
-  "name": "politics-insta",
+  "name": "sports-insta",
   "version": "1.0.0",
-  "description": "공식 국회 데이터를 카드뉴스·릴스로 만들어 인스타그램에 자동 게시",
+  "description": "골프 투어 기록·용품 비교를 카드뉴스·릴스로 만들어 인스타그램에 자동 게시 (ATL골프기어)",
   "scripts": {
-    "fetch": "node src/fetch.mjs",
-    "preview": "node src/preview.mjs"
+    "fetch": "node src/fetch-tour.mjs && node src/fetch-gear.mjs",
+    "preview": "node src/preview.mjs --reel",
+    "daily": "node src/daily.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "ffmpeg-static": "^5.2.0",
     "playwright-core": "^1.48.2"
   },
   "private": true
