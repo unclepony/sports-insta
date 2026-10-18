@@ -1,5 +1,6 @@
-# 인스타 장기 토큰(60일)을 매주 연장해 Secrets 에 다시 저장한다.
-# 필요: Secrets IG_ACCESS_TOKEN, GH_PAT(이 저장소 Secrets 쓰기 권한이 있는 토큰 — 사장님이 발급)
+# 인스타 장기 토큰(60일)을 매주 연장한다. 새 토큰은 IG_TOKEN_KEY 로 암호화해 data/ig-token.enc 에 커밋한다
+# (Secrets 를 다시 쓰려면 별도 개인 토큰이 필요해서, 암호화 파일로 대신한다). 로그에는 토큰을 남기지 않는다.
+# 필요: Secrets IG_ACCESS_TOKEN(처음 한 번), IG_TOKEN_KEY
 name: ig-token-refresh
 
 on:
@@ -8,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   refresh:
@@ -18,14 +19,24 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: 연장 후 저장
+      - name: 연장 후 암호화 저장
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_PAT }}
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
         run: |
-          [ -z "$IG_ACCESS_TOKEN" ] && { echo "토큰 없음 — 건너뜀"; exit 0; }
-          [ -z "$GH_TOKEN" ] && { echo "::warning::GH_PAT 없음 — 연장한 토큰을 저장할 수 없어 건너뜀"; exit 0; }
-          node src/ig-refresh.mjs > "$RUNNER_TEMP/tok"
-          gh secret set IG_ACCESS_TOKEN --repo "${{ github.repository }}" < "$RUNNER_TEMP/tok"
-          rm -f "$RUNNER_TEMP/tok"
-          echo "토큰 연장 완료"
+          [ -z "$IG_TOKEN_KEY" ] && { echo "::warning::IG_TOKEN_KEY 없음 — 건너뜀"; exit 0; }
+          cur="$IG_ACCESS_TOKEN"
+          if [ -f data/ig-token.enc ]; then
+            cur="$(openssl enc -d -aes-256-cbc -pbkdf2 -in data/ig-token.enc -pass env:IG_TOKEN_KEY 2>/dev/null || echo "$IG_ACCESS_TOKEN")"
+          fi
+          [ -z "$cur" ] && { echo "토큰 없음 — 건너뜀"; exit 0; }
+          echo "::add-mask::$cur"
+          new="$(IG_ACCESS_TOKEN="$cur" node src/ig-refresh.mjs)"
+          echo "::add-mask::$new"
+          mkdir -p data
+          printf '%s' "$new" | openssl enc -aes-256-cbc -pbkdf2 -salt -out data/ig-token.enc -pass env:IG_TOKEN_KEY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ig-token.enc
+          git diff --cached --quiet || git commit -m "인스타 토큰 연장(암호화) $(TZ=Asia/Seoul date +%F)"
+          git pull --rebase -q && git push

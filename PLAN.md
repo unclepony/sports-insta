@@ -22,7 +22,7 @@
 2. 고르기(`src/plan.mjs`): ① 4일 안에 끝난 투어 대회 결과(안 올린 것) ② 릴스 요일(화·목·토)엔 ATL골프기어 쇼츠(원본 파일이 있을 때) ③ 용품 순환 — 분류 14개를 '가격 비교'와 '고르는 법'으로 번갈아, 같은 게시물은 30일 안에 반복 안 함
 3. 검증(`src/validate.mjs`) → 실패하면 다음 후보, 다 실패하면 그날은 쉼
 4. 렌더링(`src/render.mjs`): 카드 1080×1350 JPEG, 릴스 1080×1920 H.264(카드 + 위 제목·아래 프로필 링크 안내, 무음)
-5. 미디어를 Cloudflare Pages(`atl-ig-media`)에 올려 공개 URL 확보 → 인스타 API 게시(`src/instagram.mjs`)
+5. 미디어를 GitHub Pages 에 올려 공개 URL 확보(그날 것만) → 인스타 API 게시(`src/instagram.mjs`)
 6. 지표·댓글 수집 → `data/insights/<날짜>.json`, 보고서 `reports/daily/<날짜>.md` → ops.unclepony.com
 
 미리보기: `npm run fetch && npm run preview` → `out/preview/index.html` (만들 수 있는 모든 게시물 + 종류별 릴스)
@@ -50,6 +50,6 @@
 ## 진행 순서
 1. [x] 기획 (정치 → 골프로 변경)
 2. [x] 수집·카드·릴스·검증·게시 코드, 미리보기 (2026-10-18, 키 없이 미리보기 모드로 끝까지 동작 확인)
-3. [ ] 사장님 준비 → [docs/setup.md](docs/setup.md): 계정 이름 → 인스타 계정 → Meta 앱·토큰 → GitHub 저장소·Secrets → Cloudflare 토큰
+3. [ ] 사장님 준비 → [docs/setup.md](docs/setup.md): 인스타 계정 → Meta 앱 토큰 → GitHub Secrets 2개 (저장소·보고 키·암호화 키·Pages 는 Claude)
 4. [ ] 첫 게시는 Actions 에서 `dry_run=1` 로 한 번 돌려 보고서 확인 후 실제 게시
 5. [ ] 셀프 개선 매일 실행 + 2주 뒤 첫 분석(시리즈·형식·시간대별 도달·저장·프로필 링크 클릭)

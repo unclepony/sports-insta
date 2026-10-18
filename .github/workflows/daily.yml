@@ -1,10 +1,10 @@
-# 매일 인스타 자동 게시: 수집 → 오늘 게시물 고르기·검증·렌더링 → 미디어 공개 URL 배포 → 게시 → 지표 → 보고
+# 매일 인스타 자동 게시: 수집 → 오늘 게시물 고르기·검증·렌더링 → 미디어 공개 URL(GitHub Pages) → 게시 → 지표 → 보고
 # 필요한 설정 (없으면 해당 단계는 건너뛰고 '미리보기만'으로 끝난다):
-#   Secrets: IG_USER_ID, IG_ACCESS_TOKEN          인스타 게시·지표 (Instagram API with Instagram Login)
-#            CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID   미디어를 Cloudflare Pages 에 올림(인스타가 공개 URL 에서 가져감)
-#            OPS_URL, OPS_KEY                      운영 보고 (ops.unclepony.com)
-#            GOLF_PRICE_TOKEN                      golf-price 저장소가 비공개일 때 읽기용(선택)
-#   Variables: MEDIA_PROJECT (Pages 프로젝트 이름, 기본 atl-ig-media), MEDIA_BASE_URL (예: https://atl-ig-media.pages.dev)
+#   Secrets: IG_USER_ID, IG_ACCESS_TOKEN   인스타 게시·지표 (사장님이 넣음, Instagram API with Instagram Login)
+#            IG_TOKEN_KEY                  연장한 토큰을 data/ig-token.enc 로 암호화해 두는 키 (token-refresh.yml)
+#            OPS_URL, OPS_KEY              운영 보고 (ops.unclepony.com)
+#   Variables(선택): MEDIA_BASE_URL — 기본 https://<계정>.github.io/<저장소>
+# 미디어는 GitHub Pages 에 그날 것만 올린다(인스타가 공개 URL 에서 가져감). 저장소 설정 → Pages → Source: GitHub Actions.
 name: daily-insta
 
 on:
@@ -18,6 +18,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: daily-insta
@@ -27,15 +29,16 @@ jobs:
   run:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    environment:
+      name: github-pages
     env:
-      HAS_CF: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+      MEDIA_BASE_URL: ${{ vars.MEDIA_BASE_URL || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
         with:
           repository: unclepony/golf-price
           path: golf-price
-          token: ${{ secrets.GOLF_PRICE_TOKEN || github.token }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -52,33 +55,41 @@ jobs:
           node src/fetch-gear.mjs
 
       - name: 오늘 게시물 만들기
-        run: node src/daily.mjs build
-
-      - name: 미디어 공개 URL 배포
-        if: env.HAS_CF == 'true'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          [ -d out/media ] || exit 0
-          # 처음 한 번은 프로젝트를 만든다(이미 있으면 무시)
-          npx --yes wrangler@3.114.0 pages project create "${{ vars.MEDIA_PROJECT || 'atl-ig-media' }}" --production-branch=main 2>/dev/null || true
-          npx --yes wrangler@3.114.0 pages deploy out/media --project-name="${{ vars.MEDIA_PROJECT || 'atl-ig-media' }}" --branch=main --commit-dirty=true
+          node src/daily.mjs build
+          mkdir -p out/media && touch out/media/.nojekyll
+
+      - name: 미디어 공개 URL 배포 (GitHub Pages)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out/media
+      - id: pages
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: 인스타 토큰 준비 (연장된 토큰이 있으면 그것을)
+        env:
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          tok="$IG_ACCESS_TOKEN"
+          if [ -f data/ig-token.enc ] && [ -n "$IG_TOKEN_KEY" ]; then
+            tok="$(openssl enc -d -aes-256-cbc -pbkdf2 -in data/ig-token.enc -pass env:IG_TOKEN_KEY 2>/dev/null || echo "$IG_ACCESS_TOKEN")"
+          fi
+          [ -n "$tok" ] && { echo "::add-mask::$tok"; echo "IG_TOKEN=$tok" >> "$GITHUB_ENV"; }
+          true
 
       - name: 게시
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-          MEDIA_BASE_URL: ${{ vars.MEDIA_BASE_URL }}
           DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
-        run: node src/daily.mjs publish
+        run: IG_ACCESS_TOKEN="$IG_TOKEN" node src/daily.mjs publish
 
       - name: 지표·댓글 수집
         if: always()
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-        run: node src/daily.mjs insights || echo "::warning::지표 수집 실패"
+        run: IG_ACCESS_TOKEN="$IG_TOKEN" node src/daily.mjs insights || echo "::warning::지표 수집 실패"
 
       - name: 보고
         if: always()
@@ -94,4 +105,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data reports
           git diff --cached --quiet || git commit -m "매일 인스타 $(TZ=Asia/Seoul date +%F)"
-          git push
+          git pull --rebase -q && git push
