@@ -135,3 +135,23 @@ ${rocket ? '<span class="chip o">로켓배송</span>' : ''}</div>
 <div style="margin-top:40px;font-size:36px;line-height:1.55">${esc(summary)}</div>
 <div style="margin:auto 0 150px">${points.map((t) => `<div style="font-size:30px;padding:16px 0;border-top:1px solid var(--line)"><span style="color:var(--gold);font-weight:900">✓</span> ${esc(t)}</div>`).join('')}</div>` });
 }
+
+// 고르는 법 표지: "{분류}, 이것만 보고 고르세요" + 기준 개수 크게
+export function tipsCoverV2(o, { name, intro, count }) {
+  return page({ ...o, source: 'ATL골프기어', swipe: '넘겨서 기준 보기', body: `
+<div style="margin-top:56px"><span class="chip">골퍼를 위한 장비 가이드</span></div>
+<div class="disp" style="margin-top:34px;font-size:118px">${esc(name)},</div>
+<div class="disp" style="margin-top:10px;font-size:104px"><span class="hl">이것만</span> 보고 고르세요</div>
+<div style="margin-top:40px;font-size:34px;line-height:1.55;color:var(--muted)">${esc(intro)}</div>
+<div style="margin:auto 0 170px;display:flex;align-items:flex-end;gap:18px">
+<span class="num" style="font-size:280px;font-weight:800;font-style:italic;line-height:.78;color:var(--gold)">${count}</span>
+<span class="disp" style="font-size:64px;padding-bottom:14px">가지 기준</span></div>` });
+}
+
+export function tipV2(o, { name, index, count, head, body, text }) {
+  return page({ ...o, source: 'ATL골프기어', body: `
+<div style="margin-top:56px"><span class="chip o">${esc(name)} 고르는 법 ${index} / ${count}</span></div>
+<div class="num" style="margin-top:50px;font-size:240px;font-weight:800;font-style:italic;line-height:.8;color:var(--gold)">${String(index).padStart(2, '0')}</div>
+${head ? `<div class="disp" style="margin-top:44px;font-size:100px">${esc(head)}</div><div style="margin-top:26px;font-size:46px;line-height:1.5">${esc(body)}</div>`
+    : `<div style="margin-top:44px;font-size:56px;font-weight:900;line-height:1.45">${esc(text)}</div>`}` });
+}

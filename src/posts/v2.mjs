@@ -2,8 +2,8 @@
 // 후킹 문구도 템플릿 + 데이터(순위, 타수 차이, 가격 차이)로만 만든다 — 숫자는 checks 에서 원본으로 다시 계산해 대조.
 import { brand, displayName, isKorean, koName, md, posLabel, usd, won, daysBetween } from '../util.mjs';
 import { country, roundsText } from '../cards/tour.mjs';
-import { compareCoverV2, endV2, koreansV2, leaderboardV2, productV2, scorecardV2, tourCoverV2 } from '../cards/v2.mjs';
-import { DISCLOSURE } from '../cards/gear.mjs';
+import { compareCoverV2, endV2, koreansV2, leaderboardV2, productV2, scorecardV2, tipV2, tipsCoverV2, tourCoverV2 } from '../cards/v2.mjs';
+import { DISCLOSURE, splitTip, tipText } from '../cards/gear.mjs';
 import { LEAGUES } from '../espn.mjs';
 import { freshItems } from './gear.mjs';
 import { finish } from './common.mjs';
@@ -105,7 +105,7 @@ export function tourPostV2(ev, src) {
     '',
     tags.join(' '),
   ].filter((l, i, a) => l !== '' || a[i - 1] !== '').join('\n');
-  return finish({ id: `v2-tour-${ev.league}-${ev.id}`, kind: 'tour', date, series, cards, checks, caption, warnings: [] });
+  return finish({ id: `tour-${ev.league}-${ev.id}`, kind: 'tour', date, series, cards, checks, caption, warnings: [] });
 }
 
 export function comparePostV2(gear, catId, date, src = 'gear') {
@@ -155,5 +155,38 @@ export function comparePostV2(gear, catId, date, src = 'gear') {
     '',
     ['#골프', '#골프용품', '#골프스타그램', '#골프클럽', `#${cat.name}`, `#${cat.name}추천`].join(' '),
   ].join('\n');
-  return finish({ id: `v2-compare-${catId}-${date}`, kind: 'compare', category: catId, date, series, cards, checks, caption, warnings: [] });
+  return finish({ id: `compare-${catId}-${date}`, kind: 'compare', category: catId, date, series, cards, checks, caption, warnings: [] });
+}
+
+export function tipsPostV2(gear, catId, date, src = 'gear') {
+  const cat = gear.categories.find((c) => c.id === catId);
+  if (!cat || cat.tips.length < 3) return null;
+  const tips = cat.tips.slice(0, 8);
+  const C = (path, value, extra = {}) => ({ src, path: ['categories', { id: catId }, ...path], value, ...extra });
+  const cards = [
+    { name: 'cover', make: (o) => tipsCoverV2(o, { name: cat.name, intro: cat.intro, count: tips.length }), facts: [C(['intro'], cat.intro)] },
+    ...tips.map((t, i) => {
+      const s = splitTip(t);
+      return { name: `tip-${i + 1}`, make: (o) => tipV2(o, { name: cat.name, index: i + 1, count: tips.length, head: s?.head, body: s?.body, text: t }),
+        facts: [C(['tips', i], tipText(t), { expect: tipText })] };
+    }),
+    { name: 'end', make: (o) => endV2(o, { source: 'ATL골프기어', title: '살 때 꺼내 보는<br>체크리스트',
+      sub: `저장해 두면 ${cat.name} 고를 때<br>바로 확인할 수 있어요.<br>모델별 비교·쿠팡 가격은 프로필 링크에서.`, disclosure: DISCLOSURE }), facts: [] },
+  ];
+  const caption = [
+    `${cat.name}, 이것만 보고 고르세요 ✅ ${tips.length}가지 기준`,
+    '',
+    cat.intro,
+    '',
+    ...tips.map((t, i) => `${i + 1}. ${t}`),
+    '',
+    '👉 여러분은 무엇을 가장 먼저 보나요? 댓글로 알려 주세요',
+    '📌 저장해 두고 살 때 다시 보세요',
+    `🏌️ ${cat.name} 모델별 비교·쿠팡 가격은 프로필 링크(${brand.site})`,
+    '',
+    DISCLOSURE,
+    '',
+    ['#골프', '#골프초보', '#골프스타그램', '#골프용품', `#${cat.name}`, `#${cat.name}고르는법`].join(' '),
+  ].join('\n');
+  return finish({ id: `tips-${catId}`, kind: 'tips', category: catId, date, series: `${cat.name} 고르는 법`, cards, checks: [], caption, warnings: [] });
 }

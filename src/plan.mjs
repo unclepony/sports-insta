@@ -6,6 +6,13 @@ import { readdirSync } from 'node:fs';
 import { daysBetween, readJson } from './util.mjs';
 import { tourPost } from './posts/tour.mjs';
 import { comparePost, tipsPost } from './posts/gear.mjs';
+import { comparePostV2, tipsPostV2, tourPostV2 } from './posts/v2.mjs';
+import { brand } from './util.mjs';
+
+// 디자인: config/brand.json 의 theme ('v2' 기본, 'v1' 로 되돌리기 가능). 게시물 id 는 둘이 같아 중복 게시 방지가 그대로 작동한다.
+const V2 = (brand.theme || 'v2') === 'v2';
+const makeTour = V2 ? tourPostV2 : tourPost;
+const makeGear = V2 ? [comparePostV2, tipsPostV2] : [comparePost, tipsPost];
 
 export const GEAR_ORDER = ['driver', 'iron', 'putter', 'wedge', 'wood', 'utility', 'ball', 'shoes', 'rangefinder', 'bag', 'glove', 'gps', 'launch', 'practice'];
 const REEL_DAYS = [2, 4, 6]; // 화 목 토 (0=일)
@@ -25,13 +32,13 @@ export function candidates(raw, date) {
   for (const [src, ev] of Object.entries(raw)) {
     if (!src.startsWith('tour-') || !src.endsWith('-latest')) continue;
     if (ev.state === 'post' && daysBetween(ev.end.slice(0, 10), date) <= 4) {
-      const p = tourPost(ev, src);
+      const p = makeTour(ev, src);
       if (p) list.push(p);
     }
   }
   if (raw.gear) {
     for (const cat of GEAR_ORDER) {
-      for (const make of [comparePost, tipsPost]) {
+      for (const make of makeGear) {
         const p = make(raw.gear, cat, date);
         if (p) list.push(p);
       }

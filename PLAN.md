@@ -21,7 +21,7 @@
 1. 수집: `src/fetch-tour.mjs`(ESPN 리더보드) + `src/fetch-gear.mjs`(golf-price 용품·확인가 스냅숏) → `data/raw/<날짜>/`
 2. 고르기(`src/plan.mjs`): ① 4일 안에 끝난 투어 대회 결과(안 올린 것) ② 릴스 요일(화·목·토)엔 ATL골프기어 쇼츠(원본 파일이 있을 때) ③ 용품 순환 — 분류 14개를 '가격 비교'와 '고르는 법'으로 번갈아, 같은 게시물은 30일 안에 반복 안 함
 3. 검증(`src/validate.mjs`) → 실패하면 다음 후보, 다 실패하면 그날은 쉼
-4. 렌더링(`src/render.mjs`): 카드 1080×1350 JPEG, 릴스 1080×1920 H.264(카드 + 위 제목·아래 프로필 링크 안내, 무음)
+4. 렌더링(`src/render.mjs`): 카드 1080×1350 JPEG — 디자인 v2(2026-10-18 벤치마킹, `src/cards/v2.mjs`, `config/brand.json` theme 로 v1 되돌리기 가능), 릴스 1080×1920 H.264(카드 + 위 제목·아래 프로필 링크 안내, 무음)
 5. 미디어를 GitHub Pages 에 올려 공개 URL 확보(그날 것만) → 인스타 API 게시(`src/instagram.mjs`)
 6. 지표·댓글 수집 → `data/insights/<날짜>.json`, 보고서 `reports/daily/<날짜>.md` → ops.unclepony.com
 

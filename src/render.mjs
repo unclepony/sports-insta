@@ -46,7 +46,8 @@ export async function renderReelFrames(browser, post, dirUrl, files) {
   for (const f of files) {
     const img = (await import('node:fs')).readFileSync(new URL(f, dirUrl)).toString('base64');
     await page.setContent(`<!doctype html><html><head><meta charset="utf-8"><style>${CSS}
-html,body{width:1080px;height:1920px}.reel{height:1920px;display:flex;flex-direction:column;align-items:center}
+html,body{width:1080px;height:1920px}
+${(brand.theme || 'v2') === 'v2' ? ':root{--bg:#0b2f20;--ink:#fff;--accent:#e9c46a}html,body{background:#0b2f20;color:#fff}' : ''}.reel{height:1920px;display:flex;flex-direction:column;align-items:center}
 .reel .t{height:285px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px}
 .reel .t b{font-size:58px;font-weight:900;letter-spacing:-1.5px}.reel .t span{font-size:30px;color:var(--accent);font-weight:700}
 .reel img{width:1080px;height:1350px;display:block}

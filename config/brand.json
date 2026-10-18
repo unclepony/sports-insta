@@ -3,5 +3,7 @@
   "name": "ATL골프기어",
   "site": "golfprice.unclepony.com",
   "handle": "atlgolfgear",
-  "staleDays": 14
+  "staleDays": 14,
+  "theme": "v2",
+  "_theme": "v2: 2026-10-18 벤치마킹 디자인(짙은 초록·금색, 후킹 표지). 되돌리려면 v1"
 }
