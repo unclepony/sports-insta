@@ -1,6 +1,8 @@
 // golfvideo 가 만든 초보 Q&A 팁 쇼츠(t-*.mp4 + .json)를 media/clips/ 로 복사한다(커밋해서 Actions 가 릴스로 올림).
 // golfvideo 영상은 직접 그린 일러스트·직접 만든 배경음이라 재활용 가능(남의 사진·영상·로고 없음).
 // 사용: node src/sync-clips.mjs   (golfvideo 위치: GOLFVIDEO_DIR, 기본 ../golfvideo)
+// 주의: golfvideo 매일 작업(07시, golfvideo 3ed0acb)이 이 명령을 그대로 부르고 media/clips 만 커밋·푸시한다.
+//       명령·인자·경로(out/t-*.json·mp4 → media/clips/)를 바꾸려면 먼저 unclepony.com 유지보수 세션과 맞춘다.
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
