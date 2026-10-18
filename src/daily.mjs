@@ -7,7 +7,7 @@
 import { existsSync } from 'node:fs';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { ROOT, brand, daysBetween, readJson, today } from './util.mjs';
-import { baseId, candidates, choose, formatFor, loadRaw } from './plan.mjs';
+import { DAILY_MAX, baseId, candidates, choose, formatFor, loadRaw, postedToday } from './plan.mjs';
 import { validatePost } from './validate.mjs';
 import { openBrowser, renderCards, renderReel, renderReelFrames } from './render.mjs';
 import { clipCandidates, renderClip } from './clip.mjs';
@@ -32,14 +32,17 @@ async function build() {
   const browser = await openBrowser();
   let result = null;
   try {
-    // 릴스 요일: 아직 안 올린 투어 결과가 없으면 ATL골프기어 쇼츠(원본 파일이 있을 때)를 먼저
+    // 저녁 슬롯(매일): 아직 안 올린 투어 결과가 없으면 ATL골프기어 초보 Q&A 쇼츠(media/clips)를 릴스로 먼저
+    // (초보 Q&A 쇼츠가 유튜브에서 반응이 좋음, 2026-10-18). 하루 릴스 1개·게시 3개 한도는 그대로.
+    const hourKst = (new Date().getUTCHours() + 9) % 24;
     const tourFirst = choose(list, state, date)?.kind === 'tour';
-    if (format === 'reel' && !tourFirst) {
+    const todays = postedToday(state, date);
+    if (hourKst >= 17 && !tourFirst && todays.length < DAILY_MAX && !todays.some((h) => h.format === 'reel')) {
       for (const clip of clipCandidates(state)) {
         try {
           const dir = new URL(`${clip.id}/`, mediaRoot);
           const { files, cover } = await renderClip(clip, dir);
-          result = { id: clip.id, kind: 'clip', category: null, series: clip.series, format, dir: `${date}/${clip.id}/`, files, cover, caption: clip.caption, warnings: [] };
+          result = { id: clip.id, kind: 'clip', category: clip.category, series: clip.series, format: 'reel', dir: `${date}/${clip.id}/`, files, cover, caption: clip.caption, warnings: [] };
           break;
         } catch (e) { tried.push({ id: clip.id, errors: [e.message] }); }
       }
@@ -126,6 +129,8 @@ async function insights() {
       post: ours?.id || null, kind: ours?.kind || null, category: ours?.category || null, format: ours?.format || null,
       likes: m.like_count ?? null, comments: m.comments_count ?? null,
       ...(await mediaInsights(m.id, cfg)),
+      // 릴스 평균 시청 시간(밀리초) — 릴스만
+      ...((m.media_product_type === 'REELS') ? await mediaInsights(m.id, cfg, ['ig_reels_avg_watch_time', 'ig_reels_video_view_total_time']) : {}),
       recentComments: daysBetween(m.timestamp.slice(0, 10), date) <= 7 ? await mediaComments(m.id, cfg) : undefined,
     });
   }
@@ -133,6 +138,39 @@ async function insights() {
   await mkdir(new URL('data/insights/', ROOT), { recursive: true });
   await saveJson(new URL(`data/insights/${date}.json`, ROOT), { date, account, posts });
   console.log(`지표: 게시물 ${posts.length}개, 팔로워 ${account.followers ?? '?'}`);
+  await sendMetrics({ date, account, posts });
+}
+
+// ops.unclepony.com/dashboard 로 지표 보내기(POST /api/metrics, unclepony-ops README 형식).
+// 게시물 지표는 누적값이라, 전날 저장한 값과의 차이를 '그날 하루 값'으로 보낸다(처음 본 게시물은 누적값 그대로).
+async function sendMetrics({ date: day, account, posts }) {
+  const url = process.env.OPS_METRICS_URL || process.env.OPS_URL?.replace(/\/api\/report$/, '/api/metrics');
+  if (!url || !process.env.OPS_KEY) { console.log('OPS 키 없음 — 대시보드 전송 건너뜀'); return; }
+  const dir = new URL('data/insights/', ROOT);
+  const prevFile = (await import('node:fs')).readdirSync(dir).filter((f) => f.endsWith('.json') && f < `${day}.json`).sort().at(-1);
+  const prev = prevFile ? readJson(new URL(prevFile, dir)) : null;
+  const MAP = { reach: 'reach', views: 'views', likes: 'likes', comments: 'comments', saved: 'saves', shares: 'shares' };
+  const rows = [], names = [], sums = {};
+  for (const p of posts) {
+    const before = prev?.posts?.find((x) => x.id === p.id);
+    for (const [k, metric] of Object.entries(MAP)) {
+      if (typeof p[k] !== 'number') continue;
+      const v = Math.max(0, p[k] - (typeof before?.[k] === 'number' ? before[k] : 0));
+      rows.push({ day, metric, dim: p.id, value: v });
+      sums[metric] = (sums[metric] || 0) + v;
+    }
+    if (typeof p.ig_reels_avg_watch_time === 'number') rows.push({ day, metric: 'avg_watch_sec', dim: p.id, value: Math.round(p.ig_reels_avg_watch_time / 100) / 10 });
+    names.push({ k: p.id, label: p.post || (p.type === 'REELS' ? '릴스' : '게시물'), extra: p.at.slice(0, 10) });
+  }
+  // 계정 합계: 도달은 계정 지표(그날), 나머지는 게시물 하루 값의 합
+  if (typeof account.reach === 'number') rows.push({ day, metric: 'reach', value: account.reach });
+  for (const m of ['views', 'likes', 'comments', 'saves', 'shares']) if (sums[m] !== undefined) rows.push({ day, metric: m, value: sums[m] });
+  if (typeof account.followers === 'number') rows.push({ day, metric: 'followers', value: account.followers });
+  if (typeof account.profile_views === 'number') rows.push({ day, metric: 'profile_visits', value: account.profile_views });
+  if (typeof (account.profile_links_taps ?? account.website_clicks) === 'number') rows.push({ day, metric: 'link_taps', value: account.profile_links_taps ?? account.website_clicks });
+  const res = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json', 'x-ops-key': process.env.OPS_KEY },
+    body: JSON.stringify({ source: 'insta', entity: 'atlgolf', rows, names }) });
+  console.log(`대시보드 지표 ${rows.length}줄 전송: ${res.status}`);
 }
 
 async function report() {

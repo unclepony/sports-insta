@@ -87,10 +87,12 @@ jobs:
           DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
         run: IG_ACCESS_TOKEN="$IG_TOKEN" node src/daily.mjs publish
 
-      - name: 지표·댓글 수집
+      - name: 지표·댓글 수집 (+ ops 대시보드 전송)
         if: always()
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          OPS_URL: ${{ secrets.OPS_URL }}
+          OPS_KEY: ${{ secrets.OPS_KEY }}
         run: IG_ACCESS_TOKEN="$IG_TOKEN" node src/daily.mjs insights || echo "::warning::지표 수집 실패"
 
       - name: 보고
