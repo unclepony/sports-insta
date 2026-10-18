@@ -1,6 +1,7 @@
 {
  "posted": {
-  "tour-lpga-401835172": "2026-10-18"
+  "tour-lpga-401835172": "2026-10-18",
+  "pick-driver-recommend-2026-beginner": "2026-10-18"
  },
  "history": [
   {
@@ -11,6 +12,16 @@
    "format": "carousel",
    "mediaId": "17986144371075833",
    "permalink": "https://www.instagram.com/p/DeokFMQkbUg/"
+  },
+  {
+   "date": "2026-10-18",
+   "id": "pick-driver-recommend-2026-beginner",
+   "kind": "pick",
+   "category": "driver",
+   "format": "carousel",
+   "mediaId": "18107575313141246",
+   "permalink": "https://www.instagram.com/p/Deo1vQkFoQU/"
   }
- ]
+ ],
+ "lastGearKind": "pick"
 }
