@@ -31,12 +31,15 @@ jobs:
           fi
           [ -z "$cur" ] && { echo "토큰 없음 — 건너뜀"; exit 0; }
           echo "::add-mask::$cur"
-          new="$(IG_ACCESS_TOKEN="$cur" node src/ig-refresh.mjs)"
+          # 발급 후 24시간이 안 됐거나 일시 오류면 이번 주는 건너뛴다(다음 주에 다시, 토큰은 60일 유효)
+          new="$(IG_ACCESS_TOKEN="$cur" node src/ig-refresh.mjs 2>"$RUNNER_TEMP/err")" || { echo "::warning::토큰 연장 실패 — $(cat "$RUNNER_TEMP/err" | head -c 200)"; exit 0; }
           echo "::add-mask::$new"
+          # 만료 예정일(연장 시점 + 60일)을 남겨 상태 보고에 쓴다
+          TZ=Asia/Seoul date -d '+60 days' +%F > data/ig-token-expires.txt
           mkdir -p data
           printf '%s' "$new" | openssl enc -aes-256-cbc -pbkdf2 -salt -out data/ig-token.enc -pass env:IG_TOKEN_KEY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ig-token.enc
+          git add data/ig-token.enc data/ig-token-expires.txt
           git diff --cached --quiet || git commit -m "인스타 토큰 연장(암호화) $(TZ=Asia/Seoul date +%F)"
           git pull --rebase -q && git push
