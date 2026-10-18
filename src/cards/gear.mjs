@@ -62,5 +62,6 @@ export function gearEnd(o, { disclosure = true } = {}) {
   return page({ ...o, cls: 'end', source: o.source || SOURCE, body: `
 <h2>모델별 자세한 비교와<br>오늘 쿠팡 가격은<br>프로필 링크에서</h2>
 <div class="url">${esc(brand.site)}</div>
+${brand.handle ? `<div style="margin-top:28px;font-size:34px;font-weight:700">@${esc(brand.handle)} 팔로우하고 매일 받아 보기</div>` : ''}
 <div class="bottom note">${disclosure ? `${esc(DISCLOSURE)}<br>` : ''}가격은 확인한 날짜 기준이며 지금은 다를 수 있습니다.</div>` });
 }

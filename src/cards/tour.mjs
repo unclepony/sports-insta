@@ -64,5 +64,6 @@ export function tourEnd(o, ev) {
   return page({ ...o, cls: 'end', source: SOURCE, body: `
 <h2>내게 맞는 클럽 비교와<br>쿠팡 가격은<br>프로필 링크에서</h2>
 <div class="url">${esc(brand.site)}</div>
+${brand.handle ? `<div style="margin-top:28px;font-size:34px;font-weight:700">@${esc(brand.handle)} 팔로우하고 매일 받아 보기</div>` : ''}
 <div class="bottom note">대회 기록은 ESPN 공개 자료를 그대로 옮겼습니다.<br>${ev.next ? `다음 대회: ${esc(ev.next.name)} (${md(ev.next.start)} 시작)<br>` : ''}잘못된 내용은 댓글로 알려 주시면 바로 고칩니다.</div>` });
 }
