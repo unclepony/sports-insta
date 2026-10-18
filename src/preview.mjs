@@ -5,7 +5,7 @@ import { mkdir, readdir, rm, writeFile } from 'node:fs/promises';
 import { ROOT, esc, today } from './util.mjs';
 import { candidates, choose, isReelDay, loadRaw } from './plan.mjs';
 import { validatePost } from './validate.mjs';
-import { openBrowser, renderCards, renderReel } from './render.mjs';
+import { openBrowser, renderCards, renderReel, renderReelFrames } from './render.mjs';
 
 const args = process.argv.slice(2);
 const withReel = args.includes('--reel');
@@ -25,6 +25,7 @@ await mkdir(outRoot, { recursive: true });
 
 const browser = await openBrowser();
 const results = [];
+const reelKinds = new Set(); // 릴스는 종류마다 첫 게시물만(시간 절약)
 for (const post of list) {
   const errors = validatePost(post, rawDir);
   const r = { post, errors, files: [], reel: null };
@@ -38,7 +39,7 @@ for (const post of list) {
     console.error(`✗ ${post.id} ${e.message}`);
     continue;
   }
-  if (withReel && (post === pick || post.kind === 'tour')) r.reel = `${post.id}/${await renderReel(dir, r.files.map((f) => f.split('/')[1]))}`;
+  if (withReel && !reelKinds.has(post.kind) && reelKinds.add(post.kind)) r.reel = `${post.id}/${await renderReel(dir, await renderReelFrames(browser, post, dir, r.files.map((f) => f.split('/')[1])))}`;
   console.log(`✓ ${post.id}: ${r.files.length}장${r.reel ? ' + 릴스' : ''}${post.warnings.length ? ` (주의: ${post.warnings.join('; ')})` : ''}`);
 }
 await browser.close();

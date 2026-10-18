@@ -35,3 +35,6 @@ export function koName(p) {
 }
 export const isKorean = (p) => p.country === 'South Korea';
 export const displayName = (p) => koName(p) || p.name;
+
+// 순위 표기: "T6" → "공동 6위", "2" → "2위"
+export const posLabel = (pos) => (/^T\d+$/.test(pos) ? `공동 ${pos.slice(1)}위` : /^\d+$/.test(pos) ? `${pos}위` : pos);

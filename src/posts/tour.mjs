@@ -1,5 +1,5 @@
 // 투어 최종 결과 게시물. 문장은 템플릿만 쓴다(AI 문장 생성 없음).
-import { brand, displayName, isKorean, koName, md, usd } from '../util.mjs';
+import { brand, displayName, isKorean, koName, md, posLabel, usd } from '../util.mjs';
 import { country, koreansCard, leaderboardCard, roundsText, tourCover, tourEnd } from '../cards/tour.mjs';
 import { LEAGUES } from '../espn.mjs';
 import { finish } from './common.mjs';
@@ -38,7 +38,7 @@ export function tourPost(ev, src) {
   const cards = [
     { name: 'cover', make: (o) => tourCover(o, e, { winner, bestKo }),
       facts: [P(winner, 'toParText', winner.toParText), nameFact(winner), { src, path: ['name'], value: ev.name },
-        ...(bestKo ? [P(bestKo, 'pos', bestKo.pos), P(bestKo, 'toParText', bestKo.toParText)] : [])] },
+        ...(bestKo ? [P(bestKo, 'pos', posLabel(bestKo.pos), { expect: posLabel }), P(bestKo, 'toParText', bestKo.toParText)] : [])] },
     { name: 'leaderboard', make: (o) => leaderboardCard(o, e, top, tail),
       facts: [...top.flatMap((p) => [P(p, 'pos', p.pos), P(p, 'name', p.name), P(p, 'toParText', p.toParText), P(p, 'total', p.total)]),
         ...(tail ? tail.players.flatMap((p) => [P(p, 'pos', p.pos), P(p, 'toParText', p.toParText), ...(koName(p) ? [] : [P(p, 'name', p.name)])]) : [])] },
@@ -76,7 +76,7 @@ export function tourPost(ev, src) {
     },
   ];
 
-  const koLine = bestKo ? `한국 선수 최고 성적은 ${displayName(bestKo)} ${bestKo.pos}위(${bestKo.toParText}).` : '';
+  const koLine = bestKo ? `한국 선수 최고 성적은 ${displayName(bestKo)} ${posLabel(bestKo.pos)}(${bestKo.toParText}).` : '';
   const tags = ['#골프', `#${ev.league.toUpperCase()}`, '#골프대회', ...[...new Set(koreans.filter((p) => fin.includes(p) && koName(p)).slice(0, 3).map((p) => `#${koName(p)}`))]];
   const caption = [
     `${leagueName} ${ev.name} 최종 결과 (${md(ev.start)}~${md(ev.end)})`,
@@ -84,7 +84,7 @@ export function tourPost(ev, src) {
     `우승: ${displayName(winner)} ${winner.toParText}${winner.country ? ` (${country(winner.country)})` : ''}`,
     koLine,
     '',
-    ...(koreans.length ? ['한국 선수', ...koreans.map((p) => `${p.status === 'STATUS_FINISH' ? `${p.pos}위` : '—'} ${displayName(p)} ${p.toParText}`)] : []),
+    ...(koreans.length ? ['한국 선수', ...koreans.map((p) => `${p.status === 'STATUS_FINISH' ? posLabel(p.pos) : '—'} ${displayName(p)} ${p.toParText}`)] : []),
     '',
     `골프 클럽 비교·쿠팡 가격은 프로필 링크(${brand.site})에서 볼 수 있습니다.`,
     `기록 출처: ESPN, ${date} 기준.`,

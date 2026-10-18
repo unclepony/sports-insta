@@ -1,5 +1,5 @@
 // 투어 결과 카드: 표지 · 리더보드 TOP10 · 한국 선수 · 마지막 장
-import { brand, displayName, esc, isKorean, koName, md, usd } from '../util.mjs';
+import { brand, displayName, esc, isKorean, koName, md, posLabel, usd } from '../util.mjs';
 import { page } from './base.mjs';
 
 export const SOURCE = 'ESPN';
@@ -35,7 +35,7 @@ export function tourCover(o, ev, { winner, bestKo }) {
 ${bestKo ? `<div style="font-size:30px;color:var(--accent);font-weight:700;margin-top:40px">한국 선수 최고 성적</div>
 <div style="display:flex;justify-content:space-between;align-items:baseline;padding:6px 0 0">
 <span style="font-size:60px;font-weight:900">${esc(displayName(bestKo))}</span>
-<span style="font-size:52px;font-weight:900">${esc(bestKo.pos)}위 <span class="num" style="font-size:80px;font-weight:800;margin-left:12px">${esc(bestKo.toParText)}</span></span></div>`
+<span style="font-size:52px;font-weight:900">${esc(posLabel(bestKo.pos))} <span class="num" style="font-size:80px;font-weight:800;margin-left:12px">${esc(bestKo.toParText)}</span></span></div>`
     : '<div style="font-size:34px;color:var(--muted);margin-top:40px">이번 대회 최종 라운드를 마친 한국 선수는 없습니다.</div>'}
 </div>` });
 }

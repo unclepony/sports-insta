@@ -1,0 +1,97 @@
+# 매일 인스타 자동 게시: 수집 → 오늘 게시물 고르기·검증·렌더링 → 미디어 공개 URL 배포 → 게시 → 지표 → 보고
+# 필요한 설정 (없으면 해당 단계는 건너뛰고 '미리보기만'으로 끝난다):
+#   Secrets: IG_USER_ID, IG_ACCESS_TOKEN          인스타 게시·지표 (Instagram API with Instagram Login)
+#            CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID   미디어를 Cloudflare Pages 에 올림(인스타가 공개 URL 에서 가져감)
+#            OPS_URL, OPS_KEY                      운영 보고 (ops.unclepony.com)
+#            GOLF_PRICE_TOKEN                      golf-price 저장소가 비공개일 때 읽기용(선택)
+#   Variables: MEDIA_PROJECT (Pages 프로젝트 이름, 기본 atl-ig-media), MEDIA_BASE_URL (예: https://atl-ig-media.pages.dev)
+name: daily-insta
+
+on:
+  schedule:
+    - cron: '30 10 * * *' # 매일 19:30 KST
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '게시하지 않고 미리보기만 (1)'
+        default: '0'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-insta
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      HAS_CF: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: unclepony/golf-price
+          path: golf-price
+          token: ${{ secrets.GOLF_PRICE_TOKEN || github.token }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: 한글 글꼴(웹 글꼴을 못 받을 때 대비)
+        run: sudo apt-get install -y -qq fonts-noto-cjk >/dev/null
+
+      - name: 수집
+        env:
+          GOLF_PRICE_DIR: golf-price
+        run: |
+          node src/fetch-tour.mjs || echo "::warning::투어 수집 실패 — 오늘은 용품 게시물만"
+          node src/fetch-gear.mjs
+
+      - name: 오늘 게시물 만들기
+        run: node src/daily.mjs build
+
+      - name: 미디어 공개 URL 배포
+        if: env.HAS_CF == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          [ -d out/media ] || exit 0
+          # 처음 한 번은 프로젝트를 만든다(이미 있으면 무시)
+          npx --yes wrangler@3.114.0 pages project create "${{ vars.MEDIA_PROJECT || 'atl-ig-media' }}" --production-branch=main 2>/dev/null || true
+          npx --yes wrangler@3.114.0 pages deploy out/media --project-name="${{ vars.MEDIA_PROJECT || 'atl-ig-media' }}" --branch=main --commit-dirty=true
+
+      - name: 게시
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          MEDIA_BASE_URL: ${{ vars.MEDIA_BASE_URL }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
+        run: node src/daily.mjs publish
+
+      - name: 지표·댓글 수집
+        if: always()
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: node src/daily.mjs insights || echo "::warning::지표 수집 실패"
+
+      - name: 보고
+        if: always()
+        env:
+          OPS_URL: ${{ secrets.OPS_URL }}
+          OPS_KEY: ${{ secrets.OPS_KEY }}
+        run: node src/daily.mjs report
+
+      - name: 기록 커밋
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data reports
+          git diff --cached --quiet || git commit -m "매일 인스타 $(TZ=Asia/Seoul date +%F)"
+          git push

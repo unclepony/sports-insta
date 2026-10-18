@@ -1,0 +1,31 @@
+# 인스타 장기 토큰(60일)을 매주 연장해 Secrets 에 다시 저장한다.
+# 필요: Secrets IG_ACCESS_TOKEN, GH_PAT(이 저장소 Secrets 쓰기 권한이 있는 토큰 — 사장님이 발급)
+name: ig-token-refresh
+
+on:
+  schedule:
+    - cron: '0 1 * * 1' # 매주 월 10:00 KST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 연장 후 저장
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          [ -z "$IG_ACCESS_TOKEN" ] && { echo "토큰 없음 — 건너뜀"; exit 0; }
+          [ -z "$GH_TOKEN" ] && { echo "::warning::GH_PAT 없음 — 연장한 토큰을 저장할 수 없어 건너뜀"; exit 0; }
+          node src/ig-refresh.mjs > "$RUNNER_TEMP/tok"
+          gh secret set IG_ACCESS_TOKEN --repo "${{ github.repository }}" < "$RUNNER_TEMP/tok"
+          rm -f "$RUNNER_TEMP/tok"
+          echo "토큰 연장 완료"

@@ -4,7 +4,8 @@ import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import ffmpegPath from 'ffmpeg-static';
 import { chromium } from 'playwright-core';
-import { W, H } from './cards/base.mjs';
+import { W, H, CSS } from './cards/base.mjs';
+import { brand, esc } from './util.mjs';
 
 // 로컬은 설치된 Chrome/Edge, GitHub Actions 는 러너에 깔린 Chrome
 export async function openBrowser() {
@@ -38,6 +39,30 @@ export async function renderCards(browser, post, dirUrl) {
   return files;
 }
 
+// 릴스용 세로 프레임(1080×1920): 위에 시리즈 제목, 가운데 카드, 아래에 프로필 링크 안내
+export async function renderReelFrames(browser, post, dirUrl, files) {
+  const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
+  const out = [];
+  for (const f of files) {
+    const img = (await import('node:fs')).readFileSync(new URL(f, dirUrl)).toString('base64');
+    await page.setContent(`<!doctype html><html><head><meta charset="utf-8"><style>${CSS}
+html,body{width:1080px;height:1920px}.reel{height:1920px;display:flex;flex-direction:column;align-items:center}
+.reel .t{height:285px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px}
+.reel .t b{font-size:58px;font-weight:900;letter-spacing:-1.5px}.reel .t span{font-size:30px;color:var(--accent);font-weight:700}
+.reel img{width:1080px;height:1350px;display:block}
+.reel .b{height:285px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;font-size:34px;font-weight:700}
+.reel .b span{color:var(--accent);font-size:40px;font-weight:900}</style></head><body>
+<div class="reel"><div class="t"><span>ATL골프기어</span><b>${esc(post.series)}</b></div>
+<img src="data:image/jpeg;base64,${img}"><div class="b">자세한 비교·가격은 프로필 링크<span>${esc(brand.site)}</span></div></div></body></html>`, { waitUntil: 'networkidle' });
+    await page.evaluate(() => document.fonts.ready);
+    const name = f.replace(/.jpg$/, '-reel.jpg');
+    await page.screenshot({ path: fileURLToPath(new URL(name, dirUrl)), type: 'jpeg', quality: 92 });
+    out.push(name);
+  }
+  await page.close();
+  return out;
+}
+
 function run(args) {
   return new Promise((ok, fail) => {
     const p = spawn(ffmpegPath, args, { stdio: ['ignore', 'ignore', 'pipe'] });
@@ -47,7 +72,7 @@ function run(args) {
   });
 }
 
-// 카드 이미지를 세로 화면 가운데에 놓고 장마다 천천히 확대 + 장 사이 밀어내기 전환.
+// 세로 프레임(renderReelFrames)을 장마다 천천히 확대 + 장 사이 밀어내기 전환.
 // 소리는 무음 트랙(남의 음원을 쓰지 않음).
 export async function renderReel(dirUrl, files, out = 'reel.mp4', { first = 3.5, each = 3.2, fade = 0.45 } = {}) {
   const dir = fileURLToPath(dirUrl);
@@ -58,8 +83,7 @@ export async function renderReel(dirUrl, files, out = 'reel.mp4', { first = 3.5,
   args.push('-f', 'lavfi', '-t', String(durs.reduce((a, b) => a + b, 0)), '-i', 'anullsrc=r=44100:cl=stereo');
   const parts = files.map((_, i) => {
     const frames = Math.round(durs[i] * fps);
-    return `[${i}:v]scale=1080:1350,zoompan=z='1+0.04*on/${frames}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${frames}:s=1080x1350:fps=${fps},`
-      + `pad=1080:1920:0:285:color=0xf6f7f4,setsar=1,format=yuv420p[v${i}]`;
+    return `[${i}:v]scale=1080:1920,zoompan=z='1+0.03*on/${frames}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${frames}:s=1080x1920:fps=${fps},setsar=1,format=yuv420p[v${i}]`;
   });
   let last = 'v0', offset = 0;
   for (let i = 1; i < files.length; i++) {
