@@ -24,8 +24,8 @@ export async function renderCards(browser, post, dirUrl) {
     await page.evaluate(() => document.fonts.ready);
     // 글자가 넘쳐 아래 출처 줄과 겹치거나 카드 밖으로 나가면 실패(그 게시물은 올리지 않음)
     const overflow = await page.evaluate(() => {
-      const foot = document.querySelector('.foot').getBoundingClientRect().top;
-      const bad = [...document.querySelectorAll('.card > *:not(.foot)')].flatMap((el) => [el, ...el.querySelectorAll('*')])
+      const foot = document.querySelector('.foot, .ft').getBoundingClientRect().top;
+      const bad = [...document.querySelectorAll('.card > *:not(.foot):not(.ft)')].flatMap((el) => [el, ...el.querySelectorAll('*')])
         .filter((el) => { const b = el.getBoundingClientRect(); return b.height > 0 && (b.bottom > foot + 1 || b.right > innerWidth - 40); });
       return bad.length ? bad[0].textContent.trim().slice(0, 40) : '';
     });

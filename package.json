@@ -5,7 +5,8 @@
   "scripts": {
     "fetch": "node src/fetch-tour.mjs && node src/fetch-gear.mjs",
     "preview": "node src/preview.mjs --reel",
-    "daily": "node src/daily.mjs"
+    "daily": "node src/daily.mjs",
+    "preview:v2": "node src/preview-v2.mjs"
   },
   "keywords": [],
   "author": "",
