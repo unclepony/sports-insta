@@ -2,7 +2,7 @@
  "date": "2026-10-18",
  "account": {
   "followers": 0,
-  "mediaCount": 3,
+  "mediaCount": 4,
   "username": "atlgolfgear",
   "reach": 0,
   "profile_views": 0,
@@ -11,6 +11,26 @@
   "follows_and_unfollows": null
  },
  "posts": [
+  {
+   "id": "18338447824258150",
+   "at": "2026-10-18T13:59:39+0000",
+   "type": "REELS",
+   "permalink": "https://www.instagram.com/reel/Deo2JLeFAtu/",
+   "post": "clip-t-fairway-wood-recommend-0",
+   "kind": "clip",
+   "category": "fairway-wood-recommend",
+   "format": "reel",
+   "likes": 0,
+   "comments": 0,
+   "reach": 0,
+   "views": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0,
+   "ig_reels_avg_watch_time": 0,
+   "ig_reels_video_view_total_time": 0,
+   "recentComments": []
+  },
   {
    "id": "18107575313141246",
    "at": "2026-10-18T13:55:51+0000",
