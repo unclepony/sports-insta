@@ -7,7 +7,7 @@
 import { existsSync } from 'node:fs';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { ROOT, brand, daysBetween, readJson, today } from './util.mjs';
-import { baseId, candidates, choose, isReelDay, loadRaw } from './plan.mjs';
+import { baseId, candidates, choose, formatFor, loadRaw } from './plan.mjs';
 import { validatePost } from './validate.mjs';
 import { openBrowser, renderCards, renderReel, renderReelFrames } from './render.mjs';
 import { clipCandidates, renderClip } from './clip.mjs';
@@ -25,7 +25,7 @@ async function build() {
   const raw = loadRaw(rawDir);
   const state = loadState();
   let list = candidates(raw, date);
-  const format = isReelDay(date) ? 'reel' : 'carousel';
+  const format = formatFor(date, state);
   const tried = [];
   const mediaRoot = new URL(`out/media/${date}/`, ROOT);
   await rm(new URL('out/media/', ROOT), { recursive: true, force: true });
@@ -105,7 +105,7 @@ async function publish() {
     : await publishCarousel(urls, p.caption, cfg);
   const state = loadState();
   state.posted[baseId(p.id)] = today.date;
-  if (p.kind === 'compare' || p.kind === 'tips') state.lastGearKind = p.kind;
+  if (['pick', 'compare', 'tips'].includes(p.kind)) state.lastGearKind = p.kind;
   state.history.push({ date: today.date, id: p.id, kind: p.kind, category: p.category, format: p.format, mediaId: info.id, permalink: info.permalink });
   await saveJson(STATE, state);
   Object.assign(today, { status: 'published', mediaId: info.id, permalink: info.permalink });

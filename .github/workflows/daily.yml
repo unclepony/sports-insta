@@ -9,7 +9,9 @@ name: daily-insta
 
 on:
   schedule:
-    - cron: '30 10 * * *' # 매일 19:30 KST
+    - cron: '30 23 * * *' # 08:30 KST
+    - cron: '30 3 * * *' # 12:30 KST
+    - cron: '30 10 * * *' # 19:30 KST (화·목·토는 릴스)
   workflow_dispatch:
     inputs:
       dry_run:

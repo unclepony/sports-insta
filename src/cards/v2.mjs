@@ -167,3 +167,28 @@ export function tipV2(o, { name, index, count, head, body, text }) {
 ${head ? `<div class="disp" style="margin-top:44px;font-size:100px">${esc(head)}</div><div style="margin-top:26px;font-size:46px;line-height:1.5">${esc(body)}</div>`
     : `<div style="margin-top:44px;font-size:56px;font-weight:900;line-height:1.45">${esc(text)}</div>`}` });
 }
+
+// 실력별 추천 표지: "{실력} {분류}, 이 N개 중에 고르세요" + 모델 이름 미리보기
+export function pickCoverV2(o, { kicker, line1, line2, hl, names, photo }) {
+  const l2 = hl && line2.includes(hl) ? esc(line2).replace(esc(hl), `<span class="hl">${esc(hl)}</span>`) : esc(line2);
+  return page({ ...o, photo, source: 'ATL골프기어 가이드', swipe: '넘겨서 모델별 보기', body: `
+<div style="margin-top:56px"><span class="chip">${esc(kicker)}</span></div>
+<div class="disp" style="margin-top:34px;font-size:${line1.length > 10 ? 96 : 112}px">${esc(line1)}</div>
+<div class="disp" style="margin-top:10px;font-size:100px">${l2}</div>
+<div style="margin:auto 0 170px;border-top:2px solid var(--gold)">
+${names.map((n, i) => `<div style="display:flex;gap:18px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)"><span class="num" style="font-size:38px;font-weight:800;color:var(--gold);width:40px">${i + 1}</span><span style="font-size:32px;font-weight:700">${esc(n)}</span></div>`).join('')}
+</div>` });
+}
+
+export function pickItemV2(o, { index, count, role, name, forWhom, pros, cons, verdict, priceText }) {
+  return page({ ...o, source: 'ATL골프기어 가이드', body: `
+<div style="margin-top:56px;display:flex;gap:12px"><span class="chip o">${index} / ${count}</span>${role ? `<span class="chip">${esc(role)}</span>` : ''}</div>
+<div class="disp" style="margin-top:28px;font-size:${name.length > 18 ? 72 : 84}px">${esc(name)}</div>
+<div style="margin-top:22px;font-size:32px;color:var(--muted)">이런 분께 · <span style="color:var(--ink)">${esc(forWhom)}</span></div>
+<div style="margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:28px">
+<div>${pros.map((t) => `<div style="font-size:30px;line-height:1.4;padding:10px 0;border-top:1px solid var(--line)"><b style="color:var(--gold)">＋</b> ${esc(t)}</div>`).join('')}</div>
+<div>${cons.map((t) => `<div style="font-size:30px;line-height:1.4;padding:10px 0;border-top:1px solid var(--line);color:var(--muted)"><b>－</b> ${esc(t)}</div>`).join('')}</div></div>
+<div style="margin:auto 0 150px">
+<div style="font-size:34px;line-height:1.5;padding:22px 26px;border-left:8px solid var(--gold);background:rgba(255,255,255,.06)">${esc(verdict)}</div>
+${priceText ? `<div style="margin-top:20px;font-size:28px;color:var(--muted)">${esc(priceText)}</div>` : ''}</div>` });
+}

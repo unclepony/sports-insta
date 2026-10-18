@@ -21,6 +21,11 @@ const out = {
     min: p.min, max: p.max,
     pick: picks[p.id] ? { title: picks[p.id].title, price: picks[p.id].price, rocket: !!picks[p.id].rocket, checked: picks[p.id].checked } : null,
   })),
+  // 실력별 추천 가이드(사이트에 이미 공개한 글): 실력별 추천 시리즈에 쓴다
+  guides: gp('guides.json').guides.map((g) => ({
+    slug: g.slug, title: g.title, gender: g.gender, updated: g.updated, criteria: g.criteria || [],
+    picks: (g.picks || []).map((p) => ({ id: p.id, skill: p.skill || null, role: p.role, forWhom: p.forWhom, pros: p.pros || [], cons: p.cons || [], verdict: p.verdict, scores: p.scores || [] })),
+  })),
 };
 
 const dir = new URL(`data/raw/${today()}/`, ROOT);
