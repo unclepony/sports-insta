@@ -1,0 +1,17 @@
+{
+  "name": "politics-insta",
+  "version": "1.0.0",
+  "description": "공식 국회 데이터를 카드뉴스·릴스로 만들어 인스타그램에 자동 게시",
+  "scripts": {
+    "fetch": "node src/fetch.mjs",
+    "preview": "node src/preview.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "playwright-core": "^1.48.2"
+  },
+  "private": true
+}
