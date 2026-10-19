@@ -17,7 +17,7 @@ const makeGear = V2 ? [comparePostV2, tipsPostV2] : [comparePost, tipsPost];
 
 export const GEAR_ORDER = ['driver', 'iron', 'putter', 'wedge', 'wood', 'utility', 'ball', 'shoes', 'rangefinder', 'bag', 'glove', 'gps', 'launch', 'practice'];
 export const KIND_CYCLE = ['pick', 'compare', 'tips'];
-export const DAILY_MAX = 3; // 인스타 API 한도(24시간 100개)보다 훨씬 적게 — 스팸·도달 저하 방지
+export const DAILY_MAX = 4; // 인스타 API 한도(24시간 100개)보다 훨씬 적게 — 스팸·도달 저하 방지 (2026-10-19 3→4, 22시 릴스 실험)
 const REEL_DAYS = [2, 4, 6]; // 화 목 토 (0=일)
 const REPEAT_DAYS = 30;
 

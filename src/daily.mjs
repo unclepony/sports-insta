@@ -33,11 +33,12 @@ async function build() {
   let result = null;
   try {
     // 저녁 슬롯(매일): 아직 안 올린 투어 결과가 없으면 ATL골프기어 초보 Q&A 쇼츠(media/clips)를 릴스로 먼저
-    // (초보 Q&A 쇼츠가 유튜브에서 반응이 좋음, 2026-10-18). 하루 릴스 1개·게시 3개 한도는 그대로.
+    // (초보 Q&A 쇼츠가 유튜브에서 반응이 좋음, 2026-10-18). 2026-10-19 사장님 결정: 22시 슬롯에 릴스 1개 더(하루 릴스 최대 2개·게시 4개, 실험 2주).
     const hourKst = (new Date().getUTCHours() + 9) % 24;
     const tourFirst = choose(list, state, date)?.kind === 'tour';
     const todays = postedToday(state, date);
-    if (hourKst >= 17 && !tourFirst && todays.length < DAILY_MAX && !todays.some((h) => h.format === 'reel')) {
+    const reelCap = hourKst >= 21 ? 2 : 1;
+    if (hourKst >= 17 && !tourFirst && todays.length < DAILY_MAX && todays.filter((h) => h.format === 'reel').length < reelCap) {
       for (const clip of clipCandidates(state)) {
         try {
           const dir = new URL(`${clip.id}/`, mediaRoot);
