@@ -3,7 +3,8 @@
   "tour-lpga-401835172": "2026-10-18",
   "pick-driver-recommend-2026-beginner": "2026-10-18",
   "clip-t-fairway-wood-recommend-0": "2026-10-18",
-  "compare-driver": "2026-10-19"
+  "compare-driver": "2026-10-19",
+  "clip-t-driver-recommend-2026-1": "2026-10-19"
  },
  "history": [
   {
@@ -41,6 +42,15 @@
    "format": "carousel",
    "mediaId": "18079699940743505",
    "permalink": "https://www.instagram.com/p/DeqFDSwmtJ-/"
+  },
+  {
+   "date": "2026-10-19",
+   "id": "clip-t-driver-recommend-2026-1",
+   "kind": "clip",
+   "category": "driver-recommend-2026",
+   "format": "reel",
+   "mediaId": "18095466251689229",
+   "permalink": "https://www.instagram.com/reel/Deq6fqNDU9P/"
   }
  ],
  "lastGearKind": "compare"
