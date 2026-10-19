@@ -45,7 +45,9 @@ jobs:
           git pull --rebase -q && git push
 
       # 스레드 토큰도 같은 방식(data/threads-token.enc, 같은 IG_TOKEN_KEY)으로 연장
-      - name: 스레드 토큰 연장 후 암호화 저장
+      # 중단됨: 2026-10-19 사장님 결정으로 스레드 게시 취소. 다시 켜려면 아래 if 를 지운다.
+      - name: 스레드 토큰 연장 후 암호화 저장 (중단됨)
+        if: false
         env:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}

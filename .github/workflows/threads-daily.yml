@@ -1,3 +1,4 @@
+# ⚠ 중단됨: 2026-10-19 사장님 결정으로 스레드 게시 취소. GitHub 에서 워크플로도 꺼 둠(gh workflow disable). 코드는 다시 켤 때를 위해 남김.
 # 스레드 자동 게시: 골린이 Q&A 한 장 + 짧은 글 + 사이트 링크(utm_source=threads). 하루 최대 2개(10:30·17:30 KST).
 # 인스타 게시 시각(08:30·12:30·19:30·22:00)과 겹치지 않게, 미디어(GitHub Pages)는 daily-insta 와 같은 그룹으로 한 번에 하나씩.
 # 필요: Secrets THREADS_ACCESS_TOKEN(사장님이 넣음), IG_TOKEN_KEY(연장 토큰 암호화), OPS_URL, OPS_KEY. 토큰이 없으면 미리보기만.
