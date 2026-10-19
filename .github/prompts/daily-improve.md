@@ -33,3 +33,10 @@
 
 ### 6. 보고
 `reports/daily/<날짜>.md` 아래에 "## 셀프 개선" 절을 덧붙여 무엇을 보고·바꿨는지, 왜, 되돌리는 법을 쓰고 커밋한다. 정정 요청 댓글이 있으면 사실을 확인해 틀렸으면 게시물 삭제 + 정정 게시물 계획을 적고 `error` 로 보고한다.
+
+## 스레드(Threads) — 2026-10-19 추가
+- 같은 계정 ATL골프기어의 스레드에 `.github/workflows/threads-daily.yml` 이 하루 최대 2개(10:30·17:30 KST) 골린이 Q&A 한 장 + 짧은 글 + 가이드 링크(utm_source=threads)를 올린다. 글감은 golf-price 가이드 FAQ(원문 그대로), 순서는 config/threads-order.json(naver-blog 키워드 순서).
+- 데이터: data/threads-insights/*.json(글별 조회·좋아요·답글·리포스트·공유, 계정 프로필 조회·**링크 클릭(clicks, 링크별)**·팔로워), data/threads-state.json, reports/threads/, golf-price data/stats 의 utm_source=threads 유입.
+- 목적은 사이트 유입: 링크 클릭과 golfprice 의 threads 유입·쿠팡 클릭을 가장 먼저 본다. 어떤 주제·말투 틀(posts/threads-qa.mjs TEMPLATES)이 클릭을 부르는지 분석한다.
+- naver-blog/keywords.json 이 바뀌었으면 config/threads-order.json 을 다시 만든다(키워드 순서대로 guide slug 중복 없이).
+- 하지 않는 것: 글감 Q·A 문장 바꾸기·지어내기, 링크 2개 이상, 하루 2개(TH_DAILY_MAX) 넘게, 같은 링크만 반복하는 스팸처럼 보이게 만들기. 토큰 만료 예정일은 data/threads-token-expires.txt.

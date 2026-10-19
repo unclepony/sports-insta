@@ -24,8 +24,9 @@ permissions:
   pages: write
   id-token: write
 
+# 스레드(threads-daily.yml)와 같은 그룹: GitHub Pages 미디어를 서로 덮어쓰지 않게 한 번에 하나씩
 concurrency:
-  group: daily-insta
+  group: pages-media
   cancel-in-progress: false
 
 jobs:

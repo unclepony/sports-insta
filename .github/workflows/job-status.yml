@@ -4,7 +4,7 @@ name: job-status
 
 on:
   workflow_run:
-    workflows: [daily-insta, ig-token-refresh]
+    workflows: [daily-insta, threads-daily, ig-token-refresh]
     types: [completed]
 
 permissions: {}

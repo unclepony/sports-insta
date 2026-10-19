@@ -43,3 +43,26 @@ jobs:
           git add data/ig-token.enc data/ig-token-expires.txt
           git diff --cached --quiet || git commit -m "인스타 토큰 연장(암호화) $(TZ=Asia/Seoul date +%F)"
           git pull --rebase -q && git push
+
+      # 스레드 토큰도 같은 방식(data/threads-token.enc, 같은 IG_TOKEN_KEY)으로 연장
+      - name: 스레드 토큰 연장 후 암호화 저장
+        env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
+        run: |
+          [ -z "$IG_TOKEN_KEY" ] && exit 0
+          cur="$THREADS_ACCESS_TOKEN"
+          if [ -f data/threads-token.enc ]; then
+            cur="$(openssl enc -d -aes-256-cbc -pbkdf2 -in data/threads-token.enc -pass env:IG_TOKEN_KEY 2>/dev/null || echo "$THREADS_ACCESS_TOKEN")"
+          fi
+          [ -z "$cur" ] && { echo "스레드 토큰 없음 — 건너뜀"; exit 0; }
+          echo "::add-mask::$cur"
+          new="$(THREADS_ACCESS_TOKEN="$cur" node src/th-refresh.mjs 2>"$RUNNER_TEMP/err")" || { echo "::warning::스레드 토큰 연장 실패 — $(cat "$RUNNER_TEMP/err" | head -c 200)"; exit 0; }
+          echo "::add-mask::$new"
+          TZ=Asia/Seoul date -d '+60 days' +%F > data/threads-token-expires.txt
+          printf '%s' "$new" | openssl enc -aes-256-cbc -pbkdf2 -salt -out data/threads-token.enc -pass env:IG_TOKEN_KEY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/threads-token.enc data/threads-token-expires.txt
+          git diff --cached --quiet || git commit -m "스레드 토큰 연장(암호화) $(TZ=Asia/Seoul date +%F)"
+          git pull --rebase -q && git push

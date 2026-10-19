@@ -24,6 +24,7 @@ const out = {
   // 실력별 추천 가이드(사이트에 이미 공개한 글): 실력별 추천 시리즈에 쓴다
   guides: gp('guides.json').guides.map((g) => ({
     slug: g.slug, title: g.title, gender: g.gender, updated: g.updated, criteria: g.criteria || [],
+    faq: (g.faq || []).map((x) => ({ q: x.q, a: x.a })), // 스레드 초보 Q&A 글감
     picks: (g.picks || []).map((p) => ({ id: p.id, skill: p.skill || null, role: p.role, forWhom: p.forWhom, pros: p.pros || [], cons: p.cons || [], verdict: p.verdict, scores: p.scores || [] })),
   })),
 };

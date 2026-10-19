@@ -41,6 +41,6 @@ export function validatePost(post, rawDir) {
   }
   if (post.caption.length > 2200) errors.push(`캡션 ${post.caption.length}자 — 인스타 한도 2,200자 초과`);
   if ((post.caption.match(/#/g) || []).length > 30) errors.push('해시태그 30개 초과');
-  if (post.cards.length < 2 || post.cards.length > 10) errors.push(`카드 ${post.cards.length}장 — 캐러셀은 2~10장`);
+  if (!post.single && (post.cards.length < 2 || post.cards.length > 10)) errors.push(`카드 ${post.cards.length}장 — 캐러셀은 2~10장`);
   return errors;
 }

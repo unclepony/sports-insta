@@ -1,0 +1,102 @@
+# 스레드 자동 게시: 골린이 Q&A 한 장 + 짧은 글 + 사이트 링크(utm_source=threads). 하루 최대 2개(10:30·17:30 KST).
+# 인스타 게시 시각(08:30·12:30·19:30·22:00)과 겹치지 않게, 미디어(GitHub Pages)는 daily-insta 와 같은 그룹으로 한 번에 하나씩.
+# 필요: Secrets THREADS_ACCESS_TOKEN(사장님이 넣음), IG_TOKEN_KEY(연장 토큰 암호화), OPS_URL, OPS_KEY. 토큰이 없으면 미리보기만.
+name: threads-daily
+
+on:
+  schedule:
+    - cron: '30 1 * * *' # 10:30 KST
+    - cron: '30 8 * * *' # 17:30 KST
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '게시하지 않고 미리보기만 (1)'
+        default: '0'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-media
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+    env:
+      MEDIA_BASE_URL: ${{ vars.MEDIA_BASE_URL || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: unclepony/golf-price
+          path: golf-price
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: 한글 글꼴(웹 글꼴을 못 받을 때 대비)
+        run: sudo apt-get install -y -qq fonts-noto-cjk >/dev/null
+
+      - name: 수집(가이드 FAQ)
+        env:
+          GOLF_PRICE_DIR: golf-price
+        run: node src/fetch-gear.mjs
+
+      - name: 오늘 글 만들기
+        run: |
+          node src/threads-daily.mjs build
+          mkdir -p out/media && touch out/media/.nojekyll
+
+      - name: 미디어 공개 URL 배포 (GitHub Pages)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out/media
+      - uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: 스레드 토큰 준비 (연장된 토큰이 있으면 그것을)
+        env:
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+        run: |
+          tok="$THREADS_ACCESS_TOKEN"
+          if [ -f data/threads-token.enc ] && [ -n "$IG_TOKEN_KEY" ]; then
+            tok="$(openssl enc -d -aes-256-cbc -pbkdf2 -in data/threads-token.enc -pass env:IG_TOKEN_KEY 2>/dev/null || echo "$THREADS_ACCESS_TOKEN")"
+          fi
+          [ -n "$tok" ] && { echo "::add-mask::$tok"; echo "TH_TOKEN=$tok" >> "$GITHUB_ENV"; }
+          true
+
+      - name: 게시
+        env:
+          DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
+        run: THREADS_ACCESS_TOKEN="$TH_TOKEN" node src/threads-daily.mjs publish
+
+      - name: 지표 수집 (+ ops 대시보드)
+        if: always()
+        env:
+          OPS_URL: ${{ secrets.OPS_URL }}
+          OPS_KEY: ${{ secrets.OPS_KEY }}
+        run: THREADS_ACCESS_TOKEN="$TH_TOKEN" node src/threads-daily.mjs insights || echo "::warning::스레드 지표 수집 실패"
+
+      - name: 보고
+        if: always()
+        env:
+          OPS_URL: ${{ secrets.OPS_URL }}
+          OPS_KEY: ${{ secrets.OPS_KEY }}
+        run: node src/threads-daily.mjs report
+
+      - name: 기록 커밋
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data reports
+          git diff --cached --quiet || git commit -m "스레드 $(TZ=Asia/Seoul date +%F)"
+          git pull --rebase -q && git push

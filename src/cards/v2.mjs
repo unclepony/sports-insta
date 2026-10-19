@@ -49,7 +49,7 @@ td .en{font-size:22px;color:var(--muted);margin-left:10px}
 
 export function page({ n, total, date, source, body, swipe = '', photo = null }) {
   return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>${CSS}</style></head><body>
-<div class="card"${photo ? ` style="background:linear-gradient(180deg,rgba(11,47,32,.50) 0%,rgba(11,47,32,.72) 32%,rgba(11,47,32,.94) 58%,#0b2f20 78%),url(${photo.data}) center top/cover"` : ''}><div class="hd"><span class="brand"><i></i>ATL골프기어${brand.handle ? ` <span style="color:var(--muted);font-weight:500">@${esc(brand.handle)}</span>` : ''}</span><span class="pg">${n}/${total}</span></div>
+<div class="card"${photo ? ` style="background:linear-gradient(180deg,rgba(11,47,32,.50) 0%,rgba(11,47,32,.72) 32%,rgba(11,47,32,.94) 58%,#0b2f20 78%),url(${photo.data}) center top/cover"` : ''}><div class="hd"><span class="brand"><i></i>ATL골프기어${brand.handle ? ` <span style="color:var(--muted);font-weight:500">@${esc(brand.handle)}</span>` : ''}</span><span class="pg">${n ? `${n}/${total}` : ''}</span></div>
 ${body}
 ${swipe ? `<div class="swipe">${esc(swipe)} →</div>` : ''}
 <div class="ft"><span>자료: ${esc(source)} · ${esc(date)} 기준</span><span>${esc(brand.site)}</span></div>
@@ -191,4 +191,15 @@ export function pickItemV2(o, { index, count, role, name, forWhom, pros, cons, v
 <div style="margin:auto 0 150px">
 <div style="font-size:34px;line-height:1.5;padding:22px 26px;border-left:8px solid var(--gold);background:rgba(255,255,255,.06)">${esc(verdict)}</div>
 ${priceText ? `<div style="margin-top:20px;font-size:28px;color:var(--muted)">${esc(priceText)}</div>` : ''}</div>` });
+}
+
+// 스레드용 초보 Q&A 한 장: 큰 질문 + 답(가이드 FAQ 그대로). 한 장짜리라 쪽 번호는 숨긴다.
+export function qaCardV2(o, { topic, q, a, photo }) {
+  return page({ ...o, n: '', total: '', photo, source: 'ATL골프기어 가이드', body: `
+<div style="margin-top:56px"><span class="chip">골린이 Q&amp;A · ${esc(topic)}</span></div>
+<div class="num" style="margin-top:40px;font-size:150px;font-weight:800;font-style:italic;line-height:.8;color:var(--gold)">Q.</div>
+<div class="disp" style="margin-top:22px;font-size:${q.length > 22 ? 78 : 92}px">${esc(q)}</div>
+<div style="margin:auto 0 150px;padding:28px 30px;border-left:8px solid var(--gold);background:rgba(11,47,32,.85)">
+<div class="num" style="font-size:64px;font-weight:800;font-style:italic;color:var(--gold);line-height:1">A.</div>
+<div style="margin-top:14px;font-size:${a.length > 90 ? 34 : 38}px;line-height:1.55">${esc(a)}</div></div>` });
 }
