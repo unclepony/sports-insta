@@ -22,6 +22,7 @@ export function clipCandidates(state) {
       return {
         id: `clip-${file}`, kind: 'clip', series: 'ATL골프기어 초보 Q&A', file, category: meta.guide || null,
         caption: [
+          `🔗 모델 비교·쿠팡 가격은 프로필 링크(${brand.site})`,
           meta.title.replace(/\s*#shorts/gi, '').trim(),
           '',
           ...qa,
