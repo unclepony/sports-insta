@@ -9,7 +9,8 @@
   "pick-fairway-wood-recommend-beginner": "2026-10-20",
   "compare-iron": "2026-10-20",
   "clip-t-iron-recommend-0": "2026-10-20",
-  "tips-iron": "2026-10-21"
+  "tips-iron": "2026-10-21",
+  "pick-driver-recommend-2026-intermediate": "2026-10-21"
  },
  "history": [
   {
@@ -101,7 +102,16 @@
    "format": "reel",
    "mediaId": "17973617439153227",
    "permalink": "https://www.instagram.com/reel/DeuIs0ijHcJ/"
+  },
+  {
+   "date": "2026-10-21",
+   "id": "pick-driver-recommend-2026-intermediate",
+   "kind": "pick",
+   "category": "driver",
+   "format": "reel",
+   "mediaId": "18099845624453796",
+   "permalink": "https://www.instagram.com/reel/DeuZjdDj3Bg/"
   }
  ],
- "lastGearKind": "tips"
+ "lastGearKind": "pick"
 }
