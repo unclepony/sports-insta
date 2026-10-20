@@ -19,6 +19,7 @@ export const GEAR_ORDER = ['driver', 'iron', 'putter', 'wedge', 'wood', 'utility
 export const KIND_CYCLE = ['pick', 'compare', 'tips'];
 export const DAILY_MAX = 4; // 인스타 API 한도(24시간 100개)보다 훨씬 적게 — 스팸·도달 저하 방지 (2026-10-19 3→4, 22시 릴스 실험)
 const REEL_DAYS = [2, 4, 6]; // 화 목 토 (0=일)
+const REELS_FIRST = true; // 2026-10-21 실험: 모든 게시물을 릴스로(카드 → 카드 영상). 팔로워 100명 또는 11/4 판정
 const REPEAT_DAYS = 30;
 
 export function loadRaw(rawDir) {
@@ -84,5 +85,8 @@ export function isReelDay(date) {
 export function formatFor(date, state, now = new Date()) {
   const hourKst = (now.getUTCHours() + 9) % 24;
   const reelDone = postedToday(state, date).some((h) => h.format === 'reel');
+  // 2026-10-21: 팔로워 0명이라 캐러셀(피드) 도달이 모두 0, 릴스만 비팔로워에게 100회 안팎 도달(인사이트 10/18~20)
+  // → 팔로워 100명이 될 때까지 카드 게시물도 릴스(카드 영상)로 올린다. 되돌리기: REELS_FIRST = false
+  if (REELS_FIRST) return 'reel';
   return isReelDay(date) && hourKst >= 17 && !reelDone ? 'reel' : 'carousel';
 }
