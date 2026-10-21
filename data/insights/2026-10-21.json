@@ -2,7 +2,7 @@
  "date": "2026-10-21",
  "account": {
   "followers": 0,
-  "mediaCount": 13,
+  "mediaCount": 14,
   "username": "atlgolfgear",
   "reach": 425,
   "profile_views": 0,
@@ -11,6 +11,26 @@
   "follows_and_unfollows": null
  },
  "posts": [
+  {
+   "id": "18632449651043369",
+   "at": "2026-10-21T08:51:31+0000",
+   "type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DewBRDEiaN9/",
+   "post": "tips-wedge",
+   "kind": "tips",
+   "category": "wedge",
+   "format": "reel",
+   "likes": 0,
+   "comments": 0,
+   "reach": 0,
+   "views": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0,
+   "ig_reels_avg_watch_time": 0,
+   "ig_reels_video_view_total_time": 0,
+   "recentComments": []
+  },
   {
    "id": "18078459917417939",
    "at": "2026-10-21T01:49:10+0000",
@@ -22,13 +42,13 @@
    "format": "reel",
    "likes": 0,
    "comments": 0,
-   "reach": 0,
-   "views": 0,
+   "reach": 102,
+   "views": 110,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 0,
-   "ig_reels_video_view_total_time": 0,
+   "ig_reels_avg_watch_time": 2017,
+   "ig_reels_video_view_total_time": 209867,
    "recentComments": []
   },
   {
@@ -82,13 +102,13 @@
    "format": "reel",
    "likes": 0,
    "comments": 0,
-   "reach": 111,
-   "views": 118,
+   "reach": 112,
+   "views": 119,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 2782,
-   "ig_reels_video_view_total_time": 300554,
+   "ig_reels_avg_watch_time": 2784,
+   "ig_reels_video_view_total_time": 303471,
    "recentComments": []
   },
   {

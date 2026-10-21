@@ -11,7 +11,8 @@
   "clip-t-iron-recommend-0": "2026-10-20",
   "tips-iron": "2026-10-21",
   "pick-driver-recommend-2026-intermediate": "2026-10-21",
-  "compare-putter": "2026-10-21"
+  "compare-putter": "2026-10-21",
+  "tips-wedge": "2026-10-21"
  },
  "history": [
   {
@@ -121,7 +122,16 @@
    "format": "reel",
    "mediaId": "18078459917417939",
    "permalink": "https://www.instagram.com/reel/DevQ7mwD-0Y/"
+  },
+  {
+   "date": "2026-10-21",
+   "id": "tips-wedge",
+   "kind": "tips",
+   "category": "wedge",
+   "format": "reel",
+   "mediaId": "18632449651043369",
+   "permalink": "https://www.instagram.com/reel/DewBRDEiaN9/"
   }
  ],
- "lastGearKind": "compare"
+ "lastGearKind": "tips"
 }
