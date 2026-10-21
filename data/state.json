@@ -13,7 +13,8 @@
   "pick-driver-recommend-2026-intermediate": "2026-10-21",
   "compare-putter": "2026-10-21",
   "tips-wedge": "2026-10-21",
-  "pick-driver-recommend-2026-advanced": "2026-10-22"
+  "pick-driver-recommend-2026-advanced": "2026-10-22",
+  "compare-wedge": "2026-10-22"
  },
  "history": [
   {
@@ -141,7 +142,16 @@
    "format": "reel",
    "mediaId": "17959293921255271",
    "permalink": "https://www.instagram.com/reel/Dewu5-bDfIU/"
+  },
+  {
+   "date": "2026-10-22",
+   "id": "compare-wedge-2026-10-22",
+   "kind": "compare",
+   "category": "wedge",
+   "format": "reel",
+   "mediaId": "18119294240118292",
+   "permalink": "https://www.instagram.com/reel/Dew--xdAq9X/"
   }
  ],
- "lastGearKind": "pick"
+ "lastGearKind": "compare"
 }

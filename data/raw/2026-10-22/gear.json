@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-10-21T15:28:50.717Z",
+ "fetchedAt": "2026-10-21T17:49:16.917Z",
  "source": "golf-price config (products.json, picks.json)",
  "categories": [
   {
@@ -5606,6 +5606,54 @@
     "rocket": false,
     "checked": "2026-10-21"
    }
+  },
+  {
+   "id": "callaway-cb12-wedge",
+   "category": "wedge",
+   "name": "캘러웨이 CB12 웨지",
+   "summary": "캘러웨이의 2025년 캐비티백 웨지입니다. 12g 둘레 무게 배분과 넓은 트라이 솔로 일관성을 노렸고 50~60도 여섯 로프트로 나옵니다.",
+   "points": [
+    "로프트별 바운스(12~14도) 확인",
+    "샤프트 사양 확인"
+   ],
+   "pick": {
+    "title": "캘러웨이 웨지 CB12 캘러웨이코리아 NS PRO 950 NEO S",
+    "price": 165000,
+    "rocket": false,
+    "checked": "2026-10-22"
+   }
+  },
+  {
+   "id": "pxg-stickem-wedge",
+   "category": "wedge",
+   "name": "PXG 스틱엠 포지드 웨지",
+   "summary": "2026년 3월 국내 출시된 PXG 단조 웨지입니다. 8620 소프트 카본 스틸을 3회 단조했고 BP(13도)·S(10도) 그라인드, 50~60도 여섯 로프트입니다.",
+   "points": [
+    "그라인드(BP·S)와 로프트 확인",
+    "마감 색상 확인"
+   ],
+   "pick": {
+    "title": "PXG 스틱엠 포지드 웨지 블랙 2026년 (주)카네 정품",
+    "price": 270000,
+    "rocket": false,
+    "checked": "2026-10-22"
+   }
+  },
+  {
+   "id": "mizuno-t24-wedge",
+   "category": "wedge",
+   "name": "미즈노 T24 웨지",
+   "summary": "2023년 10월 공개된 미즈노 단조 웨지입니다. 1025E 연철 원피스 단조이고 S·D·C·X·V 다섯 그라인드를 둡니다.",
+   "points": [
+    "그라인드와 바운스 확인",
+    "일본 미즈노 정품 여부 확인"
+   ],
+   "pick": {
+    "title": "미즈노 T24 스틸 웨지 DGS200 카퍼 50-08도",
+    "price": 211050,
+    "rocket": true,
+    "checked": "2026-10-22"
+   }
   }
  ],
  "guides": [
@@ -9018,7 +9066,7 @@
   },
   {
    "slug": "wedge-recommend",
-   "title": "웨지 추천: 초보~프로 21종 비교 (RTZ·오퍼스·MG4·S159·보키)",
+   "title": "웨지 추천: 초보~프로 25종 비교 (RTZ·오퍼스·MG4·S159·보키)",
    "gender": "공용",
    "updated": "2026-10-16",
    "criteria": [
@@ -9512,6 +9560,69 @@
      "scores": [
       5,
       4,
+      5,
+      3
+     ]
+    },
+    {
+     "id": "callaway-cb12-wedge",
+     "skill": "초심자",
+     "role": "캐비티 관용형",
+     "forWhom": "어프로치 실수를 줄이고 싶은 초중급자",
+     "pros": [
+      "12g 둘레 무게 배분 캐비티",
+      "넓은 트라이 솔"
+     ],
+     "cons": [
+      "투어형보다 헤드가 큼",
+      "손맛은 단조보다 덜함"
+     ],
+     "verdict": "쉬운 웨지를 찾는 초중급자에게 좋은 캘러웨이 선택",
+     "scores": [
+      3,
+      5,
+      3,
+      4
+     ]
+    },
+    {
+     "id": "pxg-stickem-wedge",
+     "skill": "고급",
+     "role": "PXG 단조",
+     "forWhom": "단조 감각을 원하는 중상급자",
+     "pros": [
+      "8620 소프트 카본 스틸 3회 단조",
+      "BP·S 두 가지 그라인드"
+     ],
+     "cons": [
+      "가격대가 높음",
+      "관용성 위주는 아님"
+     ],
+     "verdict": "PXG 단조 웨지를 처음 써 보는 분께",
+     "scores": [
+      4,
+      3,
+      5,
+      3
+     ]
+    },
+    {
+     "id": "mizuno-t24-wedge",
+     "skill": "고급",
+     "role": "정통 단조",
+     "forWhom": "손맛을 중시하는 상급자",
+     "pros": [
+      "1025E 연철 원피스 단조",
+      "다섯 그라인드"
+     ],
+     "cons": [
+      "병행 상품이 섞이기 쉬움",
+      "관용성 보통"
+     ],
+     "verdict": "미즈노 감각의 단조 웨지를 찾는 분께",
+     "scores": [
+      5,
+      3,
       5,
       3
      ]
