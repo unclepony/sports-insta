@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-10-20T17:42:47.740Z",
+ "fetchedAt": "2026-10-21T01:47:52.328Z",
  "source": "golf-price config (products.json, picks.json)",
  "categories": [
   {
@@ -358,7 +358,7 @@
     "title": "부쉬넬 신형 PRO X3 레이저형 거리측정기 카네 as가능 사은품4종 증정",
     "price": 720000,
     "rocket": false,
-    "checked": "2026-10-15"
+    "checked": "2026-10-21"
    }
   },
   {
@@ -4187,7 +4187,7 @@
  "guides": [
   {
    "slug": "driver-recommend-2026",
-   "title": "2026 남성 드라이버 추천: 실력별 19종 비교 (Qi35·G440·GT·퀀텀·Qi4D)",
+   "title": "2026 남성 드라이버 추천: 초보~프로 19종 비교 (Qi35·G440·GT·퀀텀·Qi4D)",
    "gender": "남성",
    "updated": "2026-10-16",
    "criteria": [
@@ -4651,7 +4651,7 @@
   },
   {
    "slug": "fairway-wood-recommend",
-   "title": "남성 페어웨이 우드 추천: 실력별 19종 비교 (G440·Qi·퀀텀·젝시오·ZXi)",
+   "title": "남성 페어웨이 우드 추천: 초보~프로 19종 비교 (G440·Qi·퀀텀·젝시오·ZXi)",
    "gender": "남성",
    "updated": "2026-10-16",
    "criteria": [
@@ -5107,7 +5107,7 @@
   },
   {
    "slug": "utility-recommend",
-   "title": "남성 유틸리티 추천: 실력별 19종 비교 (G440·Qi10·퀀텀·젝시오·ZXi)",
+   "title": "남성 유틸리티 추천: 초보~프로 19종 비교 (G440·Qi10·퀀텀·젝시오·ZXi)",
    "gender": "남성",
    "updated": "2026-10-16",
    "criteria": [
@@ -5563,7 +5563,7 @@
   },
   {
    "slug": "womens-fairway-wood-recommend",
-   "title": "여성 페어웨이 우드 추천: 실력별 20종 비교 (젝시오·GLE4·Qi35·엘리트)",
+   "title": "여성 페어웨이 우드 추천: 초보~프로 20종 비교 (젝시오·GLE4·Qi35·엘리트)",
    "gender": "여성",
    "updated": "2026-10-16",
    "criteria": [
@@ -6023,7 +6023,7 @@
   },
   {
    "slug": "iron-recommend",
-   "title": "남성 아이언 추천: 실력별 19종 비교 (G440·Qi·JPX925·P790·T100·ZXi)",
+   "title": "남성 아이언 추천: 초보~프로 19종 비교 (G440·Qi·JPX925·P790·T100·ZXi)",
    "gender": "남성",
    "updated": "2026-10-16",
    "criteria": [
@@ -6483,7 +6483,7 @@
   },
   {
    "slug": "womens-utility-recommend",
-   "title": "여성 유틸리티 추천: 실력별 20종 비교 (젝시오·GLE4·퀀텀·Qi35)",
+   "title": "여성 유틸리티 추천: 초보~프로 20종 비교 (젝시오·GLE4·퀀텀·Qi35)",
    "gender": "여성",
    "updated": "2026-10-16",
    "criteria": [
@@ -6943,7 +6943,7 @@
   },
   {
    "slug": "wedge-recommend",
-   "title": "웨지 추천: 실력별 21종 비교 (RTZ·오퍼스·MG4·S159·보키)",
+   "title": "웨지 추천: 초보~프로 21종 비교 (RTZ·오퍼스·MG4·S159·보키)",
    "gender": "공용",
    "updated": "2026-10-16",
    "criteria": [
@@ -7763,7 +7763,7 @@
   },
   {
    "slug": "womens-driver-recommend",
-   "title": "여성 드라이버 추천: 실력별 20종 비교 (GLE4·젝시오·퀀텀·Qi4D·G440)",
+   "title": "여성 드라이버 추천: 초보~프로 20종 비교 (GLE4·젝시오·퀀텀·Qi4D·G440)",
    "gender": "여성",
    "updated": "2026-10-16",
    "criteria": [
@@ -8223,7 +8223,7 @@
   },
   {
    "slug": "putter-recommend",
-   "title": "퍼터 추천: 실력별 19종 비교 (블레이드·말렛·제로토크)",
+   "title": "퍼터 추천: 초보~프로 19종 비교 (블레이드·말렛·제로토크)",
    "gender": "공용",
    "updated": "2026-10-16",
    "criteria": [
@@ -9395,7 +9395,7 @@
   },
   {
    "slug": "womens-iron-recommend",
-   "title": "여성 아이언 추천: 실력별 21종 비교 (GLE4·젝시오·JPX·P790)",
+   "title": "여성 아이언 추천: 초보~프로 21종 비교 (GLE4·젝시오·JPX·P790)",
    "gender": "여성",
    "updated": "2026-10-16",
    "criteria": [
