@@ -132,8 +132,8 @@ async function insights() {
       post: ours?.id || null, kind: ours?.kind || null, category: ours?.category || null, format: ours?.format || null,
       likes: m.like_count ?? null, comments: m.comments_count ?? null,
       ...(await mediaInsights(m.id, cfg)),
-      // 릴스 평균 시청 시간(밀리초) — 릴스만
-      ...((m.media_product_type === 'REELS') ? await mediaInsights(m.id, cfg, ['ig_reels_avg_watch_time', 'ig_reels_video_view_total_time']) : {}),
+      // 릴스 평균 시청 시간(밀리초)·첫 3초 건너뛰기 비율(%, 지원 안 되면 null) — 릴스만
+      ...((m.media_product_type === 'REELS') ? await mediaInsights(m.id, cfg, ['ig_reels_avg_watch_time', 'ig_reels_video_view_total_time', 'reels_skip_rate']) : {}),
       recentComments: daysBetween(m.timestamp.slice(0, 10), date) <= 7 ? await mediaComments(m.id, cfg) : undefined,
     });
   }
