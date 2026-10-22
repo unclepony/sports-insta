@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-10-22T01:40:29.767Z",
+ "fetchedAt": "2026-10-22T09:05:55.305Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "pga",
@@ -1458,7 +1458,7 @@
   }
  ],
  "next": {
-  "name": "Butterfield Bermuda Championship",
-  "start": "2026-10-22T07:00Z"
+  "name": "VidantaWorld Mexico Open",
+  "start": "2026-10-29T07:00Z"
  }
 }
