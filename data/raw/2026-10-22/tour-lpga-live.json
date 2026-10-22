@@ -1,0 +1,347 @@
+{
+ "fetchedAt": "2026-10-22T01:40:29.873Z",
+ "source": "ESPN",
+ "kind": "live",
+ "league": "lpga",
+ "id": "401835173",
+ "name": "BMW Ladies Championship",
+ "start": "2026-10-21T04:00Z",
+ "end": "2026-10-25T04:00Z",
+ "state": "in",
+ "detail": "Round 1 - In Progress",
+ "purse": 2350000,
+ "course": {
+  "name": "Pine Beach Golf Links",
+  "par": 72,
+  "yards": 6784
+ },
+ "players": [
+  {
+   "id": "5157244",
+   "name": "Julia López Ramirez",
+   "country": "Spain",
+   "amateur": false,
+   "pos": "T1",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -4,
+   "toParText": "E",
+   "total": 28,
+   "rounds": [
+    28
+   ],
+   "earnings": 0,
+   "thru": 8
+  },
+  {
+   "id": "11425",
+   "name": "Yuri Yoshida",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "T1",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -4,
+   "toParText": "E",
+   "total": 21,
+   "rounds": [
+    21
+   ],
+   "earnings": 0,
+   "thru": 6
+  },
+  {
+   "id": "5110528",
+   "name": "Chizzy Iwai",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "3",
+   "tie": false,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -3,
+   "toParText": "E",
+   "total": 33,
+   "rounds": [
+    33
+   ],
+   "earnings": 0,
+   "thru": 9
+  },
+  {
+   "id": "4897749",
+   "name": "Yesung Jun",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 27,
+   "rounds": [
+    27
+   ],
+   "earnings": 0,
+   "thru": 7
+  },
+  {
+   "id": "5369394",
+   "name": "Kyorim Seo",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 27,
+   "rounds": [
+    27
+   ],
+   "earnings": 0,
+   "thru": 7
+  },
+  {
+   "id": "5462863",
+   "name": "Bokyeom Park",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 27,
+   "rounds": [
+    27
+   ],
+   "earnings": 0,
+   "thru": 7
+  },
+  {
+   "id": "5075179",
+   "name": "Melanie Green",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 23,
+   "rounds": [
+    23
+   ],
+   "earnings": 0,
+   "thru": 6
+  },
+  {
+   "id": "5180576",
+   "name": "Rio Takeda",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 10,
+   "rounds": [
+    10
+   ],
+   "earnings": 0,
+   "thru": 3
+  },
+  {
+   "id": "8807",
+   "name": "Amy Yang",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 7,
+   "rounds": [
+    7
+   ],
+   "earnings": 0,
+   "thru": 2
+  },
+  {
+   "id": "4425566",
+   "name": "Jiwon Jeon",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 7,
+   "rounds": [
+    7
+   ],
+   "earnings": 0,
+   "thru": 2
+  },
+  {
+   "id": "5149792",
+   "name": "Yana Wilson",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -1,
+   "toParText": "E",
+   "total": 31,
+   "rounds": [
+    31
+   ],
+   "earnings": 0,
+   "thru": 8
+  },
+  {
+   "id": "7424",
+   "name": "Carlota Ciganda",
+   "country": "Spain",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -1,
+   "toParText": "E",
+   "total": 28,
+   "rounds": [
+    28
+   ],
+   "earnings": 0,
+   "thru": 7
+  },
+  {
+   "id": "9557",
+   "name": "Lucy Li",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -1,
+   "toParText": "E",
+   "total": 28,
+   "rounds": [
+    28
+   ],
+   "earnings": 0,
+   "thru": 7
+  },
+  {
+   "id": "9208",
+   "name": "In Gee Chun",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -1,
+   "toParText": "E",
+   "total": 19,
+   "rounds": [
+    19
+   ],
+   "earnings": 0,
+   "thru": 5
+  },
+  {
+   "id": "5084271",
+   "name": "Arpichaya Yubol",
+   "country": "Thailand",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -1,
+   "toParText": "E",
+   "total": 19,
+   "rounds": [
+    19
+   ],
+   "earnings": 0,
+   "thru": 5
+  },
+  {
+   "id": "5241249",
+   "name": "Cassie Porter",
+   "country": "Australia",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -1,
+   "toParText": "E",
+   "total": 19,
+   "rounds": [
+    19
+   ],
+   "earnings": 0,
+   "thru": 5
+  },
+  {
+   "id": "5462870",
+   "name": "Eunsoo Jang",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -1,
+   "toParText": "E",
+   "total": 15,
+   "rounds": [
+    15
+   ],
+   "earnings": 0,
+   "thru": 4
+  },
+  {
+   "id": "5129950",
+   "name": "Aki Iwai",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -1,
+   "toParText": "E",
+   "total": 8,
+   "rounds": [
+    8
+   ],
+   "earnings": 0,
+   "thru": 2
+  },
+  {
+   "id": "7913",
+   "name": "Hyo Joo Kim",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -1,
+   "toParText": "E",
+   "total": 3,
+   "rounds": [
+    3
+   ],
+   "earnings": 0,
+   "thru": 1
+  }
+ ],
+ "next": {
+  "name": "Maybank Championship",
+  "start": "2026-10-29T07:00Z"
+ }
+}

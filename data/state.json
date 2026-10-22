@@ -14,7 +14,8 @@
   "compare-putter": "2026-10-21",
   "tips-wedge": "2026-10-21",
   "pick-driver-recommend-2026-advanced": "2026-10-22",
-  "compare-wedge": "2026-10-22"
+  "compare-wedge": "2026-10-22",
+  "tips-putter": "2026-10-22"
  },
  "history": [
   {
@@ -151,7 +152,16 @@
    "format": "reel",
    "mediaId": "18119294240118292",
    "permalink": "https://www.instagram.com/reel/Dew--xdAq9X/"
+  },
+  {
+   "date": "2026-10-22",
+   "id": "tips-putter",
+   "kind": "tips",
+   "category": "putter",
+   "format": "reel",
+   "mediaId": "17913166707485539",
+   "permalink": "https://www.instagram.com/reel/Dex05BMlEXz/"
   }
  ],
- "lastGearKind": "compare"
+ "lastGearKind": "tips"
 }

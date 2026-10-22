@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-10-21T17:49:16.880Z",
+ "fetchedAt": "2026-10-22T01:40:29.853Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "lpga",
@@ -1633,7 +1633,7 @@
   }
  ],
  "next": {
-  "name": "BMW Ladies Championship",
-  "start": "2026-10-22T07:00Z"
+  "name": "Maybank Championship",
+  "start": "2026-10-29T07:00Z"
  }
 }
