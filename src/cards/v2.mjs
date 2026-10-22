@@ -1,6 +1,6 @@
 // v2 디자인(테스트) — 2026-10-18 벤치마킹(@lpga_tour, @pgatour, 카드뉴스 저장 공식) 반영
 //  · 표지는 '제목'이 아니라 '한 줄 이야기'(데이터로 만든 후킹 문구) + 핵심 숫자 하나를 크게
-//  · 짙은 초록 바탕 + 금색 강조(ATL골프기어 로고 색), 굵은 압축 서체, 강조 숫자는 금색 상자
+//  · 짙은 초록 바탕 + 금색 강조(초이스골프 로고 색), 굵은 압축 서체, 강조 숫자는 금색 상자
 //  · 스코어카드: 언더파 라운드는 금색 동그라미(LPGA 스코어카드 방식)
 //  · 표지에 '넘겨 보기 →', 마지막 장은 '저장·팔로우' 한 가지 행동만
 //  · 사진은 여전히 쓰지 않는다(저작권) — 대신 글자·숫자·도형으로 채운다
@@ -49,7 +49,7 @@ td .en{font-size:22px;color:var(--muted);margin-left:10px}
 
 export function page({ n, total, date, source, body, swipe = '', photo = null }) {
   return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>${CSS}</style></head><body>
-<div class="card"${photo ? ` style="background:linear-gradient(180deg,rgba(11,47,32,.50) 0%,rgba(11,47,32,.72) 32%,rgba(11,47,32,.94) 58%,#0b2f20 78%),url(${photo.data}) center top/cover"` : ''}><div class="hd"><span class="brand"><i></i>ATL골프기어${brand.handle ? ` <span style="color:var(--muted);font-weight:500">@${esc(brand.handle)}</span>` : ''}</span><span class="pg">${n ? `${n}/${total}` : ''}</span></div>
+<div class="card"${photo ? ` style="background:linear-gradient(180deg,rgba(11,47,32,.50) 0%,rgba(11,47,32,.72) 32%,rgba(11,47,32,.94) 58%,#0b2f20 78%),url(${photo.data}) center top/cover"` : ''}><div class="hd"><span class="brand"><i></i>초이스골프${brand.handle ? ` <span style="color:var(--muted);font-weight:500">@${esc(brand.handle)}</span>` : ''}</span><span class="pg">${n ? `${n}/${total}` : ''}</span></div>
 ${body}
 ${swipe ? `<div class="swipe">${esc(swipe)} →</div>` : ''}
 <div class="ft"><span>자료: ${esc(source)} · ${esc(date)} 기준</span><span>${esc(brand.site)}</span></div>
@@ -117,7 +117,7 @@ export function endV2(o, { source, title, sub, disclosure }) {
 <div class="disp" style="margin-top:170px;font-size:104px">${title}</div>
 <div style="margin-top:34px;font-size:38px;line-height:1.5;color:var(--muted)">${sub}</div>
 <div style="margin-top:56px;display:flex;gap:16px;flex-wrap:wrap">
-<span class="chip">저장해 두기</span><span class="chip o">@${esc(brand.handle || 'atlgolfgear')} 팔로우</span></div>
+<span class="chip">저장해 두기</span><span class="chip o">@${esc(brand.handle || 'choicegolfgear')} 팔로우</span></div>
 <div style="margin-top:28px;font-size:40px;font-weight:900;color:var(--gold)">${esc(brand.site)}</div>
 ${disclosure ? `<div style="margin:auto 0 150px;font-size:24px;line-height:1.6;color:var(--muted)">${esc(disclosure)}</div>` : ''}` });
 }
@@ -125,7 +125,7 @@ ${disclosure ? `<div style="margin:auto 0 150px;font-size:24px;line-height:1.6;c
 // 용품 가격 비교 표지: "최저가와 최고가 차이 N원" 후킹
 export function compareCoverV2(o, { kicker, line1, line2, hl, low, high, checkedText, photo }) {
   const l2 = hl && line2.includes(hl) ? esc(line2).replace(esc(hl), `<span class="hl">${esc(hl)}</span>`) : esc(line2);
-  return page({ ...o, photo, source: '쿠팡 판매가(ATL골프기어 확인)', swipe: '넘겨서 모델별 가격', body: `
+  return page({ ...o, photo, source: '쿠팡 판매가(초이스골프 확인)', swipe: '넘겨서 모델별 가격', body: `
 <div style="margin-top:56px"><span class="chip">${esc(kicker)}</span></div>
 <div class="disp" style="margin-top:34px;font-size:112px">${esc(line1)}</div>
 <div class="disp" style="margin-top:10px;font-size:104px">${l2}</div>
@@ -137,7 +137,7 @@ export function compareCoverV2(o, { kicker, line1, line2, hl, low, high, checked
 }
 
 export function productV2(o, { index, count, name, price, rocket, checkedText, summary, points, rankLabel }) {
-  return page({ ...o, source: '쿠팡 판매가(ATL골프기어 확인)', body: `
+  return page({ ...o, source: '쿠팡 판매가(초이스골프 확인)', body: `
 <div style="margin-top:56px;display:flex;gap:12px"><span class="chip o">${index} / ${count}</span>${rankLabel ? `<span class="chip">${esc(rankLabel)}</span>` : ''}</div>
 <div class="disp" style="margin-top:30px;font-size:84px">${esc(name)}</div>
 <div style="margin-top:34px;display:flex;align-items:baseline;gap:18px">
@@ -150,7 +150,7 @@ ${rocket ? '<span class="chip o">로켓배송</span>' : ''}</div>
 
 // 고르는 법 표지: "{분류}, 이것만 보고 고르세요" + 기준 개수 크게
 export function tipsCoverV2(o, { name, intro, count, photo }) {
-  return page({ ...o, photo, source: 'ATL골프기어', swipe: '넘겨서 기준 보기', body: `
+  return page({ ...o, photo, source: '초이스골프', swipe: '넘겨서 기준 보기', body: `
 <div style="margin-top:56px"><span class="chip">골퍼를 위한 장비 가이드</span></div>
 <div class="disp" style="margin-top:34px;font-size:118px">${esc(name)},</div>
 <div class="disp" style="margin-top:10px;font-size:104px"><span class="hl">이것만</span> 보고 고르세요</div>
@@ -161,7 +161,7 @@ export function tipsCoverV2(o, { name, intro, count, photo }) {
 }
 
 export function tipV2(o, { name, index, count, head, body, text }) {
-  return page({ ...o, source: 'ATL골프기어', body: `
+  return page({ ...o, source: '초이스골프', body: `
 <div style="margin-top:56px"><span class="chip o">${esc(name)} 고르는 법 ${index} / ${count}</span></div>
 <div class="num" style="margin-top:50px;font-size:240px;font-weight:800;font-style:italic;line-height:.8;color:var(--gold)">${String(index).padStart(2, '0')}</div>
 ${head ? `<div class="disp" style="margin-top:44px;font-size:100px">${esc(head)}</div><div style="margin-top:26px;font-size:46px;line-height:1.5">${esc(body)}</div>`
@@ -171,7 +171,7 @@ ${head ? `<div class="disp" style="margin-top:44px;font-size:100px">${esc(head)}
 // 실력별 추천 표지: "{실력} {분류}, 이 N개 중에 고르세요" + 모델 이름 미리보기
 export function pickCoverV2(o, { kicker, line1, line2, hl, names, photo }) {
   const l2 = hl && line2.includes(hl) ? esc(line2).replace(esc(hl), `<span class="hl">${esc(hl)}</span>`) : esc(line2);
-  return page({ ...o, photo, source: 'ATL골프기어 가이드', swipe: '넘겨서 모델별 보기', body: `
+  return page({ ...o, photo, source: '초이스골프 가이드', swipe: '넘겨서 모델별 보기', body: `
 <div style="margin-top:56px"><span class="chip">${esc(kicker)}</span></div>
 <div class="disp" style="margin-top:34px;font-size:${line1.length > 10 ? 96 : 112}px">${esc(line1)}</div>
 <div class="disp" style="margin-top:10px;font-size:100px">${l2}</div>
@@ -181,7 +181,7 @@ ${names.map((n, i) => `<div style="display:flex;gap:18px;align-items:baseline;pa
 }
 
 export function pickItemV2(o, { index, count, role, name, forWhom, pros, cons, verdict, priceText }) {
-  return page({ ...o, source: 'ATL골프기어 가이드', body: `
+  return page({ ...o, source: '초이스골프 가이드', body: `
 <div style="margin-top:56px;display:flex;gap:12px"><span class="chip o">${index} / ${count}</span>${role ? `<span class="chip">${esc(role)}</span>` : ''}</div>
 <div class="disp" style="margin-top:28px;font-size:${name.length > 18 ? 72 : 84}px">${esc(name)}</div>
 <div style="margin-top:22px;font-size:32px;color:var(--muted)">이런 분께 · <span style="color:var(--ink)">${esc(forWhom)}</span></div>
@@ -195,7 +195,7 @@ ${priceText ? `<div style="margin-top:20px;font-size:28px;color:var(--muted)">${
 
 // 스레드용 초보 Q&A 한 장: 큰 질문 + 답(가이드 FAQ 그대로). 한 장짜리라 쪽 번호는 숨긴다.
 export function qaCardV2(o, { topic, q, a, photo }) {
-  return page({ ...o, n: '', total: '', photo, source: 'ATL골프기어 가이드', body: `
+  return page({ ...o, n: '', total: '', photo, source: '초이스골프 가이드', body: `
 <div style="margin-top:56px"><span class="chip">골린이 Q&amp;A · ${esc(topic)}</span></div>
 <div class="num" style="margin-top:40px;font-size:150px;font-weight:800;font-style:italic;line-height:.8;color:var(--gold)">Q.</div>
 <div class="disp" style="margin-top:22px;font-size:${q.length > 22 ? 78 : 92}px">${esc(q)}</div>

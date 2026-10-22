@@ -53,7 +53,7 @@ ${(brand.theme || 'v2') === 'v2' ? ':root{--bg:#0b2f20;--ink:#fff;--accent:#e9c4
 .reel img{width:1080px;height:1350px;display:block}
 .reel .b{height:285px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;font-size:34px;font-weight:700}
 .reel .b span{color:var(--accent);font-size:40px;font-weight:900}</style></head><body>
-<div class="reel"><div class="t"><span>ATL골프기어</span><b>${esc(post.series)}</b></div>
+<div class="reel"><div class="t"><span>초이스골프</span><b>${esc(post.series)}</b></div>
 <img src="data:image/jpeg;base64,${img}"><div class="b">자세한 비교·가격은 프로필 링크<span>${esc(brand.site)}</span></div></div></body></html>`, { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);
     const name = f.replace(/.jpg$/, '-reel.jpg');

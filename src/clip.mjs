@@ -1,4 +1,4 @@
-// ATL골프기어 초보 Q&A 팁 쇼츠를 인스타 릴스로 다시 올리기.
+// 초이스골프 초보 Q&A 팁 쇼츠를 인스타 릴스로 다시 올리기.
 // 원본: media/clips/<에피소드>.mp4 + .json (src/sync-clips.mjs 가 golfvideo/out 에서 복사, 직접 만든 영상만).
 // 캡션은 영상 설명의 Q·A 줄을 그대로 쓴다(새로 지어내지 않음).
 import { existsSync, readdirSync } from 'node:fs';
@@ -20,7 +20,7 @@ export function clipCandidates(state) {
       const qa = (meta.description || '').split('\n').filter((l) => /^[QA]\.\s/.test(l));
       const tags = [...new Set([...(meta.description || '').matchAll(/#[^\s#]+/g)].map((m) => m[0]).filter((t) => t !== '#shorts'))];
       return {
-        id: `clip-${file}`, kind: 'clip', series: 'ATL골프기어 초보 Q&A', file, category: meta.guide || null,
+        id: `clip-${file}`, kind: 'clip', series: '초이스골프 초보 Q&A', file, category: meta.guide || null,
         caption: [
           `🔗 모델 비교·쿠팡 가격은 프로필 링크(${brand.site})`,
           meta.title.replace(/\s*#shorts/gi, '').trim(),
@@ -30,10 +30,10 @@ export function clipCandidates(state) {
           '📌 저장해 두고 클럽 살 때 다시 보세요',
           `🏌️ 모델별 비교·쿠팡 가격은 프로필 링크(${brand.site})`,
           '',
-          '영상의 그림과 배경음은 ATL골프기어가 직접 만들었습니다.',
+          '영상의 그림과 배경음은 초이스골프가 직접 만들었습니다.',
           DISCLOSURE,
           '',
-          [...tags, '#골프초보', '#골프스타그램', '#ATL골프기어'].filter((t, i, a) => a.indexOf(t) === i).slice(0, 8).join(' '),
+          [...tags, '#골프초보', '#골프스타그램', '#초이스골프'].filter((t, i, a) => a.indexOf(t) === i).slice(0, 8).join(' '),
         ].join('\n'),
         warnings: [],
       };

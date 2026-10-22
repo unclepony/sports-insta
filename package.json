@@ -1,7 +1,7 @@
 {
   "name": "sports-insta",
   "version": "1.0.0",
-  "description": "골프 투어 기록·용품 비교를 카드뉴스·릴스로 만들어 인스타그램에 자동 게시 (ATL골프기어)",
+  "description": "골프 투어 기록·용품 비교를 카드뉴스·릴스로 만들어 인스타그램에 자동 게시 (초이스골프)",
   "scripts": {
     "fetch": "node src/fetch-tour.mjs && node src/fetch-gear.mjs",
     "preview": "node src/preview.mjs --reel",

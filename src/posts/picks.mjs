@@ -50,7 +50,7 @@ export function pickPost(gear, { slug, skill }, date, src = 'gear') {
           ...p.cons.slice(0, 2).map((t, k) => G(i, 'cons', t, { expect: (a) => a[k] })),
           ...(priceText ? [P(p.id, ['pick', 'price'], won(pr.pick.price), { expect: won })] : [])] };
     }),
-    { name: 'end', make: (o) => endV2(o, { source: 'ATL골프기어 가이드', title: '내 실력에 맞는<br>클럽부터',
+    { name: 'end', make: (o) => endV2(o, { source: '초이스골프 가이드', title: '내 실력에 맞는<br>클럽부터',
       sub: `저장해 두고 살 때 다시 보세요.<br>${cat.name} 실력별 전체 비교·점수는<br>프로필 링크의 가이드에서.`, disclosure: DISCLOSURE }), facts: [] },
   ];
   const checks = [(load) => {
@@ -71,7 +71,7 @@ export function pickPost(gear, { slug, skill }, date, src = 'gear') {
     '📌 저장해 두고 살 때 다시 보세요',
     `🏌️ 실력별 전체 비교·쿠팡 가격은 프로필 링크(${brand.site})`,
     '',
-    'ATL골프기어 가이드의 평가를 옮겼습니다. 가격은 확인한 날짜 기준이며 달라질 수 있습니다.',
+    '초이스골프 가이드의 평가를 옮겼습니다. 가격은 확인한 날짜 기준이며 달라질 수 있습니다.',
     DISCLOSURE,
     '',
     ['#골프', '#골프스타그램', '#골프용품', `#${cat.name}`, `#${cat.name}추천`, ...(level === '초보' ? ['#골프초보'] : [])].join(' '),

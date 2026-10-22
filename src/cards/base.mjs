@@ -1,4 +1,4 @@
-// 카드 공통 틀 (1080×1350, 인스타 세로 4:5). 색은 golfprice 사이트(ATL골프기어)와 같게.
+// 카드 공통 틀 (1080×1350, 인스타 세로 4:5). 색은 golfprice 사이트(초이스골프)와 같게.
 import { brand, esc } from '../util.mjs';
 
 export const W = 1080, H = 1350;

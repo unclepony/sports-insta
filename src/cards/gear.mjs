@@ -2,8 +2,8 @@
 import { brand, esc, md, won } from '../util.mjs';
 import { page } from './base.mjs';
 
-export const SOURCE = '쿠팡 판매가(ATL골프기어 확인)';
-export const TIP_SOURCE = 'ATL골프기어';
+export const SOURCE = '쿠팡 판매가(초이스골프 확인)';
+export const TIP_SOURCE = '초이스골프';
 export const DISCLOSURE = '이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.';
 
 export function compareCover(o, cat, items, checked) {

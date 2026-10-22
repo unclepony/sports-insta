@@ -14,7 +14,7 @@
 - `config/products.json`: categories(id, name, intro, tips), products(id, category, name, summary, points, min, max)
 - `config/picks.json`: 상품별 쿠팡 상품 정보 — price(링크 만들 때 확인한 판매가), rocket, checked(확인일)
 - 상품 이미지(쿠팡 썸네일)는 쓰지 않는다. 가격은 확인일이 14일(`config/brand.json` staleDays) 이내일 때만.
-- `config/videos.json`: ATL골프기어 유튜브 영상 목록 — 쇼츠 재활용(원본 파일은 `media/source/<영상ID>.mp4`)
+- `config/videos.json`: 초이스골프 유튜브 영상 목록 — 쇼츠 재활용(원본 파일은 `media/source/<영상ID>.mp4`)
 
 ## 인스타그램 (Instagram API with Instagram Login)
 - 게시: `POST /{ig-user-id}/media`(image_url·is_carousel_item / CAROUSEL children / REELS video_url) → 상태 FINISHED 대기 → `POST /{ig-user-id}/media_publish`

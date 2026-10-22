@@ -126,7 +126,7 @@ export function comparePostV2(gear, catId, date, src = 'gear') {
     ...items.map((p, i) => ({ name: `item-${i + 1}`, make: (o) => productV2(o, { index: i + 1, count: items.length, name: p.name, price: won(p.pick.price), rocket: p.pick.rocket,
         checkedText: `${md(p.pick.checked)} 쿠팡 판매가`, summary: p.summary, points: p.points.slice(0, 2), rankLabel: i === 0 ? '가장 싼 모델' : i === items.length - 1 ? '가장 비싼 모델' : '' }),
       facts: [F(p, ['name'], p.name), F(p, ['pick', 'price'], won(p.pick.price), { expect: won }), F(p, ['pick', 'checked'], md(p.pick.checked), { expect: md }), F(p, ['summary'], p.summary)] })),
-    { name: 'end', make: (o) => endV2(o, { source: '쿠팡 판매가(ATL골프기어 확인)', title: '살 때 다시<br>꺼내 보세요',
+    { name: 'end', make: (o) => endV2(o, { source: '쿠팡 판매가(초이스골프 확인)', title: '살 때 다시<br>꺼내 보세요',
       sub: '저장해 두면 매장·온라인 가격을<br>바로 비교할 수 있어요.<br>모델별 자세한 비교는 프로필 링크에서.', disclosure: DISCLOSURE }), facts: [] },
   ];
   const checks = [(load) => {
@@ -171,7 +171,7 @@ export function tipsPostV2(gear, catId, date, src = 'gear') {
       return { name: `tip-${i + 1}`, make: (o) => tipV2(o, { name: cat.name, index: i + 1, count: tips.length, head: s?.head, body: s?.body, text: t }),
         facts: [C(['tips', i], tipText(t), { expect: tipText })] };
     }),
-    { name: 'end', make: (o) => endV2(o, { source: 'ATL골프기어', title: '살 때 꺼내 보는<br>체크리스트',
+    { name: 'end', make: (o) => endV2(o, { source: '초이스골프', title: '살 때 꺼내 보는<br>체크리스트',
       sub: `저장해 두면 ${cat.name} 고를 때<br>바로 확인할 수 있어요.<br>모델별 비교·쿠팡 가격은 프로필 링크에서.`, disclosure: DISCLOSURE }), facts: [] },
   ];
   const caption = [
