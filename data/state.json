@@ -17,7 +17,8 @@
   "compare-wedge": "2026-10-22",
   "tips-putter": "2026-10-22",
   "pick-fairway-wood-recommend-intermediate": "2026-10-22",
-  "compare-wood": "2026-10-23"
+  "compare-wood": "2026-10-23",
+  "tips-utility": "2026-10-23"
  },
  "history": [
   {
@@ -181,7 +182,16 @@
    "format": "reel",
    "mediaId": "18084044228355021",
    "permalink": "https://www.instagram.com/reel/DezTpJXjsqs/"
+  },
+  {
+   "date": "2026-10-23",
+   "id": "tips-utility",
+   "kind": "tips",
+   "category": "utility",
+   "format": "reel",
+   "mediaId": "18100345622378747",
+   "permalink": "https://www.instagram.com/reel/Dezlg3RipPc/"
   }
  ],
- "lastGearKind": "compare"
+ "lastGearKind": "tips"
 }
