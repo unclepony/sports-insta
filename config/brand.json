@@ -1,7 +1,7 @@
 {
   "_설명": "카드·캡션에 들어가는 이름과 주소. 인스타 계정명을 정하면 handle 을 채운다.",
   "name": "ATL골프기어",
-  "site": "golfprice.unclepony.com",
+  "site": "choicegolf.unclepony.com",
   "handle": "atlgolfgear",
   "staleDays": 14,
   "theme": "v2",

@@ -9,7 +9,7 @@
 1. 휴대폰에 **Threads** 앱을 설치하고 **@atlgolfgear 인스타그램 계정으로 로그인**합니다(인스타 계정으로 바로 만들어짐).
 2. 프로필은 "인스타그램에서 가져오기"로 사진·소개를 그대로 쓰고, **공개 프로필**로 둡니다.
 3. 프로필 편집 → 링크에 아래 주소:
-   `https://golfprice.unclepony.com/?utm_source=threads&utm_medium=profile`
+   `https://choicegolf.unclepony.com/?utm_source=threads&utm_medium=profile`
 
 ## 2. 개발자 앱에 Threads 사용 사례 추가
 1. https://developers.facebook.com → 내 앱 → **ATL골프기어 자동게시** → 왼쪽 **사용 사례 → 사용 사례 추가**

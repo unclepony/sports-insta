@@ -10,7 +10,7 @@ GitHub 저장소 만들기·코드 올리기·운영 보고 키·암호화 키·
    - 가입 메일: golfpricedev@gmail.com 권장
 2. 설정 → 계정 유형 및 도구 → **프로페셔널 계정으로 전환** → 크리에이터, 카테고리 '스포츠'
 3. 프로필 편집 → 링크 추가 → 아래 주소를 그대로 붙여 넣기
-   `https://golfprice.unclepony.com/?utm_source=instagram&utm_medium=social&utm_campaign=profile`
+   `https://choicegolf.unclepony.com/?utm_source=instagram&utm_medium=social&utm_campaign=profile`
 4. 소개 글 예: `골프용품 비교 · 쿠팡 판매가 · PGA·LPGA 한국 선수 기록 | 쿠팡 파트너스 활동으로 수수료를 받을 수 있습니다`
 5. 아이디를 저에게 알려 주세요(카드·보고서에 씁니다).
 
