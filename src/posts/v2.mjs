@@ -142,6 +142,7 @@ export function comparePostV2(gear, catId, date, src = 'gear') {
     return '';
   }];
   const caption = [
+    `🔗 모델 비교·쿠팡 가격은 프로필 링크(${brand.site})`,
     `${cat.name} 가격, 최대 ${gapMan}만원 차이 💸 인기 ${items.length}종 쿠팡 판매가 (${md(checked)} 확인)`,
     '',
     ...items.map((p, i) => `${i + 1}. ${p.name} ${won(p.pick.price)}${p.pick.rocket ? ' 🚀로켓' : ''}`),
@@ -174,6 +175,7 @@ export function tipsPostV2(gear, catId, date, src = 'gear') {
       sub: `저장해 두면 ${cat.name} 고를 때<br>바로 확인할 수 있어요.<br>모델별 비교·쿠팡 가격은 프로필 링크에서.`, disclosure: DISCLOSURE }), facts: [] },
   ];
   const caption = [
+    `🔗 모델 비교·쿠팡 가격은 프로필 링크(${brand.site})`,
     `${cat.name}, 이것만 보고 고르세요 ✅ ${tips.length}가지 기준`,
     '',
     cat.intro,

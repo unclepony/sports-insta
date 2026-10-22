@@ -62,6 +62,7 @@ export function pickPost(gear, { slug, skill }, date, src = 'gear') {
     return '';
   }];
   const caption = [
+    `🔗 모델 비교·쿠팡 가격은 프로필 링크(${brand.site})`,
     `${line1.replace(/,$/, '')}, 이 ${picks.length}개 중에 고르세요 ⛳`,
     '',
     ...picks.map((p, i) => `${i + 1}. ${prod(p.id).name}${p.role ? ` (${p.role})` : ''} — ${p.forWhom}`),
