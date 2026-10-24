@@ -12,6 +12,8 @@ export async function openBrowser() {
   for (const channel of ['chrome', 'msedge']) {
     try { return await chromium.launch({ channel }); } catch {}
   }
+  // 클라우드 루틴 환경: 설치된 Chromium 경로(CHROME_PATH)로 미리보기
+  if (process.env.CHROME_PATH) return chromium.launch({ executablePath: process.env.CHROME_PATH });
   throw new Error('Chrome 또는 Edge 를 찾을 수 없습니다');
 }
 
