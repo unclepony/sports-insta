@@ -141,7 +141,7 @@ async function insights() {
   }
   const account = await accountInsights(cfg);
   await mkdir(new URL('data/insights/', ROOT), { recursive: true });
-  await saveJson(new URL(`data/insights/${date}.json`, ROOT), { date, account, posts });
+  await saveJson(new URL(`data/insights/${date}.json`, ROOT), { date, capturedAt: new Date().toISOString(), account, posts });
   console.log(`지표: 게시물 ${posts.length}개, 팔로워 ${account.followers ?? '?'}`);
   await sendMetrics({ date, account, posts });
 }
