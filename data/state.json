@@ -23,7 +23,8 @@
   "compare-ball": "2026-10-23",
   "tips-wood": "2026-10-24",
   "pick-utility-recommend-beginner": "2026-10-24",
-  "compare-shoes": "2026-10-24"
+  "compare-shoes": "2026-10-24",
+  "tips-ball": "2026-10-24"
  },
  "history": [
   {
@@ -241,7 +242,16 @@
    "format": "reel",
    "mediaId": "17977242362934502",
    "permalink": "https://www.instagram.com/reel/De2_GzriG9j/"
+  },
+  {
+   "date": "2026-10-24",
+   "id": "tips-ball",
+   "kind": "tips",
+   "category": "ball",
+   "format": "reel",
+   "mediaId": "18111554804594509",
+   "permalink": "https://www.instagram.com/reel/De3scY-iu3c/"
   }
  ],
- "lastGearKind": "compare"
+ "lastGearKind": "tips"
 }
