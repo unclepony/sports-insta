@@ -24,7 +24,8 @@
   "tips-wood": "2026-10-24",
   "pick-utility-recommend-beginner": "2026-10-24",
   "compare-shoes": "2026-10-24",
-  "tips-ball": "2026-10-24"
+  "tips-ball": "2026-10-24",
+  "pick-fairway-wood-recommend-advanced": "2026-10-25"
  },
  "history": [
   {
@@ -251,7 +252,16 @@
    "format": "reel",
    "mediaId": "18111554804594509",
    "permalink": "https://www.instagram.com/reel/De3scY-iu3c/"
+  },
+  {
+   "date": "2026-10-25",
+   "id": "pick-fairway-wood-recommend-advanced",
+   "kind": "pick",
+   "category": "wood",
+   "format": "reel",
+   "mediaId": "17941419186373392",
+   "permalink": "https://www.instagram.com/reel/De4lyvxk0d5/"
   }
  ],
- "lastGearKind": "tips"
+ "lastGearKind": "pick"
 }
