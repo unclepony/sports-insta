@@ -201,7 +201,11 @@ async function report() {
   ].filter((l) => l !== '');
   const md = lines.join('\n') + '\n';
   await mkdir(new URL('reports/daily/', ROOT), { recursive: true });
-  await writeFile(new URL(`reports/daily/${date}.md`, ROOT), md);
+  const reportFile = new URL(`reports/daily/${date}.md`, ROOT);
+  // 같은 날 다시 쓸 때 Claude 가 덧붙인 '## 셀프 개선' 절은 지우지 않고 뒤에 그대로 둔다
+  const prev = existsSync(reportFile) ? await readFile(reportFile, 'utf8') : '';
+  const keep = prev.indexOf('\n## 셀프 개선');
+  await writeFile(reportFile, keep >= 0 ? md + prev.slice(keep) : md);
   console.log(md);
   if (process.env.OPS_URL && process.env.OPS_KEY) {
     const kind = t.status === 'skipped' || (t.rejected || []).length ? 'error' : t.status === 'published' ? 'upload' : 'info';
