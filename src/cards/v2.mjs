@@ -149,15 +149,16 @@ ${rocket ? '<span class="chip o">로켓배송</span>' : ''}</div>
 }
 
 // 고르는 법 표지: "{분류}, 이것만 보고 고르세요" + 기준 개수 크게
-export function tipsCoverV2(o, { name, intro, count, photo }) {
+// 2026-10-24 실험 E3: 표지에 기준을 바로 적는다(실력별 추천 표지처럼 첫 화면에 답). 소개 문단·큰 숫자 대신 기준 목록.
+//  릴스 첫 3초 건너뛰기: 고르는 법 90~92% vs 실력별 추천 68~73%(10/20~23). 되돌리기: revert.
+export function tipsCoverV2(o, { name, tips, photo }) {
   return page({ ...o, photo, source: '초이스골프', swipe: '넘겨서 기준 보기', body: `
-<div style="margin-top:56px"><span class="chip">골퍼를 위한 장비 가이드</span></div>
+<div style="margin-top:56px"><span class="chip">${esc(name)} · 고르는 기준</span></div>
 <div class="disp" style="margin-top:34px;font-size:118px">${esc(name)},</div>
 <div class="disp" style="margin-top:10px;font-size:104px"><span class="hl">이것만</span> 보고 고르세요</div>
-<div style="margin-top:40px;font-size:34px;line-height:1.55;color:var(--muted)">${esc(intro)}</div>
-<div style="margin:auto 0 170px;display:flex;align-items:flex-end;gap:18px">
-<span class="num" style="font-size:280px;font-weight:800;font-style:italic;line-height:.78;color:var(--gold)">${count}</span>
-<span class="disp" style="font-size:64px;padding-bottom:14px">가지 기준</span></div>` });
+<div style="margin:auto 0 170px;border-top:2px solid var(--gold)">
+${tips.map((t, i) => `<div style="display:flex;gap:18px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)"><span class="num" style="font-size:38px;font-weight:800;color:var(--gold);width:40px;flex:none">${i + 1}</span><span style="font-size:${tips.length > 3 ? 28 : 31}px;font-weight:700;line-height:1.4">${esc(t)}</span></div>`).join('')}
+</div>` });
 }
 
 export function tipV2(o, { name, index, count, head, body, text }) {

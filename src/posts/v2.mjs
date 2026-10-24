@@ -165,7 +165,7 @@ export function tipsPostV2(gear, catId, date, src = 'gear') {
   const tips = cat.tips.slice(0, 8);
   const C = (path, value, extra = {}) => ({ src, path: ['categories', { id: catId }, ...path], value, ...extra });
   const cards = [
-    { name: 'cover', make: (o) => tipsCoverV2(o, { name: cat.name, intro: cat.intro, count: tips.length, photo: photoFor({ category: catId }) }), facts: [C(['intro'], cat.intro)] },
+    { name: 'cover', make: (o) => tipsCoverV2(o, { name: cat.name, tips: tips.slice(0, 4), photo: photoFor({ category: catId }) }), facts: tips.slice(0, 4).map((t, i) => C(['tips', i], t)) },
     ...tips.map((t, i) => {
       const s = splitTip(t);
       return { name: `tip-${i + 1}`, make: (o) => tipV2(o, { name: cat.name, index: i + 1, count: tips.length, head: s?.head, body: s?.body, text: t }),
