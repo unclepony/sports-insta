@@ -22,7 +22,8 @@
   "pick-driver-recommend-2026-pro": "2026-10-23",
   "compare-ball": "2026-10-23",
   "tips-wood": "2026-10-24",
-  "pick-utility-recommend-beginner": "2026-10-24"
+  "pick-utility-recommend-beginner": "2026-10-24",
+  "compare-shoes": "2026-10-24"
  },
  "history": [
   {
@@ -231,7 +232,16 @@
    "format": "reel",
    "mediaId": "17996894742019432",
    "permalink": "https://www.instagram.com/reel/De2HYI8AbYY/"
+  },
+  {
+   "date": "2026-10-24",
+   "id": "compare-shoes-2026-10-24",
+   "kind": "compare",
+   "category": "shoes",
+   "format": "reel",
+   "mediaId": "17977242362934502",
+   "permalink": "https://www.instagram.com/reel/De2_GzriG9j/"
   }
  ],
- "lastGearKind": "pick"
+ "lastGearKind": "compare"
 }

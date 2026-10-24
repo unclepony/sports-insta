@@ -2,23 +2,23 @@
  "date": "2026-10-24",
  "account": {
   "followers": 0,
-  "mediaCount": 24,
+  "mediaCount": 25,
   "username": "choicegolfgear",
-  "reach": 585,
-  "profile_views": 2,
+  "reach": 783,
+  "profile_views": 3,
   "profile_links_taps": 0,
   "website_clicks": 1,
   "follows_and_unfollows": null
  },
  "posts": [
   {
-   "id": "17996894742019432",
-   "at": "2026-10-23T17:40:20+0000",
+   "id": "17977242362934502",
+   "at": "2026-10-24T01:47:23+0000",
    "type": "REELS",
-   "permalink": "https://www.instagram.com/reel/De2HYI8AbYY/",
-   "post": "pick-utility-recommend-beginner",
-   "kind": "pick",
-   "category": "utility",
+   "permalink": "https://www.instagram.com/reel/De2_GzriG9j/",
+   "post": "compare-shoes-2026-10-24",
+   "kind": "compare",
+   "category": "shoes",
    "format": "reel",
    "likes": 0,
    "comments": 0,
@@ -30,6 +30,31 @@
    "ig_reels_avg_watch_time": 0,
    "ig_reels_video_view_total_time": 0,
    "reels_skip_rate": 0,
+   "profile_visits": null,
+   "follows": null,
+   "recentComments": []
+  },
+  {
+   "id": "17996894742019432",
+   "at": "2026-10-23T17:40:20+0000",
+   "type": "REELS",
+   "permalink": "https://www.instagram.com/reel/De2HYI8AbYY/",
+   "post": "pick-utility-recommend-beginner",
+   "kind": "pick",
+   "category": "utility",
+   "format": "reel",
+   "likes": 0,
+   "comments": 0,
+   "reach": 157,
+   "views": 173,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0,
+   "ig_reels_avg_watch_time": 5118,
+   "ig_reels_video_view_total_time": 798413,
+   "reels_skip_rate": 67.9,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -43,14 +68,16 @@
    "format": "reel",
    "likes": 0,
    "comments": 0,
-   "reach": 52,
-   "views": 59,
+   "reach": 102,
+   "views": 115,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 1984,
-   "ig_reels_video_view_total_time": 105187,
-   "reels_skip_rate": 92.7,
+   "ig_reels_avg_watch_time": 2979,
+   "ig_reels_video_view_total_time": 306877,
+   "reels_skip_rate": 91.3,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -64,14 +91,16 @@
    "format": "reel",
    "likes": 0,
    "comments": 0,
-   "reach": 110,
-   "views": 119,
+   "reach": 111,
+   "views": 121,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 2510,
-   "ig_reels_video_view_total_time": 278658,
-   "reels_skip_rate": 88.3,
+   "ig_reels_avg_watch_time": 2713,
+   "ig_reels_video_view_total_time": 303866,
+   "reels_skip_rate": 88.4,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -85,14 +114,16 @@
    "format": "reel",
    "likes": 0,
    "comments": 0,
-   "reach": 105,
-   "views": 121,
+   "reach": 106,
+   "views": 123,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 3836,
-   "ig_reels_video_view_total_time": 406701,
-   "reels_skip_rate": 70.8,
+   "ig_reels_avg_watch_time": 3813,
+   "ig_reels_video_view_total_time": 408079,
+   "reels_skip_rate": 71,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -106,14 +137,16 @@
    "format": "reel",
    "likes": 0,
    "comments": 0,
-   "reach": 103,
-   "views": 111,
+   "reach": 104,
+   "views": 112,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 2468,
-   "ig_reels_video_view_total_time": 254306,
+   "ig_reels_avg_watch_time": 2453,
+   "ig_reels_video_view_total_time": 255120,
    "reels_skip_rate": 91.3,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -135,6 +168,8 @@
    "ig_reels_avg_watch_time": 2588,
    "ig_reels_video_view_total_time": 274353,
    "reels_skip_rate": 83,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -156,6 +191,8 @@
    "ig_reels_avg_watch_time": 3363,
    "ig_reels_video_view_total_time": 366580,
    "reels_skip_rate": 73.4,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -177,6 +214,8 @@
    "ig_reels_avg_watch_time": 2235,
    "ig_reels_video_view_total_time": 245923,
    "reels_skip_rate": 91.7,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -198,6 +237,8 @@
    "ig_reels_avg_watch_time": 2247,
    "ig_reels_video_view_total_time": 247279,
    "reels_skip_rate": 90,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -219,6 +260,8 @@
    "ig_reels_avg_watch_time": 4428,
    "ig_reels_video_view_total_time": 495968,
    "reels_skip_rate": 71.4,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -240,6 +283,8 @@
    "ig_reels_avg_watch_time": 8987,
    "ig_reels_video_view_total_time": 1150415,
    "reels_skip_rate": 90.5,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -261,6 +306,8 @@
    "ig_reels_avg_watch_time": 2017,
    "ig_reels_video_view_total_time": 209867,
    "reels_skip_rate": 89.4,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -274,14 +321,16 @@
    "format": "reel",
    "likes": 0,
    "comments": 0,
-   "reach": 108,
-   "views": 121,
+   "reach": 109,
+   "views": 122,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 3612,
-   "ig_reels_video_view_total_time": 390150,
-   "reels_skip_rate": 72.2,
+   "ig_reels_avg_watch_time": 3585,
+   "ig_reels_video_view_total_time": 390871,
+   "reels_skip_rate": 72.5,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -295,14 +344,16 @@
    "format": "reel",
    "likes": 0,
    "comments": 0,
-   "reach": 114,
-   "views": 118,
+   "reach": 115,
+   "views": 119,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 2096,
-   "ig_reels_video_view_total_time": 232740,
-   "reels_skip_rate": 90.1,
+   "ig_reels_avg_watch_time": 2081,
+   "ig_reels_video_view_total_time": 233151,
+   "reels_skip_rate": 90.2,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -316,14 +367,16 @@
    "format": "reel",
    "likes": 0,
    "comments": 0,
-   "reach": 112,
-   "views": 119,
+   "reach": 113,
+   "views": 120,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
    "ig_reels_avg_watch_time": 2784,
-   "ig_reels_video_view_total_time": 303471,
-   "reels_skip_rate": 83.5,
+   "ig_reels_video_view_total_time": 306249,
+   "reels_skip_rate": 83.6,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -342,6 +395,8 @@
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
+   "profile_visits": 0,
+   "follows": 0,
    "recentComments": []
   },
   {
@@ -360,6 +415,8 @@
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
+   "profile_visits": 0,
+   "follows": 0,
    "recentComments": []
   },
   {
@@ -378,6 +435,8 @@
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
+   "profile_visits": 0,
+   "follows": 0,
    "recentComments": []
   },
   {
@@ -391,14 +450,16 @@
    "format": "reel",
    "likes": 0,
    "comments": 0,
-   "reach": 100,
-   "views": 108,
+   "reach": 101,
+   "views": 109,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 2989,
-   "ig_reels_video_view_total_time": 304912,
-   "reels_skip_rate": 85.3,
+   "ig_reels_avg_watch_time": 3090,
+   "ig_reels_video_view_total_time": 318307,
+   "reels_skip_rate": 84.5,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -417,6 +478,8 @@
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
+   "profile_visits": 0,
+   "follows": 0,
    "recentComments": []
   },
   {
@@ -430,14 +493,16 @@
    "format": "reel",
    "likes": 0,
    "comments": 0,
-   "reach": 105,
-   "views": 114,
+   "reach": 106,
+   "views": 115,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 3010,
-   "ig_reels_video_view_total_time": 322101,
-   "reels_skip_rate": 86.7,
+   "ig_reels_avg_watch_time": 3135,
+   "ig_reels_video_view_total_time": 338677,
+   "reels_skip_rate": 85.8,
+   "profile_visits": null,
+   "follows": null,
    "recentComments": []
   },
   {
@@ -456,6 +521,8 @@
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
+   "profile_visits": 0,
+   "follows": 0,
    "recentComments": []
   },
   {
@@ -474,6 +541,8 @@
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
+   "profile_visits": 0,
+   "follows": 0,
    "recentComments": []
   },
   {
@@ -492,6 +561,8 @@
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
+   "profile_visits": 0,
+   "follows": 0,
    "recentComments": []
   }
  ]
