@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-10-25T08:40:58.583Z",
+ "fetchedAt": "2026-10-25T14:29:04.995Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "lpga",
@@ -33,7 +33,7 @@
     68,
     68
    ],
-   "earnings": 0,
+   "earnings": 352500,
    "thru": 18
   },
   {
@@ -53,7 +53,7 @@
     66,
     69
    ],
-   "earnings": 0,
+   "earnings": 183024,
    "thru": 18
   },
   {
@@ -73,7 +73,7 @@
     68,
     73
    ],
-   "earnings": 0,
+   "earnings": 183024,
    "thru": 18
   },
   {
@@ -93,7 +93,7 @@
     70,
     67
    ],
-   "earnings": 0,
+   "earnings": 107439,
    "thru": 18
   },
   {
@@ -113,7 +113,7 @@
     67,
     68
    ],
-   "earnings": 0,
+   "earnings": 107439,
    "thru": 18
   },
   {
@@ -133,7 +133,7 @@
     69,
     66
    ],
-   "earnings": 0,
+   "earnings": 63302,
    "thru": 18
   },
   {
@@ -153,7 +153,7 @@
     70,
     67
    ],
-   "earnings": 0,
+   "earnings": 63302,
    "thru": 18
   },
   {
@@ -173,7 +173,7 @@
     70,
     67
    ],
-   "earnings": 0,
+   "earnings": 63302,
    "thru": 18
   },
   {
@@ -193,7 +193,7 @@
     66,
     68
    ],
-   "earnings": 0,
+   "earnings": 63302,
    "thru": 18
   },
   {
@@ -213,7 +213,7 @@
     72,
     70
    ],
-   "earnings": 0,
+   "earnings": 47041,
    "thru": 18
   },
   {
@@ -233,7 +233,7 @@
     69,
     67
    ],
-   "earnings": 0,
+   "earnings": 39519,
    "thru": 18
   },
   {
@@ -253,7 +253,7 @@
     72,
     71
    ],
-   "earnings": 0,
+   "earnings": 39519,
    "thru": 18
   },
   {
@@ -273,7 +273,7 @@
     70,
     72
    ],
-   "earnings": 0,
+   "earnings": 39519,
    "thru": 18
   },
   {
@@ -293,7 +293,7 @@
     65,
     73
    ],
-   "earnings": 0,
+   "earnings": 39519,
    "thru": 18
   },
   {
@@ -313,7 +313,7 @@
     70,
     66
    ],
-   "earnings": 0,
+   "earnings": 28689,
    "thru": 18
   },
   {
@@ -333,7 +333,7 @@
     73,
     67
    ],
-   "earnings": 0,
+   "earnings": 28689,
    "thru": 18
   },
   {
@@ -353,7 +353,7 @@
     75,
     67
    ],
-   "earnings": 0,
+   "earnings": 28689,
    "thru": 18
   },
   {
@@ -373,7 +373,7 @@
     70,
     69
    ],
-   "earnings": 0,
+   "earnings": 28689,
    "thru": 18
   },
   {
@@ -393,7 +393,7 @@
     74,
     69
    ],
-   "earnings": 0,
+   "earnings": 28689,
    "thru": 18
   },
   {
@@ -413,7 +413,7 @@
     68,
     70
    ],
-   "earnings": 0,
+   "earnings": 28689,
    "thru": 18
   },
   {
@@ -433,7 +433,7 @@
     69,
     70
    ],
-   "earnings": 0,
+   "earnings": 28689,
    "thru": 18
   },
   {
@@ -453,7 +453,7 @@
     66,
     72
    ],
-   "earnings": 0,
+   "earnings": 28689,
    "thru": 18
   },
   {
@@ -473,7 +473,7 @@
     71,
     66
    ],
-   "earnings": 0,
+   "earnings": 21798,
    "thru": 18
   },
   {
@@ -493,7 +493,7 @@
     70,
     67
    ],
-   "earnings": 0,
+   "earnings": 21798,
    "thru": 18
   },
   {
@@ -513,7 +513,7 @@
     70,
     69
    ],
-   "earnings": 0,
+   "earnings": 21798,
    "thru": 18
   },
   {
@@ -533,7 +533,7 @@
     70,
     70
    ],
-   "earnings": 0,
+   "earnings": 21798,
    "thru": 18
   },
   {
@@ -553,7 +553,7 @@
     73,
     70
    ],
-   "earnings": 0,
+   "earnings": 21798,
    "thru": 18
   },
   {
@@ -573,7 +573,7 @@
     69,
     75
    ],
-   "earnings": 0,
+   "earnings": 21798,
    "thru": 18
   },
   {
@@ -593,7 +593,7 @@
     73,
     67
    ],
-   "earnings": 0,
+   "earnings": 17887,
    "thru": 18
   },
   {
@@ -613,7 +613,7 @@
     68,
     70
    ],
-   "earnings": 0,
+   "earnings": 17887,
    "thru": 18
   },
   {
@@ -633,7 +633,7 @@
     69,
     73
    ],
-   "earnings": 0,
+   "earnings": 17887,
    "thru": 18
   },
   {
@@ -653,7 +653,7 @@
     68,
     74
    ],
-   "earnings": 0,
+   "earnings": 17887,
    "thru": 18
   },
   {
@@ -673,7 +673,7 @@
     72,
     66
    ],
-   "earnings": 0,
+   "earnings": 16144,
    "thru": 18
   },
   {
@@ -693,7 +693,7 @@
     74,
     66
    ],
-   "earnings": 0,
+   "earnings": 13996,
    "thru": 18
   },
   {
@@ -713,7 +713,7 @@
     70,
     68
    ],
-   "earnings": 0,
+   "earnings": 13996,
    "thru": 18
   },
   {
@@ -733,7 +733,7 @@
     71,
     68
    ],
-   "earnings": 0,
+   "earnings": 13996,
    "thru": 18
   },
   {
@@ -753,7 +753,7 @@
     72,
     68
    ],
-   "earnings": 0,
+   "earnings": 13996,
    "thru": 18
   },
   {
@@ -793,7 +793,7 @@
     71,
     71
    ],
-   "earnings": 0,
+   "earnings": 13996,
    "thru": 18
   },
   {
@@ -813,7 +813,7 @@
     73,
     71
    ],
-   "earnings": 0,
+   "earnings": 13996,
    "thru": 18
   },
   {
@@ -833,7 +833,7 @@
     69,
     65
    ],
-   "earnings": 0,
+   "earnings": 11150,
    "thru": 18
   },
   {
@@ -853,7 +853,7 @@
     70,
     69
    ],
-   "earnings": 0,
+   "earnings": 11150,
    "thru": 18
   },
   {
@@ -873,7 +873,7 @@
     71,
     70
    ],
-   "earnings": 0,
+   "earnings": 11150,
    "thru": 18
   },
   {
@@ -893,7 +893,7 @@
     74,
     70
    ],
-   "earnings": 0,
+   "earnings": 11150,
    "thru": 18
   },
   {
@@ -913,7 +913,7 @@
     71,
     74
    ],
-   "earnings": 0,
+   "earnings": 11150,
    "thru": 18
   },
   {
@@ -933,7 +933,7 @@
     71,
     68
    ],
-   "earnings": 0,
+   "earnings": 9524,
    "thru": 18
   },
   {
@@ -953,7 +953,7 @@
     75,
     69
    ],
-   "earnings": 0,
+   "earnings": 9524,
    "thru": 18
   },
   {
@@ -973,7 +973,7 @@
     74,
     71
    ],
-   "earnings": 0,
+   "earnings": 9524,
    "thru": 18
   },
   {
@@ -993,7 +993,7 @@
     71,
     67
    ],
-   "earnings": 0,
+   "earnings": 8072,
    "thru": 18
   },
   {
@@ -1013,7 +1013,7 @@
     71,
     68
    ],
-   "earnings": 0,
+   "earnings": 8072,
    "thru": 18
   },
   {
@@ -1033,7 +1033,7 @@
     73,
     69
    ],
-   "earnings": 0,
+   "earnings": 8072,
    "thru": 18
   },
   {
@@ -1053,7 +1053,7 @@
     72,
     71
    ],
-   "earnings": 0,
+   "earnings": 8072,
    "thru": 18
   },
   {
@@ -1073,7 +1073,7 @@
     71,
     73
    ],
-   "earnings": 0,
+   "earnings": 8072,
    "thru": 18
   },
   {
@@ -1093,7 +1093,7 @@
     70,
     74
    ],
-   "earnings": 0,
+   "earnings": 8072,
    "thru": 18
   },
   {
@@ -1113,7 +1113,7 @@
     72,
     69
    ],
-   "earnings": 0,
+   "earnings": 6504,
    "thru": 18
   },
   {
@@ -1133,7 +1133,7 @@
     72,
     70
    ],
-   "earnings": 0,
+   "earnings": 6504,
    "thru": 18
   },
   {
@@ -1153,7 +1153,7 @@
     73,
     70
    ],
-   "earnings": 0,
+   "earnings": 6504,
    "thru": 18
   },
   {
@@ -1173,7 +1173,7 @@
     77,
     70
    ],
-   "earnings": 0,
+   "earnings": 6504,
    "thru": 18
   },
   {
@@ -1193,7 +1193,7 @@
     73,
     71
    ],
-   "earnings": 0,
+   "earnings": 6504,
    "thru": 18
   },
   {
@@ -1213,7 +1213,7 @@
     69,
     72
    ],
-   "earnings": 0,
+   "earnings": 6504,
    "thru": 18
   },
   {
@@ -1233,7 +1233,7 @@
     71,
     76
    ],
-   "earnings": 0,
+   "earnings": 6504,
    "thru": 18
   },
   {
@@ -1253,7 +1253,7 @@
     69,
     71
    ],
-   "earnings": 0,
+   "earnings": 5401,
    "thru": 18
   },
   {
@@ -1273,7 +1273,7 @@
     73,
     71
    ],
-   "earnings": 0,
+   "earnings": 5401,
    "thru": 18
   },
   {
@@ -1293,7 +1293,7 @@
     75,
     71
    ],
-   "earnings": 0,
+   "earnings": 5401,
    "thru": 18
   },
   {
@@ -1313,7 +1313,7 @@
     73,
     72
    ],
-   "earnings": 0,
+   "earnings": 5401,
    "thru": 18
   },
   {
@@ -1333,7 +1333,7 @@
     73,
     73
    ],
-   "earnings": 0,
+   "earnings": 5401,
    "thru": 18
   },
   {
@@ -1353,7 +1353,7 @@
     74,
     74
    ],
-   "earnings": 0,
+   "earnings": 5401,
    "thru": 18
   },
   {
@@ -1373,7 +1373,7 @@
     70,
     73
    ],
-   "earnings": 0,
+   "earnings": 4995,
    "thru": 18
   },
   {
@@ -1393,7 +1393,7 @@
     72,
     74
    ],
-   "earnings": 0,
+   "earnings": 4820,
    "thru": 18
   },
   {
@@ -1413,7 +1413,7 @@
     75,
     74
    ],
-   "earnings": 0,
+   "earnings": 4820,
    "thru": 18
   },
   {
@@ -1433,7 +1433,7 @@
     73,
     69
    ],
-   "earnings": 0,
+   "earnings": 4588,
    "thru": 18
   },
   {
@@ -1453,7 +1453,7 @@
     69,
     74
    ],
-   "earnings": 0,
+   "earnings": 4588,
    "thru": 18
   },
   {
@@ -1473,7 +1473,7 @@
     70,
     77
    ],
-   "earnings": 0,
+   "earnings": 4588,
    "thru": 18
   },
   {
@@ -1493,7 +1493,7 @@
     73,
     70
    ],
-   "earnings": 0,
+   "earnings": 4388,
    "thru": 18
   },
   {
@@ -1513,7 +1513,7 @@
     71,
     75
    ],
-   "earnings": 0,
+   "earnings": 4388,
    "thru": 18
   },
   {
@@ -1533,7 +1533,7 @@
     72,
     76
    ],
-   "earnings": 0,
+   "earnings": 4388,
    "thru": 18
   },
   {
@@ -1553,7 +1553,7 @@
     72,
     77
    ],
-   "earnings": 0,
+   "earnings": 4388,
    "thru": 18
   },
   {
@@ -1573,85 +1573,8 @@
     76,
     72
    ],
-   "earnings": 0,
+   "earnings": 4250,
    "thru": 18
-  },
-  {
-   "id": "4939783",
-   "name": "Nanna Koerstz Madsen",
-   "country": "Denmark",
-   "amateur": false,
-   "pos": "-",
-   "tie": false,
-   "status": "STATUS_CUT",
-   "toPar": 1,
-   "toParText": "+1",
-   "total": 145,
-   "rounds": [
-    72,
-    73,
-    null
-   ],
-   "earnings": 0,
-   "thru": null
-  },
-  {
-   "id": "5369394",
-   "name": "Kyorim Seo",
-   "country": "South Korea",
-   "amateur": false,
-   "pos": "-",
-   "tie": false,
-   "status": "STATUS_CUT",
-   "toPar": 15,
-   "toParText": "+15",
-   "total": 231,
-   "rounds": [
-    72,
-    77,
-    82,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "4425587",
-   "name": "Auston Kim",
-   "country": "USA",
-   "amateur": false,
-   "pos": "-",
-   "tie": false,
-   "status": "STATUS_CUT",
-   "toPar": 5,
-   "toParText": "+5",
-   "total": 77,
-   "rounds": [
-    77,
-    null
-   ],
-   "earnings": 0,
-   "thru": null
-  },
-  {
-   "id": "5209262",
-   "name": "Shinsil Bang",
-   "country": "South Korea",
-   "amateur": false,
-   "pos": "-",
-   "tie": false,
-   "status": "STATUS_CUT",
-   "toPar": 5,
-   "toParText": "+5",
-   "total": 221,
-   "rounds": [
-    74,
-    75,
-    72,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
   },
   {
    "id": "11281",
@@ -1659,7 +1582,7 @@
    "country": "USA",
    "amateur": false,
    "pos": "-",
-   "tie": false,
+   "tie": true,
    "status": "STATUS_CUT",
    "toPar": -2,
    "toParText": "-2",
@@ -1670,8 +1593,85 @@
     72,
     null
    ],
-   "earnings": 0,
+   "earnings": 4064,
    "thru": 0
+  },
+  {
+   "id": "5209262",
+   "name": "Shinsil Bang",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "-",
+   "tie": true,
+   "status": "STATUS_CUT",
+   "toPar": 5,
+   "toParText": "+5",
+   "total": 221,
+   "rounds": [
+    74,
+    75,
+    72,
+    null
+   ],
+   "earnings": 4064,
+   "thru": 0
+  },
+  {
+   "id": "5369394",
+   "name": "Kyorim Seo",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "-",
+   "tie": true,
+   "status": "STATUS_CUT",
+   "toPar": 15,
+   "toParText": "+15",
+   "total": 231,
+   "rounds": [
+    72,
+    77,
+    82,
+    null
+   ],
+   "earnings": 4064,
+   "thru": 0
+  },
+  {
+   "id": "4939783",
+   "name": "Nanna Koerstz Madsen",
+   "country": "Denmark",
+   "amateur": false,
+   "pos": "-",
+   "tie": true,
+   "status": "STATUS_CUT",
+   "toPar": 1,
+   "toParText": "+1",
+   "total": 145,
+   "rounds": [
+    72,
+    73,
+    null
+   ],
+   "earnings": 4064,
+   "thru": null
+  },
+  {
+   "id": "4425587",
+   "name": "Auston Kim",
+   "country": "USA",
+   "amateur": false,
+   "pos": "-",
+   "tie": true,
+   "status": "STATUS_CUT",
+   "toPar": 5,
+   "toParText": "+5",
+   "total": 77,
+   "rounds": [
+    77,
+    null
+   ],
+   "earnings": 4064,
+   "thru": null
   },
   {
    "id": "4473",
@@ -1679,7 +1679,7 @@
    "country": "China",
    "amateur": false,
    "pos": "-",
-   "tie": false,
+   "tie": true,
    "status": "STATUS_CUT",
    "toPar": 0,
    "toParText": "E",
@@ -1687,7 +1687,7 @@
    "rounds": [
     4
    ],
-   "earnings": 0,
+   "earnings": 4064,
    "thru": null
   }
  ],

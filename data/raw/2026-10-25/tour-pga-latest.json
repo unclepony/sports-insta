@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-10-25T08:40:58.539Z",
+ "fetchedAt": "2026-10-25T14:29:04.747Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "pga",
@@ -8,7 +8,7 @@
  "start": "2026-10-22T04:00Z",
  "end": "2026-10-25T04:00Z",
  "state": "post",
- "detail": "Round 3 - Play Complete",
+ "detail": "Round 4 - Suspended",
  "purse": 6000000,
  "course": {
   "name": "Port Royal Golf Course",
@@ -237,26 +237,6 @@
    "thru": 0
   },
   {
-   "id": "10863",
-   "name": "Cam Davis",
-   "country": "Australia",
-   "amateur": false,
-   "pos": "T11",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -12,
-   "toParText": "-12",
-   "total": 201,
-   "rounds": [
-    70,
-    64,
-    67,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
    "id": "4589406",
    "name": "Isaiah Salinda",
    "country": "USA",
@@ -270,6 +250,26 @@
    "rounds": [
     69,
     65,
+    67,
+    null
+   ],
+   "earnings": 0,
+   "thru": 0
+  },
+  {
+   "id": "10863",
+   "name": "Cam Davis",
+   "country": "Australia",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_SCHEDULED",
+   "toPar": -12,
+   "toParText": "-12",
+   "total": 201,
+   "rounds": [
+    70,
+    64,
     67,
     null
    ],
@@ -297,26 +297,6 @@
    "thru": 0
   },
   {
-   "id": "3257",
-   "name": "David Skinns",
-   "country": "England",
-   "amateur": false,
-   "pos": "T15",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -11,
-   "toParText": "-11",
-   "total": 202,
-   "rounds": [
-    68,
-    63,
-    71,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
    "id": "10054",
    "name": "Denny McCarthy",
    "country": "USA",
@@ -330,6 +310,26 @@
    "rounds": [
     67,
     64,
+    71,
+    null
+   ],
+   "earnings": 0,
+   "thru": 0
+  },
+  {
+   "id": "3257",
+   "name": "David Skinns",
+   "country": "England",
+   "amateur": false,
+   "pos": "T15",
+   "tie": true,
+   "status": "STATUS_SCHEDULED",
+   "toPar": -11,
+   "toParText": "-11",
+   "total": 202,
+   "rounds": [
+    68,
+    63,
     71,
     null
    ],
@@ -377,6 +377,26 @@
    "thru": 0
   },
   {
+   "id": "2283",
+   "name": "Brice Garnett",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T17",
+   "tie": true,
+   "status": "STATUS_SCHEDULED",
+   "toPar": -10,
+   "toParText": "-10",
+   "total": 203,
+   "rounds": [
+    65,
+    70,
+    68,
+    null
+   ],
+   "earnings": 0,
+   "thru": 0
+  },
+  {
    "id": "5548",
    "name": "Adam Hadwin",
    "country": "Canada",
@@ -410,26 +430,6 @@
    "rounds": [
     67,
     68,
-    68,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "2283",
-   "name": "Brice Garnett",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T17",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -10,
-   "toParText": "-10",
-   "total": 203,
-   "rounds": [
-    65,
-    70,
     68,
     null
    ],
@@ -497,26 +497,6 @@
    "thru": 0
   },
   {
-   "id": "5150294",
-   "name": "David Ford",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T25",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -9,
-   "toParText": "-9",
-   "total": 204,
-   "rounds": [
-    72,
-    64,
-    68,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
    "id": "5692",
    "name": "Peter Malnati",
    "country": "USA",
@@ -537,9 +517,9 @@
    "thru": 0
   },
   {
-   "id": "5075652",
-   "name": "A.J. Ewart",
-   "country": "Canada",
+   "id": "5150294",
+   "name": "David Ford",
+   "country": "USA",
    "amateur": false,
    "pos": "T25",
    "tie": true,
@@ -548,8 +528,28 @@
    "toParText": "-9",
    "total": 204,
    "rounds": [
-    70,
-    65,
+    72,
+    64,
+    68,
+    null
+   ],
+   "earnings": 0,
+   "thru": 0
+  },
+  {
+   "id": "2571",
+   "name": "Martin Laird",
+   "country": "Scotland",
+   "amateur": false,
+   "pos": "T25",
+   "tie": true,
+   "status": "STATUS_SCHEDULED",
+   "toPar": -9,
+   "toParText": "-9",
+   "total": 204,
+   "rounds": [
+    67,
+    68,
     69,
     null
    ],
@@ -577,9 +577,9 @@
    "thru": 0
   },
   {
-   "id": "2571",
-   "name": "Martin Laird",
-   "country": "Scotland",
+   "id": "5075652",
+   "name": "A.J. Ewart",
+   "country": "Canada",
    "amateur": false,
    "pos": "T25",
    "tie": true,
@@ -588,8 +588,8 @@
    "toParText": "-9",
    "total": 204,
    "rounds": [
-    67,
-    68,
+    70,
+    65,
     69,
     null
    ],
@@ -617,26 +617,6 @@
    "thru": 0
   },
   {
-   "id": "4699329",
-   "name": "Jesper Svensson",
-   "country": "Sweden",
-   "amateur": false,
-   "pos": "T25",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -9,
-   "toParText": "-9",
-   "total": 204,
-   "rounds": [
-    69,
-    64,
-    71,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
    "id": "6931",
    "name": "Mackenzie Hughes",
    "country": "Canada",
@@ -650,6 +630,26 @@
    "rounds": [
     64,
     69,
+    71,
+    null
+   ],
+   "earnings": 0,
+   "thru": 0
+  },
+  {
+   "id": "4699329",
+   "name": "Jesper Svensson",
+   "country": "Sweden",
+   "amateur": false,
+   "pos": "T25",
+   "tie": true,
+   "status": "STATUS_SCHEDULED",
+   "toPar": -9,
+   "toParText": "-9",
+   "total": 204,
+   "rounds": [
+    69,
+    64,
     71,
     null
    ],
@@ -697,26 +697,6 @@
    "thru": 0
   },
   {
-   "id": "8889",
-   "name": "Zecheng Dou",
-   "country": "China",
-   "amateur": false,
-   "pos": "T34",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -8,
-   "toParText": "-8",
-   "total": 205,
-   "rounds": [
-    67,
-    69,
-    69,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
    "id": "4638",
    "name": "Ben Martin",
    "country": "USA",
@@ -730,6 +710,26 @@
    "rounds": [
     66,
     70,
+    69,
+    null
+   ],
+   "earnings": 0,
+   "thru": 0
+  },
+  {
+   "id": "8889",
+   "name": "Zecheng Dou",
+   "country": "China",
+   "amateur": false,
+   "pos": "T34",
+   "tie": true,
+   "status": "STATUS_SCHEDULED",
+   "toPar": -8,
+   "toParText": "-8",
+   "total": 205,
+   "rounds": [
+    67,
+    69,
     69,
     null
    ],
@@ -817,26 +817,6 @@
    "thru": 0
   },
   {
-   "id": "9143",
-   "name": "Mark Hubbard",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T34",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -8,
-   "toParText": "-8",
-   "total": 205,
-   "rounds": [
-    67,
-    66,
-    72,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
    "id": "11183",
    "name": "Trace Crowe",
    "country": "USA",
@@ -850,6 +830,26 @@
    "rounds": [
     66,
     67,
+    72,
+    null
+   ],
+   "earnings": 0,
+   "thru": 0
+  },
+  {
+   "id": "9143",
+   "name": "Mark Hubbard",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T34",
+   "tie": true,
+   "status": "STATUS_SCHEDULED",
+   "toPar": -8,
+   "toParText": "-8",
+   "total": 205,
+   "rounds": [
+    67,
+    66,
     72,
     null
    ],
@@ -897,6 +897,26 @@
    "thru": 0
   },
   {
+   "id": "6196",
+   "name": "Joel Dahmen",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T44",
+   "tie": true,
+   "status": "STATUS_SCHEDULED",
+   "toPar": -7,
+   "toParText": "-7",
+   "total": 206,
+   "rounds": [
+    65,
+    71,
+    70,
+    null
+   ],
+   "earnings": 0,
+   "thru": 0
+  },
+  {
    "id": "11383",
    "name": "Max McGreevy",
    "country": "USA",
@@ -937,8 +957,8 @@
    "thru": 0
   },
   {
-   "id": "6196",
-   "name": "Joel Dahmen",
+   "id": "4355611",
+   "name": "Willie Mack III",
    "country": "USA",
    "amateur": false,
    "pos": "T44",
@@ -948,9 +968,9 @@
    "toParText": "-7",
    "total": 206,
    "rounds": [
-    65,
-    71,
-    70,
+    68,
+    66,
+    72,
     null
    ],
    "earnings": 0,
@@ -970,26 +990,6 @@
    "rounds": [
     69,
     65,
-    72,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "4355611",
-   "name": "Willie Mack III",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T44",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -7,
-   "toParText": "-7",
-   "total": 206,
-   "rounds": [
-    68,
-    66,
     72,
     null
    ],
@@ -1037,26 +1037,6 @@
    "thru": 0
   },
   {
-   "id": "11385",
-   "name": "Rico Hoey",
-   "country": "Philippines",
-   "amateur": false,
-   "pos": "T52",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -6,
-   "toParText": "-6",
-   "total": 207,
-   "rounds": [
-    69,
-    67,
-    71,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
    "id": "5619",
    "name": "Robert Streb",
    "country": "USA",
@@ -1077,9 +1057,9 @@
    "thru": 0
   },
   {
-   "id": "5113338",
-   "name": "Davis Chatfield",
-   "country": "USA",
+   "id": "11385",
+   "name": "Rico Hoey",
+   "country": "Philippines",
    "amateur": false,
    "pos": "T52",
    "tie": true,
@@ -1088,8 +1068,8 @@
    "toParText": "-6",
    "total": 207,
    "rounds": [
-    66,
-    70,
+    69,
+    67,
     71,
     null
    ],
@@ -1110,6 +1090,26 @@
    "rounds": [
     65,
     71,
+    71,
+    null
+   ],
+   "earnings": 0,
+   "thru": 0
+  },
+  {
+   "id": "5113338",
+   "name": "Davis Chatfield",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T52",
+   "tie": true,
+   "status": "STATUS_SCHEDULED",
+   "toPar": -6,
+   "toParText": "-6",
+   "total": 207,
+   "rounds": [
+    66,
+    70,
     71,
     null
    ],
@@ -1277,9 +1277,9 @@
    "thru": 0
   },
   {
-   "id": "3454",
-   "name": "Brendon Todd",
-   "country": "USA",
+   "id": "5573",
+   "name": "Henrik Norlander",
+   "country": "Sweden",
    "amateur": false,
    "pos": "T64",
    "tie": true,
@@ -1288,8 +1288,8 @@
    "toParText": "-3",
    "total": 210,
    "rounds": [
-    70,
-    67,
+    68,
+    69,
     73,
     null
    ],
@@ -1317,9 +1317,9 @@
    "thru": 0
   },
   {
-   "id": "5573",
-   "name": "Henrik Norlander",
-   "country": "Sweden",
+   "id": "3454",
+   "name": "Brendon Todd",
+   "country": "USA",
    "amateur": false,
    "pos": "T64",
    "tie": true,
@@ -1328,8 +1328,8 @@
    "toParText": "-3",
    "total": 210,
    "rounds": [
-    68,
-    69,
+    70,
+    67,
     73,
     null
    ],
@@ -2319,7 +2319,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": null
   }
  ],
  "next": {
