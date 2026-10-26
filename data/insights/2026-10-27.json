@@ -1,11 +1,11 @@
 {
  "date": "2026-10-27",
- "capturedAt": "2026-10-26T16:55:09.042Z",
+ "capturedAt": "2026-10-26T19:20:24.141Z",
  "account": {
   "followers": 1,
-  "mediaCount": 34,
+  "mediaCount": 35,
   "username": "choicegolfgear",
-  "reach": 544,
+  "reach": 634,
   "profile_views": 1,
   "profile_links_taps": 0,
   "website_clicks": 0,
@@ -13,7 +13,7 @@
   "website": "https://choicegolf.unclepony.com",
   "yesterday": {
    "day": "2026-10-26",
-   "reach": 102,
+   "reach": 193,
    "profile_views": 0,
    "profile_links_taps": 0,
    "website_clicks": 0
@@ -21,13 +21,13 @@
  },
  "posts": [
   {
-   "id": "18351120499269843",
-   "at": "2026-10-26T16:53:42+0000",
+   "id": "18056593835804562",
+   "at": "2026-10-26T19:18:46+0000",
    "type": "REELS",
-   "permalink": "https://www.instagram.com/reel/De9wbBujLQ_/",
-   "post": "tips-rangefinder",
-   "kind": "tips",
-   "category": "rangefinder",
+   "permalink": "https://www.instagram.com/reel/De-BCRbAfVE/",
+   "post": "pick-utility-recommend-intermediate",
+   "kind": "pick",
+   "category": "utility",
    "format": "reel",
    "likes": 0,
    "comments": 0,
@@ -39,6 +39,29 @@
    "ig_reels_avg_watch_time": 0,
    "ig_reels_video_view_total_time": 0,
    "reels_skip_rate": 0,
+   "profile_visits": null,
+   "follows": null,
+   "recentComments": []
+  },
+  {
+   "id": "18351120499269843",
+   "at": "2026-10-26T16:53:42+0000",
+   "type": "REELS",
+   "permalink": "https://www.instagram.com/reel/De9wbBujLQ_/",
+   "post": "tips-rangefinder",
+   "kind": "tips",
+   "category": "rangefinder",
+   "format": "reel",
+   "likes": 0,
+   "comments": 0,
+   "reach": 91,
+   "views": 99,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0,
+   "ig_reels_avg_watch_time": 2414,
+   "ig_reels_video_view_total_time": 214915,
+   "reels_skip_rate": 81.7,
    "profile_visits": null,
    "follows": null,
    "recentComments": []
@@ -668,23 +691,6 @@
    "ig_reels_avg_watch_time": 3090,
    "ig_reels_video_view_total_time": 318307,
    "reels_skip_rate": 84.5
-  },
-  {
-   "id": "18079699940743505",
-   "at": "2026-10-19T01:28:53+0000",
-   "type": "FEED",
-   "permalink": "https://www.instagram.com/p/DeqFDSwmtJ-/",
-   "post": "compare-driver-2026-10-19",
-   "kind": "compare",
-   "category": "driver",
-   "format": "carousel",
-   "likes": 0,
-   "comments": 0,
-   "reach": 1,
-   "views": 1,
-   "saved": 0,
-   "shares": 0,
-   "total_interactions": 0
   }
  ]
 }
