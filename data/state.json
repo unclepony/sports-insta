@@ -29,7 +29,8 @@
   "compare-utility": "2026-10-25",
   "tour-lpga-401835173": "2026-10-25",
   "tips-shoes": "2026-10-25",
-  "pick-fairway-wood-recommend-pro": "2026-10-26"
+  "pick-fairway-wood-recommend-pro": "2026-10-26",
+  "compare-rangefinder": "2026-10-26"
  },
  "history": [
   {
@@ -301,7 +302,16 @@
    "format": "reel",
    "mediaId": "18352786687280043",
    "permalink": "https://www.instagram.com/reel/De7MJgTk754/"
+  },
+  {
+   "date": "2026-10-26",
+   "id": "compare-rangefinder-2026-10-26",
+   "kind": "compare",
+   "category": "rangefinder",
+   "format": "reel",
+   "mediaId": "18149234035605120",
+   "permalink": "https://www.instagram.com/reel/De8GgLgjXP5/"
   }
  ],
- "lastGearKind": "pick"
+ "lastGearKind": "compare"
 }
