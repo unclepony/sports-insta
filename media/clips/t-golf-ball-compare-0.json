@@ -1,0 +1,35 @@
+{
+  "template": "tip-v2",
+  "scenes": [
+    {
+      "key": "intro",
+      "dur": 5
+    },
+    {
+      "key": "answer",
+      "dur": 10.2
+    },
+    {
+      "key": "outro",
+      "dur": 6.6
+    }
+  ],
+  "episode": "t-golf-ball-compare-0",
+  "format": "shorts",
+  "type": "tip",
+  "guide": "golf-ball-compare",
+  "madeAt": "2026-10-26",
+  "dataUpdated": "2026-10-16",
+  "voice": "ko-KR-Neural2-A",
+  "title": "프로V1 vs 프로V1x 차이는? | 골프공 고르기 #shorts",
+  "description": "▶ 골프공 실력별 비교·현재 가격: https://choicegolf.unclepony.com/g/golf-ball-compare?utm_source=youtube&utm_medium=video&utm_campaign=t-golf-ball-compare-0\n\nQ. 골프공, Pro V1과 Pro V1x 차이는?\nA. Pro V1x가 일반적으로 탄도가 더 높고 더 단단한 타구감을 가집니다. 스윙 속도가 빠르지 않다면 Pro V1이 무난합니다.\n\n초이스골프 가이드 \"골프공 추천: 초보·중급·투어볼 37종 비교 (타이틀리스트·캘러웨이·테일러메이드·스릭슨·브리지스톤·볼빅)\" 의 FAQ 내용을 요약했습니다. 가격·사양은 바뀔 수 있으니 링크에서 확인해 주세요.\n\n▶ 골프공 비교·현재 가격 확인 (초이스골프)\nhttps://choicegolf.unclepony.com/g/golf-ball-compare?utm_source=youtube&utm_medium=video&utm_campaign=t-golf-ball-compare-0\n\n그림은 초이스골프가 직접 그린 일러스트로 실제 제품과 다릅니다. 배경음도 직접 만들었으며, 한국어 내레이션은 음성 합성(TTS)입니다. 제조사·판매처의 사진·영상·로고는 사용하지 않았습니다.\n\n#골프 #골프공추천 #골프팁",
+  "tags": [
+    "프로V1 프로V1x 차이",
+    "골프공 추천",
+    "골프공 고르는 법",
+    "골프 팁",
+    "초이스골프"
+  ],
+  "categoryId": "17",
+  "link": "https://choicegolf.unclepony.com/g/golf-ball-compare?utm_source=youtube&utm_medium=video&utm_campaign=t-golf-ball-compare-0"
+}
