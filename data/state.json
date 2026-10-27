@@ -34,7 +34,8 @@
   "tour-pga-401850917": "2026-10-26",
   "tips-rangefinder": "2026-10-27",
   "pick-utility-recommend-intermediate": "2026-10-27",
-  "compare-bag": "2026-10-27"
+  "compare-bag": "2026-10-27",
+  "tips-glove": "2026-10-27"
  },
  "history": [
   {
@@ -351,7 +352,16 @@
    "format": "reel",
    "mediaId": "18163436281491974",
    "permalink": "https://www.instagram.com/reel/De-xbzMkgSy/"
+  },
+  {
+   "date": "2026-10-27",
+   "id": "tips-glove",
+   "kind": "tips",
+   "category": "glove",
+   "format": "reel",
+   "mediaId": "18001992774043715",
+   "permalink": "https://www.instagram.com/reel/De_hPJBCRP2/"
   }
  ],
- "lastGearKind": "compare"
+ "lastGearKind": "tips"
 }
