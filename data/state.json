@@ -36,7 +36,8 @@
   "pick-utility-recommend-intermediate": "2026-10-27",
   "compare-bag": "2026-10-27",
   "tips-glove": "2026-10-27",
-  "pick-utility-recommend-advanced": "2026-10-28"
+  "pick-utility-recommend-advanced": "2026-10-28",
+  "compare-glove": "2026-10-28"
  },
  "history": [
   {
@@ -371,7 +372,16 @@
    "format": "reel",
    "mediaId": "17954882058309653",
    "permalink": "https://www.instagram.com/reel/DfAPBQRiFV0/"
+  },
+  {
+   "date": "2026-10-28",
+   "id": "compare-glove-2026-10-28",
+   "kind": "compare",
+   "category": "glove",
+   "format": "reel",
+   "mediaId": "17915478051494470",
+   "permalink": "https://www.instagram.com/reel/DfAgqmklHUk/"
   }
  ],
- "lastGearKind": "pick"
+ "lastGearKind": "compare"
 }
