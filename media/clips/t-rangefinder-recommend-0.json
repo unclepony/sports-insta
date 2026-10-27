@@ -1,0 +1,35 @@
+{
+  "template": "tip-v2",
+  "scenes": [
+    {
+      "key": "intro",
+      "dur": 5.8
+    },
+    {
+      "key": "answer",
+      "dur": 12.3
+    },
+    {
+      "key": "outro",
+      "dur": 6.9
+    }
+  ],
+  "episode": "t-rangefinder-recommend-0",
+  "format": "shorts",
+  "type": "tip",
+  "guide": "rangefinder-recommend",
+  "madeAt": "2026-10-27",
+  "dataUpdated": "2026-10-16",
+  "voice": "ko-KR-Neural2-A",
+  "title": "거리측정기 10만 원대 vs 70만 원대 차이는? #shorts",
+  "description": "▶ 거리측정기 실력별 비교·현재 가격: https://choicegolf.unclepony.com/g/rangefinder-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-rangefinder-recommend-0\n\nQ. 거리측정기 가격대는 얼마나 하나요?\nA. 10만 원대 보급형부터 70~80만 원대 프리미엄까지 다양합니다. 측정 속도, 손떨림 보정, 경사 보정, 방수 여부에서 가격 차이가 납니다.\n\n초이스골프 가이드 \"골프 거리측정기 추천: 실력·가격대별 17종 비교 (부쉬넬·니콘·보이스캐디·골프버디·캐디톡)\" 의 FAQ 내용을 요약했습니다. 가격·사양은 바뀔 수 있으니 링크에서 확인해 주세요.\n\n▶ 거리측정기 비교·현재 가격 확인 (초이스골프)\nhttps://choicegolf.unclepony.com/g/rangefinder-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-rangefinder-recommend-0\n\n그림은 초이스골프가 직접 그린 일러스트로 실제 제품과 다릅니다. 배경음도 직접 만들었으며, 한국어 내레이션은 음성 합성(TTS)입니다. 제조사·판매처의 사진·영상·로고는 사용하지 않았습니다.\n\n#골프 #거리측정기추천 #골프팁",
+  "tags": [
+    "거리측정기 추천",
+    "거리측정기 가격",
+    "거리측정기 고르는 법",
+    "골프 팁",
+    "초이스골프"
+  ],
+  "categoryId": "17",
+  "link": "https://choicegolf.unclepony.com/g/rangefinder-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-rangefinder-recommend-0"
+}
