@@ -178,6 +178,26 @@ async function sendMetrics({ date: day, account, posts }) {
   console.log(`대시보드 지표 ${rows.length}줄 전송: ${res.status}`);
 }
 
+// 릴스 종류별 평균 — 올린 지 48시간 넘은 것만(도달이 거의 다 찬 뒤) 비교해 배분 판단에 쓴다
+function kindSummary(ins) {
+  const now = Date.parse(ins.capturedAt || '') || Date.now();
+  const groups = {};
+  for (const x of ins.posts) {
+    if ((x.format || (x.type === 'REELS' ? 'reel' : '')) !== 'reel' || !x.kind) continue;
+    if (now - Date.parse(x.at.replace(/\+0000$/, 'Z')) < 48 * 3600e3) continue;
+    (groups[x.kind] ||= []).push(x);
+  }
+  const avg = (a) => (a.length ? a.reduce((s, v) => s + v, 0) / a.length : null);
+  const rows = Object.entries(groups).sort((a, b) => b[1].length - a[1].length).map(([k, xs]) => {
+    const seen = xs.filter((x) => x.reach > 0);
+    const reach = avg(xs.map((x) => x.reach || 0));
+    const skip = avg(seen.map((x) => x.reels_skip_rate).filter((v) => typeof v === 'number'));
+    const watch = avg(seen.map((x) => x.ig_reels_avg_watch_time).filter((v) => typeof v === 'number'));
+    return `| ${k} | ${xs.length} | ${Math.round(reach)} | ${skip == null ? '-' : skip.toFixed(1) + '%'} | ${watch == null ? '-' : (watch / 1000).toFixed(1) + '초'} | ${xs.reduce((s, x) => s + (x.saved || 0), 0)} | ${xs.reduce((s, x) => s + (x.shares || 0), 0)} |`;
+  });
+  return rows.length ? `\n## 릴스 종류별 평균 (최근 30개 중 올린 지 48시간 지난 것)\n| 종류 | 편 | 도달 평균 | 첫 3초 건너뛰기 | 평균 시청 | 저장 | 공유 |\n|---|---|---|---|---|---|---|\n${rows.join('\n')}\n` : '';
+}
+
 async function report() {
   const t = existsSync(TODAY) ? readJson(TODAY) : { status: 'none' };
   const insFile = new URL(`data/insights/${date}.json`, ROOT);
@@ -197,6 +217,7 @@ async function report() {
     ins?.account?.yesterday ? `- 어제(${ins.account.yesterday.day} KST 하루): 도달 ${ins.account.yesterday.reach ?? '?'} · 프로필 방문 ${ins.account.yesterday.profile_views ?? '?'} · 링크 클릭 ${ins.account.yesterday.profile_links_taps ?? ins.account.yesterday.website_clicks ?? '?'}` : '',
     ins?.account && 'website' in ins.account ? `- 프로필 링크: ${ins.account.website ?? '확인 못 함'}${ins.account.website && !/utm_source=instagram/.test(ins.account.website) ? ' (utm 없음 — 사이트 통계는 인스타 앱 브라우저를 UA 로 \'인스타그램\' 유입으로 셈, golf-price functions/api/hit.js)' : ''}` : '',
     ins?.posts?.length ? `\n## 최근 게시물 (30일)\n| 날짜 | 게시물 | 형식 | 도달 | 저장 | 공유 |\n|---|---|---|---|---|---|\n${ins.posts.slice(0, 10).map((x) => `| ${x.at.slice(0, 10)} | ${x.post || '-'} | ${x.format || x.type} | ${x.reach ?? '-'} | ${x.saved ?? '-'} | ${x.shares ?? '-'} |`).join('\n')}` : '',
+    ins?.posts?.length ? kindSummary(ins) : '',
     ins?.posts?.some((x) => x.recentComments?.length) ? `\n## 최근 댓글 (정정 요청 확인용)\n${ins.posts.flatMap((x) => (x.recentComments || []).map((c) => `- ${x.post || x.id}: ${c.text.replace(/\s+/g, ' ').slice(0, 120)}`)).slice(0, 20).join('\n')}` : '',
     '',
     `되돌리기: 게시물 삭제는 \`node src/daily.mjs delete <미디어 ID>\` 또는 인스타 앱에서. 코드 변경은 git revert.`,
