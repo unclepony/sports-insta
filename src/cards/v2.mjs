@@ -123,17 +123,17 @@ ${disclosure ? `<div style="margin:auto 0 150px;font-size:24px;line-height:1.6;c
 }
 
 // 용품 가격 비교 표지: "최저가와 최고가 차이 N원" 후킹
-export function compareCoverV2(o, { kicker, line1, line2, hl, low, high, checkedText, photo }) {
+// 2026-10-30 실험 E4: 표지에 모델별 가격 목록을 바로 적는다(실력별 추천 표지처럼 첫 화면에 답). 가장 싼·비싼 두 숫자 대신 목록.
+//  10/27~29 가격 비교 릴스 4편 도달 16~55(같은 날 다른 종류 81~106), 첫 3초 건너뛰기 74~94%. 되돌리기: revert.
+export function compareCoverV2(o, { kicker, line1, line2, hl, rows, checkedText, photo }) {
   const l2 = hl && line2.includes(hl) ? esc(line2).replace(esc(hl), `<span class="hl">${esc(hl)}</span>`) : esc(line2);
   return page({ ...o, photo, source: '쿠팡 판매가(초이스골프 확인)', swipe: '넘겨서 모델별 가격', body: `
 <div style="margin-top:56px"><span class="chip">${esc(kicker)}</span></div>
 <div class="disp" style="margin-top:34px;font-size:112px">${esc(line1)}</div>
 <div class="disp" style="margin-top:10px;font-size:104px">${l2}</div>
-<div style="margin-top:auto;margin-bottom:170px">
-<div style="display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--gold)">
-<div style="padding-top:18px"><div style="font-size:26px;color:var(--muted)">가장 싼 모델</div><div class="num" style="font-size:84px;font-weight:800;font-style:italic">${esc(low)}</div></div>
-<div style="padding-top:18px"><div style="font-size:26px;color:var(--muted)">가장 비싼 모델</div><div class="num" style="font-size:84px;font-weight:800;font-style:italic">${esc(high)}</div></div></div>
-<div style="margin-top:14px;font-size:24px;color:var(--muted)">${esc(checkedText)}</div></div>` });
+<div style="margin:auto 0 170px;border-top:2px solid var(--gold)">
+${rows.map((r, i) => `<div style="display:flex;gap:18px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line)"><span class="num" style="font-size:36px;font-weight:800;color:var(--gold);width:40px;flex:none">${i + 1}</span><span style="flex:1;font-size:28px;font-weight:700;line-height:1.3">${esc(r.name)}</span><span class="num" style="flex:none;font-size:40px;font-weight:800;font-style:italic">${esc(r.price)}</span></div>`).join('')}
+<div style="margin-top:12px;font-size:24px;color:var(--muted)">${esc(checkedText)}</div></div>` });
 }
 
 export function productV2(o, { index, count, name, price, rocket, checkedText, summary, points, rankLabel }) {

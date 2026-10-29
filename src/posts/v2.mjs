@@ -121,8 +121,8 @@ export function comparePostV2(gear, catId, date, src = 'gear') {
   const F = (p, path, value, extra = {}) => ({ src, path: ['products', { id: p.id }, ...path], value, ...extra });
   const cards = [
     { name: 'cover', make: (o) => compareCoverV2(o, { kicker: `${cat.name} ${items.length}종 · 쿠팡 판매가`, line1: `${cat.name} 가격,`,
-        line2: `최대 ${gapMan}만원 차이`, hl: `${gapMan}만원`, low: won(low.pick.price), high: won(high.pick.price), checkedText: `${md(checked)} 확인 가격 · 옵션·시기에 따라 다를 수 있음`, photo: photoFor({ category: catId }) }),
-      facts: [F(low, ['pick', 'price'], won(low.pick.price), { expect: won }), F(high, ['pick', 'price'], won(high.pick.price), { expect: won })] },
+        line2: `최대 ${gapMan}만원 차이`, hl: `${gapMan}만원`, rows: items.map((p) => ({ name: p.name, price: won(p.pick.price) })), checkedText: `${md(checked)} 확인 가격 · 옵션·시기에 따라 다를 수 있음`, photo: photoFor({ category: catId }) }),
+      facts: items.flatMap((p) => [F(p, ['name'], p.name), F(p, ['pick', 'price'], won(p.pick.price), { expect: won })]) },
     ...items.map((p, i) => ({ name: `item-${i + 1}`, make: (o) => productV2(o, { index: i + 1, count: items.length, name: p.name, price: won(p.pick.price), rocket: p.pick.rocket,
         checkedText: `${md(p.pick.checked)} 쿠팡 판매가`, summary: p.summary, points: p.points.slice(0, 2), rankLabel: i === 0 ? '가장 싼 모델' : i === items.length - 1 ? '가장 비싼 모델' : '' }),
       facts: [F(p, ['name'], p.name), F(p, ['pick', 'price'], won(p.pick.price), { expect: won }), F(p, ['pick', 'checked'], md(p.pick.checked), { expect: md }), F(p, ['summary'], p.summary)] })),
