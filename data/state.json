@@ -43,7 +43,8 @@
   "compare-gps": "2026-10-29",
   "tips-launch": "2026-10-29",
   "pick-utility-recommend-pro": "2026-10-29",
-  "compare-practice": "2026-10-29"
+  "compare-practice": "2026-10-29",
+  "tips-gps": "2026-10-30"
  },
  "history": [
   {
@@ -441,7 +442,16 @@
    "format": "reel",
    "mediaId": "18130380523867385",
    "permalink": "https://www.instagram.com/reel/DfEyP3yoPTX/"
+  },
+  {
+   "date": "2026-10-30",
+   "id": "tips-gps",
+   "kind": "tips",
+   "category": "gps",
+   "format": "reel",
+   "mediaId": "17912175159481741",
+   "permalink": "https://www.instagram.com/reel/DfFf7ipDFbR/"
   }
  ],
- "lastGearKind": "compare"
+ "lastGearKind": "tips"
 }
