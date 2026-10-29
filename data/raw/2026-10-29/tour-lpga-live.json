@@ -1,0 +1,483 @@
+{
+ "fetchedAt": "2026-10-29T02:36:10.488Z",
+ "source": "ESPN",
+ "kind": "live",
+ "league": "lpga",
+ "id": "401835174",
+ "name": "Maybank Championship",
+ "start": "2026-10-28T04:00Z",
+ "end": "2026-11-01T04:00Z",
+ "state": "in",
+ "detail": "Round 1 - In Progress",
+ "purse": 3000000,
+ "course": {
+  "name": "Kuala Lumpur Golf and Country Club (West Course)",
+  "par": 72,
+  "yards": 6536
+ },
+ "players": [
+  {
+   "id": "8931",
+   "name": "Perrine Delacour",
+   "country": "France",
+   "amateur": false,
+   "pos": "T1",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -5,
+   "toParText": "E",
+   "total": 39,
+   "rounds": [
+    39
+   ],
+   "earnings": 0,
+   "thru": 11
+  },
+  {
+   "id": "4567744",
+   "name": "Pauline Roussin-Bouchard",
+   "country": "France",
+   "amateur": false,
+   "pos": "T1",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -5,
+   "toParText": "E",
+   "total": 39,
+   "rounds": [
+    39
+   ],
+   "earnings": 0,
+   "thru": 11
+  },
+  {
+   "id": "5157244",
+   "name": "Julia López Ramirez",
+   "country": "Spain",
+   "amateur": false,
+   "pos": "T1",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -5,
+   "toParText": "E",
+   "total": 36,
+   "rounds": [
+    36
+   ],
+   "earnings": 0,
+   "thru": 10
+  },
+  {
+   "id": "11275",
+   "name": "Sophia Schubert",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -4,
+   "toParText": "E",
+   "total": 40,
+   "rounds": [
+    40
+   ],
+   "earnings": 0,
+   "thru": 11
+  },
+  {
+   "id": "5141008",
+   "name": "Youmin Hwang",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -4,
+   "toParText": "E",
+   "total": 37,
+   "rounds": [
+    37
+   ],
+   "earnings": 0,
+   "thru": 10
+  },
+  {
+   "id": "5241249",
+   "name": "Cassie Porter",
+   "country": "Australia",
+   "amateur": false,
+   "pos": "T6",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -3,
+   "toParText": "E",
+   "total": 41,
+   "rounds": [
+    41
+   ],
+   "earnings": 0,
+   "thru": 11
+  },
+  {
+   "id": "11038",
+   "name": "Gina Kim",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T6",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -3,
+   "toParText": "E",
+   "total": 38,
+   "rounds": [
+    38
+   ],
+   "earnings": 0,
+   "thru": 10
+  },
+  {
+   "id": "11315",
+   "name": "Liyana Durisic",
+   "country": "Malaysia",
+   "amateur": false,
+   "pos": "T6",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -3,
+   "toParText": "E",
+   "total": 33,
+   "rounds": [
+    33
+   ],
+   "earnings": 0,
+   "thru": 9
+  },
+  {
+   "id": "5270114",
+   "name": "Achiraya Sriwong",
+   "country": "Thailand",
+   "amateur": false,
+   "pos": "T6",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -3,
+   "toParText": "E",
+   "total": 29,
+   "rounds": [
+    29
+   ],
+   "earnings": 0,
+   "thru": 8
+  },
+  {
+   "id": "9758",
+   "name": "Jin Young Ko",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T6",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -3,
+   "toParText": "E",
+   "total": 26,
+   "rounds": [
+    26
+   ],
+   "earnings": 0,
+   "thru": 7
+  },
+  {
+   "id": "4569918",
+   "name": "Hinako Shibuno",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "T6",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -3,
+   "toParText": "E",
+   "total": 26,
+   "rounds": [
+    26
+   ],
+   "earnings": 0,
+   "thru": 7
+  },
+  {
+   "id": "9945",
+   "name": "Hye-Jin Choi",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T6",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -3,
+   "toParText": "E",
+   "total": 18,
+   "rounds": [
+    18
+   ],
+   "earnings": 0,
+   "thru": 5
+  },
+  {
+   "id": "4473",
+   "name": "Yu Liu",
+   "country": "China",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 46,
+   "rounds": [
+    46
+   ],
+   "earnings": 0,
+   "thru": 12
+  },
+  {
+   "id": "8806",
+   "name": "Jing Yan",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 46,
+   "rounds": [
+    46
+   ],
+   "earnings": 0,
+   "thru": 12
+  },
+  {
+   "id": "8898",
+   "name": "Yan Liu",
+   "country": "China",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 42,
+   "rounds": [
+    42
+   ],
+   "earnings": 0,
+   "thru": 11
+  },
+  {
+   "id": "4355566",
+   "name": "Alexa Pano",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 39,
+   "rounds": [
+    39
+   ],
+   "earnings": 0,
+   "thru": 10
+  },
+  {
+   "id": "4708891",
+   "name": "Narin An",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 39,
+   "rounds": [
+    39
+   ],
+   "earnings": 0,
+   "thru": 10
+  },
+  {
+   "id": "4413602",
+   "name": "Erika Hara",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 34,
+   "rounds": [
+    34
+   ],
+   "earnings": 0,
+   "thru": 9
+  },
+  {
+   "id": "10969",
+   "name": "Karis Davidson",
+   "country": "Australia",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 30,
+   "rounds": [
+    30
+   ],
+   "earnings": 0,
+   "thru": 8
+  },
+  {
+   "id": "4708901",
+   "name": "Maja Stark",
+   "country": "Sweden",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 27,
+   "rounds": [
+    27
+   ],
+   "earnings": 0,
+   "thru": 7
+  },
+  {
+   "id": "5195963",
+   "name": "Minji Kang",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 23,
+   "rounds": [
+    23
+   ],
+   "earnings": 0,
+   "thru": 6
+  },
+  {
+   "id": "5220705",
+   "name": "Anna Huang",
+   "country": "Canada",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 19,
+   "rounds": [
+    19
+   ],
+   "earnings": 0,
+   "thru": 5
+  },
+  {
+   "id": "5084271",
+   "name": "Arpichaya Yubol",
+   "country": "Thailand",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 19,
+   "rounds": [
+    19
+   ],
+   "earnings": 0,
+   "thru": 5
+  },
+  {
+   "id": "7553",
+   "name": "Jodi Ewart Shadoff",
+   "country": "England",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 14,
+   "rounds": [
+    14
+   ],
+   "earnings": 0,
+   "thru": 4
+  },
+  {
+   "id": "7774",
+   "name": "Charley Hull",
+   "country": "England",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 14,
+   "rounds": [
+    14
+   ],
+   "earnings": 0,
+   "thru": 4
+  },
+  {
+   "id": "11425",
+   "name": "Yuri Yoshida",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 14,
+   "rounds": [
+    14
+   ],
+   "earnings": 0,
+   "thru": 4
+  },
+  {
+   "id": "7424",
+   "name": "Carlota Ciganda",
+   "country": "Spain",
+   "amateur": false,
+   "pos": "T13",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -2,
+   "toParText": "E",
+   "total": 11,
+   "rounds": [
+    11
+   ],
+   "earnings": 0,
+   "thru": 3
+  }
+ ],
+ "next": {
+  "name": "TOTO Japan Classic",
+  "start": "2026-11-05T08:00Z"
+ }
+}

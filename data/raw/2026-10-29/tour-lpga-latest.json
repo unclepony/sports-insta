@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-10-28T18:36:46.862Z",
+ "fetchedAt": "2026-10-29T02:36:10.449Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "lpga",
@@ -1692,7 +1692,7 @@
   }
  ],
  "next": {
-  "name": "Maybank Championship",
-  "start": "2026-10-29T07:00Z"
+  "name": "TOTO Japan Classic",
+  "start": "2026-11-05T08:00Z"
  }
 }
