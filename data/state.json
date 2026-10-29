@@ -44,7 +44,8 @@
   "tips-launch": "2026-10-29",
   "pick-utility-recommend-pro": "2026-10-29",
   "compare-practice": "2026-10-29",
-  "tips-gps": "2026-10-30"
+  "tips-gps": "2026-10-30",
+  "pick-womens-fairway-wood-recommend-intermediate": "2026-10-30"
  },
  "history": [
   {
@@ -451,7 +452,16 @@
    "format": "reel",
    "mediaId": "17912175159481741",
    "permalink": "https://www.instagram.com/reel/DfFf7ipDFbR/"
+  },
+  {
+   "date": "2026-10-30",
+   "id": "pick-womens-fairway-wood-recommend-intermediate",
+   "kind": "pick",
+   "category": "wood",
+   "format": "reel",
+   "mediaId": "18033778958883428",
+   "permalink": "https://www.instagram.com/reel/DfFryvqjRdi/"
   }
  ],
- "lastGearKind": "tips"
+ "lastGearKind": "pick"
 }
