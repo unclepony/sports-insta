@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-10-29T02:36:10.330Z",
+ "fetchedAt": "2026-10-29T10:21:48.903Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "pga",
@@ -2325,7 +2325,7 @@
   }
  ],
  "next": {
-  "name": "VidantaWorld Mexico Open",
-  "start": "2026-10-29T07:00Z"
+  "name": "World Wide Technology Championship",
+  "start": "2026-11-05T08:00Z"
  }
 }
