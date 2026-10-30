@@ -48,7 +48,8 @@
   "pick-womens-fairway-wood-recommend-intermediate": "2026-10-30",
   "compare-launch": "2026-10-30",
   "tips-practice": "2026-10-30",
-  "pick-womens-fairway-wood-recommend-advanced": "2026-10-31"
+  "pick-womens-fairway-wood-recommend-advanced": "2026-10-31",
+  "pick-iron-recommend-beginner": "2026-10-31"
  },
  "history": [
   {
@@ -491,6 +492,15 @@
    "format": "reel",
    "mediaId": "17958934827259211",
    "permalink": "https://www.instagram.com/reel/DfIDCt5lZs-/"
+  },
+  {
+   "date": "2026-10-31",
+   "id": "pick-iron-recommend-beginner",
+   "kind": "pick",
+   "category": "iron",
+   "format": "reel",
+   "mediaId": "18079199354732997",
+   "permalink": "https://www.instagram.com/reel/DfIOAcbDBU-/"
   }
  ],
  "lastGearKind": "pick"
