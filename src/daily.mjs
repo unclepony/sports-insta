@@ -178,6 +178,13 @@ async function sendMetrics({ date: day, account, posts }) {
   console.log(`대시보드 지표 ${rows.length}줄 전송: ${res.status}`);
 }
 
+// 지표를 모은 시각 기준 올린 지 몇 시간
+function ageHours(ins, x) {
+  const now = Date.parse(ins.capturedAt || '');
+  const at = Date.parse(x.at.replace(/\+0000$/, 'Z'));
+  return Number.isFinite(now) && Number.isFinite(at) ? `${Math.max(0, Math.round((now - at) / 3600e3))}시간` : '-';
+}
+
 // 릴스 종류별 평균 — 올린 지 48시간 넘은 것만(도달이 거의 다 찬 뒤) 비교해 배분 판단에 쓴다
 function kindSummary(ins) {
   const now = Date.parse(ins.capturedAt || '') || Date.now();
@@ -216,7 +223,8 @@ async function report() {
     ins ? `## 계정\n- 팔로워 ${ins.account.followers ?? '?'} · 하루 도달 ${ins.account.reach ?? '?'} · 프로필 방문 ${ins.account.profile_views ?? '?'} · 링크 클릭 ${ins.account.profile_links_taps ?? ins.account.website_clicks ?? '?'}` : '',
     ins?.account?.yesterday ? `- 어제(${ins.account.yesterday.day} KST 하루): 도달 ${ins.account.yesterday.reach ?? '?'} · 프로필 방문 ${ins.account.yesterday.profile_views ?? '?'} · 링크 클릭 ${ins.account.yesterday.profile_links_taps ?? ins.account.yesterday.website_clicks ?? '?'}` : '',
     ins?.account && 'website' in ins.account ? `- 프로필 링크: ${ins.account.website ?? '확인 못 함'}${ins.account.website && !/utm_source=instagram/.test(ins.account.website) ? ' (utm 없음 — 사이트 통계는 인스타 앱 브라우저를 UA 로 \'인스타그램\' 유입으로 셈, golf-price functions/api/hit.js)' : ''}` : '',
-    ins?.posts?.length ? `\n## 최근 게시물 (30일)\n| 날짜 | 게시물 | 형식 | 도달 | 저장 | 공유 |\n|---|---|---|---|---|---|\n${ins.posts.slice(0, 10).map((x) => `| ${x.at.slice(0, 10)} | ${x.post || '-'} | ${x.format || x.type} | ${x.reach ?? '-'} | ${x.saved ?? '-'} | ${x.shares ?? '-'} |`).join('\n')}` : '',
+    // '올린 뒤'는 지표를 모은 시각 기준 — 몇 시간 안 된 게시물의 도달 0·5 를 급락으로 잘못 읽지 않게(2026-10-31)
+    ins?.posts?.length ? `\n## 최근 게시물 (30일)\n| 날짜 | 게시물 | 형식 | 올린 뒤 | 도달 | 첫 3초 건너뛰기 | 저장 | 공유 |\n|---|---|---|---|---|---|---|---|\n${ins.posts.slice(0, 10).map((x) => `| ${x.at.slice(0, 10)} | ${x.post || '-'} | ${x.format || x.type} | ${ageHours(ins, x)} | ${x.reach ?? '-'} | ${x.reach > 0 && typeof x.reels_skip_rate === 'number' ? x.reels_skip_rate + '%' : '-'} | ${x.saved ?? '-'} | ${x.shares ?? '-'} |`).join('\n')}` : '',
     ins?.posts?.length ? kindSummary(ins) : '',
     ins?.posts?.some((x) => x.recentComments?.length) ? `\n## 최근 댓글 (정정 요청 확인용)\n${ins.posts.flatMap((x) => (x.recentComments || []).map((c) => `- ${x.post || x.id}: ${c.text.replace(/\s+/g, ' ').slice(0, 120)}`)).slice(0, 20).join('\n')}` : '',
     '',
