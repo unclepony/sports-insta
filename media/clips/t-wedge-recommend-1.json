@@ -1,0 +1,35 @@
+{
+  "template": "tip-v2",
+  "scenes": [
+    {
+      "key": "intro",
+      "dur": 4.4
+    },
+    {
+      "key": "answer",
+      "dur": 9
+    },
+    {
+      "key": "outro",
+      "dur": 6.4
+    }
+  ],
+  "episode": "t-wedge-recommend-1",
+  "format": "shorts",
+  "type": "tip",
+  "guide": "wedge-recommend",
+  "madeAt": "2026-10-31",
+  "dataUpdated": "2026-10-16",
+  "voice": "ko-KR-Neural2-A",
+  "title": "웨지 교체 시기는 언제? 그루브를 보세요 #shorts",
+  "description": "▶ 웨지 실력별 비교·현재 가격: https://choicegolf.unclepony.com/g/wedge-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-wedge-recommend-1\n\nQ. 웨지는 얼마나 자주 바꾸나요?\nA. 자주 치는 골퍼는 그루브가 닳아 스핀이 줄면 교체를 고려합니다.\n\n초이스골프 가이드 \"웨지 추천: 초보~프로 36종 비교 (RTZ·오퍼스·MG5·S159·보키)\" 의 FAQ 내용을 요약했습니다. 가격·사양은 바뀔 수 있으니 링크에서 확인해 주세요.\n\n▶ 웨지 비교·현재 가격 확인 (초이스골프)\nhttps://choicegolf.unclepony.com/g/wedge-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-wedge-recommend-1\n\n그림은 초이스골프가 직접 그린 일러스트로 실제 제품과 다릅니다. 배경음도 직접 만들었으며, 한국어 내레이션은 음성 합성(TTS)입니다. 제조사·판매처의 사진·영상·로고는 사용하지 않았습니다.\n\n#골프 #웨지추천 #골프팁",
+  "tags": [
+    "웨지 추천",
+    "웨지 고르는 법",
+    "웨지 교체 시기",
+    "골프 팁",
+    "초이스골프"
+  ],
+  "categoryId": "17",
+  "link": "https://choicegolf.unclepony.com/g/wedge-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-wedge-recommend-1"
+}
