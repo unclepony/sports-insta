@@ -205,6 +205,24 @@ function kindSummary(ins) {
   return rows.length ? `\n## 릴스 종류별 평균 (최근 30개 중 올린 지 48시간 지난 것)\n| 종류 | 편 | 도달 평균 | 첫 3초 건너뛰기 | 평균 시청 | 저장 | 공유 |\n|---|---|---|---|---|---|---|\n${rows.join('\n')}\n` : '';
 }
 
+// 종류별 남은 후보(30일 반복 금지 안) — 10/31 compare·tips 가 다 써서 pick 만 나간 것을 보고서에서 바로 보이게(2026-11-01)
+function remainingSummary() {
+  try {
+    const rawDir = new URL(`data/raw/${date}/`, ROOT);
+    if (!existsSync(rawDir)) return '';
+    const state = loadState();
+    const list = candidates(loadRaw(rawDir), date).filter((p) => p.kind !== 'tour');
+    const kinds = [...new Set(list.map((p) => p.kind))];
+    const rows = kinds.map((k) => {
+      const all = [...new Set(list.filter((p) => p.kind === k).map((p) => baseId(p.id)))];
+      const used = all.map((id) => state.posted?.[id]).filter((d) => d && daysBetween(d, date) < 30).sort();
+      const next = used.length === all.length && used.length ? new Date(new Date(`${used[0]}T00:00:00Z`).getTime() + 30 * 864e5).toISOString().slice(0, 10) : '-';
+      return `| ${k} | ${all.length - used.length} / ${all.length} | ${next} |`;
+    });
+    return rows.length ? `\n## 남은 후보 (30일 안에 안 올린 것)\n| 종류 | 남은 / 전체 | 다 썼으면 다시 쓸 수 있는 날 |\n|---|---|---|\n${rows.join('\n')}\n` : '';
+  } catch (e) { return `\n- 남은 후보 계산 실패: ${e.message}\n`; }
+}
+
 async function report() {
   const t = existsSync(TODAY) ? readJson(TODAY) : { status: 'none' };
   const insFile = new URL(`data/insights/${date}.json`, ROOT);
@@ -226,6 +244,7 @@ async function report() {
     // '올린 뒤'는 지표를 모은 시각 기준 — 몇 시간 안 된 게시물의 도달 0·5 를 급락으로 잘못 읽지 않게(2026-10-31)
     ins?.posts?.length ? `\n## 최근 게시물 (30일)\n| 날짜 | 게시물 | 형식 | 올린 뒤 | 도달 | 첫 3초 건너뛰기 | 저장 | 공유 |\n|---|---|---|---|---|---|---|---|\n${ins.posts.slice(0, 10).map((x) => `| ${x.at.slice(0, 10)} | ${x.post || '-'} | ${x.format || x.type} | ${ageHours(ins, x)} | ${x.reach ?? '-'} | ${x.reach > 0 && typeof x.reels_skip_rate === 'number' ? x.reels_skip_rate + '%' : '-'} | ${x.saved ?? '-'} | ${x.shares ?? '-'} |`).join('\n')}` : '',
     ins?.posts?.length ? kindSummary(ins) : '',
+    remainingSummary(),
     ins?.posts?.some((x) => x.recentComments?.length) ? `\n## 최근 댓글 (정정 요청 확인용)\n${ins.posts.flatMap((x) => (x.recentComments || []).map((c) => `- ${x.post || x.id}: ${c.text.replace(/\s+/g, ' ').slice(0, 120)}`)).slice(0, 20).join('\n')}` : '',
     '',
     `되돌리기: 게시물 삭제는 \`node src/daily.mjs delete <미디어 ID>\` 또는 인스타 앱에서. 코드 변경은 git revert.`,
