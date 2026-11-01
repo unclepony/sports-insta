@@ -239,7 +239,8 @@ async function report() {
     ...(t.rejected || []).map((r) => `- 검증에서 거절: \`${r.id}\` — ${r.errors.slice(0, 2).join(' / ')}`),
     '',
     ins ? `## 계정\n- 팔로워 ${ins.account.followers ?? '?'} · 하루 도달 ${ins.account.reach ?? '?'} · 프로필 방문 ${ins.account.profile_views ?? '?'} · 링크 클릭 ${ins.account.profile_links_taps ?? ins.account.website_clicks ?? '?'}` : '',
-    ins?.account?.yesterday ? `- 어제(${ins.account.yesterday.day} KST 하루): 도달 ${ins.account.yesterday.reach ?? '?'} · 프로필 방문 ${ins.account.yesterday.profile_views ?? '?'} · 링크 클릭 ${ins.account.yesterday.profile_links_taps ?? ins.account.yesterday.website_clicks ?? '?'}` : '',
+    // 어제 값은 늦은 새벽 수집이면 아직 덜 쌓인 값(10/31: 03시 104 → 다음 날 384) — 수집 시각과 '잠정'을 붙인다(2026-11-02)
+    ins?.account?.yesterday ? `- 어제(${ins.account.yesterday.day} KST 하루): 도달 ${ins.account.yesterday.reach ?? '?'} · 프로필 방문 ${ins.account.yesterday.profile_views ?? '?'} · 링크 클릭 ${ins.account.yesterday.profile_links_taps ?? ins.account.yesterday.website_clicks ?? '?'}${yesterdayNote(ins)}` : '',
     ins?.account && 'website' in ins.account ? `- 프로필 링크: ${ins.account.website ?? '확인 못 함'}${ins.account.website && !/utm_source=instagram/.test(ins.account.website) ? ' (utm 없음 — 사이트 통계는 인스타 앱 브라우저를 UA 로 \'인스타그램\' 유입으로 셈, golf-price functions/api/hit.js)' : ''}` : '',
     // '올린 뒤'는 지표를 모은 시각 기준 — 몇 시간 안 된 게시물의 도달 0·5 를 급락으로 잘못 읽지 않게(2026-10-31)
     ins?.posts?.length ? `\n## 최근 게시물 (30일)\n| 날짜 | 게시물 | 형식 | 올린 뒤 | 도달 | 첫 3초 건너뛰기 | 저장 | 공유 |\n|---|---|---|---|---|---|---|---|\n${ins.posts.slice(0, 10).map((x) => `| ${x.at.slice(0, 10)} | ${x.post || '-'} | ${x.format || x.type} | ${ageHours(ins, x)} | ${x.reach ?? '-'} | ${x.reach > 0 && typeof x.reels_skip_rate === 'number' ? x.reels_skip_rate + '%' : '-'} | ${x.saved ?? '-'} | ${x.shares ?? '-'} |`).join('\n')}` : '',
@@ -279,3 +280,14 @@ const cmd = process.argv[2];
 const steps = { build, publish, insights, report, delete: () => remove(process.argv[3]) };
 if (!steps[cmd]) { console.error(`사용: node src/daily.mjs ${Object.keys(steps).join('|')}`); process.exit(2); }
 await steps[cmd]();
+
+// 어제 하루 값의 수집 시각(KST)과, 하루가 끝난 뒤 24시간이 안 됐으면 '잠정' 표시
+function yesterdayNote(ins) {
+  const day = ins?.account?.yesterday?.day;
+  const at = Date.parse(ins?.capturedAt || '');
+  if (!day || !Number.isFinite(at)) return '';
+  const dayEnd = Date.parse(`${day}T15:00:00Z`); // 다음 날 00:00 KST
+  const kst = new Date(at + 9 * 3600e3).toISOString().slice(5, 16).replace('T', ' ').replace('-', '/');
+  const h = Math.floor((at - dayEnd) / 3600e3);
+  return h < 24 ? ` (수집 ${kst} KST, 하루 끝난 뒤 ${h}시간 — 잠정, 다음 수집에서 늘 수 있음)` : ` (수집 ${kst} KST)`;
+}
