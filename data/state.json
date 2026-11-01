@@ -56,7 +56,8 @@
   "pick-iron-recommend-intermediate": "2026-11-01",
   "pick-womens-utility-recommend-intermediate": "2026-11-01",
   "tour-lpga-401835174": "2026-11-01",
-  "pick-iron-recommend-advanced": "2026-11-02"
+  "pick-iron-recommend-advanced": "2026-11-02",
+  "pick-womens-utility-recommend-advanced": "2026-11-02"
  },
  "history": [
   {
@@ -571,6 +572,15 @@
    "format": "reel",
    "mediaId": "17998665075019622",
    "permalink": "https://www.instagram.com/reel/DfNNROpE0YE/"
+  },
+  {
+   "date": "2026-11-02",
+   "id": "pick-womens-utility-recommend-advanced",
+   "kind": "pick",
+   "category": "utility",
+   "format": "reel",
+   "mediaId": "18085546988329100",
+   "permalink": "https://www.instagram.com/reel/DfNWjpLDGkv/"
   }
  ],
  "lastGearKind": "pick"
