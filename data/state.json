@@ -55,7 +55,8 @@
   "pick-womens-fairway-wood-recommend-pro": "2026-11-01",
   "pick-iron-recommend-intermediate": "2026-11-01",
   "pick-womens-utility-recommend-intermediate": "2026-11-01",
-  "tour-lpga-401835174": "2026-11-01"
+  "tour-lpga-401835174": "2026-11-01",
+  "pick-iron-recommend-advanced": "2026-11-02"
  },
  "history": [
   {
@@ -561,6 +562,15 @@
    "format": "reel",
    "mediaId": "17995129038048655",
    "permalink": "https://www.instagram.com/reel/DfMjQ9cDk7f/"
+  },
+  {
+   "date": "2026-11-02",
+   "id": "pick-iron-recommend-advanced",
+   "kind": "pick",
+   "category": "iron",
+   "format": "reel",
+   "mediaId": "17998665075019622",
+   "permalink": "https://www.instagram.com/reel/DfNNROpE0YE/"
   }
  ],
  "lastGearKind": "pick"
