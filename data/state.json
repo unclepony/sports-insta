@@ -54,7 +54,8 @@
   "pick-wedge-recommend-beginner": "2026-10-31",
   "pick-womens-fairway-wood-recommend-pro": "2026-11-01",
   "pick-iron-recommend-intermediate": "2026-11-01",
-  "pick-womens-utility-recommend-intermediate": "2026-11-01"
+  "pick-womens-utility-recommend-intermediate": "2026-11-01",
+  "tour-lpga-401835174": "2026-11-01"
  },
  "history": [
   {
@@ -551,6 +552,15 @@
    "format": "reel",
    "mediaId": "17916727590554858",
    "permalink": "https://www.instagram.com/reel/DfLp6DzidXt/"
+  },
+  {
+   "date": "2026-11-01",
+   "id": "tour-lpga-401835174",
+   "kind": "tour",
+   "category": null,
+   "format": "reel",
+   "mediaId": "17995129038048655",
+   "permalink": "https://www.instagram.com/reel/DfMjQ9cDk7f/"
   }
  ],
  "lastGearKind": "pick"
