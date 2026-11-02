@@ -104,6 +104,8 @@ export async function accountInsights(cfg) {
   }
   // 프로필 링크 주소(utm_source=instagram 이 붙었는지 확인용, 2026-10-26). 실패해도 다른 값에 영향 없게 따로 부른다.
   try { out.website = (await call('GET', cfg.userId, { fields: 'website' }, cfg)).website ?? null; } catch { out.website = null; }
+  // 프로필 소개 글(손님이 링크 누르기 전에 보는 문장) — 사장님 손 없이 매일 점검하려고 기록(2026-11-03, in-1103-1). 실패해도 다른 값에 영향 없게 따로 부른다.
+  try { out.biography = (await call('GET', cfg.userId, { fields: 'biography' }, cfg)).biography ?? null; } catch { out.biography = null; }
   // 어제 하루(KST 00:00~24:00) 고정 창 — 수집 시각이 날마다 달라 24시간 창이 겹치는 문제를 없앤다(2026-10-26).
   const end = new Date(`${kstToday()}T00:00:00+09:00`).getTime() / 1000;
   out.yesterday = { day: new Date((end - 86400) * 1000 + 9 * 3600e3).toISOString().slice(0, 10) };
