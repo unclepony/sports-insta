@@ -51,7 +51,7 @@ export function pickPost(gear, { slug, skill }, date, src = 'gear') {
           ...(priceText ? [P(p.id, ['pick', 'price'], won(pr.pick.price), { expect: won })] : [])] };
     }),
     { name: 'end', make: (o) => endV2(o, { source: '초이스골프 가이드', title: '내 실력에 맞는<br>클럽부터',
-      sub: `저장해 두고 살 때 다시 보세요.<br>${cat.name} 실력별 전체 비교·점수는<br>프로필 링크의 가이드에서.`, disclosure: DISCLOSURE }), facts: [] },
+      sub: `저장해 두고 살 때 다시 보세요.<br>@${brand.handle} 누르고 프로필 링크 →<br>${cat.name} 실력별 전체 비교·점수 가이드.`, disclosure: DISCLOSURE }), facts: [] },
   ];
   const checks = [(load) => {
     const gg = load(src);
@@ -76,5 +76,7 @@ export function pickPost(gear, { slug, skill }, date, src = 'gear') {
     '',
     ['#골프', '#골프스타그램', '#골프용품', `#${cat.name}`, `#${cat.name}추천`, ...(level === '초보' ? ['#골프초보'] : [])].join(' '),
   ].join('\n');
-  return finish({ id: `pick-${slug}${skill ? `-${SKILLS[skill][1]}` : ''}`, kind: 'pick', category: cat.id, date, series, cards, checks, caption, warnings: [] });
+  // 2026-11-04 실험 E6(in-1104-1): 릴스 아래 띠(모든 장)에 프로필로 가는 길(계정 이름 누르기)을 적는다. 되돌리기: revert.
+  const reelBar = `@${brand.handle} 누르고 → 프로필 링크에서 비교·가격`;
+  return finish({ id: `pick-${slug}${skill ? `-${SKILLS[skill][1]}` : ''}`, kind: 'pick', category: cat.id, date, series, cards, checks, caption, reelBar, warnings: [] });
 }

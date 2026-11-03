@@ -42,6 +42,7 @@ export async function renderCards(browser, post, dirUrl) {
 }
 
 // 릴스용 세로 프레임(1080×1920): 위에 시리즈 제목, 가운데 카드, 아래에 프로필 링크 안내
+// 아래 띠 문구는 게시물이 post.reelBar 로 바꿀 수 있다(없으면 기본 문구). 2026-11-04 pick 실험 E6.
 export async function renderReelFrames(browser, post, dirUrl, files) {
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
   const out = [];
@@ -56,7 +57,7 @@ ${(brand.theme || 'v2') === 'v2' ? ':root{--bg:#0b2f20;--ink:#fff;--accent:#e9c4
 .reel .b{height:285px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;font-size:34px;font-weight:700}
 .reel .b span{color:var(--accent);font-size:40px;font-weight:900}</style></head><body>
 <div class="reel"><div class="t"><span>초이스골프</span><b>${esc(post.series)}</b></div>
-<img src="data:image/jpeg;base64,${img}"><div class="b">자세한 비교·가격은 프로필 링크<span>${esc(brand.site)}</span></div></div></body></html>`, { waitUntil: 'networkidle' });
+<img src="data:image/jpeg;base64,${img}"><div class="b">${esc(post.reelBar || '자세한 비교·가격은 프로필 링크')}<span>${esc(brand.site)}</span></div></div></body></html>`, { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);
     const name = f.replace(/.jpg$/, '-reel.jpg');
     await page.screenshot({ path: fileURLToPath(new URL(name, dirUrl)), type: 'jpeg', quality: 92 });
