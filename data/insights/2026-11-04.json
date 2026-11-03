@@ -1,11 +1,11 @@
 {
  "date": "2026-11-04",
- "capturedAt": "2026-11-03T18:01:52.913Z",
+ "capturedAt": "2026-11-03T20:00:17.823Z",
  "account": {
   "followers": 2,
-  "mediaCount": 66,
+  "mediaCount": 67,
   "username": "choicegolfgear",
-  "reach": 551,
+  "reach": 575,
   "profile_views": 2,
   "profile_links_taps": 0,
   "website_clicks": 0,
@@ -14,7 +14,7 @@
   "biography": "골프소식",
   "yesterday": {
    "day": "2026-11-03",
-   "reach": 181,
+   "reach": 209,
    "profile_views": 1,
    "profile_links_taps": 0,
    "website_clicks": 0
@@ -22,13 +22,13 @@
  },
  "posts": [
   {
-   "id": "17902277067672614",
-   "at": "2026-11-03T18:00:38+0000",
+   "id": "18454739122123089",
+   "at": "2026-11-03T19:59:14+0000",
    "type": "REELS",
-   "permalink": "https://www.instagram.com/reel/DfSecQjFaWW/",
-   "post": "pick-wedge-recommend-pro",
+   "permalink": "https://www.instagram.com/reel/DfSsAu6EwjY/",
+   "post": "pick-golf-ball-compare-intermediate",
    "kind": "pick",
-   "category": "wedge",
+   "category": "ball",
    "format": "reel",
    "likes": 0,
    "comments": 0,
@@ -40,6 +40,29 @@
    "ig_reels_avg_watch_time": 0,
    "ig_reels_video_view_total_time": 0,
    "reels_skip_rate": 0,
+   "profile_visits": null,
+   "follows": null,
+   "recentComments": []
+  },
+  {
+   "id": "17902277067672614",
+   "at": "2026-11-03T18:00:38+0000",
+   "type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DfSecQjFaWW/",
+   "post": "pick-wedge-recommend-pro",
+   "kind": "pick",
+   "category": "wedge",
+   "format": "reel",
+   "likes": 0,
+   "comments": 0,
+   "reach": 28,
+   "views": 39,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0,
+   "ig_reels_avg_watch_time": 5218,
+   "ig_reels_video_view_total_time": 146129,
+   "reels_skip_rate": 47.4,
    "profile_visits": null,
    "follows": null,
    "recentComments": []
@@ -681,26 +704,6 @@
    "ig_reels_avg_watch_time": 4306,
    "ig_reels_video_view_total_time": 439283,
    "reels_skip_rate": 70.6
-  },
-  {
-   "id": "18001992774043715",
-   "at": "2026-10-27T09:19:24+0000",
-   "type": "REELS",
-   "permalink": "https://www.instagram.com/reel/De_hPJBCRP2/",
-   "post": "tips-glove",
-   "kind": "tips",
-   "category": "glove",
-   "format": "reel",
-   "likes": 0,
-   "comments": 0,
-   "reach": 107,
-   "views": 114,
-   "saved": 0,
-   "shares": 0,
-   "total_interactions": 0,
-   "ig_reels_avg_watch_time": 2823,
-   "ig_reels_video_view_total_time": 304940,
-   "reels_skip_rate": 82.4
   }
  ]
 }
