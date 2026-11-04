@@ -213,13 +213,31 @@ function remainingSummary() {
     const state = loadState();
     const list = candidates(loadRaw(rawDir), date).filter((p) => p.kind !== 'tour');
     const kinds = [...new Set(list.map((p) => p.kind))];
+    const floors = [], nexts = [];
+    const addDays = (d, n) => new Date(new Date(`${d}T00:00:00Z`).getTime() + n * 864e5).toISOString().slice(0, 10);
+    // 어제까지 7일(오늘은 아직 덜 올라서 뺌)의 용품 게시 속도
+    const week = (state.history || []).filter((h) => h.kind !== 'tour' && daysBetween(h.date, date) >= 1 && daysBetween(h.date, date) <= 7);
+    const gearRate = week.length / 7;
+    const leftOf = (k) => { const ids = [...new Set(list.filter((p) => p.kind === k).map((p) => baseId(p.id)))]; return ids.filter((id) => !(state.posted?.[id] && daysBetween(state.posted[id], date) < 30)).length; };
+    const kindsLeft = kinds.filter((k) => leftOf(k) > 0).length || 1;
     const rows = kinds.map((k) => {
       const all = [...new Set(list.filter((p) => p.kind === k).map((p) => baseId(p.id)))];
       const used = all.map((id) => state.posted?.[id]).filter((d) => d && daysBetween(d, date) < 30).sort();
-      const next = used.length === all.length && used.length ? new Date(new Date(`${used[0]}T00:00:00Z`).getTime() + 30 * 864e5).toISOString().slice(0, 10) : '-';
-      return `| ${k} | ${all.length - used.length} / ${all.length} | ${next} |`;
+      const next = used.length === all.length && used.length ? addDays(used[0], 30) : '-';
+      // 바닥 예상(2026-11-05, in-1105-1): 최근 7일 이 종류 게시 속도로 남은 후보가 다 떨어지는 날(추정 — 검증 실패·투어 게시로 달라질 수 있음)
+      const left = all.length - used.length;
+      const rate = week.filter((h) => h.kind === k).length / 7;
+      // 남은 종류끼리 용품 칸을 나눠 쓴다고 보고 계산(compare·tips 가 바닥나면 pick 이 하루 칸을 다 씀)
+      const share = gearRate / kindsLeft;
+      const floor = left > 0 && share > 0 ? addDays(date, Math.ceil(left / share)) : '-';
+      if (floor !== '-') { floors.push(floor); if (used.length) nexts.push(addDays(used[0], 30)); }
+      if (next !== '-') nexts.push(next);
+      return `| ${k} | ${left} / ${all.length} | ${rate ? rate.toFixed(1) : 0}개 | ${floor} | ${next} |`;
     });
-    return rows.length ? `\n## 남은 후보 (30일 안에 안 올린 것)\n| 종류 | 남은 / 전체 | 다 썼으면 다시 쓸 수 있는 날 |\n|---|---|---|\n${rows.join('\n')}\n` : '';
+    floors.sort(); nexts.sort();
+    const last = floors.at(-1);
+    const gap = last && nexts.length && nexts[0] > last ? `\n- ⚠ 추정: ${last}~${addDays(nexts[0], -1)} 사이 올릴 용품 후보가 없을 수 있음(투어 결과만 나감) — 종류 복귀 계획 필요\n` : '';
+    return rows.length ? `\n## 남은 후보 (30일 안에 안 올린 것)\n| 종류 | 남은 / 전체 | 최근 7일 하루 | 바닥 예상(추정) | 다 썼으면 다시 쓸 수 있는 날 |\n|---|---|---|---|---|\n${rows.join('\n')}\n${gap}` : '';
   } catch (e) { return `\n- 남은 후보 계산 실패: ${e.message}\n`; }
 }
 
