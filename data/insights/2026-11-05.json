@@ -1,11 +1,11 @@
 {
  "date": "2026-11-05",
- "capturedAt": "2026-11-04T18:12:34.345Z",
+ "capturedAt": "2026-11-04T20:18:28.405Z",
  "account": {
   "followers": 2,
   "mediaCount": 70,
   "username": "choicegolfgear",
-  "reach": 593,
+  "reach": 616,
   "profile_views": 1,
   "profile_links_taps": 0,
   "website_clicks": 0,
@@ -14,7 +14,7 @@
   "biography": "골프소식",
   "yesterday": {
    "day": "2026-11-04",
-   "reach": 102,
+   "reach": 123,
    "profile_views": 0,
    "profile_links_taps": 0,
    "website_clicks": 0
@@ -32,14 +32,14 @@
    "format": "reel",
    "likes": 0,
    "comments": 0,
-   "reach": 0,
-   "views": 0,
+   "reach": 21,
+   "views": 34,
    "saved": 0,
    "shares": 0,
    "total_interactions": 0,
-   "ig_reels_avg_watch_time": 0,
-   "ig_reels_video_view_total_time": 0,
-   "reels_skip_rate": 0,
+   "ig_reels_avg_watch_time": 4517,
+   "ig_reels_video_view_total_time": 94862,
+   "reels_skip_rate": 59.3,
    "profile_visits": null,
    "follows": null,
    "recentComments": []
