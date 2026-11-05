@@ -1,11 +1,11 @@
 {
  "date": "2026-11-06",
- "capturedAt": "2026-11-05T18:12:53.155Z",
+ "capturedAt": "2026-11-05T20:29:47.159Z",
  "account": {
   "followers": 2,
-  "mediaCount": 73,
+  "mediaCount": 74,
   "username": "choicegolfgear",
-  "reach": 431,
+  "reach": 538,
   "profile_views": 0,
   "profile_links_taps": 0,
   "website_clicks": 0,
@@ -14,7 +14,7 @@
   "biography": "골프소식",
   "yesterday": {
    "day": "2026-11-05",
-   "reach": 153,
+   "reach": 260,
    "profile_views": 0,
    "profile_links_taps": 0,
    "website_clicks": 0
@@ -22,13 +22,13 @@
  },
  "posts": [
   {
-   "id": "17970661833198654",
-   "at": "2026-11-05T18:11:52+0000",
+   "id": "18116474708598220",
+   "at": "2026-11-05T20:28:37+0000",
    "type": "REELS",
-   "permalink": "https://www.instagram.com/reel/DfXpUM9kUNv/",
-   "post": "pick-golf-ball-compare-pro",
+   "permalink": "https://www.instagram.com/reel/DfX496lkksy/",
+   "post": "pick-rangefinder-recommend-advanced",
    "kind": "pick",
-   "category": "ball",
+   "category": "rangefinder",
    "format": "reel",
    "likes": 0,
    "comments": 0,
@@ -40,6 +40,29 @@
    "ig_reels_avg_watch_time": 0,
    "ig_reels_video_view_total_time": 0,
    "reels_skip_rate": 0,
+   "profile_visits": null,
+   "follows": null,
+   "recentComments": []
+  },
+  {
+   "id": "17970661833198654",
+   "at": "2026-11-05T18:11:52+0000",
+   "type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DfXpUM9kUNv/",
+   "post": "pick-golf-ball-compare-pro",
+   "kind": "pick",
+   "category": "ball",
+   "format": "reel",
+   "likes": 0,
+   "comments": 0,
+   "reach": 107,
+   "views": 124,
+   "saved": 1,
+   "shares": 0,
+   "total_interactions": 1,
+   "ig_reels_avg_watch_time": 3995,
+   "ig_reels_video_view_total_time": 423485,
+   "reels_skip_rate": 72,
    "profile_visits": null,
    "follows": null,
    "recentComments": []
@@ -678,26 +701,6 @@
    "ig_reels_avg_watch_time": 3122,
    "ig_reels_video_view_total_time": 330961,
    "reels_skip_rate": 74.5
-  },
-  {
-   "id": "17917896282263184",
-   "at": "2026-10-29T02:37:33+0000",
-   "type": "REELS",
-   "permalink": "https://www.instagram.com/reel/DfD80yQEeO_/",
-   "post": "pick-utility-recommend-pro",
-   "kind": "pick",
-   "category": "utility",
-   "format": "reel",
-   "likes": 0,
-   "comments": 0,
-   "reach": 107,
-   "views": 123,
-   "saved": 0,
-   "shares": 0,
-   "total_interactions": 0,
-   "ig_reels_avg_watch_time": 4544,
-   "ig_reels_video_view_total_time": 486241,
-   "reels_skip_rate": 68.2
   }
  ]
 }
