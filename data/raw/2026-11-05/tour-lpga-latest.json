@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-04T20:15:03.514Z",
+ "fetchedAt": "2026-11-05T03:36:13.003Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "lpga",
@@ -1575,7 +1575,7 @@
   }
  ],
  "next": {
-  "name": "TOTO Japan Classic",
-  "start": "2026-11-05T08:00Z"
+  "name": "The ANNIKA driven by Gainbridge at Pelican",
+  "start": "2026-11-12T08:00Z"
  }
 }
