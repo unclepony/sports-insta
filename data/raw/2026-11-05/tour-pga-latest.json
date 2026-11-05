@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-05T03:36:12.947Z",
+ "fetchedAt": "2026-11-05T11:25:31.171Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "pga",
@@ -2314,7 +2314,7 @@
   }
  ],
  "next": {
-  "name": "World Wide Technology Championship",
-  "start": "2026-11-05T08:00Z"
+  "name": "Austin Championship pres. by Compliance Solutions",
+  "start": "2026-11-12T08:00Z"
  }
 }

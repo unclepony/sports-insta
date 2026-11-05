@@ -69,7 +69,8 @@
   "pick-rangefinder-recommend-beginner": "2026-11-04",
   "pick-womens-driver-recommend-beginner": "2026-11-04",
   "pick-golf-ball-compare-advanced": "2026-11-05",
-  "pick-rangefinder-recommend-intermediate": "2026-11-05"
+  "pick-rangefinder-recommend-intermediate": "2026-11-05",
+  "pick-womens-driver-recommend-intermediate": "2026-11-05"
  },
  "history": [
   {
@@ -701,6 +702,15 @@
    "format": "reel",
    "mediaId": "18117151133598431",
    "permalink": "https://www.instagram.com/reel/DfWFQZmkh_P/"
+  },
+  {
+   "date": "2026-11-05",
+   "id": "pick-womens-driver-recommend-intermediate",
+   "kind": "pick",
+   "category": "driver",
+   "format": "reel",
+   "mediaId": "18226156906337318",
+   "permalink": "https://www.instagram.com/reel/DfW688vjZhL/"
   }
  ],
  "lastGearKind": "pick"
