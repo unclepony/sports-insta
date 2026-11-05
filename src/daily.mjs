@@ -261,6 +261,7 @@ async function report() {
     ins?.account?.yesterday ? `- 어제(${ins.account.yesterday.day} KST 하루): 도달 ${ins.account.yesterday.reach ?? '?'} · 프로필 방문 ${ins.account.yesterday.profile_views ?? '?'} · 링크 클릭 ${ins.account.yesterday.profile_links_taps ?? ins.account.yesterday.website_clicks ?? '?'}${yesterdayNote(ins)}` : '',
     ins?.account && 'website' in ins.account ? `- 프로필 링크: ${ins.account.website ?? '확인 못 함'}${ins.account.website && !/utm_source=instagram/.test(ins.account.website) ? ' (utm 없음 — 사이트 통계는 인스타 앱 브라우저를 UA 로 \'인스타그램\' 유입으로 셈, golf-price functions/api/hit.js)' : ''}` : '',
     ins?.account && 'biography' in ins.account ? `- 프로필 소개: ${ins.account.biography ? JSON.stringify(ins.account.biography.replace(/\s+/g, ' ').trim()) : '확인 못 함(빈 값 또는 API 오류)'}` : '',
+    dailyWeek(),
     // '올린 뒤'는 지표를 모은 시각 기준 — 몇 시간 안 된 게시물의 도달 0·5 를 급락으로 잘못 읽지 않게(2026-10-31)
     ins?.posts?.length ? `\n## 최근 게시물 (30일)\n| 날짜 | 게시물 | 형식 | 올린 뒤 | 도달 | 첫 3초 건너뛰기 | 저장 | 공유 |\n|---|---|---|---|---|---|---|---|\n${ins.posts.slice(0, 10).map((x) => `| ${x.at.slice(0, 10)} | ${x.post || '-'} | ${x.format || x.type} | ${ageHours(ins, x)} | ${x.reach ?? '-'} | ${x.reach > 0 && typeof x.reels_skip_rate === 'number' ? x.reels_skip_rate + '%' : '-'} | ${x.saved ?? '-'} | ${x.shares ?? '-'} |`).join('\n')}` : '',
     ins?.posts?.length ? kindSummary(ins) : '',
@@ -299,6 +300,29 @@ const cmd = process.argv[2];
 const steps = { build, publish, insights, report, delete: () => remove(process.argv[3]) };
 if (!steps[cmd]) { console.error(`사용: node src/daily.mjs ${Object.keys(steps).join('|')}`); process.exit(2); }
 await steps[cmd]();
+
+// 최근 7일 하루 값 — 날마다 그다음 날 파일(그날 마지막 수집)의 '어제' 값을 모은다(2026-11-06, in-1106-1).
+// 아침 보고의 '어제'는 잠정(11/03: 209 → 494, 11/04: 123 → 286)이라 실험 판정(E6 프로필 방문÷도달)은 이 표로 본다.
+function dailyWeek() {
+  const add = (d, n) => new Date(new Date(`${d}T00:00:00Z`).getTime() + n * 864e5).toISOString().slice(0, 10);
+  const rows = [];
+  let reach = 0, pv = 0, taps = 0, n = 0;
+  for (let i = 7; i >= 1; i--) {
+    const day = add(date, -i);
+    const f = new URL(`data/insights/${add(day, 1)}.json`, ROOT);
+    const y = existsSync(f) ? readJson(f) : null;
+    const v = y?.account?.yesterday;
+    if (!v || v.day !== day) { rows.push(`| ${day} | - | - | - | 기록 없음 |`); continue; }
+    const t = v.profile_links_taps ?? v.website_clicks ?? 0;
+    const m = yesterdayNote(y).match(/수집 (\S+ \S+) KST(?:, 하루 끝난 뒤 (\d+)시간)?/);
+    const note = m ? `${m[1]}${m[2] ? ` (${m[2]}시간 뒤${+m[2] < 12 ? ', 잠정' : ''})` : ''}` : '';
+    rows.push(`| ${day} | ${v.reach ?? '-'} | ${v.profile_views ?? '-'} | ${t} | ${note || '-'} |`);
+    if (typeof v.reach === 'number') { reach += v.reach; pv += v.profile_views || 0; taps += t; n++; }
+  }
+  if (!n) return '';
+  const ratio = reach ? ((pv / reach) * 100).toFixed(2) : '-';
+  return `\n## 최근 7일 하루 값 (그날 마지막 수집 기준)\n| 날짜 | 도달 | 프로필 방문 | 링크 클릭 | 수집 |\n|---|---|---|---|---|\n${rows.join('\n')}\n- ${n}일 합: 도달 ${reach} · 프로필 방문 ${pv} (${ratio}%) · 링크 클릭 ${taps}\n`;
+}
 
 // 어제 하루 값의 수집 시각(KST)과, 하루가 끝난 뒤 24시간이 안 됐으면 '잠정' 표시
 function yesterdayNote(ins) {
