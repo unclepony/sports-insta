@@ -73,7 +73,8 @@
   "pick-womens-driver-recommend-intermediate": "2026-11-05",
   "pick-golf-ball-compare-pro": "2026-11-06",
   "pick-rangefinder-recommend-advanced": "2026-11-06",
-  "pick-womens-driver-recommend-advanced": "2026-11-06"
+  "pick-womens-driver-recommend-advanced": "2026-11-06",
+  "pick-putter-recommend-beginner": "2026-11-06"
  },
  "history": [
   {
@@ -741,6 +742,15 @@
    "format": "reel",
    "mediaId": "18672323137012838",
    "permalink": "https://www.instagram.com/reel/DfYpdnQjPWP/"
+  },
+  {
+   "date": "2026-11-06",
+   "id": "pick-putter-recommend-beginner",
+   "kind": "pick",
+   "category": "putter",
+   "format": "reel",
+   "mediaId": "18129960571871268",
+   "permalink": "https://www.instagram.com/reel/DfZjRGziVm9/"
   }
  ],
  "lastGearKind": "pick"
