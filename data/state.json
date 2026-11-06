@@ -75,7 +75,8 @@
   "pick-rangefinder-recommend-advanced": "2026-11-06",
   "pick-womens-driver-recommend-advanced": "2026-11-06",
   "pick-putter-recommend-beginner": "2026-11-06",
-  "pick-rangefinder-recommend-pro": "2026-11-07"
+  "pick-rangefinder-recommend-pro": "2026-11-07",
+  "pick-womens-driver-recommend-pro": "2026-11-07"
  },
  "history": [
   {
@@ -761,6 +762,15 @@
    "format": "reel",
    "mediaId": "17913563913488102",
    "permalink": "https://www.instagram.com/reel/DfaKgdFiMHG/"
+  },
+  {
+   "date": "2026-11-07",
+   "id": "pick-womens-driver-recommend-pro",
+   "kind": "pick",
+   "category": "driver",
+   "format": "reel",
+   "mediaId": "18110120318239193",
+   "permalink": "https://www.instagram.com/reel/DfaZX3dAm5E/"
   }
  ],
  "lastGearKind": "pick"
