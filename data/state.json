@@ -74,7 +74,8 @@
   "pick-golf-ball-compare-pro": "2026-11-06",
   "pick-rangefinder-recommend-advanced": "2026-11-06",
   "pick-womens-driver-recommend-advanced": "2026-11-06",
-  "pick-putter-recommend-beginner": "2026-11-06"
+  "pick-putter-recommend-beginner": "2026-11-06",
+  "pick-rangefinder-recommend-pro": "2026-11-07"
  },
  "history": [
   {
@@ -751,6 +752,15 @@
    "format": "reel",
    "mediaId": "18129960571871268",
    "permalink": "https://www.instagram.com/reel/DfZjRGziVm9/"
+  },
+  {
+   "date": "2026-11-07",
+   "id": "pick-rangefinder-recommend-pro",
+   "kind": "pick",
+   "category": "rangefinder",
+   "format": "reel",
+   "mediaId": "17913563913488102",
+   "permalink": "https://www.instagram.com/reel/DfaKgdFiMHG/"
   }
  ],
  "lastGearKind": "pick"
