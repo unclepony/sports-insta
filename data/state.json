@@ -77,7 +77,8 @@
   "pick-putter-recommend-beginner": "2026-11-06",
   "pick-rangefinder-recommend-pro": "2026-11-07",
   "pick-womens-driver-recommend-pro": "2026-11-07",
-  "pick-putter-recommend-intermediate": "2026-11-07"
+  "pick-putter-recommend-intermediate": "2026-11-07",
+  "pick-golf-shoes-recommend": "2026-11-07"
  },
  "history": [
   {
@@ -781,6 +782,15 @@
    "format": "reel",
    "mediaId": "17916017460517040",
    "permalink": "https://www.instagram.com/reel/DfbKgHOm4nb/"
+  },
+  {
+   "date": "2026-11-07",
+   "id": "pick-golf-shoes-recommend",
+   "kind": "pick",
+   "category": "shoes",
+   "format": "reel",
+   "mediaId": "18390385564224612",
+   "permalink": "https://www.instagram.com/reel/Dfb_F7kDmaI/"
   }
  ],
  "lastGearKind": "pick"
