@@ -79,7 +79,8 @@
   "pick-womens-driver-recommend-pro": "2026-11-07",
   "pick-putter-recommend-intermediate": "2026-11-07",
   "pick-golf-shoes-recommend": "2026-11-07",
-  "pick-putter-recommend-advanced": "2026-11-08"
+  "pick-putter-recommend-advanced": "2026-11-08",
+  "pick-golf-watch-recommend-beginner": "2026-11-08"
  },
  "history": [
   {
@@ -801,6 +802,15 @@
    "format": "reel",
    "mediaId": "18101323676100860",
    "permalink": "https://www.instagram.com/reel/Dfcn8DajwKP/"
+  },
+  {
+   "date": "2026-11-08",
+   "id": "pick-golf-watch-recommend-beginner",
+   "kind": "pick",
+   "category": "gps",
+   "format": "reel",
+   "mediaId": "18422348779159146",
+   "permalink": "https://www.instagram.com/reel/DfcxM-dk2yj/"
   }
  ],
  "lastGearKind": "pick"
