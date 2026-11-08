@@ -80,7 +80,8 @@
   "pick-putter-recommend-intermediate": "2026-11-07",
   "pick-golf-shoes-recommend": "2026-11-07",
   "pick-putter-recommend-advanced": "2026-11-08",
-  "pick-golf-watch-recommend-beginner": "2026-11-08"
+  "pick-golf-watch-recommend-beginner": "2026-11-08",
+  "pick-launch-monitor-recommend-beginner": "2026-11-08"
  },
  "history": [
   {
@@ -811,6 +812,15 @@
    "format": "reel",
    "mediaId": "18422348779159146",
    "permalink": "https://www.instagram.com/reel/DfcxM-dk2yj/"
+  },
+  {
+   "date": "2026-11-08",
+   "id": "pick-launch-monitor-recommend-beginner",
+   "kind": "pick",
+   "category": "launch",
+   "format": "reel",
+   "mediaId": "18027244028871340",
+   "permalink": "https://www.instagram.com/reel/Dfds9hUHMMu/"
   }
  ],
  "lastGearKind": "pick"
