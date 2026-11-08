@@ -1,7 +1,7 @@
 // 오늘 올릴 게시물 고르기. 하루 최대 3번(아침·점심·저녁 슬롯), 실행할 때마다 하나.
 //  1순위: 최근 4일 안에 끝난 투어 대회 결과(아직 안 올린 것)
 //  그 밖: 종류를 돌아가며 — 실력별 추천(pick) → 가격 비교(compare) → 고르는 법(tips) → …
-//         같은 게시물은 30일 안에 다시 올리지 않음, 같은 날 같은 분류는 피함
+//         같은 게시물은 30일(compare·tips 21일, E5) 안에 다시 올리지 않음, 같은 날 같은 분류는 피함
 //  릴스: 화·목·토 저녁 슬롯만 캐러셀 대신 릴스(하루 1개)
 import { readdirSync } from 'node:fs';
 import { brand, daysBetween, readJson } from './util.mjs';
@@ -21,6 +21,10 @@ export const DAILY_MAX = 4; // 인스타 API 한도(24시간 100개)보다 훨�
 const REEL_DAYS = [2, 4, 6]; // 화 목 토 (0=일)
 const REELS_FIRST = true; // 2026-10-21 실험: 모든 게시물을 릴스로(카드 → 카드 영상). 팔로워 100명 또는 11/4 판정
 const REPEAT_DAYS = 30;
+// E5(2026-11-09 적용, ops exp #38, 판단 11/19): compare·tips 는 21일 뒤 다시 올림 — pick 바닥(11/12) 뒤 빈 날 막기.
+// compare 는 그날 가격으로 다시 만들어져 숫자가 새로 바뀜. 되돌리기: 이 줄을 지우고 repeatDays 가 REPEAT_DAYS 만 돌려주게.
+const REPEAT_DAYS_BY_KIND = { compare: 21, tips: 21 };
+export const repeatDays = (kind) => (kind === 'tour' ? 99999 : REPEAT_DAYS_BY_KIND[kind] ?? REPEAT_DAYS);
 
 export function loadRaw(rawDir) {
   const raw = {};
@@ -61,7 +65,7 @@ export function choose(list, state, date) {
   if (postedToday(state, date).length >= DAILY_MAX) return null;
   const recent = (p) => {
     const last = state.posted?.[baseId(p.id)];
-    return last && daysBetween(last, date) < (p.kind === 'tour' ? 99999 : REPEAT_DAYS);
+    return last && daysBetween(last, date) < repeatDays(p.kind);
   };
   const tour = list.find((p) => p.kind === 'tour' && !recent(p));
   if (tour) return tour;
