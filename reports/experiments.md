@@ -41,7 +41,7 @@
 - 변경안(아직 안 함): plan.mjs `choose()` 의 반복 금지를 종류별로 — compare·tips 21일, pick 30일, tour 그대로. 한 줄짜리 상수 추가.
 - 시작 조건: 관제탑이 exp:add 로 등록한 뒤, 남은 pick 이 6개 이하가 되는 날(≈11/08~09)에 적용.
 - 판단(2주): 다시 올린 compare·tips 편의 올린 뒤 24시간 도달 평균이 같은 분류 첫 게시의 70% 이상이면 유지, 50% 미만이면 30일로 되돌림. 첫 3초 건너뛰기도 함께 봄.
-- 적용(2026-11-09 06:30 클라우드 루틴, in-1109-1): src/plan.mjs `REPEAT_DAYS_BY_KIND = { compare: 21, tips: 21 }` + `repeatDays(kind)`. 보고서 '남은 후보' 표(src/daily.mjs)도 같은 기간으로 셈. 적용 시점 남은 후보: pick 12 · compare 1(compare-driver) · tips 0 → 11/10부터 날마다 1~3개씩 풀림.
+- 적용(2026-11-09 06:30 클라우드 루틴, in-1109-1): src/plan.mjs `REPEAT_DAYS_BY_KIND = { compare: 21, tips: 21 }` + `repeatDays(kind)`. 보고서 '남은 후보' 표(src/daily.mjs)도 같은 기간으로 셈(sports-insta e34c664). 적용 시점 남은 후보: pick 12 · compare 1(compare-driver) · tips 0 → 11/10부터 날마다 1~3개씩 풀림.
 - 되돌리기: 적용 커밋 revert(REPEAT_DAYS 30 하나로).
 
 ## #16 판정 (2026-11-04, ops exp #16) — 채택: 모든 게시물 릴스로
