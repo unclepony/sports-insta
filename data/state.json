@@ -84,7 +84,8 @@
   "pick-launch-monitor-recommend-beginner": "2026-11-08",
   "tour-lpga-401835175": "2026-11-08",
   "pick-putter-recommend-pro": "2026-11-09",
-  "pick-golf-shoes-recommend-intermediate": "2026-11-09"
+  "pick-golf-shoes-recommend-intermediate": "2026-11-09",
+  "tour-pga-401850979": "2026-11-09"
  },
  "history": [
   {
@@ -851,6 +852,15 @@
    "format": "reel",
    "mediaId": "18127673938809963",
    "permalink": "https://www.instagram.com/reel/DffXyDEmgip/"
+  },
+  {
+   "date": "2026-11-09",
+   "id": "tour-pga-401850979",
+   "kind": "tour",
+   "category": null,
+   "format": "reel",
+   "mediaId": "18424623478156548",
+   "permalink": "https://www.instagram.com/reel/DfgTSi-FGv7/"
   }
  ],
  "lastGearKind": "pick"
