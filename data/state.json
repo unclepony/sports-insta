@@ -86,7 +86,8 @@
   "pick-putter-recommend-pro": "2026-11-09",
   "pick-golf-shoes-recommend-intermediate": "2026-11-09",
   "tour-pga-401850979": "2026-11-09",
-  "pick-golf-watch-recommend-intermediate": "2026-11-10"
+  "pick-golf-watch-recommend-intermediate": "2026-11-10",
+  "pick-golf-bag-recommend": "2026-11-10"
  },
  "history": [
   {
@@ -898,7 +899,16 @@
    "format": "reel",
    "mediaId": "18109835582254643",
    "permalink": "https://www.instagram.com/reel/DfjE9Ctj7Fo/"
+  },
+  {
+   "date": "2026-11-10",
+   "id": "pick-golf-bag-recommend",
+   "kind": "pick",
+   "category": "bag",
+   "format": "reel",
+   "mediaId": "18098143856439775",
+   "permalink": "https://www.instagram.com/reel/Dfj0fT9Dk9e/"
   }
  ],
- "lastGearKind": "compare"
+ "lastGearKind": "pick"
 }
