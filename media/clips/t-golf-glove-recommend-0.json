@@ -1,0 +1,35 @@
+{
+  "template": "tip-v3",
+  "scenes": [
+    {
+      "key": "intro",
+      "dur": 5.5
+    },
+    {
+      "key": "answer",
+      "dur": 9
+    },
+    {
+      "key": "outro",
+      "dur": 6.8
+    }
+  ],
+  "episode": "t-golf-glove-recommend-0",
+  "format": "shorts",
+  "type": "tip",
+  "guide": "golf-glove-recommend",
+  "madeAt": "2026-11-10",
+  "dataUpdated": "2026-10-16",
+  "voice": "ko-KR-Neural2-A",
+  "title": "골프장갑 언제 바꿀까? 교체 신호 2가지 | 초보 골퍼 골프장갑 고르기 #shorts",
+  "description": "▶ 골프장갑 실력별 비교·현재 가격: https://choicegolf.unclepony.com/g/golf-glove-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-golf-glove-recommend-0\n\nQ. 골프장갑, 얼마나 자주 바꾸나요?\nA. 자주 치는 골퍼는 손바닥이 닳거나 미끄러워지면 바꿉니다. 여러 장을 번갈아 쓰면 더 오래 씁니다.\n\n초이스골프 가이드 \"골프 장갑 추천: 양피·합피·겨울·여성용 58종 비교 (풋조이·타이틀리스트·테일러메이드·캘러웨이)\" 의 FAQ 내용을 요약했습니다. 가격·사양은 바뀔 수 있으니 링크에서 확인해 주세요.\n\n▶ 골프장갑 비교·현재 가격 확인 (초이스골프)\nhttps://choicegolf.unclepony.com/g/golf-glove-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-golf-glove-recommend-0\n\n그림은 초이스골프가 직접 그린 일러스트로 실제 제품과 다릅니다. 배경음도 직접 만들었으며, 한국어 내레이션은 음성 합성(TTS)입니다. 제조사·판매처의 사진·영상·로고는 사용하지 않았습니다.\n\n#골프 #골프장갑추천 #골프팁",
+  "tags": [
+    "골프장갑 추천",
+    "골프장갑 고르는 법",
+    "골프 팁",
+    "초이스골프"
+  ],
+  "categoryId": "17",
+  "link": "https://choicegolf.unclepony.com/g/golf-glove-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-golf-glove-recommend-0",
+  "linkLabel": "실력별 전체 비교"
+}
