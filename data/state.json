@@ -88,7 +88,8 @@
   "tour-pga-401850979": "2026-11-09",
   "pick-golf-watch-recommend-intermediate": "2026-11-10",
   "pick-golf-bag-recommend": "2026-11-10",
-  "pick-golf-watch-recommend-pro": "2026-11-11"
+  "pick-golf-watch-recommend-pro": "2026-11-11",
+  "pick-golf-glove-recommend": "2026-11-12"
  },
  "history": [
   {
@@ -945,7 +946,16 @@
    "format": "reel",
    "mediaId": "17978130066137813",
    "permalink": "https://www.instagram.com/reel/DfmXizTDfOw/"
+  },
+  {
+   "date": "2026-11-12",
+   "id": "pick-golf-glove-recommend",
+   "kind": "pick",
+   "category": "glove",
+   "format": "reel",
+   "mediaId": "17917242177546171",
+   "permalink": "https://www.instagram.com/reel/DfnEuyDE8-D/"
   }
  ],
- "lastGearKind": "tips"
+ "lastGearKind": "pick"
 }
