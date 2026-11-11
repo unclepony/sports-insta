@@ -63,16 +63,21 @@ const rows = reposts.map((o) => {
   return {
     line: `| ${o.kind} | ${o.category} | ${kst(first.at)} ${carousel ? '캐러셀' : '릴스'} · ${f ? f.reach : '-'}${f?.skip != null ? ` (${f1(f.skip)})` : ''} | ${kst(o.at)} · ${r ? `${r.reach} (${f1(r.skip)})` : `아직 — 지금 ${now.reach} (${Math.round(now.age)}시간)`} | ${carousel ? `종류 평균 ${Math.round(base)}` : base ?? '-'} | ${r ? pct(r.reach, base) : '-'} |`,
     ratio: r && base ? r.reach / base : null,
+    same: !carousel,
   };
 });
 
 const done = rows.filter((x) => x.ratio != null);
 const mean = avg(done.map((x) => x.ratio));
+// 같은 분류 릴스 첫 게시와 바로 비교한 편만(대신 기준 = 종류 평균은 10/27~30 낮은 값이 섞여 높게 나옴)
+const same = done.filter((x) => x.same);
+const meanSame = avg(same.map((x) => x.ratio));
 console.log(`## E5 다시 올린 compare·tips — 올린 뒤 24시간 도달 (판단일 2026-11-19: 평균 70% 이상 유지 · 50% 미만 되돌림)
 | 종류 | 분류 | 첫 게시 (KST · 24시간 도달 (첫 3초 건너뛰기)) | 다시 올림 (KST · 24시간 도달 (건너뛰기)) | 기준 | 비율 |
 |---|---|---|---|---|---|
 ${rows.map((x) => x.line).join('\n') || '| - | - | - | - | - | - |'}
 
 - 24시간 값이 나온 편: ${done.length} / ${rows.length}${mean != null ? ` · 비율 평균 ${Math.round(mean * 100)}%` : ''}
+- 같은 분류 릴스 첫 게시와 바로 비교한 편만: ${same.length}편${meanSame != null ? ` · 비율 평균 ${Math.round(meanSame * 100)}% (판정은 이 값을 함께 본다)` : ''}
 - 종류별 릴스 첫 게시 24시간 평균(캐러셀 첫 게시의 대신 기준): ${[...KINDS].map((k) => `${k} ${kindBase[k].n}편 도달 ${Math.round(kindBase[k].reach)} · 건너뛰기 ${f1(kindBase[k].skip)}`).join(' / ')}
 - 주의: 10/27~30 첫 게시 일부(compare 골프백 15·장갑 55·GPS 27·런치 29, tips GPS 32·연습 63)는 계정 노출이 떨어진 시기라 기준이 낮다 — 그 분류는 비율이 높게 나온다.`);
