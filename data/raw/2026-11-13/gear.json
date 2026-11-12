@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-12T18:30:35.278Z",
+ "fetchedAt": "2026-11-12T20:37:37.054Z",
  "source": "golf-price config (products.json, picks.json)",
  "categories": [
   {
@@ -4353,10 +4353,10 @@
     "엘리트 기본형·트리플 다이아몬드와 구분"
    ],
    "pick": {
-    "title": "캘러웨이 (25)엘리트 X 페어웨이 우드 VENTUS GREEN",
-    "price": 319000,
-    "rocket": false,
-    "checked": "2026-11-06"
+    "title": "캘러웨이 남성용 엘리트 X 페어웨이우드 3W",
+    "price": 270330,
+    "rocket": true,
+    "checked": "2026-11-13"
    }
   },
   {
@@ -10066,10 +10066,10 @@
     "연결 상품은 5번·ALTA J CB BLACK R"
    ],
    "pick": {
-    "title": "G430 MAX 페어웨이 우드 ALTA J CB BLACK 카본 샤프트 2022 5번(R)",
-    "price": 499170,
+    "title": "PING G430 MAX ALTA JCB BLACK 골프 페어웨이우드 남성",
+    "price": 444900,
     "rocket": false,
-    "checked": "2026-10-31"
+    "checked": "2026-11-13"
    }
   },
   {
@@ -13501,6 +13501,40 @@
     "rocket": true,
     "checked": "2026-11-13"
    }
+  },
+  {
+   "id": "callaway-bigbertha-fairway",
+   "category": "wood",
+   "name": "캘러웨이 빅버사 23 페어웨이 우드",
+   "summary": "캘러웨이 2023년 빅버사 페어웨이 우드입니다. 큰 헤드와 얕은 페이스로 띄우기 쉽고, 관용성과 슬라이스 줄이기에 맞춘 쉬운 우드입니다.",
+   "points": [
+    "큰 헤드·얕은 페이스로 높은 탄도",
+    "관용성·슬라이스 줄이기에 맞춤",
+    "3·5번은 로프트 조절 호젤"
+   ],
+   "pick": {
+    "title": "캘러웨이 코리아 정품 23 빅버사 남성 페어웨이우드",
+    "price": 407000,
+    "rocket": false,
+    "checked": "2026-11-13"
+   }
+  },
+  {
+   "id": "yamaha-rmx-vd-fairway",
+   "category": "wood",
+   "name": "야마하 RMX VD 페어웨이 우드",
+   "summary": "야마하 리믹스(RMX) VD 페어웨이 우드입니다. 티타늄 바디·티타늄 페이스와 솔 쪽 무게로 낮은 무게중심을 만든 2세대 VD 우드로, 국내는 오리엔트골프가 수입합니다.",
+   "points": [
+    "티타늄 바디·티타늄 페이스",
+    "솔 쪽 무게로 낮은 무게중심",
+    "국내 공식 수입사 오리엔트골프"
+   ],
+   "pick": {
+    "title": "[오리엔트골프정품] 야마하 RMX VD 페어웨이우드[남성][TENSEI TR]",
+    "price": 680000,
+    "rocket": false,
+    "checked": "2026-11-13"
+   }
   }
  ],
  "guides": [
@@ -14768,7 +14802,7 @@
   },
   {
    "slug": "fairway-wood-recommend",
-   "title": "남성 페어웨이 우드 추천: 초보~프로 50종 비교 (G440·Qi·퀀텀·젝시오·ZXi)",
+   "title": "남성 페어웨이 우드 추천: 초보~프로 52종 비교 (G440·Qi·퀀텀·젝시오·ZXi)",
    "gender": "남성",
    "updated": "2026-10-16",
    "criteria": [
@@ -15848,6 +15882,48 @@
       3,
       3,
       4
+     ]
+    },
+    {
+     "id": "callaway-bigbertha-fairway",
+     "skill": "초심자",
+     "role": "쉬운 캘러웨이 우드",
+     "forWhom": "우드가 잘 안 뜨고 슬라이스가 나는 초보 골퍼",
+     "pros": [
+      "큰 헤드·얕은 페이스로 잘 뜸",
+      "슬라이스 줄이기에 맞춘 설계"
+     ],
+     "cons": [
+      "2023년 모델(새 퀀텀 MAX 계열보다 이전)",
+      "7·9번 등 일부 번호는 로프트 조절 없음"
+     ],
+     "verdict": "우드가 어려운 초보가 고르기 쉬운 캘러웨이 선택",
+     "scores": [
+      3,
+      5,
+      5,
+      3
+     ]
+    },
+    {
+     "id": "yamaha-rmx-vd-fairway",
+     "skill": "중급",
+     "role": "티타늄 헤드 프리미엄 우드",
+     "forWhom": "거리와 방향을 같이 원하는 중급 골퍼",
+     "pros": [
+      "티타늄 바디·페이스의 프리미엄 구성",
+      "낮은 무게중심으로 띄우기 쉬움"
+     ],
+     "cons": [
+      "가격이 높은 편",
+      "국내 판매처가 적음"
+     ],
+     "verdict": "티타늄 헤드 우드를 원하는 중급 골퍼의 야마하 선택",
+     "scores": [
+      4,
+      4,
+      4,
+      2
      ]
     }
    ]
