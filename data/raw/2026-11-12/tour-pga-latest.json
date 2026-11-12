@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-12T03:58:33.180Z",
+ "fetchedAt": "2026-11-12T11:44:39.658Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "pga",
@@ -2332,7 +2332,7 @@
   }
  ],
  "next": {
-  "name": "Austin Championship pres. by Compliance Solutions",
-  "start": "2026-11-12T08:00Z"
+  "name": "The RSM Classic",
+  "start": "2026-11-19T08:00Z"
  }
 }

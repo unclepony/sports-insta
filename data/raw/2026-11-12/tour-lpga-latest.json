@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-12T03:58:33.228Z",
+ "fetchedAt": "2026-11-12T11:44:39.753Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "lpga",
@@ -1578,7 +1578,7 @@
   }
  ],
  "next": {
-  "name": "The ANNIKA driven by Gainbridge at Pelican",
-  "start": "2026-11-12T08:00Z"
+  "name": "CME Group Tour Championship",
+  "start": "2026-11-19T08:00Z"
  }
 }
