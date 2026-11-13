@@ -20,7 +20,7 @@
   "compare-wood": "2026-11-13",
   "tips-utility": "2026-11-13",
   "pick-driver-recommend-2026-pro": "2026-10-23",
-  "compare-ball": "2026-10-23",
+  "compare-ball": "2026-11-13",
   "tips-wood": "2026-10-24",
   "pick-utility-recommend-beginner": "2026-10-24",
   "compare-shoes": "2026-10-24",
@@ -1011,7 +1011,16 @@
    "format": "reel",
    "mediaId": "18358697485172752",
    "permalink": "https://www.instagram.com/reel/Dfqq2ZmAQxs/"
+  },
+  {
+   "date": "2026-11-13",
+   "id": "compare-ball-2026-11-13",
+   "kind": "compare",
+   "category": "ball",
+   "format": "reel",
+   "mediaId": "18075063587762722",
+   "permalink": "https://www.instagram.com/reel/DfrhjimgeuZ/"
   }
  ],
- "lastGearKind": "pick"
+ "lastGearKind": "compare"
 }
