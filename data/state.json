@@ -90,7 +90,8 @@
   "pick-golf-bag-recommend": "2026-11-10",
   "pick-golf-watch-recommend-pro": "2026-11-11",
   "pick-golf-glove-recommend": "2026-11-12",
-  "pick-practice-gear-recommend-beginner": "2026-11-12"
+  "pick-practice-gear-recommend-beginner": "2026-11-12",
+  "pick-practice-gear-recommend-intermediate": "2026-11-13"
  },
  "history": [
   {
@@ -1001,7 +1002,16 @@
    "format": "reel",
    "mediaId": "17991986325020034",
    "permalink": "https://www.instagram.com/reel/Dfp7rQSk4cm/"
+  },
+  {
+   "date": "2026-11-13",
+   "id": "pick-practice-gear-recommend-intermediate",
+   "kind": "pick",
+   "category": "practice",
+   "format": "reel",
+   "mediaId": "18358697485172752",
+   "permalink": "https://www.instagram.com/reel/Dfqq2ZmAQxs/"
   }
  ],
- "lastGearKind": "tips"
+ "lastGearKind": "pick"
 }
