@@ -21,7 +21,7 @@
   "tips-utility": "2026-11-13",
   "pick-driver-recommend-2026-pro": "2026-10-23",
   "compare-ball": "2026-11-13",
-  "tips-wood": "2026-10-24",
+  "tips-wood": "2026-11-14",
   "pick-utility-recommend-beginner": "2026-10-24",
   "compare-shoes": "2026-10-24",
   "tips-ball": "2026-10-24",
@@ -1020,7 +1020,16 @@
    "format": "reel",
    "mediaId": "18075063587762722",
    "permalink": "https://www.instagram.com/reel/DfrhjimgeuZ/"
+  },
+  {
+   "date": "2026-11-14",
+   "id": "tips-wood",
+   "kind": "tips",
+   "category": "wood",
+   "format": "reel",
+   "mediaId": "17955163779297883",
+   "permalink": "https://www.instagram.com/reel/DfsOK3cjq_s/"
   }
  ],
- "lastGearKind": "compare"
+ "lastGearKind": "tips"
 }
