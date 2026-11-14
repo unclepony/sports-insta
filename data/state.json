@@ -24,7 +24,7 @@
   "tips-wood": "2026-11-14",
   "pick-utility-recommend-beginner": "2026-10-24",
   "compare-shoes": "2026-11-14",
-  "tips-ball": "2026-10-24",
+  "tips-ball": "2026-11-14",
   "pick-fairway-wood-recommend-advanced": "2026-10-25",
   "compare-utility": "2026-10-25",
   "tour-lpga-401835173": "2026-10-25",
@@ -1048,7 +1048,16 @@
    "format": "reel",
    "mediaId": "18007096532793096",
    "permalink": "https://www.instagram.com/reel/DftPNw9jj8J/"
+  },
+  {
+   "date": "2026-11-14",
+   "id": "tips-ball",
+   "kind": "tips",
+   "category": "ball",
+   "format": "reel",
+   "mediaId": "18119150726593119",
+   "permalink": "https://www.instagram.com/reel/DfuCEGgDJ3A/"
   }
  ],
- "lastGearKind": "compare"
+ "lastGearKind": "tips"
 }
