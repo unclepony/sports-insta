@@ -23,7 +23,7 @@
   "compare-ball": "2026-11-13",
   "tips-wood": "2026-11-14",
   "pick-utility-recommend-beginner": "2026-10-24",
-  "compare-shoes": "2026-10-24",
+  "compare-shoes": "2026-11-14",
   "tips-ball": "2026-10-24",
   "pick-fairway-wood-recommend-advanced": "2026-10-25",
   "compare-utility": "2026-10-25",
@@ -1039,7 +1039,16 @@
    "format": "reel",
    "mediaId": "18134986969754053",
    "permalink": "https://www.instagram.com/reel/Dfsd5rfEVws/"
+  },
+  {
+   "date": "2026-11-14",
+   "id": "compare-shoes-2026-11-14",
+   "kind": "compare",
+   "category": "shoes",
+   "format": "reel",
+   "mediaId": "18007096532793096",
+   "permalink": "https://www.instagram.com/reel/DftPNw9jj8J/"
   }
  ],
- "lastGearKind": "pick"
+ "lastGearKind": "compare"
 }
