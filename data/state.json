@@ -92,7 +92,8 @@
   "pick-golf-glove-recommend": "2026-11-12",
   "pick-practice-gear-recommend-beginner": "2026-11-12",
   "pick-practice-gear-recommend-intermediate": "2026-11-13",
-  "pick-practice-gear-recommend-advanced": "2026-11-14"
+  "pick-practice-gear-recommend-advanced": "2026-11-14",
+  "pick-womens-iron-recommend-beginner": "2026-11-15"
  },
  "history": [
   {
@@ -1057,7 +1058,16 @@
    "format": "reel",
    "mediaId": "18119150726593119",
    "permalink": "https://www.instagram.com/reel/DfuCEGgDJ3A/"
+  },
+  {
+   "date": "2026-11-15",
+   "id": "pick-womens-iron-recommend-beginner",
+   "kind": "pick",
+   "category": "iron",
+   "format": "reel",
+   "mediaId": "17919971649533092",
+   "permalink": "https://www.instagram.com/reel/DfuqO3wCmKd/"
   }
  ],
- "lastGearKind": "tips"
+ "lastGearKind": "pick"
 }
