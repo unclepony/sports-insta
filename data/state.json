@@ -26,7 +26,7 @@
   "compare-shoes": "2026-11-14",
   "tips-ball": "2026-11-14",
   "pick-fairway-wood-recommend-advanced": "2026-10-25",
-  "compare-utility": "2026-10-25",
+  "compare-utility": "2026-11-15",
   "tour-lpga-401835173": "2026-10-25",
   "tips-shoes": "2026-10-25",
   "pick-fairway-wood-recommend-pro": "2026-10-26",
@@ -1067,7 +1067,16 @@
    "format": "reel",
    "mediaId": "17919971649533092",
    "permalink": "https://www.instagram.com/reel/DfuqO3wCmKd/"
+  },
+  {
+   "date": "2026-11-15",
+   "id": "compare-utility-2026-11-15",
+   "kind": "compare",
+   "category": "utility",
+   "format": "reel",
+   "mediaId": "18148105348608654",
+   "permalink": "https://www.instagram.com/reel/Dfu3gs-gYrj/"
   }
  ],
- "lastGearKind": "pick"
+ "lastGearKind": "compare"
 }
