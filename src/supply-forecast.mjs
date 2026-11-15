@@ -1,8 +1,9 @@
 // 앞으로 N일 게시 가능 수 예측 (게시 파이프라인 밖, 읽기만) — 2026-11-11 in-1110-1 셀프 개선
-//   node src/supply-forecast.mjs [일수=21] [--pick 21]
+//   node src/supply-forecast.mjs [일수=21] [--pick 21] [--skip gps,practice,glove,launch]
 // 오늘 data/raw 의 후보(gear·pick)와 data/state.json 으로, 반복 금지(plan.mjs repeatDays)와
 // 하루 한도(DAILY_MAX)를 그대로 적용해 날마다 몇 개가 나갈 수 있는지 흉내 낸다(투어 결과는 미래를 몰라 뺌).
 // 고르는 순서는 choose() 를 그대로 쓴다. --pick N 은 pick 반복 금지를 N일로 바꿨을 때의 가정 계산(코드는 안 바꿈).
+// --skip a,b 는 그 분류의 pick 을 '다시 올리기'(이미 올린 적 있는 것)에서 뺐을 때의 가정 계산(2026-11-16 in-1116-1, E7 분류 제외 안).
 import { readdirSync } from 'node:fs';
 import { DAILY_MAX, KIND_CYCLE, baseId, candidates, loadRaw, postedToday, repeatDays } from './plan.mjs';
 import { daysBetween, readJson } from './util.mjs';
@@ -11,6 +12,8 @@ const args = process.argv.slice(2);
 const days = Number(args.find((a) => /^\d+$/.test(a)) || 21);
 const pi = args.indexOf('--pick');
 const pickDays = pi >= 0 ? Number(args[pi + 1]) : null;
+const si = args.indexOf('--skip');
+const skip = new Set(si >= 0 ? String(args[si + 1] || '').split(',').filter(Boolean) : []);
 const rd = (kind) => (kind === 'pick' && pickDays ? pickDays : repeatDays(kind));
 
 const rawRoot = new URL('../data/raw/', import.meta.url);
@@ -24,7 +27,8 @@ function pickOne(list, date) {
   if (postedToday(state, date).length >= DAILY_MAX) return null;
   const recent = (p) => { const last = state.posted[baseId(p.id)]; return last && daysBetween(last, date) < rd(p.kind); };
   const todayCats = new Set(postedToday(state, date).map((h) => h.category).filter(Boolean));
-  const gear = list.filter((p) => p.kind !== 'tour' && !recent(p));
+  const skipped = (p) => p.kind === 'pick' && skip.has(p.category) && state0.posted[baseId(p.id)];
+  const gear = list.filter((p) => p.kind !== 'tour' && !recent(p) && !skipped(p));
   const last = KIND_CYCLE.indexOf(state.lastGearKind);
   for (let i = 0; i < KIND_CYCLE.length; i++) {
     const pool = gear.filter((p) => p.kind === KIND_CYCLE[(last + 1 + i) % KIND_CYCLE.length]);
@@ -50,7 +54,7 @@ for (let i = 0; i < days; i++) {
   rows.push({ date, before, got });
 }
 const dow = (d) => '일월화수목금토'[new Date(`${d}T12:00:00+09:00`).getUTCDay()];
-console.log(`## 게시 가능 수 예측 (${today}부터 ${days}일, 하루 최대 ${DAILY_MAX}, 반복 금지 pick ${rd('pick')}일 · compare ${rd('compare')}일 · tips ${rd('tips')}일${pickDays ? ' — pick 가정값' : ''})`);
+console.log(`## 게시 가능 수 예측 (${today}부터 ${days}일, 하루 최대 ${DAILY_MAX}, 반복 금지 pick ${rd('pick')}일 · compare ${rd('compare')}일 · tips ${rd('tips')}일${pickDays ? ' — pick 가정값' : ''}${skip.size ? ` · 다시 올리지 않는 pick 분류: ${[...skip].join(', ')}` : ''})`);
 console.log('| 날짜 | 이미 올림 | 더 나갈 수 있음 | 종류 |\n|---|---|---|---|');
 for (const r of rows) {
   const c = {}; for (const k of r.got) c[k] = (c[k] || 0) + 1;
