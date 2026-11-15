@@ -93,7 +93,8 @@
   "pick-practice-gear-recommend-beginner": "2026-11-12",
   "pick-practice-gear-recommend-intermediate": "2026-11-13",
   "pick-practice-gear-recommend-advanced": "2026-11-14",
-  "pick-womens-iron-recommend-beginner": "2026-11-15"
+  "pick-womens-iron-recommend-beginner": "2026-11-15",
+  "pick-womens-iron-recommend-intermediate": "2026-11-15"
  },
  "history": [
   {
@@ -1085,7 +1086,16 @@
    "format": "reel",
    "mediaId": "18103677182394812",
    "permalink": "https://www.instagram.com/reel/DfvwgmqiGzi/"
+  },
+  {
+   "date": "2026-11-15",
+   "id": "pick-womens-iron-recommend-intermediate",
+   "kind": "pick",
+   "category": "iron",
+   "format": "reel",
+   "mediaId": "17911159308664656",
+   "permalink": "https://www.instagram.com/reel/Dfwq5McjRr2/"
   }
  ],
- "lastGearKind": "tips"
+ "lastGearKind": "pick"
 }
