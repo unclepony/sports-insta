@@ -1,0 +1,464 @@
+{
+ "fetchedAt": "2026-11-15T17:20:27.931Z",
+ "source": "ESPN",
+ "kind": "latest",
+ "league": "lpga",
+ "id": "401835176",
+ "name": "The ANNIKA driven by Gainbridge at Pelican",
+ "start": "2026-11-12T05:00Z",
+ "end": "2026-11-15T05:00Z",
+ "state": "in",
+ "detail": "Round 4 - In Progress",
+ "purse": 3250000,
+ "course": {
+  "name": "Pelican Golf Club",
+  "par": 70,
+  "yards": 6349
+ },
+ "players": [
+  {
+   "id": "7510",
+   "name": "Lindy Duncan",
+   "country": "USA",
+   "amateur": false,
+   "pos": "1",
+   "tie": false,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -14,
+   "toParText": "-13",
+   "total": 197,
+   "rounds": [
+    62,
+    66,
+    69,
+    3
+   ],
+   "earnings": 0,
+   "thru": 1
+  },
+  {
+   "id": "11425",
+   "name": "Yuri Yoshida",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "T2",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -12,
+   "toParText": "-11",
+   "total": 199,
+   "rounds": [
+    66,
+    66,
+    67,
+    3
+   ],
+   "earnings": 0,
+   "thru": 1
+  },
+  {
+   "id": "9945",
+   "name": "Hye-Jin Choi",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T2",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -12,
+   "toParText": "-12",
+   "total": 198,
+   "rounds": [
+    61,
+    67,
+    70,
+    4
+   ],
+   "earnings": 0,
+   "thru": 1
+  },
+  {
+   "id": "8087",
+   "name": "Gaby López",
+   "country": "Mexico",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -10,
+   "toParText": "-9",
+   "total": 201,
+   "rounds": [
+    68,
+    63,
+    70,
+    3
+   ],
+   "earnings": 0,
+   "thru": 1
+  },
+  {
+   "id": "5259423",
+   "name": "Ina Yoon",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -10,
+   "toParText": "-10",
+   "total": 200,
+   "rounds": [
+    64,
+    67,
+    69,
+    4
+   ],
+   "earnings": 0,
+   "thru": 1
+  },
+  {
+   "id": "10620",
+   "name": "Haeran Ryu",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "6",
+   "tie": false,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -9,
+   "toParText": "-9",
+   "total": 201,
+   "rounds": [
+    67,
+    69,
+    65,
+    4
+   ],
+   "earnings": 0,
+   "thru": 1
+  },
+  {
+   "id": "4916234",
+   "name": "Dewi Weber",
+   "country": "Netherlands",
+   "amateur": false,
+   "pos": "T7",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -8,
+   "toParText": "-7",
+   "total": 203,
+   "rounds": [
+    66,
+    69,
+    68,
+    7
+   ],
+   "earnings": 0,
+   "thru": 2
+  },
+  {
+   "id": "5157244",
+   "name": "Julia López Ramirez",
+   "country": "Spain",
+   "amateur": false,
+   "pos": "T7",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -8,
+   "toParText": "-9",
+   "total": 201,
+   "rounds": [
+    64,
+    67,
+    70,
+    9
+   ],
+   "earnings": 0,
+   "thru": 2
+  },
+  {
+   "id": "5201229",
+   "name": "Lottie Woad",
+   "country": "England",
+   "amateur": false,
+   "pos": "T9",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -7,
+   "toParText": "-7",
+   "total": 203,
+   "rounds": [
+    65,
+    68,
+    70,
+    11
+   ],
+   "earnings": 0,
+   "thru": 3
+  },
+  {
+   "id": "9012",
+   "name": "Nelly Korda",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T9",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -7,
+   "toParText": "-7",
+   "total": 203,
+   "rounds": [
+    63,
+    69,
+    71,
+    11
+   ],
+   "earnings": 0,
+   "thru": 3
+  },
+  {
+   "id": "4708898",
+   "name": "Yuna Nishimura",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -6,
+   "toParText": "-5",
+   "total": 205,
+   "rounds": [
+    66,
+    67,
+    72,
+    18
+   ],
+   "earnings": 0,
+   "thru": 5
+  },
+  {
+   "id": "9758",
+   "name": "Jin Young Ko",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -6,
+   "toParText": "-6",
+   "total": 204,
+   "rounds": [
+    67,
+    69,
+    68,
+    15
+   ],
+   "earnings": 0,
+   "thru": 4
+  },
+  {
+   "id": "5075179",
+   "name": "Melanie Green",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -6,
+   "toParText": "-7",
+   "total": 203,
+   "rounds": [
+    67,
+    66,
+    70,
+    12
+   ],
+   "earnings": 0,
+   "thru": 3
+  },
+  {
+   "id": "4369229",
+   "name": "Frida Kinhult",
+   "country": "Sweden",
+   "amateur": false,
+   "pos": "T11",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -6,
+   "toParText": "-7",
+   "total": 203,
+   "rounds": [
+    65,
+    69,
+    69,
+    9
+   ],
+   "earnings": 0,
+   "thru": 2
+  },
+  {
+   "id": "9539",
+   "name": "Andrea Lee",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T15",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -5,
+   "toParText": "-1",
+   "total": 209,
+   "rounds": [
+    67,
+    69,
+    73,
+    28
+   ],
+   "earnings": 0,
+   "thru": 8
+  },
+  {
+   "id": "10168",
+   "name": "Nicole Broch Estrup",
+   "country": "Denmark",
+   "amateur": false,
+   "pos": "T15",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -5,
+   "toParText": "-3",
+   "total": 207,
+   "rounds": [
+    64,
+    70,
+    73,
+    30
+   ],
+   "earnings": 0,
+   "thru": 8
+  },
+  {
+   "id": "4396037",
+   "name": "A Lim Kim",
+   "country": "South Korea",
+   "amateur": false,
+   "pos": "T15",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -5,
+   "toParText": "-4",
+   "total": 206,
+   "rounds": [
+    66,
+    70,
+    70,
+    22
+   ],
+   "earnings": 0,
+   "thru": 6
+  },
+  {
+   "id": "11281",
+   "name": "Rose Zhang",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T15",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -5,
+   "toParText": "-4",
+   "total": 206,
+   "rounds": [
+    67,
+    69,
+    70,
+    22
+   ],
+   "earnings": 0,
+   "thru": 6
+  },
+  {
+   "id": "4401235",
+   "name": "Minami Katsu",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "T15",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -5,
+   "toParText": "-5",
+   "total": 205,
+   "rounds": [
+    61,
+    69,
+    75,
+    23
+   ],
+   "earnings": 0,
+   "thru": 6
+  },
+  {
+   "id": "5129950",
+   "name": "Aki Iwai",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "T15",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -5,
+   "toParText": "-6",
+   "total": 204,
+   "rounds": [
+    72,
+    61,
+    71,
+    20
+   ],
+   "earnings": 0,
+   "thru": 5
+  },
+  {
+   "id": "4413602",
+   "name": "Erika Hara",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "T15",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -5,
+   "toParText": "-6",
+   "total": 204,
+   "rounds": [
+    65,
+    70,
+    69,
+    16
+   ],
+   "earnings": 0,
+   "thru": 4
+  },
+  {
+   "id": "7424",
+   "name": "Carlota Ciganda",
+   "country": "Spain",
+   "amateur": false,
+   "pos": "T15",
+   "tie": true,
+   "status": "STATUS_IN_PROGRESS",
+   "toPar": -5,
+   "toParText": "-7",
+   "total": 203,
+   "rounds": [
+    65,
+    63,
+    75,
+    17
+   ],
+   "earnings": 0,
+   "thru": 4
+  }
+ ],
+ "next": {
+  "name": "CME Group Tour Championship",
+  "start": "2026-11-19T08:00Z"
+ }
+}
