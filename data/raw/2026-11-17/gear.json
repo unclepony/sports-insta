@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-16T20:37:48.560Z",
+ "fetchedAt": "2026-11-16T22:42:56.567Z",
  "source": "golf-price config (products.json, picks.json)",
  "categories": [
   {
@@ -2760,10 +2760,10 @@
    "min": 110000,
    "max": 330000,
    "pick": {
-    "title": "미즈노 ST-Z 230 남성 페어웨이우드 벤투스 티타니움 블랙",
-    "price": 380000,
+    "title": "[미즈노코리아 정품] ST-Z 230 남성 페어웨이우드 [VENTUS TITANIUM BLACK]",
+    "price": 185000,
     "rocket": false,
-    "checked": "2026-11-16"
+    "checked": "2026-11-17"
    }
   },
   {

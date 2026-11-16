@@ -32,7 +32,7 @@
   "pick-fairway-wood-recommend-pro": "2026-10-26",
   "compare-rangefinder": "2026-11-16",
   "tour-pga-401850917": "2026-10-26",
-  "tips-rangefinder": "2026-10-27",
+  "tips-rangefinder": "2026-11-17",
   "pick-utility-recommend-intermediate": "2026-10-27",
   "compare-bag": "2026-11-17",
   "tips-glove": "2026-10-27",
@@ -1143,7 +1143,16 @@
    "format": "reel",
    "mediaId": "18230263675332281",
    "permalink": "https://www.instagram.com/reel/Df0O7UPiBMT/"
+  },
+  {
+   "date": "2026-11-17",
+   "id": "tips-rangefinder",
+   "kind": "tips",
+   "category": "rangefinder",
+   "format": "reel",
+   "mediaId": "18651294712059959",
+   "permalink": "https://www.instagram.com/reel/Df0dSd9kReG/"
   }
  ],
- "lastGearKind": "compare"
+ "lastGearKind": "tips"
 }
