@@ -237,7 +237,9 @@ function remainingSummary() {
     floors.sort(); nexts.sort();
     const last = floors.at(-1);
     const gap = last && nexts.length && nexts[0] > last ? `\n- ⚠ 추정: ${last}~${addDays(nexts[0], -1)} 사이 올릴 용품 후보가 없을 수 있음(투어 결과만 나감) — 종류 복귀 계획 필요\n` : '';
-    return rows.length ? `\n## 남은 후보 (반복 금지 기간 안에 안 올린 것: pick 30일 · compare·tips 21일)\n| 종류 | 남은 / 전체 | 최근 7일 하루 | 바닥 예상(추정) | 다 썼으면 다시 쓸 수 있는 날 |\n|---|---|---|---|---|\n${rows.join('\n')}\n${gap}` : '';
+    // 제목의 반복 금지 일수는 plan.mjs repeatDays 에서 읽음(2026-11-17, in-1117-1 — E7 로 pick 일수가 바뀌어도 보고서가 맞게)
+    const days = kinds.map((k) => `${k} ${repeatDays(k)}일`).join(' · ');
+    return rows.length ? `\n## 남은 후보 (반복 금지 기간 안에 안 올린 것: ${days})\n| 종류 | 남은 / 전체 | 최근 7일 하루 | 바닥 예상(추정) | 다 썼으면 다시 쓸 수 있는 날 |\n|---|---|---|---|---|\n${rows.join('\n')}\n${gap}` : '';
   } catch (e) { return `\n- 남은 후보 계산 실패: ${e.message}\n`; }
 }
 
