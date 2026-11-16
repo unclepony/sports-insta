@@ -95,7 +95,8 @@
   "pick-practice-gear-recommend-advanced": "2026-11-14",
   "pick-womens-iron-recommend-beginner": "2026-11-15",
   "pick-womens-iron-recommend-intermediate": "2026-11-15",
-  "tour-pga-401850980": "2026-11-16"
+  "tour-pga-401850980": "2026-11-16",
+  "tour-lpga-401835176": "2026-11-16"
  },
  "history": [
   {
@@ -1114,6 +1115,15 @@
    "format": "reel",
    "mediaId": "18112614524185520",
    "permalink": "https://www.instagram.com/reel/DfxgacXAkau/"
+  },
+  {
+   "date": "2026-11-16",
+   "id": "tour-lpga-401835176",
+   "kind": "tour",
+   "category": null,
+   "format": "reel",
+   "mediaId": "18113460914225782",
+   "permalink": "https://www.instagram.com/reel/DfyVZbKmcnL/"
   }
  ],
  "lastGearKind": "compare"
