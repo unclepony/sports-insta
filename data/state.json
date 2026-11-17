@@ -1,7 +1,7 @@
 {
  "posted": {
   "tour-lpga-401835172": "2026-10-18",
-  "pick-driver-recommend-2026-beginner": "2026-10-18",
+  "pick-driver-recommend-2026-beginner": "2026-11-17",
   "clip-t-fairway-wood-recommend-0": "2026-10-18",
   "compare-driver": "2026-11-09",
   "clip-t-driver-recommend-2026-1": "2026-10-19",
@@ -1152,7 +1152,16 @@
    "format": "reel",
    "mediaId": "18651294712059959",
    "permalink": "https://www.instagram.com/reel/Df0dSd9kReG/"
+  },
+  {
+   "date": "2026-11-17",
+   "id": "pick-driver-recommend-2026-beginner",
+   "kind": "pick",
+   "category": "driver",
+   "format": "reel",
+   "mediaId": "17994977448083177",
+   "permalink": "https://www.instagram.com/reel/Df1JlRWimB7/"
   }
  ],
- "lastGearKind": "tips"
+ "lastGearKind": "pick"
 }
