@@ -1,11 +1,11 @@
 {
  "date": "2026-11-18",
- "capturedAt": "2026-11-17T19:19:33.430Z",
+ "capturedAt": "2026-11-17T21:30:50.848Z",
  "account": {
   "followers": 3,
-  "mediaCount": 121,
+  "mediaCount": 122,
   "username": "choicegolfgear",
-  "reach": 539,
+  "reach": 599,
   "profile_views": 5,
   "profile_links_taps": 0,
   "website_clicks": 2,
@@ -14,7 +14,7 @@
   "biography": "골프소식",
   "yesterday": {
    "day": "2026-11-17",
-   "reach": 111,
+   "reach": 170,
    "profile_views": 0,
    "profile_links_taps": 0,
    "website_clicks": 0
@@ -22,13 +22,13 @@
  },
  "posts": [
   {
-   "id": "18001348938022198",
-   "at": "2026-11-17T19:18:20+0000",
+   "id": "18034928381908804",
+   "at": "2026-11-17T21:29:51+0000",
    "type": "REELS",
-   "permalink": "https://www.instagram.com/reel/Df2qdISiNak/",
-   "post": "pick-womens-iron-recommend-pro",
-   "kind": "pick",
-   "category": "iron",
+   "permalink": "https://www.instagram.com/reel/Df25gxRoMX1/",
+   "post": "compare-glove-2026-11-18",
+   "kind": "compare",
+   "category": "glove",
    "format": "reel",
    "likes": 0,
    "comments": 0,
@@ -40,6 +40,29 @@
    "ig_reels_avg_watch_time": 0,
    "ig_reels_video_view_total_time": 0,
    "reels_skip_rate": 0,
+   "profile_visits": null,
+   "follows": null,
+   "recentComments": []
+  },
+  {
+   "id": "18001348938022198",
+   "at": "2026-11-17T19:18:20+0000",
+   "type": "REELS",
+   "permalink": "https://www.instagram.com/reel/Df2qdISiNak/",
+   "post": "pick-womens-iron-recommend-pro",
+   "kind": "pick",
+   "category": "iron",
+   "format": "reel",
+   "likes": 0,
+   "comments": 0,
+   "reach": 60,
+   "views": 90,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0,
+   "ig_reels_avg_watch_time": 4813,
+   "ig_reels_video_view_total_time": 288821,
+   "reels_skip_rate": 53.8,
    "profile_visits": null,
    "follows": null,
    "recentComments": []
@@ -681,26 +704,6 @@
    "ig_reels_avg_watch_time": 4671,
    "ig_reels_video_view_total_time": 490500,
    "reels_skip_rate": 56.2
-  },
-  {
-   "id": "18098143856439775",
-   "at": "2026-11-10T11:40:24+0000",
-   "type": "REELS",
-   "permalink": "https://www.instagram.com/reel/Dfj0fT9Dk9e/",
-   "post": "pick-golf-bag-recommend",
-   "kind": "pick",
-   "category": "bag",
-   "format": "reel",
-   "likes": 0,
-   "comments": 0,
-   "reach": 103,
-   "views": 115,
-   "saved": 0,
-   "shares": 0,
-   "total_interactions": 0,
-   "ig_reels_avg_watch_time": 3558,
-   "ig_reels_video_view_total_time": 366478,
-   "reels_skip_rate": 70.9
   }
  ]
 }
