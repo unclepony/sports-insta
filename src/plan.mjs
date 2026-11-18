@@ -23,7 +23,9 @@ const REELS_FIRST = true; // 2026-10-21 실험: 모든 게시물을 릴스로(�
 const REPEAT_DAYS = 30;
 // E5(2026-11-09 적용, ops exp #38, 판단 11/19): compare·tips 는 21일 뒤 다시 올림 — pick 바닥(11/12) 뒤 빈 날 막기.
 // compare 는 그날 가격으로 다시 만들어져 숫자가 새로 바뀜. 되돌리기: 이 줄을 지우고 repeatDays 가 REPEAT_DAYS 만 돌려주게.
-const REPEAT_DAYS_BY_KIND = { compare: 21, tips: 21 };
+// E7(2026-11-19 적용, 판단 12/01): pick 도 21일 뒤 다시 올림 — 11/21~29 하루 1~2개 공백 막기(E5 판정 같은 분류 비교 16편 평균 96%).
+// 분류 제외 없음(관제탑 11/16 결정). 되돌리기: 아래 `pick: 21` 항목만 지움.
+const REPEAT_DAYS_BY_KIND = { compare: 21, tips: 21, pick: 21 };
 export const repeatDays = (kind) => (kind === 'tour' ? 99999 : REPEAT_DAYS_BY_KIND[kind] ?? REPEAT_DAYS);
 
 export function loadRaw(rawDir) {
