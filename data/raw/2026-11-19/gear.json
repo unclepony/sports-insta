@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-18T18:57:42.557Z",
+ "fetchedAt": "2026-11-18T21:02:38.487Z",
  "source": "golf-price config (products.json, picks.json)",
  "categories": [
   {
@@ -4343,9 +4343,9 @@
    ],
    "pick": {
     "title": "핑 G440 SFT 페어웨이우드 ALTA J CB BLUE 샤프트 삼양인터내셔날 정품",
-    "price": 355000,
+    "price": 358000,
     "rocket": false,
-    "checked": "2026-11-07"
+    "checked": "2026-11-19"
    }
   },
   {
@@ -8843,10 +8843,10 @@
     "혼마 정품 여부 확인"
    ],
    "pick": {
-    "title": "혼마 베레스 09 3스타 남성용 페어웨이우드",
-    "price": 446160,
+    "title": "3스타 혼마 베레스 09 남성 페어웨이우드 3번 15도 R",
+    "price": 856000,
     "rocket": false,
-    "checked": "2026-11-11"
+    "checked": "2026-11-19"
    }
   },
   {
@@ -15363,6 +15363,40 @@
     "rocket": false,
     "checked": "2026-11-19"
    }
+  },
+  {
+   "id": "callaway-quantum-mini-buffy-fairway",
+   "category": "wood",
+   "name": "캘러웨이 퀀텀 미니 버피(QUANTUM MINI BUFFY) 페어웨이 우드 (남성)",
+   "summary": "캘러웨이 퀀텀 시리즈의 4번(BUFFY) 우드로, 일반 우드보다 샤프트가 짧은(42.25인치) 17도 모델입니다. 일본에서 2026년 4월 나왔고 국내는 한국캘러웨이골프가 수입합니다.",
+   "points": [
+    "로프트 17도, 길이 42.25인치(일반 5번 우드보다 짧음)",
+    "솔 안쪽 스피드웨이브 2.0, 조절 호젤 OptiFit 4",
+    "2026년 4월 출시(일본), 샤프트·강도는 판매처 확인"
+   ],
+   "pick": {
+    "title": "[캘러웨이코리아정품] 2026 퀀텀 미니 버피 페어웨이(ATHLEMAX 50)",
+    "price": 461990,
+    "rocket": false,
+    "checked": "2026-11-19"
+   }
+  },
+  {
+   "id": "taylormade-qi35max-fairway",
+   "category": "wood",
+   "name": "테일러메이드 Qi35 MAX 페어웨이 우드 (남성)",
+   "summary": "테일러메이드 Qi35 시리즈(2025년 1월 발표)에서 가장 관용성이 높은 MAX 페어웨이 우드입니다. 200cc 큰 헤드와 뒤쪽 34g 텅스텐으로 공이 쉽게 뜹니다.",
+   "points": [
+    "Qi35 라인에서 가장 큰 200cc 헤드",
+    "뒤쪽 고정 텅스텐 34g, 높은 관용성",
+    "3번·5번은 4도 로프트 조절 슬리브"
+   ],
+   "pick": {
+    "title": "테일러메이드 남성용 Qi35 MAX 페어웨이우드 3번 DIA BLUE TM50",
+    "price": 268990,
+    "rocket": true,
+    "checked": "2026-11-19"
+   }
   }
  ],
  "guides": [
@@ -16819,7 +16853,7 @@
   },
   {
    "slug": "fairway-wood-recommend",
-   "title": "남성 페어웨이 우드 추천: 초보~프로 56종 비교 (G440·Qi·퀀텀·젝시오·ZXi)",
+   "title": "남성 페어웨이 우드 추천: 초보~프로 58종 비교 (G440·Qi·퀀텀·젝시오·ZXi)",
    "gender": "남성",
    "updated": "2026-10-16",
    "criteria": [
@@ -18025,6 +18059,48 @@
       4,
       4,
       3
+     ]
+    },
+    {
+     "id": "callaway-quantum-mini-buffy-fairway",
+     "skill": "중급",
+     "role": "짧은 샤프트 4번 우드",
+     "forWhom": "3번 우드가 길어 부담스러운 중급 골퍼",
+     "pros": [
+      "42.25인치 짧은 샤프트로 정확히 맞히기 쉬움",
+      "17도로 3번과 5번 사이 거리"
+     ],
+     "cons": [
+      "로프트 17도 한 가지",
+      "국내 판매처가 적음"
+     ],
+     "verdict": "3번 우드가 어려운 중급자의 티샷·세컨드용 대안",
+     "scores": [
+      4,
+      4,
+      4,
+      3
+     ]
+    },
+    {
+     "id": "taylormade-qi35max-fairway",
+     "skill": "중급",
+     "role": "직전 세대 관용성형",
+     "forWhom": "우드가 잘 안 뜨는 중급자(연결 상품은 3번)",
+     "pros": [
+      "200cc 큰 헤드로 미스에 강함",
+      "3·5번 로프트 조절"
+     ],
+     "cons": [
+      "직전 세대(후속 Qi4D)",
+      "스핀이 많아 강한 스윙엔 뜰 수 있음"
+     ],
+     "verdict": "쉽게 띄우고 싶은 중급자에게 맞는 관용성 우드",
+     "scores": [
+      3,
+      5,
+      5,
+      4
      ]
     }
    ]
