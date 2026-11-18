@@ -98,7 +98,8 @@
   "tour-pga-401850980": "2026-11-16",
   "tour-lpga-401835176": "2026-11-16",
   "pick-womens-iron-recommend-advanced": "2026-11-16",
-  "pick-womens-iron-recommend-pro": "2026-11-18"
+  "pick-womens-iron-recommend-pro": "2026-11-18",
+  "pick-golf-shoes-recommend-beginner": "2026-11-18"
  },
  "history": [
   {
@@ -1198,7 +1199,16 @@
    "format": "reel",
    "mediaId": "18129803107873784",
    "permalink": "https://www.instagram.com/reel/Df3qnhuAW-O/"
+  },
+  {
+   "date": "2026-11-18",
+   "id": "pick-golf-shoes-recommend-beginner",
+   "kind": "pick",
+   "category": "shoes",
+   "format": "reel",
+   "mediaId": "18083555483376051",
+   "permalink": "https://www.instagram.com/reel/Df4eR8ajQS5/"
   }
  ],
- "lastGearKind": "tips"
+ "lastGearKind": "pick"
 }
