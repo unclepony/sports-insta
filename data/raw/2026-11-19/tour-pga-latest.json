@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-19T04:19:58.807Z",
+ "fetchedAt": "2026-11-19T12:02:24.296Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "pga",
@@ -2314,7 +2314,7 @@
   }
  ],
  "next": {
-  "name": "The RSM Classic",
-  "start": "2026-11-19T08:00Z"
+  "name": "Hero World Challenge",
+  "start": "2026-12-03T08:00Z"
  }
 }
