@@ -1,0 +1,35 @@
+{
+  "template": "tip-v3",
+  "scenes": [
+    {
+      "key": "intro",
+      "dur": 5.5
+    },
+    {
+      "key": "answer",
+      "dur": 14.8
+    },
+    {
+      "key": "outro",
+      "dur": 6.7
+    }
+  ],
+  "episode": "t-utility-recommend-3",
+  "format": "shorts",
+  "type": "tip",
+  "guide": "utility-recommend",
+  "madeAt": "2026-11-19",
+  "dataUpdated": "2026-10-16",
+  "voice": "ko-KR-Neural2-A",
+  "title": "유틸리티와 롱아이언 차이는? | 초보 골퍼 유틸리티 고르기 #shorts",
+  "description": "▶ 유틸리티 실력별 비교·현재 가격: https://choicegolf.unclepony.com/g/utility-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-utility-recommend-3\n\nQ. 유틸리티와 롱아이언 차이는?\nA. 유틸리티는 헤드가 넓고 무게중심이 낮아 공이 쉽게 뜹니다. 롱아이언은 탄도와 방향을 다루기 좋지만 정확히 맞히기가 어렵습니다. 초보나 스윙이 빠르지 않은 골퍼에게는 유틸리티가 더 쉬운 편입니다.\n\n초이스골프 가이드 \"남성 유틸리티 추천: 초보~프로 49종 비교 (G440·Qi10·퀀텀·젝시오·ZXi)\" 의 FAQ 내용을 요약했습니다. 가격·사양은 바뀔 수 있으니 링크에서 확인해 주세요.\n\n▶ 유틸리티 비교·현재 가격 확인 (초이스골프)\nhttps://choicegolf.unclepony.com/g/utility-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-utility-recommend-3\n\n그림은 초이스골프가 직접 그린 일러스트로 실제 제품과 다릅니다. 배경음도 직접 만들었으며, 한국어 내레이션은 음성 합성(TTS)입니다. 제조사·판매처의 사진·영상·로고는 사용하지 않았습니다.\n\n#골프 #유틸리티추천 #골프팁",
+  "tags": [
+    "유틸리티 추천",
+    "유틸리티 고르는 법",
+    "골프 팁",
+    "초이스골프"
+  ],
+  "categoryId": "17",
+  "link": "https://choicegolf.unclepony.com/g/utility-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-utility-recommend-3",
+  "linkLabel": "실력별 전체 비교"
+}
