@@ -106,7 +106,8 @@ export async function accountInsights(cfg) {
   try { out.website = (await call('GET', cfg.userId, { fields: 'website' }, cfg)).website ?? null; } catch { out.website = null; }
   // 프로필 소개 글(손님이 링크 누르기 전에 보는 문장) — 사장님 손 없이 매일 점검하려고 기록(2026-11-03, in-1103-1). 실패해도 다른 값에 영향 없게 따로 부른다.
   try { out.biography = (await call('GET', cfg.userId, { fields: 'biography' }, cfg)).biography ?? null; } catch { out.biography = null; }
-  // 어제 하루(KST 00:00~24:00) 고정 창 — 수집 시각이 날마다 달라 24시간 창이 겹치는 문제를 없앤다(2026-10-26).
+  // 어제 하루(KST 00:00~24:00)로 묻는 고정 창 — 수집 시각이 날마다 달라 24시간 창이 겹치는 문제를 없앤다(2026-10-26).
+  // 단, 돌아오는 값은 사이트 KST 날짜보다 하루 앞선 것으로 보인다(11/12↔11/13·11/16↔11/17 링크 클릭 2건, 2026-11-20 in-1120-1) — 인스타가 미국 서부 시간 하루로 묶는 것으로 추정.
   const end = new Date(`${kstToday()}T00:00:00+09:00`).getTime() / 1000;
   out.yesterday = { day: new Date((end - 86400) * 1000 + 9 * 3600e3).toISOString().slice(0, 10) };
   for (const metric of ['reach', 'profile_views', 'profile_links_taps', 'website_clicks']) {

@@ -260,7 +260,7 @@ async function report() {
     '',
     ins ? `## 계정\n- 팔로워 ${ins.account.followers ?? '?'} · 하루 도달 ${ins.account.reach ?? '?'} · 프로필 방문 ${ins.account.profile_views ?? '?'} · 링크 클릭 ${linkTaps(ins.account) ?? '?'}` : '',
     // 어제 값은 늦은 새벽 수집이면 아직 덜 쌓인 값(10/31: 03시 104 → 다음 날 384) — 수집 시각과 '잠정'을 붙인다(2026-11-02)
-    ins?.account?.yesterday ? `- 어제(${ins.account.yesterday.day} KST 하루): 도달 ${ins.account.yesterday.reach ?? '?'} · 프로필 방문 ${ins.account.yesterday.profile_views ?? '?'} · 링크 클릭 ${linkTaps(ins.account.yesterday) ?? '?'}${yesterdayNote(ins)}` : '',
+    ins?.account?.yesterday ? `- 어제(인스타 집계일 ${ins.account.yesterday.day}): 도달 ${ins.account.yesterday.reach ?? '?'} · 프로필 방문 ${ins.account.yesterday.profile_views ?? '?'} · 링크 클릭 ${linkTaps(ins.account.yesterday) ?? '?'}${yesterdayNote(ins)}` : '',
     ins?.account && 'website' in ins.account ? `- 프로필 링크: ${ins.account.website ?? '확인 못 함'}${ins.account.website && !/utm_source=instagram/.test(ins.account.website) ? ' (우리가 붙인 utm 없음 — 인스타가 링크에 utm_source=ig 를 스스로 붙여 사이트 통계엔 \'캠페인: ig\'(ig / social)로 남음. utm 없이 instagram.com 출처·인스타 앱일 때는 \'인스타그램\', 우리 utm 이면 \'캠페인: instagram\'. 셋을 더해 본다 — golf-price functions/api/hit.js)' : ''}` : '',
     ins?.account && 'biography' in ins.account ? `- 프로필 소개: ${ins.account.biography ? JSON.stringify(ins.account.biography.replace(/\s+/g, ' ').trim()) : '확인 못 함(빈 값 또는 API 오류)'}` : '',
     dailyWeek(),
@@ -323,7 +323,7 @@ function dailyWeek() {
   }
   if (!n) return '';
   const ratio = reach ? ((pv / reach) * 100).toFixed(2) : '-';
-  return `\n## 최근 7일 하루 값 (그날 마지막 수집 기준)\n| 날짜 | 도달 | 프로필 방문 | 링크 클릭 | 수집 |\n|---|---|---|---|---|\n${rows.join('\n')}\n- ${n}일 합: 도달 ${reach} · 프로필 방문 ${pv} (${ratio}%) · 링크 클릭 ${taps}\n`;
+  return `\n## 최근 7일 하루 값 (그날 마지막 수집 기준)\n| 날짜 | 도달 | 프로필 방문 | 링크 클릭 | 수집 |\n|---|---|---|---|---|\n${rows.join('\n')}\n- ${n}일 합: 도달 ${reach} · 프로필 방문 ${pv} (${ratio}%) · 링크 클릭 ${taps}\n- 날짜 주의: 인스타 집계일은 사이트 통계('캠페인: ig') 날짜보다 하루 앞서 찍힌다(링크 클릭 11/12↔사이트 11/13, 11/16↔11/17 — 2건 모두). 한국 하루로 물어도 인스타가 미국 서부 시간 하루로 묶는 것으로 추정. 사이트와 맞춰 볼 때는 하루 밀어서 본다.\n`;
 }
 
 // 프로필 링크 클릭 = profile_links_taps(연락처 버튼 등) + website_clicks(소개의 사이트 링크) — 2026-11-20 in-1120-1.
