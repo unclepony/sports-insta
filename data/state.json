@@ -10,7 +10,7 @@
   "compare-iron": "2026-11-10",
   "clip-t-iron-recommend-0": "2026-10-20",
   "tips-iron": "2026-11-11",
-  "pick-driver-recommend-2026-intermediate": "2026-10-21",
+  "pick-driver-recommend-2026-intermediate": "2026-11-19",
   "compare-putter": "2026-11-11",
   "tips-wedge": "2026-11-11",
   "pick-driver-recommend-2026-advanced": "2026-10-22",
@@ -1226,7 +1226,16 @@
    "format": "reel",
    "mediaId": "18134557729691080",
    "permalink": "https://www.instagram.com/reel/Df5bVrxgjgk/"
+  },
+  {
+   "date": "2026-11-19",
+   "id": "pick-driver-recommend-2026-intermediate",
+   "kind": "pick",
+   "category": "driver",
+   "format": "reel",
+   "mediaId": "18119711453113297",
+   "permalink": "https://www.instagram.com/reel/Df6NYHej0ub/"
   }
  ],
- "lastGearKind": "tips"
+ "lastGearKind": "pick"
 }
