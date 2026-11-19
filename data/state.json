@@ -13,7 +13,7 @@
   "pick-driver-recommend-2026-intermediate": "2026-11-19",
   "compare-putter": "2026-11-11",
   "tips-wedge": "2026-11-11",
-  "pick-driver-recommend-2026-advanced": "2026-10-22",
+  "pick-driver-recommend-2026-advanced": "2026-11-20",
   "compare-wedge": "2026-11-12",
   "tips-putter": "2026-11-12",
   "pick-fairway-wood-recommend-intermediate": "2026-10-22",
@@ -1253,7 +1253,16 @@
    "format": "reel",
    "mediaId": "18651043951018281",
    "permalink": "https://www.instagram.com/reel/Df7yzYSgrCk/"
+  },
+  {
+   "date": "2026-11-20",
+   "id": "pick-driver-recommend-2026-advanced",
+   "kind": "pick",
+   "category": "driver",
+   "format": "reel",
+   "mediaId": "18126623312294525",
+   "permalink": "https://www.instagram.com/reel/Df8AzMvlTk1/"
   }
  ],
- "lastGearKind": "tips"
+ "lastGearKind": "pick"
 }
