@@ -172,7 +172,7 @@ async function sendMetrics({ date: day, account, posts }) {
   for (const m of ['views', 'likes', 'comments', 'saves', 'shares']) if (sums[m] !== undefined) rows.push({ day, metric: m, value: sums[m] });
   if (typeof account.followers === 'number') rows.push({ day, metric: 'followers', value: account.followers });
   if (typeof account.profile_views === 'number') rows.push({ day, metric: 'profile_visits', value: account.profile_views });
-  if (typeof (account.profile_links_taps ?? account.website_clicks) === 'number') rows.push({ day, metric: 'link_taps', value: account.profile_links_taps ?? account.website_clicks });
+  if (typeof linkTaps(account) === 'number') rows.push({ day, metric: 'link_taps', value: linkTaps(account) });
   const res = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json', 'x-ops-key': process.env.OPS_KEY },
     body: JSON.stringify({ source: 'insta', entity: 'atlgolf', rows, names }) });
   console.log(`대시보드 지표 ${rows.length}줄 전송: ${res.status}`);
@@ -258,9 +258,9 @@ async function report() {
     ...(p?.warnings || []).map((w) => `- 주의: ${w}`),
     ...(t.rejected || []).map((r) => `- 검증에서 거절: \`${r.id}\` — ${r.errors.slice(0, 2).join(' / ')}`),
     '',
-    ins ? `## 계정\n- 팔로워 ${ins.account.followers ?? '?'} · 하루 도달 ${ins.account.reach ?? '?'} · 프로필 방문 ${ins.account.profile_views ?? '?'} · 링크 클릭 ${ins.account.profile_links_taps ?? ins.account.website_clicks ?? '?'}` : '',
+    ins ? `## 계정\n- 팔로워 ${ins.account.followers ?? '?'} · 하루 도달 ${ins.account.reach ?? '?'} · 프로필 방문 ${ins.account.profile_views ?? '?'} · 링크 클릭 ${linkTaps(ins.account) ?? '?'}` : '',
     // 어제 값은 늦은 새벽 수집이면 아직 덜 쌓인 값(10/31: 03시 104 → 다음 날 384) — 수집 시각과 '잠정'을 붙인다(2026-11-02)
-    ins?.account?.yesterday ? `- 어제(${ins.account.yesterday.day} KST 하루): 도달 ${ins.account.yesterday.reach ?? '?'} · 프로필 방문 ${ins.account.yesterday.profile_views ?? '?'} · 링크 클릭 ${ins.account.yesterday.profile_links_taps ?? ins.account.yesterday.website_clicks ?? '?'}${yesterdayNote(ins)}` : '',
+    ins?.account?.yesterday ? `- 어제(${ins.account.yesterday.day} KST 하루): 도달 ${ins.account.yesterday.reach ?? '?'} · 프로필 방문 ${ins.account.yesterday.profile_views ?? '?'} · 링크 클릭 ${linkTaps(ins.account.yesterday) ?? '?'}${yesterdayNote(ins)}` : '',
     ins?.account && 'website' in ins.account ? `- 프로필 링크: ${ins.account.website ?? '확인 못 함'}${ins.account.website && !/utm_source=instagram/.test(ins.account.website) ? ' (우리가 붙인 utm 없음 — 인스타가 링크에 utm_source=ig 를 스스로 붙여 사이트 통계엔 \'캠페인: ig\'(ig / social)로 남음. utm 없이 instagram.com 출처·인스타 앱일 때는 \'인스타그램\', 우리 utm 이면 \'캠페인: instagram\'. 셋을 더해 본다 — golf-price functions/api/hit.js)' : ''}` : '',
     ins?.account && 'biography' in ins.account ? `- 프로필 소개: ${ins.account.biography ? JSON.stringify(ins.account.biography.replace(/\s+/g, ' ').trim()) : '확인 못 함(빈 값 또는 API 오류)'}` : '',
     dailyWeek(),
@@ -315,7 +315,7 @@ function dailyWeek() {
     const y = existsSync(f) ? readJson(f) : null;
     const v = y?.account?.yesterday;
     if (!v || v.day !== day) { rows.push(`| ${day} | - | - | - | 기록 없음 |`); continue; }
-    const t = v.profile_links_taps ?? v.website_clicks ?? 0;
+    const t = linkTaps(v) ?? 0;
     const m = yesterdayNote(y).match(/수집 (\S+ \S+) KST(?:, 하루 끝난 뒤 (\d+)시간)?/);
     const note = m ? `${m[1]}${m[2] ? ` (${m[2]}시간 뒤${+m[2] < 12 ? ', 잠정' : ''})` : ''}` : '';
     rows.push(`| ${day} | ${v.reach ?? '-'} | ${v.profile_views ?? '-'} | ${t} | ${note || '-'} |`);
@@ -324,6 +324,15 @@ function dailyWeek() {
   if (!n) return '';
   const ratio = reach ? ((pv / reach) * 100).toFixed(2) : '-';
   return `\n## 최근 7일 하루 값 (그날 마지막 수집 기준)\n| 날짜 | 도달 | 프로필 방문 | 링크 클릭 | 수집 |\n|---|---|---|---|---|\n${rows.join('\n')}\n- ${n}일 합: 도달 ${reach} · 프로필 방문 ${pv} (${ratio}%) · 링크 클릭 ${taps}\n`;
+}
+
+// 프로필 링크 클릭 = profile_links_taps(연락처 버튼 등) + website_clicks(소개의 사이트 링크) — 2026-11-20 in-1120-1.
+// 전에는 `profile_links_taps ?? website_clicks` 라 profile_links_taps 가 0(숫자)이면 website_clicks(11/12 1·11/16 2)가 가려져 보고·대시보드에 0으로 나갔다.
+// profile-rate.mjs·profile-by-kind.mjs 와 같은 셈. 둘 다 없으면 null.
+function linkTaps(a) {
+  if (!a) return null;
+  const v = [a.profile_links_taps, a.website_clicks].filter((x) => typeof x === 'number');
+  return v.length ? v.reduce((s, x) => s + x, 0) : null;
 }
 
 // 어제 하루 값의 수집 시각(KST)과, 하루가 끝난 뒤 24시간이 안 됐으면 '잠정' 표시
