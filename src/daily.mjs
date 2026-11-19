@@ -261,7 +261,7 @@ async function report() {
     ins ? `## 계정\n- 팔로워 ${ins.account.followers ?? '?'} · 하루 도달 ${ins.account.reach ?? '?'} · 프로필 방문 ${ins.account.profile_views ?? '?'} · 링크 클릭 ${ins.account.profile_links_taps ?? ins.account.website_clicks ?? '?'}` : '',
     // 어제 값은 늦은 새벽 수집이면 아직 덜 쌓인 값(10/31: 03시 104 → 다음 날 384) — 수집 시각과 '잠정'을 붙인다(2026-11-02)
     ins?.account?.yesterday ? `- 어제(${ins.account.yesterday.day} KST 하루): 도달 ${ins.account.yesterday.reach ?? '?'} · 프로필 방문 ${ins.account.yesterday.profile_views ?? '?'} · 링크 클릭 ${ins.account.yesterday.profile_links_taps ?? ins.account.yesterday.website_clicks ?? '?'}${yesterdayNote(ins)}` : '',
-    ins?.account && 'website' in ins.account ? `- 프로필 링크: ${ins.account.website ?? '확인 못 함'}${ins.account.website && !/utm_source=instagram/.test(ins.account.website) ? ' (utm 없음 — 사이트 통계는 인스타 앱 브라우저를 UA 로 \'인스타그램\' 유입으로 셈, golf-price functions/api/hit.js)' : ''}` : '',
+    ins?.account && 'website' in ins.account ? `- 프로필 링크: ${ins.account.website ?? '확인 못 함'}${ins.account.website && !/utm_source=instagram/.test(ins.account.website) ? ' (우리가 붙인 utm 없음 — 인스타가 링크에 utm_source=ig 를 스스로 붙여 사이트 통계엔 \'캠페인: ig\'(ig / social)로 남음. utm 없이 instagram.com 출처·인스타 앱일 때는 \'인스타그램\', 우리 utm 이면 \'캠페인: instagram\'. 셋을 더해 본다 — golf-price functions/api/hit.js)' : ''}` : '',
     ins?.account && 'biography' in ins.account ? `- 프로필 소개: ${ins.account.biography ? JSON.stringify(ins.account.biography.replace(/\s+/g, ' ').trim()) : '확인 못 함(빈 값 또는 API 오류)'}` : '',
     dailyWeek(),
     // '올린 뒤'는 지표를 모은 시각 기준 — 몇 시간 안 된 게시물의 도달 0·5 를 급락으로 잘못 읽지 않게(2026-10-31)
