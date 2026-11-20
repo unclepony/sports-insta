@@ -1,0 +1,35 @@
+{
+  "template": "tip-v3",
+  "scenes": [
+    {
+      "key": "intro",
+      "dur": 5.5
+    },
+    {
+      "key": "answer",
+      "dur": 15.4
+    },
+    {
+      "key": "outro",
+      "dur": 6.5
+    }
+  ],
+  "episode": "t-iron-recommend-2",
+  "format": "shorts",
+  "type": "tip",
+  "guide": "iron-recommend",
+  "madeAt": "2026-11-20",
+  "dataUpdated": "2026-10-16",
+  "voice": "ko-KR-Neural2-A",
+  "title": "아이언 세트 구성, 몇 개가 한 세트일까? | 5번·6번~피칭 초보 아이언 고르기 #shorts",
+  "description": "▶ 아이언 실력별 비교·현재 가격: https://choicegolf.unclepony.com/g/iron-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-iron-recommend-2\n\nQ. 아이언 세트는 몇 개로 되어 있나요?\nA. 보통 5번이나 6번부터 9번, 피칭웨지까지 6~7개가 한 세트입니다. 브랜드마다 구성이 달라 4번이 들어가거나 갭웨지가 포함되기도 합니다. 살 때 몇 번부터 몇 번까지인지 꼭 확인하세요.\n\n초이스골프 가이드 \"남성 아이언 추천: 초보~프로 90종 비교 (G440·Qi·JPX925·P790·T100·ZXi)\" 의 FAQ 내용을 요약했습니다. 가격·사양은 바뀔 수 있으니 링크에서 확인해 주세요.\n\n▶ 아이언 비교·현재 가격 확인 (초이스골프)\nhttps://choicegolf.unclepony.com/g/iron-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-iron-recommend-2\n\n그림은 초이스골프가 직접 그린 일러스트로 실제 제품과 다릅니다. 배경음도 직접 만들었으며, 한국어 내레이션은 음성 합성(TTS)입니다. 제조사·판매처의 사진·영상·로고는 사용하지 않았습니다.\n\n#골프 #아이언추천 #골프팁",
+  "tags": [
+    "아이언 추천",
+    "아이언 고르는 법",
+    "골프 팁",
+    "초이스골프"
+  ],
+  "categoryId": "17",
+  "link": "https://choicegolf.unclepony.com/g/iron-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-iron-recommend-2",
+  "linkLabel": "실력별 전체 비교"
+}
