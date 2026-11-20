@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-19T21:08:22.962Z",
+ "fetchedAt": "2026-11-20T04:08:01.086Z",
  "source": "ESPN",
  "kind": "live",
  "league": "pga",
@@ -2555,42 +2555,6 @@
    "thru": 0
   },
   {
-   "id": "11098",
-   "name": "Cameron Champ",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T142",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": 5,
-   "toParText": "+5",
-   "total": 75,
-   "rounds": [
-    75,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "1264",
-   "name": "Camilo Villegas",
-   "country": "Colombia",
-   "amateur": false,
-   "pos": "T142",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": 5,
-   "toParText": "+5",
-   "total": 75,
-   "rounds": [
-    75,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
    "id": "4408318",
    "name": "Jeffrey Kang",
    "country": "USA",
@@ -2631,7 +2595,7 @@
    "name": "Calen Sanderson",
    "country": "USA",
    "amateur": false,
-   "pos": "146",
+   "pos": "144",
    "tie": false,
    "status": "STATUS_SCHEDULED",
    "toPar": 6,
@@ -2649,7 +2613,7 @@
    "name": "Troy Merritt",
    "country": "USA",
    "amateur": false,
-   "pos": "147",
+   "pos": "145",
    "tie": false,
    "status": "STATUS_SCHEDULED",
    "toPar": 8,
@@ -2657,6 +2621,40 @@
    "total": 80,
    "rounds": [
     80,
+    null
+   ],
+   "earnings": 0,
+   "thru": 0
+  },
+  {
+   "id": "11098",
+   "name": "Cameron Champ",
+   "country": "USA",
+   "amateur": false,
+   "pos": "-",
+   "tie": false,
+   "status": "STATUS_SCHEDULED",
+   "toPar": 0,
+   "toParText": "-",
+   "total": 0,
+   "rounds": [
+    null
+   ],
+   "earnings": 0,
+   "thru": 0
+  },
+  {
+   "id": "1264",
+   "name": "Camilo Villegas",
+   "country": "Colombia",
+   "amateur": false,
+   "pos": "-",
+   "tie": false,
+   "status": "STATUS_SCHEDULED",
+   "toPar": 0,
+   "toParText": "-",
+   "total": 0,
+   "rounds": [
     null
    ],
    "earnings": 0,
