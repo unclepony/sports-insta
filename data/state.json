@@ -19,7 +19,7 @@
   "pick-fairway-wood-recommend-intermediate": "2026-10-22",
   "compare-wood": "2026-11-13",
   "tips-utility": "2026-11-13",
-  "pick-driver-recommend-2026-pro": "2026-10-23",
+  "pick-driver-recommend-2026-pro": "2026-11-21",
   "compare-ball": "2026-11-13",
   "tips-wood": "2026-11-14",
   "pick-utility-recommend-beginner": "2026-10-24",
@@ -1280,7 +1280,16 @@
    "format": "reel",
    "mediaId": "17935309053418419",
    "permalink": "https://www.instagram.com/reel/Df9nT1YD-Z1/"
+  },
+  {
+   "date": "2026-11-21",
+   "id": "pick-driver-recommend-2026-pro",
+   "kind": "pick",
+   "category": "driver",
+   "format": "reel",
+   "mediaId": "18377108473208475",
+   "permalink": "https://www.instagram.com/reel/Df-U7MWCfpa/"
   }
  ],
- "lastGearKind": "tips"
+ "lastGearKind": "pick"
 }
