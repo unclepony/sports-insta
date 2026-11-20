@@ -6,7 +6,7 @@
   "compare-driver": "2026-11-09",
   "clip-t-driver-recommend-2026-1": "2026-10-19",
   "tips-driver": "2026-11-10",
-  "pick-fairway-wood-recommend-beginner": "2026-10-20",
+  "pick-fairway-wood-recommend-beginner": "2026-11-21",
   "compare-iron": "2026-11-10",
   "clip-t-iron-recommend-0": "2026-10-20",
   "tips-iron": "2026-11-11",
@@ -1289,6 +1289,15 @@
    "format": "reel",
    "mediaId": "18377108473208475",
    "permalink": "https://www.instagram.com/reel/Df-U7MWCfpa/"
+  },
+  {
+   "date": "2026-11-21",
+   "id": "pick-fairway-wood-recommend-beginner",
+   "kind": "pick",
+   "category": "wood",
+   "format": "reel",
+   "mediaId": "18078392705474060",
+   "permalink": "https://www.instagram.com/reel/Df-j2xOAXSf/"
   }
  ],
  "lastGearKind": "pick"
