@@ -264,6 +264,7 @@ async function report() {
     ins?.account && 'website' in ins.account ? `- 프로필 링크: ${ins.account.website ?? '확인 못 함'}${ins.account.website && !/utm_source=instagram/.test(ins.account.website) ? ' (우리가 붙인 utm 없음 — 인스타가 링크에 utm_source=ig 를 스스로 붙여 사이트 통계엔 \'캠페인: ig\'(ig / social)로 남음. utm 없이 instagram.com 출처·인스타 앱일 때는 \'인스타그램\', 우리 utm 이면 \'캠페인: instagram\'. 셋을 더해 본다 — golf-price functions/api/hit.js)' : ''}` : '',
     ins?.account && 'biography' in ins.account ? `- 프로필 소개: ${ins.account.biography ? JSON.stringify(ins.account.biography.replace(/\s+/g, ' ').trim()) : '확인 못 함(빈 값 또는 API 오류)'}` : '',
     dailyWeek(),
+    funnel30(),
     // '올린 뒤'는 지표를 모은 시각 기준 — 몇 시간 안 된 게시물의 도달 0·5 를 급락으로 잘못 읽지 않게(2026-10-31)
     ins?.posts?.length ? `\n## 최근 게시물 (30일)\n| 날짜 | 게시물 | 형식 | 올린 뒤 | 도달 | 첫 3초 건너뛰기 | 저장 | 공유 |\n|---|---|---|---|---|---|---|---|\n${ins.posts.slice(0, 10).map((x) => `| ${x.at.slice(0, 10)} | ${x.post || '-'} | ${x.format || x.type} | ${ageHours(ins, x)} | ${x.reach ?? '-'} | ${x.reach > 0 && typeof x.reels_skip_rate === 'number' ? x.reels_skip_rate + '%' : '-'} | ${x.saved ?? '-'} | ${x.shares ?? '-'} |`).join('\n')}` : '',
     ins?.posts?.length ? kindSummary(ins) : '',
@@ -324,6 +325,37 @@ function dailyWeek() {
   if (!n) return '';
   const ratio = reach ? ((pv / reach) * 100).toFixed(2) : '-';
   return `\n## 최근 7일 하루 값 (그날 마지막 수집 기준)\n| 날짜 | 도달 | 프로필 방문 | 링크 클릭 | 수집 |\n|---|---|---|---|---|\n${rows.join('\n')}\n- ${n}일 합: 도달 ${reach} · 프로필 방문 ${pv} (${ratio}%) · 링크 클릭 ${taps}\n- 날짜 주의: 인스타 집계일은 사이트 통계('캠페인: ig') 날짜보다 하루 앞서 찍힌다(링크 클릭 11/12↔사이트 11/13, 11/16↔11/17 — 2건 모두). 한국 하루로 물어도 인스타가 미국 서부 시간 하루로 묶는 것으로 추정. 사이트와 맞춰 볼 때는 하루 밀어서 본다.\n`;
+}
+
+// 30일 깔때기: 인스타 링크 클릭(인스타 집계일) → 사이트 인스타 방문(다음 KST 날짜) → 쿠팡 이동 — 2026-11-21 in-1121-1.
+// 사이트 쪽은 golf-price data/stats 의 by.ref·by.outref 에서 '캠페인: ig' + '인스타그램' + '캠페인: instagram' 을 더한다(refurl·refland 는 같은 방문의 다른 분해라 더하지 않음).
+// golf-price 는 Actions 에선 ./golf-price(checkout path), 컴퓨터·클라우드에선 옆 폴더. 없으면 인스타 쪽만 적는다. 읽기만 한다.
+function funnel30() {
+  const add = (d, n) => new Date(new Date(`${d}T00:00:00Z`).getTime() + n * 864e5).toISOString().slice(0, 10);
+  const gp = [process.env.GOLF_PRICE_DIR, 'golf-price', '../golf-price'].filter(Boolean).map((d) => new URL(`${d.replace(/\/$/, '')}/data/stats/`, ROOT)).find((u) => existsSync(u));
+  const IG = ['캠페인: ig', '인스타그램', '캠페인: instagram'];
+  let n = 0, reach = 0, pv = 0, taps = 0, visits = 0, outs = 0, statDays = 0;
+  const hits = [];
+  for (let i = 30; i >= 1; i--) {
+    const day = add(date, -i);
+    const f = new URL(`data/insights/${add(day, 1)}.json`, ROOT);
+    const v = existsSync(f) ? readJson(f)?.account?.yesterday : null;
+    const t = v?.day === day ? linkTaps(v) ?? 0 : 0;
+    if (v?.day === day && typeof v.reach === 'number') { n++; reach += v.reach; pv += v.profile_views || 0; taps += t; }
+    let vis = 0, out = 0;
+    const sf = gp && new URL(`${add(day, 1)}.json`, gp);
+    if (sf && existsSync(sf)) {
+      statDays++;
+      const by = readJson(sf).by || {};
+      vis = IG.reduce((s, k) => s + (by.ref?.[k] || 0), 0);
+      out = IG.reduce((s, k) => s + (by.outref?.[k] || 0), 0);
+      visits += vis; outs += out;
+    }
+    if (t || vis || out) hits.push(`| ${day} → ${add(day, 1)} | ${t} | ${sf && existsSync(sf) ? vis : '-'} | ${sf && existsSync(sf) ? out : '-'} |`);
+  }
+  if (!n) return '';
+  const site = gp ? `사이트 인스타 방문 ${visits} → 쿠팡 이동 ${outs} (사이트 통계 ${statDays}일)` : '사이트 통계 없음(golf-price 폴더를 못 찾음)';
+  return `\n## 30일 깔때기 (인스타 → 초이스골프 → 쿠팡)\n- 인스타 ${n}일: 도달 ${reach} → 프로필 방문 ${pv} (${reach ? ((pv / reach) * 100).toFixed(2) : '-'}%) → 링크 클릭 ${taps} → ${site}\n${hits.length ? `| 인스타 집계일 → 사이트 날짜 | 링크 클릭 | 사이트 인스타 방문 | 쿠팡 이동 |\n|---|---|---|---|\n${hits.join('\n')}\n` : '- 링크 클릭·인스타 방문이 있던 날 없음\n'}- 사이트 방문 = golf-price 통계 ref 의 '캠페인: ig'+'인스타그램'+'캠페인: instagram', 쿠팡 이동 = outref 같은 칸. 인스타 집계일은 하루 밀어 맞춘다.\n`;
 }
 
 // 프로필 링크 클릭 = profile_links_taps(연락처 버튼 등) + website_clicks(소개의 사이트 링크) — 2026-11-20 in-1120-1.
