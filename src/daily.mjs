@@ -354,8 +354,10 @@ function funnel30() {
     if (t || vis || out) hits.push(`| ${day} → ${add(day, 1)} | ${t} | ${sf && existsSync(sf) ? vis : '-'} | ${sf && existsSync(sf) ? out : '-'} |`);
   }
   if (!n) return '';
+  // 기간을 적어 둔다(2026-11-22 in-1122-1): 창이 매일 하루씩 밀려 전날 보고와 방문 수가 달라지는 이유(예: 10/23 1방문이 빠짐)가 보이게.
   const site = gp ? `사이트 인스타 방문 ${visits} → 쿠팡 이동 ${outs} (사이트 통계 ${statDays}일)` : '사이트 통계 없음(golf-price 폴더를 못 찾음)';
-  return `\n## 30일 깔때기 (인스타 → 초이스골프 → 쿠팡)\n- 인스타 ${n}일: 도달 ${reach} → 프로필 방문 ${pv} (${reach ? ((pv / reach) * 100).toFixed(2) : '-'}%) → 링크 클릭 ${taps} → ${site}\n${hits.length ? `| 인스타 집계일 → 사이트 날짜 | 링크 클릭 | 사이트 인스타 방문 | 쿠팡 이동 |\n|---|---|---|---|\n${hits.join('\n')}\n` : '- 링크 클릭·인스타 방문이 있던 날 없음\n'}- 사이트 방문 = golf-price 통계 ref 의 '캠페인: ig'+'인스타그램'+'캠페인: instagram', 쿠팡 이동 = outref 같은 칸. 인스타 집계일은 하루 밀어 맞춘다.\n`;
+  const span = `인스타 집계일 ${add(date, -30)}~${add(date, -1)}(값 있는 날 ${n}일) · 사이트 날짜 ${add(date, -29)}~${date}(파일 ${statDays}일, 오늘 파일은 수집 시각까지만)`;
+  return `\n## 30일 깔때기 (인스타 → 초이스골프 → 쿠팡)\n- 인스타 ${n}일: 도달 ${reach} → 프로필 방문 ${pv} (${reach ? ((pv / reach) * 100).toFixed(2) : '-'}%) → 링크 클릭 ${taps} → ${site}\n${hits.length ? `| 인스타 집계일 → 사이트 날짜 | 링크 클릭 | 사이트 인스타 방문 | 쿠팡 이동 |\n|---|---|---|---|\n${hits.join('\n')}\n` : '- 링크 클릭·인스타 방문이 있던 날 없음\n'}- 사이트 방문 = golf-price 통계 ref 의 '캠페인: ig'+'인스타그램'+'캠페인: instagram', 쿠팡 이동 = outref 같은 칸. 인스타 집계일은 하루 밀어 맞춘다.\n- 기간: ${span}\n`;
 }
 
 // 프로필 링크 클릭 = profile_links_taps(연락처 버튼 등) + website_clicks(소개의 사이트 링크) — 2026-11-20 in-1120-1.
