@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-21T04:07:30.173Z",
+ "fetchedAt": "2026-11-21T11:39:19.101Z",
  "source": "ESPN",
  "kind": "live",
  "league": "pga",
@@ -8,7 +8,7 @@
  "start": "2026-11-19T05:00Z",
  "end": "2026-11-22T05:00Z",
  "state": "post",
- "detail": "Round 2 - Play Complete",
+ "detail": "Round 2 - Suspended",
  "purse": 7400000,
  "course": {
   "name": "Sea Island Golf Club (Seaside Course)",
@@ -17,32 +17,13 @@
  },
  "players": [
   {
-   "id": "4858859",
-   "name": "Rasmus Neergaard-Petersen",
-   "country": "Denmark",
-   "amateur": false,
-   "pos": "T1",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -9,
-   "toParText": "-9",
-   "total": 133,
-   "rounds": [
-    68,
-    65,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
    "id": "4585549",
    "name": "Marco Penge",
    "country": "England",
    "amateur": false,
    "pos": "T1",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -9,
    "toParText": "-9",
    "total": 133,
@@ -52,7 +33,26 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
+  },
+  {
+   "id": "4858859",
+   "name": "Rasmus Neergaard-Petersen",
+   "country": "Denmark",
+   "amateur": false,
+   "pos": "T1",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -9,
+   "toParText": "-9",
+   "total": 133,
+   "rounds": [
+    68,
+    65,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
   },
   {
    "id": "4425904",
@@ -61,7 +61,7 @@
    "amateur": false,
    "pos": "T1",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -9,
    "toParText": "-9",
    "total": 133,
@@ -71,26 +71,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "5076011",
-   "name": "Adrien Dumont de Chassart",
-   "country": "Belgium",
-   "amateur": false,
-   "pos": "T4",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -8,
-   "toParText": "-8",
-   "total": 134,
-   "rounds": [
-    68,
-    66,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "11383",
@@ -99,7 +80,7 @@
    "amateur": false,
    "pos": "T4",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -8,
    "toParText": "-8",
    "total": 134,
@@ -109,64 +90,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "4691931",
-   "name": "Ricky Castillo",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T4",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -8,
-   "toParText": "-8",
-   "total": 134,
-   "rounds": [
-    67,
-    67,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "11253",
-   "name": "Rasmus Højgaard",
-   "country": "Denmark",
-   "amateur": false,
-   "pos": "T4",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -8,
-   "toParText": "-8",
-   "total": 134,
-   "rounds": [
-    66,
-    68,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "9221",
-   "name": "Haotong Li",
-   "country": "China",
-   "amateur": false,
-   "pos": "T4",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -8,
-   "toParText": "-8",
-   "total": 134,
-   "rounds": [
-    66,
-    68,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "4404991",
@@ -175,7 +99,7 @@
    "amateur": false,
    "pos": "T4",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -8,
    "toParText": "-8",
    "total": 134,
@@ -185,83 +109,83 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
-   "id": "4589438",
-   "name": "Harry Hall",
-   "country": "England",
+   "id": "5076011",
+   "name": "Adrien Dumont de Chassart",
+   "country": "Belgium",
    "amateur": false,
-   "pos": "T10",
+   "pos": "T4",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -7,
-   "toParText": "-7",
-   "total": 135,
+   "status": "STATUS_FINISH",
+   "toPar": -8,
+   "toParText": "-8",
+   "total": 134,
+   "rounds": [
+    68,
+    66,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "4691931",
+   "name": "Ricky Castillo",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -8,
+   "toParText": "-8",
+   "total": 134,
    "rounds": [
     67,
+    67,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "11253",
+   "name": "Rasmus Højgaard",
+   "country": "Denmark",
+   "amateur": false,
+   "pos": "T4",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -8,
+   "toParText": "-8",
+   "total": 134,
+   "rounds": [
+    66,
     68,
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
-   "id": "5408",
-   "name": "Harris English",
-   "country": "USA",
+   "id": "9221",
+   "name": "Haotong Li",
+   "country": "China",
    "amateur": false,
-   "pos": "T10",
+   "pos": "T4",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -7,
-   "toParText": "-7",
-   "total": 135,
+   "status": "STATUS_FINISH",
+   "toPar": -8,
+   "toParText": "-8",
+   "total": 134,
    "rounds": [
-    67,
+    66,
     68,
     null
    ],
    "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "3980",
-   "name": "Patton Kizzire",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T10",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -7,
-   "toParText": "-7",
-   "total": 135,
-   "rounds": [
-    66,
-    69,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "11387",
-   "name": "Hank Lebioda",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T10",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -7,
-   "toParText": "-7",
-   "total": 135,
-   "rounds": [
-    66,
-    69,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "10058",
@@ -270,7 +194,7 @@
    "amateur": false,
    "pos": "T10",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -7,
    "toParText": "-7",
    "total": 135,
@@ -280,7 +204,26 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
+  },
+  {
+   "id": "11387",
+   "name": "Hank Lebioda",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T10",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -7,
+   "toParText": "-7",
+   "total": 135,
+   "rounds": [
+    66,
+    69,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
   },
   {
    "id": "11101",
@@ -289,7 +232,7 @@
    "amateur": false,
    "pos": "T10",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -7,
    "toParText": "-7",
    "total": 135,
@@ -299,7 +242,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "4699329",
@@ -308,7 +251,7 @@
    "amateur": false,
    "pos": "T10",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -7,
    "toParText": "-7",
    "total": 135,
@@ -318,7 +261,64 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
+  },
+  {
+   "id": "5408",
+   "name": "Harris English",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T10",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -7,
+   "toParText": "-7",
+   "total": 135,
+   "rounds": [
+    67,
+    68,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "4589438",
+   "name": "Harry Hall",
+   "country": "England",
+   "amateur": false,
+   "pos": "T10",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -7,
+   "toParText": "-7",
+   "total": 135,
+   "rounds": [
+    67,
+    68,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "3980",
+   "name": "Patton Kizzire",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T10",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -7,
+   "toParText": "-7",
+   "total": 135,
+   "rounds": [
+    66,
+    69,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
   },
   {
    "id": "5150294",
@@ -327,7 +327,7 @@
    "amateur": false,
    "pos": "T17",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -6,
    "toParText": "-6",
    "total": 136,
@@ -337,7 +337,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "5209442",
@@ -346,7 +346,7 @@
    "amateur": false,
    "pos": "T17",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -6,
    "toParText": "-6",
    "total": 136,
@@ -356,45 +356,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "4602218",
-   "name": "Davis Thompson",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T19",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -5,
-   "toParText": "-5",
-   "total": 137,
-   "rounds": [
-    68,
-    69,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "10588",
-   "name": "Jeremy Paul",
-   "country": "Germany",
-   "amateur": false,
-   "pos": "T19",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -5,
-   "toParText": "-5",
-   "total": 137,
-   "rounds": [
-    68,
-    69,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "4513",
@@ -403,7 +365,7 @@
    "amateur": false,
    "pos": "T19",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -5,
    "toParText": "-5",
    "total": 137,
@@ -413,7 +375,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "4267",
@@ -422,7 +384,7 @@
    "amateur": false,
    "pos": "T19",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -5,
    "toParText": "-5",
    "total": 137,
@@ -432,45 +394,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "6798",
-   "name": "Brooks Koepka",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T19",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -5,
-   "toParText": "-5",
-   "total": 137,
-   "rounds": [
-    67,
-    70,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "5113338",
-   "name": "Davis Chatfield",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T19",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -5,
-   "toParText": "-5",
-   "total": 137,
-   "rounds": [
-    68,
-    69,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "10505",
@@ -479,7 +403,7 @@
    "amateur": false,
    "pos": "T19",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -5,
    "toParText": "-5",
    "total": 137,
@@ -489,7 +413,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "5215013",
@@ -498,7 +422,7 @@
    "amateur": false,
    "pos": "T19",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -5,
    "toParText": "-5",
    "total": 137,
@@ -508,45 +432,26 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
-   "id": "4585548",
-   "name": "Sami Välimäki",
-   "country": "Finland",
-   "amateur": false,
-   "pos": "T19",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -5,
-   "toParText": "-5",
-   "total": 137,
-   "rounds": [
-    66,
-    71,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "3449",
-   "name": "Chris Kirk",
+   "id": "5113338",
+   "name": "Davis Chatfield",
    "country": "USA",
    "amateur": false,
    "pos": "T19",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -5,
    "toParText": "-5",
    "total": 137,
    "rounds": [
-    67,
-    70,
+    68,
+    69,
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "4587989",
@@ -555,7 +460,7 @@
    "amateur": false,
    "pos": "T19",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -5,
    "toParText": "-5",
    "total": 137,
@@ -565,26 +470,26 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
-   "id": "5882",
-   "name": "Emiliano Grillo",
-   "country": "Argentina",
+   "id": "3449",
+   "name": "Chris Kirk",
+   "country": "USA",
    "amateur": false,
    "pos": "T19",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -5,
    "toParText": "-5",
    "total": 137,
    "rounds": [
-    66,
-    71,
+    67,
+    70,
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "9530",
@@ -593,7 +498,7 @@
    "amateur": false,
    "pos": "T19",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -5,
    "toParText": "-5",
    "total": 137,
@@ -603,45 +508,102 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
-   "id": "6922",
-   "name": "Ben Kohles",
-   "country": "USA",
+   "id": "5882",
+   "name": "Emiliano Grillo",
+   "country": "Argentina",
    "amateur": false,
-   "pos": "T32",
+   "pos": "T19",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -4,
-   "toParText": "-4",
-   "total": 138,
+   "status": "STATUS_FINISH",
+   "toPar": -5,
+   "toParText": "-5",
+   "total": 137,
    "rounds": [
+    66,
     71,
-    67,
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
-   "id": "10048",
-   "name": "Nick Hardy",
-   "country": "USA",
+   "id": "10588",
+   "name": "Jeremy Paul",
+   "country": "Germany",
    "amateur": false,
-   "pos": "T32",
+   "pos": "T19",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -4,
-   "toParText": "-4",
-   "total": 138,
+   "status": "STATUS_FINISH",
+   "toPar": -5,
+   "toParText": "-5",
+   "total": 137,
    "rounds": [
-    71,
-    67,
+    68,
+    69,
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
+  },
+  {
+   "id": "4602218",
+   "name": "Davis Thompson",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T19",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -5,
+   "toParText": "-5",
+   "total": 137,
+   "rounds": [
+    68,
+    69,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "6798",
+   "name": "Brooks Koepka",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T19",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -5,
+   "toParText": "-5",
+   "total": 137,
+   "rounds": [
+    67,
+    70,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "4585548",
+   "name": "Sami Välimäki",
+   "country": "Finland",
+   "amateur": false,
+   "pos": "T19",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -5,
+   "toParText": "-5",
+   "total": 137,
+   "rounds": [
+    66,
+    71,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
   },
   {
    "id": "9506",
@@ -650,7 +612,7 @@
    "amateur": false,
    "pos": "T32",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -4,
    "toParText": "-4",
    "total": 138,
@@ -660,7 +622,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "4408319",
@@ -669,7 +631,7 @@
    "amateur": false,
    "pos": "T32",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -4,
    "toParText": "-4",
    "total": 138,
@@ -679,26 +641,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "11332",
-   "name": "Andrew Novak",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T32",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -4,
-   "toParText": "-4",
-   "total": 138,
-   "rounds": [
-    69,
-    69,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "4351896",
@@ -707,7 +650,7 @@
    "amateur": false,
    "pos": "T32",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -4,
    "toParText": "-4",
    "total": 138,
@@ -717,7 +660,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "6196",
@@ -726,7 +669,7 @@
    "amateur": false,
    "pos": "T32",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -4,
    "toParText": "-4",
    "total": 138,
@@ -736,7 +679,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "4361934",
@@ -745,7 +688,7 @@
    "amateur": false,
    "pos": "T32",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -4,
    "toParText": "-4",
    "total": 138,
@@ -755,7 +698,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "11393",
@@ -764,7 +707,7 @@
    "amateur": false,
    "pos": "T32",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -4,
    "toParText": "-4",
    "total": 138,
@@ -774,7 +717,64 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
+  },
+  {
+   "id": "6922",
+   "name": "Ben Kohles",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T32",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -4,
+   "toParText": "-4",
+   "total": 138,
+   "rounds": [
+    71,
+    67,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "10048",
+   "name": "Nick Hardy",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T32",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -4,
+   "toParText": "-4",
+   "total": 138,
+   "rounds": [
+    71,
+    67,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "11332",
+   "name": "Andrew Novak",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T32",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -4,
+   "toParText": "-4",
+   "total": 138,
+   "rounds": [
+    69,
+    69,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
   },
   {
    "id": "4858572",
@@ -783,7 +783,7 @@
    "amateur": false,
    "pos": "T41",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -3,
    "toParText": "-3",
    "total": 139,
@@ -793,7 +793,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "4375977",
@@ -802,7 +802,7 @@
    "amateur": false,
    "pos": "T41",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -3,
    "toParText": "-3",
    "total": 139,
@@ -812,7 +812,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "4408315",
@@ -821,7 +821,7 @@
    "amateur": false,
    "pos": "T41",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -3,
    "toParText": "-3",
    "total": 139,
@@ -831,7 +831,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "9243",
@@ -840,7 +840,7 @@
    "amateur": false,
    "pos": "T41",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -3,
    "toParText": "-3",
    "total": 139,
@@ -850,83 +850,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "10596",
-   "name": "Matthieu Pavon",
-   "country": "France",
-   "amateur": false,
-   "pos": "T41",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -3,
-   "toParText": "-3",
-   "total": 139,
-   "rounds": [
-    68,
-    71,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "10057",
-   "name": "Chad Ramey",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T41",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -3,
-   "toParText": "-3",
-   "total": 139,
-   "rounds": [
-    68,
-    71,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "5147097",
-   "name": "Karl Vilips",
-   "country": "Australia",
-   "amateur": false,
-   "pos": "T41",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -3,
-   "toParText": "-3",
-   "total": 139,
-   "rounds": [
-    68,
-    71,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "10664",
-   "name": "Taylor Moore",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T41",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -3,
-   "toParText": "-3",
-   "total": 139,
-   "rounds": [
-    68,
-    71,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "5075548",
@@ -935,7 +859,7 @@
    "amateur": false,
    "pos": "T41",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -3,
    "toParText": "-3",
    "total": 139,
@@ -945,7 +869,83 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
+  },
+  {
+   "id": "10596",
+   "name": "Matthieu Pavon",
+   "country": "France",
+   "amateur": false,
+   "pos": "T41",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -3,
+   "toParText": "-3",
+   "total": 139,
+   "rounds": [
+    68,
+    71,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "10057",
+   "name": "Chad Ramey",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T41",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -3,
+   "toParText": "-3",
+   "total": 139,
+   "rounds": [
+    68,
+    71,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "5147097",
+   "name": "Karl Vilips",
+   "country": "Australia",
+   "amateur": false,
+   "pos": "T41",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -3,
+   "toParText": "-3",
+   "total": 139,
+   "rounds": [
+    68,
+    71,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "10664",
+   "name": "Taylor Moore",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T41",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -3,
+   "toParText": "-3",
+   "total": 139,
+   "rounds": [
+    68,
+    71,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
   },
   {
    "id": "4426182",
@@ -954,7 +954,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -964,7 +964,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "9143",
@@ -973,7 +973,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -983,7 +983,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "9658",
@@ -992,7 +992,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -1002,7 +1002,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "9040",
@@ -1011,7 +1011,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -1021,26 +1021,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "10054",
-   "name": "Denny McCarthy",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T50",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -2,
-   "toParText": "-2",
-   "total": 140,
-   "rounds": [
-    70,
-    70,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "2283",
@@ -1049,7 +1030,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -1059,7 +1040,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "4837368",
@@ -1068,7 +1049,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -1078,64 +1059,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "4921329",
-   "name": "Michael Brennan",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T50",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -2,
-   "toParText": "-2",
-   "total": 140,
-   "rounds": [
-    69,
-    71,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "8910",
-   "name": "Ben Silverman",
-   "country": "Canada",
-   "amateur": false,
-   "pos": "T50",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -2,
-   "toParText": "-2",
-   "total": 140,
-   "rounds": [
-    69,
-    71,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
-  },
-  {
-   "id": "5502",
-   "name": "Andrew Putnam",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T50",
-   "tie": true,
-   "status": "STATUS_SCHEDULED",
-   "toPar": -2,
-   "toParText": "-2",
-   "total": 140,
-   "rounds": [
-    69,
-    71,
-    null
-   ],
-   "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "4832046",
@@ -1144,7 +1068,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -1154,7 +1078,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "10562",
@@ -1163,7 +1087,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -1173,7 +1097,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "11143",
@@ -1182,7 +1106,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -1192,7 +1116,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "5077389",
@@ -1201,7 +1125,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -1211,7 +1135,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "11456",
@@ -1220,7 +1144,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -1230,7 +1154,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "8889",
@@ -1239,7 +1163,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -1249,7 +1173,83 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
+  },
+  {
+   "id": "10054",
+   "name": "Denny McCarthy",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T50",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -2,
+   "toParText": "-2",
+   "total": 140,
+   "rounds": [
+    70,
+    70,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "4921329",
+   "name": "Michael Brennan",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T50",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -2,
+   "toParText": "-2",
+   "total": 140,
+   "rounds": [
+    69,
+    71,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "8910",
+   "name": "Ben Silverman",
+   "country": "Canada",
+   "amateur": false,
+   "pos": "T50",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -2,
+   "toParText": "-2",
+   "total": 140,
+   "rounds": [
+    69,
+    71,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
+  },
+  {
+   "id": "5502",
+   "name": "Andrew Putnam",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T50",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -2,
+   "toParText": "-2",
+   "total": 140,
+   "rounds": [
+    69,
+    71,
+    null
+   ],
+   "earnings": 0,
+   "thru": 18
   },
   {
    "id": "8906",
@@ -1258,7 +1258,7 @@
    "amateur": false,
    "pos": "T50",
    "tie": true,
-   "status": "STATUS_SCHEDULED",
+   "status": "STATUS_FINISH",
    "toPar": -2,
    "toParText": "-2",
    "total": 140,
@@ -1268,7 +1268,7 @@
     null
    ],
    "earnings": 0,
-   "thru": 0
+   "thru": 18
   },
   {
    "id": "9569",

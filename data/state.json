@@ -22,7 +22,7 @@
   "pick-driver-recommend-2026-pro": "2026-11-21",
   "compare-ball": "2026-11-13",
   "tips-wood": "2026-11-14",
-  "pick-utility-recommend-beginner": "2026-10-24",
+  "pick-utility-recommend-beginner": "2026-11-21",
   "compare-shoes": "2026-11-14",
   "tips-ball": "2026-11-14",
   "pick-fairway-wood-recommend-advanced": "2026-10-25",
@@ -1298,6 +1298,15 @@
    "format": "reel",
    "mediaId": "18078392705474060",
    "permalink": "https://www.instagram.com/reel/Df-j2xOAXSf/"
+  },
+  {
+   "date": "2026-11-21",
+   "id": "pick-utility-recommend-beginner",
+   "kind": "pick",
+   "category": "utility",
+   "format": "reel",
+   "mediaId": "18433809754149456",
+   "permalink": "https://www.instagram.com/reel/DgAJS12FK-K/"
   }
  ],
  "lastGearKind": "pick"
