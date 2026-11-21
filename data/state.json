@@ -33,7 +33,7 @@
   "compare-rangefinder": "2026-11-16",
   "tour-pga-401850917": "2026-10-26",
   "tips-rangefinder": "2026-11-17",
-  "pick-utility-recommend-intermediate": "2026-10-27",
+  "pick-utility-recommend-intermediate": "2026-11-22",
   "compare-bag": "2026-11-17",
   "tips-glove": "2026-11-17",
   "pick-utility-recommend-advanced": "2026-10-28",
@@ -1316,6 +1316,15 @@
    "format": "reel",
    "mediaId": "18120488822468192",
    "permalink": "https://www.instagram.com/reel/DgAy5jnmDyM/"
+  },
+  {
+   "date": "2026-11-22",
+   "id": "pick-utility-recommend-intermediate",
+   "kind": "pick",
+   "category": "utility",
+   "format": "reel",
+   "mediaId": "18140140756647579",
+   "permalink": "https://www.instagram.com/reel/DgBB5HliGbV/"
   }
  ],
  "lastGearKind": "pick"
