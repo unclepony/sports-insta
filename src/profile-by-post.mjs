@@ -9,7 +9,7 @@
 import { execFileSync } from 'node:child_process';
 
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 256 << 20 });
-if (git('rev-parse', '--is-shallow-repository').trim() === 'true') console.error('주의: 얕은 clone — git fetch --deepen=1000 origin main 뒤 다시 실행');
+if (git('rev-parse', '--is-shallow-repository').trim() === 'true') console.log('⚠ 얕은 clone — 오래된 수집 판이 빠져 값이 작게 나올 수 있다. git fetch --deepen=1000 origin main 뒤 다시 실행'); // 2026-11-24: stderr 라 tail 에 안 보여 표에 섞어 찍음
 const addDay = (d, n) => new Date(Date.parse(`${d}T00:00:00Z`) + n * 86400e3).toISOString().slice(0, 10);
 
 // 1) 모든 지표 판(capturedAt 있는 것)
@@ -66,5 +66,5 @@ for (const [k, o] of list) console.log(`| ${k} | ${o.kind} | ${o.gain} | ${o.pv}
 const kinds = new Map();
 for (const [, o] of list) { const s = kinds.get(o.kind) || { n: 0, gain: 0, pv: 0 }; s.n++; s.gain += o.gain; s.pv += o.pv; kinds.set(o.kind, s); }
 const total = rows.reduce((s, r) => s + Math.max(r.dpv, 0), 0);
-console.log(`\n- 종류별: ${[...kinds].map(([k, s]) => `${k} ${s.n}편 · 도달 ${s.gain} · 프로필 ${s.pv}`).join(' / ')}`);
+console.log(`\n- 종류별: ${[...kinds].map(([k, s]) => `${k} ${s.n}편 · 도달 ${s.gain} · 프로필 ${s.pv} (도달 100당 ${s.gain ? (s.pv * 100 / s.gain).toFixed(2) : '-'})`).join(' / ')}`);
 console.log(`- 기간 프로필 방문 합 ${total}(간격 합). 날 바뀜 간격의 값은 앞 간격 몫이 섞일 수 있다. 하루 0~5건이라 1~2건으로 순위가 뒤집힌다 — 참고용.`);
