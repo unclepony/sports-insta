@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-22T20:05:45.883Z",
+ "fetchedAt": "2026-11-23T03:52:50.869Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "lpga",
@@ -7,8 +7,8 @@
  "name": "CME Group Tour Championship",
  "start": "2026-11-19T05:00Z",
  "end": "2026-11-22T05:00Z",
- "state": "in",
- "detail": "Round 4 - In Progress",
+ "state": "post",
+ "detail": "Final",
  "purse": 11000000,
  "course": {
   "name": "Tiburón Golf Club (Black Course)",
@@ -23,18 +23,18 @@
    "amateur": false,
    "pos": "1",
    "tie": false,
-   "status": "STATUS_IN_PROGRESS",
-   "toPar": -23,
-   "toParText": "-17",
-   "total": 199,
+   "status": "STATUS_FINISH",
+   "toPar": -24,
+   "toParText": "-24",
+   "total": 264,
    "rounds": [
     65,
     67,
     67,
-    57
+    65
    ],
-   "earnings": 0,
-   "thru": 16
+   "earnings": 4000000,
+   "thru": 18
   },
   {
    "id": "5129950",
@@ -43,18 +43,18 @@
    "amateur": false,
    "pos": "2",
    "tie": false,
-   "status": "STATUS_IN_PROGRESS",
+   "status": "STATUS_FINISH",
    "toPar": -22,
-   "toParText": "-15",
-   "total": 201,
+   "toParText": "-22",
+   "total": 266,
    "rounds": [
     68,
     66,
     67,
-    56
+    65
    ],
-   "earnings": 0,
-   "thru": 16
+   "earnings": 1000000,
+   "thru": 18
   },
   {
    "id": "9012",
@@ -63,18 +63,18 @@
    "amateur": false,
    "pos": "3",
    "tie": false,
-   "status": "STATUS_IN_PROGRESS",
+   "status": "STATUS_FINISH",
    "toPar": -20,
-   "toParText": "-16",
-   "total": 200,
+   "toParText": "-20",
+   "total": 268,
    "rounds": [
     68,
     67,
     65,
-    59
+    68
    ],
-   "earnings": 0,
-   "thru": 16
+   "earnings": 550000,
+   "thru": 18
   },
   {
    "id": "10981",
@@ -93,7 +93,7 @@
     70,
     63
    ],
-   "earnings": 0,
+   "earnings": 268333,
    "thru": 18
   },
   {
@@ -113,7 +113,7 @@
     70,
     66
    ],
-   "earnings": 0,
+   "earnings": 268333,
    "thru": 18
   },
   {
@@ -123,18 +123,18 @@
    "amateur": false,
    "pos": "T4",
    "tie": true,
-   "status": "STATUS_IN_PROGRESS",
+   "status": "STATUS_FINISH",
    "toPar": -19,
-   "toParText": "-14",
-   "total": 202,
+   "toParText": "-19",
+   "total": 269,
    "rounds": [
     69,
     67,
     66,
-    63
+    67
    ],
-   "earnings": 0,
-   "thru": 17
+   "earnings": 268333,
+   "thru": 18
   },
   {
    "id": "9212",
@@ -153,7 +153,27 @@
     67,
     67
    ],
-   "earnings": 0,
+   "earnings": 137000,
+   "thru": 18
+  },
+  {
+   "id": "11425",
+   "name": "Yuri Yoshida",
+   "country": "Japan",
+   "amateur": false,
+   "pos": "T7",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -18,
+   "toParText": "-18",
+   "total": 270,
+   "rounds": [
+    68,
+    65,
+    66,
+    71
+   ],
+   "earnings": 137000,
    "thru": 18
   },
   {
@@ -163,26 +183,26 @@
    "amateur": false,
    "pos": "T7",
    "tie": true,
-   "status": "STATUS_IN_PROGRESS",
+   "status": "STATUS_FINISH",
    "toPar": -18,
    "toParText": "-18",
-   "total": 198,
+   "total": 270,
    "rounds": [
     65,
     64,
     69,
-    56
+    72
    ],
-   "earnings": 0,
-   "thru": 14
+   "earnings": 137000,
+   "thru": 18
   },
   {
    "id": "9945",
    "name": "Hye-Jin Choi",
    "country": "South Korea",
    "amateur": false,
-   "pos": "T9",
-   "tie": true,
+   "pos": "10",
+   "tie": false,
    "status": "STATUS_FINISH",
    "toPar": -17,
    "toParText": "-17",
@@ -193,28 +213,8 @@
     71,
     64
    ],
-   "earnings": 0,
+   "earnings": 113500,
    "thru": 18
-  },
-  {
-   "id": "11425",
-   "name": "Yuri Yoshida",
-   "country": "Japan",
-   "amateur": false,
-   "pos": "T9",
-   "tie": true,
-   "status": "STATUS_IN_PROGRESS",
-   "toPar": -17,
-   "toParText": "-17",
-   "total": 199,
-   "rounds": [
-    68,
-    65,
-    66,
-    60
-   ],
-   "earnings": 0,
-   "thru": 15
   },
   {
    "id": "4708901",
@@ -233,7 +233,7 @@
     71,
     67
    ],
-   "earnings": 0,
+   "earnings": 96600,
    "thru": 18
   },
   {
@@ -253,7 +253,7 @@
     65,
     68
    ],
-   "earnings": 0,
+   "earnings": 96600,
    "thru": 18
   },
   {
@@ -273,7 +273,7 @@
     69,
     68
    ],
-   "earnings": 0,
+   "earnings": 96600,
    "thru": 18
   },
   {
@@ -293,7 +293,7 @@
     68,
     69
    ],
-   "earnings": 0,
+   "earnings": 96600,
    "thru": 18
   },
   {
@@ -313,7 +313,7 @@
     70,
     69
    ],
-   "earnings": 0,
+   "earnings": 96600,
    "thru": 18
   },
   {
@@ -333,7 +333,7 @@
     69,
     66
    ],
-   "earnings": 0,
+   "earnings": 83750,
    "thru": 18
   },
   {
@@ -353,7 +353,7 @@
     68,
     68
    ],
-   "earnings": 0,
+   "earnings": 83750,
    "thru": 18
   },
   {
@@ -363,18 +363,18 @@
    "amateur": false,
    "pos": "T16",
    "tie": true,
-   "status": "STATUS_IN_PROGRESS",
+   "status": "STATUS_FINISH",
    "toPar": -15,
-   "toParText": "-14",
-   "total": 202,
+   "toParText": "-15",
+   "total": 273,
    "rounds": [
     66,
     67,
     69,
-    62
+    71
    ],
-   "earnings": 0,
-   "thru": 16
+   "earnings": 83750,
+   "thru": 18
   },
   {
    "id": "4425587",
@@ -383,18 +383,18 @@
    "amateur": false,
    "pos": "T16",
    "tie": true,
-   "status": "STATUS_IN_PROGRESS",
+   "status": "STATUS_FINISH",
    "toPar": -15,
-   "toParText": "-16",
-   "total": 200,
+   "toParText": "-15",
+   "total": 273,
    "rounds": [
     66,
     67,
     67,
-    64
+    73
    ],
-   "earnings": 0,
-   "thru": 16
+   "earnings": 83750,
+   "thru": 18
   },
   {
    "id": "5201229",
@@ -413,7 +413,7 @@
     70,
     67
    ],
-   "earnings": 0,
+   "earnings": 79000,
    "thru": 18
   },
   {
@@ -433,7 +433,7 @@
     67,
     68
    ],
-   "earnings": 0,
+   "earnings": 79000,
    "thru": 18
   },
   {
@@ -443,18 +443,18 @@
    "amateur": false,
    "pos": "T20",
    "tie": true,
-   "status": "STATUS_IN_PROGRESS",
+   "status": "STATUS_FINISH",
    "toPar": -14,
    "toParText": "-14",
-   "total": 202,
+   "total": 274,
    "rounds": [
     69,
     66,
     67,
-    68
+    72
    ],
-   "earnings": 0,
-   "thru": 17
+   "earnings": 79000,
+   "thru": 18
   },
   {
    "id": "11422",
@@ -473,7 +473,7 @@
     70,
     68
    ],
-   "earnings": 0,
+   "earnings": 76500,
    "thru": 18
   },
   {
@@ -483,18 +483,18 @@
    "amateur": false,
    "pos": "T23",
    "tie": true,
-   "status": "STATUS_IN_PROGRESS",
+   "status": "STATUS_FINISH",
    "toPar": -13,
-   "toParText": "-14",
-   "total": 202,
+   "toParText": "-13",
+   "total": 275,
    "rounds": [
     66,
     67,
     69,
-    69
+    73
    ],
-   "earnings": 0,
-   "thru": 17
+   "earnings": 76500,
+   "thru": 18
   },
   {
    "id": "10476",
@@ -513,7 +513,7 @@
     70,
     67
    ],
-   "earnings": 0,
+   "earnings": 75000,
    "thru": 18
   },
   {
@@ -533,7 +533,7 @@
     70,
     66
    ],
-   "earnings": 0,
+   "earnings": 73500,
    "thru": 18
   },
   {
@@ -553,7 +553,7 @@
     68,
     73
    ],
-   "earnings": 0,
+   "earnings": 73500,
    "thru": 18
   },
   {
@@ -573,7 +573,7 @@
     71,
     69
    ],
-   "earnings": 0,
+   "earnings": 72000,
    "thru": 18
   },
   {
@@ -593,7 +593,7 @@
     71,
     68
    ],
-   "earnings": 0,
+   "earnings": 70083,
    "thru": 18
   },
   {
@@ -613,7 +613,7 @@
     72,
     69
    ],
-   "earnings": 0,
+   "earnings": 70083,
    "thru": 18
   },
   {
@@ -633,7 +633,7 @@
     74,
     70
    ],
-   "earnings": 0,
+   "earnings": 70083,
    "thru": 18
   },
   {
@@ -653,7 +653,7 @@
     70,
     70
    ],
-   "earnings": 0,
+   "earnings": 67375,
    "thru": 18
   },
   {
@@ -673,7 +673,7 @@
     71,
     71
    ],
-   "earnings": 0,
+   "earnings": 67375,
    "thru": 18
   },
   {
@@ -693,7 +693,7 @@
     72,
     71
    ],
-   "earnings": 0,
+   "earnings": 67375,
    "thru": 18
   },
   {
@@ -713,7 +713,7 @@
     70,
     72
    ],
-   "earnings": 0,
+   "earnings": 67375,
    "thru": 18
   },
   {
@@ -733,7 +733,7 @@
     72,
     70
    ],
-   "earnings": 0,
+   "earnings": 64750,
    "thru": 18
   },
   {
@@ -753,7 +753,7 @@
     71,
     71
    ],
-   "earnings": 0,
+   "earnings": 64750,
    "thru": 18
   },
   {
@@ -773,7 +773,7 @@
     74,
     71
    ],
-   "earnings": 0,
+   "earnings": 64750,
    "thru": 18
   },
   {
@@ -793,7 +793,7 @@
     71,
     69
    ],
-   "earnings": 0,
+   "earnings": 62313,
    "thru": 18
   },
   {
@@ -813,7 +813,7 @@
     69,
     71
    ],
-   "earnings": 0,
+   "earnings": 62313,
    "thru": 18
   },
   {
@@ -833,7 +833,7 @@
     71,
     71
    ],
-   "earnings": 0,
+   "earnings": 62313,
    "thru": 18
   },
   {
@@ -853,7 +853,7 @@
     68,
     74
    ],
-   "earnings": 0,
+   "earnings": 62313,
    "thru": 18
   },
   {
@@ -873,7 +873,7 @@
     69,
     70
    ],
-   "earnings": 0,
+   "earnings": 60750,
    "thru": 18
   },
   {
@@ -893,7 +893,7 @@
     71,
     70
    ],
-   "earnings": 0,
+   "earnings": 60750,
    "thru": 18
   },
   {
@@ -913,7 +913,7 @@
     73,
     70
    ],
-   "earnings": 0,
+   "earnings": 59750,
    "thru": 18
   },
   {
@@ -933,7 +933,7 @@
     72,
     71
    ],
-   "earnings": 0,
+   "earnings": 59750,
    "thru": 18
   },
   {
@@ -953,7 +953,7 @@
     65,
     72
    ],
-   "earnings": 0,
+   "earnings": 58750,
    "thru": 18
   },
   {
@@ -973,7 +973,7 @@
     71,
     73
    ],
-   "earnings": 0,
+   "earnings": 58750,
    "thru": 18
   },
   {
@@ -993,7 +993,7 @@
     73,
     71
    ],
-   "earnings": 0,
+   "earnings": 57750,
    "thru": 18
   },
   {
@@ -1013,7 +1013,7 @@
     72,
     72
    ],
-   "earnings": 0,
+   "earnings": 57750,
    "thru": 18
   },
   {
@@ -1033,7 +1033,7 @@
     73,
     76
    ],
-   "earnings": 0,
+   "earnings": 57250,
    "thru": 18
   },
   {
@@ -1053,7 +1053,7 @@
     72,
     69
    ],
-   "earnings": 0,
+   "earnings": 56875,
    "thru": 18
   },
   {
@@ -1073,7 +1073,7 @@
     73,
     70
    ],
-   "earnings": 0,
+   "earnings": 56875,
    "thru": 18
   },
   {
@@ -1093,7 +1093,7 @@
     73,
     69
    ],
-   "earnings": 0,
+   "earnings": 56250,
    "thru": 18
   },
   {
@@ -1113,7 +1113,7 @@
     72,
     71
    ],
-   "earnings": 0,
+   "earnings": 56250,
    "thru": 18
   },
   {
@@ -1133,7 +1133,7 @@
     74,
     73
    ],
-   "earnings": 0,
+   "earnings": 56250,
    "thru": 18
   },
   {
@@ -1153,7 +1153,7 @@
     72,
     72
    ],
-   "earnings": 0,
+   "earnings": 55625,
    "thru": 18
   },
   {
@@ -1173,7 +1173,7 @@
     73,
     76
    ],
-   "earnings": 0,
+   "earnings": 55625,
    "thru": 18
   },
   {
@@ -1193,7 +1193,7 @@
     80,
     77
    ],
-   "earnings": 0,
+   "earnings": 55250,
    "thru": 18
   },
   {
@@ -1213,7 +1213,7 @@
     72,
     69
    ],
-   "earnings": 0,
+   "earnings": 55000,
    "thru": 18
   }
  ],
