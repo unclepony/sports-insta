@@ -1,0 +1,35 @@
+{
+  "template": "tip-v3",
+  "scenes": [
+    {
+      "key": "intro",
+      "dur": 5.5
+    },
+    {
+      "key": "answer",
+      "dur": 14.8
+    },
+    {
+      "key": "outro",
+      "dur": 6.4
+    }
+  ],
+  "episode": "t-wedge-recommend-2",
+  "format": "shorts",
+  "type": "tip",
+  "guide": "wedge-recommend",
+  "madeAt": "2026-11-24",
+  "dataUpdated": "2026-10-16",
+  "voice": "ko-KR-Neural2-A",
+  "title": "초보 첫 웨지는 몇 도? | 56도 전후 샌드웨지부터 #shorts",
+  "description": "▶ 웨지 실력별 비교·현재 가격: https://choicegolf.unclepony.com/g/wedge-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-wedge-recommend-2\n\nQ. 초보는 웨지 몇 도부터 사나요?\nA. 아이언 세트에 피칭웨지가 들어 있다면 다음으로 56도 전후의 샌드웨지부터 사는 것이 무난합니다. 벙커와 짧은 어프로치에 두루 쓸 수 있기 때문입니다. 익숙해지면 그 사이에 갭웨지를 더하면 됩니다.\n\n초이스골프 가이드 \"웨지 추천: 초보~프로 52종 비교 (RTZ·오퍼스·MG5·S159·보키)\" 의 FAQ 내용을 요약했습니다. 가격·사양은 바뀔 수 있으니 링크에서 확인해 주세요.\n\n▶ 웨지 비교·현재 가격 확인 (초이스골프)\nhttps://choicegolf.unclepony.com/g/wedge-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-wedge-recommend-2\n\n그림은 초이스골프가 직접 그린 일러스트로 실제 제품과 다릅니다. 배경음도 직접 만들었으며, 한국어 내레이션은 음성 합성(TTS)입니다. 제조사·판매처의 사진·영상·로고는 사용하지 않았습니다.\n\n#골프 #웨지추천 #골프팁",
+  "tags": [
+    "웨지 추천",
+    "웨지 고르는 법",
+    "골프 팁",
+    "초이스골프"
+  ],
+  "categoryId": "17",
+  "link": "https://choicegolf.unclepony.com/g/wedge-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-wedge-recommend-2",
+  "linkLabel": "실력별 전체 비교"
+}
