@@ -39,7 +39,7 @@
   "pick-utility-recommend-advanced": "2026-11-23",
   "compare-glove": "2026-11-18",
   "tips-bag": "2026-11-18",
-  "pick-womens-fairway-wood-recommend-beginner": "2026-10-28",
+  "pick-womens-fairway-wood-recommend-beginner": "2026-11-26",
   "compare-gps": "2026-11-19",
   "tips-launch": "2026-11-19",
   "pick-utility-recommend-pro": "2026-11-25",
@@ -1408,6 +1408,15 @@
    "format": "reel",
    "mediaId": "18181425286453776",
    "permalink": "https://www.instagram.com/reel/DgKoalZo21Q/"
+  },
+  {
+   "date": "2026-11-26",
+   "id": "pick-womens-fairway-wood-recommend-beginner",
+   "kind": "pick",
+   "category": "wood",
+   "format": "reel",
+   "mediaId": "18104379623389934",
+   "permalink": "https://www.instagram.com/reel/DgLkLbtTnhA/"
   }
  ],
  "lastGearKind": "pick"
