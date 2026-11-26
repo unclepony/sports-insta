@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-25T22:06:05.117Z",
+ "fetchedAt": "2026-11-26T05:16:07.125Z",
  "source": "ESPN",
  "kind": "latest",
  "league": "pga",
@@ -32,33 +32,11 @@
     65,
     68,
     65,
-    3,
+    null,
     null
    ],
    "earnings": 1332000,
-   "thru": 1
-  },
-  {
-   "id": "4425904",
-   "name": "Michael Thorbjornsen",
-   "country": "USA",
-   "amateur": false,
-   "pos": "T2",
-   "tie": true,
-   "status": "STATUS_FINISH",
-   "toPar": -16,
-   "toParText": "-16",
-   "total": 266,
-   "rounds": [
-    64,
-    69,
-    66,
-    67,
-    4,
-    null
-   ],
-   "earnings": 559933,
-   "thru": 1
+   "thru": 0
   },
   {
    "id": "9221",
@@ -98,6 +76,28 @@
     70,
     65,
     66,
+    null,
+    null
+   ],
+   "earnings": 559933,
+   "thru": 0
+  },
+  {
+   "id": "4425904",
+   "name": "Michael Thorbjornsen",
+   "country": "USA",
+   "amateur": false,
+   "pos": "T2",
+   "tie": true,
+   "status": "STATUS_FINISH",
+   "toPar": -16,
+   "toParText": "-16",
+   "total": 266,
+   "rounds": [
+    64,
+    69,
+    66,
+    67,
     null,
     null
    ],
