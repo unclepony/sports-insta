@@ -1,12 +1,12 @@
 {
  "date": "2026-11-26",
- "capturedAt": "2026-11-26T05:19:22.661Z",
+ "capturedAt": "2026-11-26T13:04:53.677Z",
  "account": {
   "followers": 3,
-  "mediaCount": 148,
+  "mediaCount": 149,
   "username": "choicegolfgear",
-  "reach": 572,
-  "profile_views": 1,
+  "reach": 323,
+  "profile_views": 0,
   "profile_links_taps": 0,
   "website_clicks": 0,
   "follows_and_unfollows": null,
@@ -14,7 +14,7 @@
   "biography": "골프소식",
   "yesterday": {
    "day": "2026-11-25",
-   "reach": 211,
+   "reach": 322,
    "profile_views": 0,
    "profile_links_taps": 0,
    "website_clicks": 0
@@ -22,13 +22,13 @@
  },
  "posts": [
   {
-   "id": "18119259515110079",
-   "at": "2026-11-26T05:18:24+0000",
+   "id": "17986943261898730",
+   "at": "2026-11-26T13:03:58+0000",
    "type": "REELS",
-   "permalink": "https://www.instagram.com/reel/DgMVfpVJhMP/",
-   "post": "pick-iron-recommend-advanced",
+   "permalink": "https://www.instagram.com/reel/DgNKxjshDnl/",
+   "post": "pick-womens-utility-recommend-beginner",
    "kind": "pick",
-   "category": "iron",
+   "category": "utility",
    "format": "reel",
    "likes": 0,
    "comments": 0,
@@ -40,6 +40,29 @@
    "ig_reels_avg_watch_time": 0,
    "ig_reels_video_view_total_time": 0,
    "reels_skip_rate": 0,
+   "profile_visits": null,
+   "follows": null,
+   "recentComments": []
+  },
+  {
+   "id": "18119259515110079",
+   "at": "2026-11-26T05:18:24+0000",
+   "type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgMVfpVJhMP/",
+   "post": "pick-iron-recommend-advanced",
+   "kind": "pick",
+   "category": "iron",
+   "format": "reel",
+   "likes": 0,
+   "comments": 0,
+   "reach": 114,
+   "views": 119,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0,
+   "ig_reels_avg_watch_time": 4319,
+   "ig_reels_video_view_total_time": 483809,
+   "reels_skip_rate": 70.5,
    "profile_visits": null,
    "follows": null,
    "recentComments": []
@@ -666,26 +689,6 @@
    "ig_reels_avg_watch_time": 2723,
    "ig_reels_video_view_total_time": 294190,
    "reels_skip_rate": 79.6
-  },
-  {
-   "id": "17994977448083177",
-   "at": "2026-11-17T05:11:50+0000",
-   "type": "REELS",
-   "permalink": "https://www.instagram.com/reel/Df1JlRWimB7/",
-   "post": "pick-driver-recommend-2026-beginner",
-   "kind": "pick",
-   "category": "driver",
-   "format": "reel",
-   "likes": 0,
-   "comments": 0,
-   "reach": 109,
-   "views": 125,
-   "saved": 1,
-   "shares": 0,
-   "total_interactions": 1,
-   "ig_reels_avg_watch_time": 4338,
-   "ig_reels_video_view_total_time": 481556,
-   "reels_skip_rate": 64.9
   }
  ]
 }
