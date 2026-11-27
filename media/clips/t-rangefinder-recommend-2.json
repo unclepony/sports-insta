@@ -1,0 +1,35 @@
+{
+  "template": "tip-v3",
+  "scenes": [
+    {
+      "key": "intro",
+      "dur": 5.5
+    },
+    {
+      "key": "answer",
+      "dur": 14
+    },
+    {
+      "key": "outro",
+      "dur": 6.9
+    }
+  ],
+  "episode": "t-rangefinder-recommend-2",
+  "format": "shorts",
+  "type": "tip",
+  "guide": "rangefinder-recommend",
+  "madeAt": "2026-11-27",
+  "dataUpdated": "2026-10-16",
+  "voice": "ko-KR-Neural2-A",
+  "title": "초보, 거리측정기 꼭 필요할까? | 노캐디 늘면 그때 #shorts",
+  "description": "▶ 거리측정기 실력별 비교·현재 가격: https://choicegolf.unclepony.com/g/rangefinder-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-rangefinder-recommend-2\n\nQ. 초보도 거리측정기가 필요한가요?\nA. 꼭 필요하지는 않지만 있으면 클럽 고르기가 쉬워집니다. 캐디가 거리를 알려 주는 골프장이 많아 처음에는 없이 시작해도 됩니다. 노캐디 라운드나 연습 라운드가 늘어나면 그때 사도 늦지 않습니다.\n\n초이스골프 가이드 \"골프 거리측정기 추천: 실력·가격대별 33종 비교 (부쉬넬·니콘·보이스캐디·골프버디·캐디톡)\" 의 FAQ 내용을 요약했습니다. 가격·사양은 바뀔 수 있으니 링크에서 확인해 주세요.\n\n▶ 거리측정기 비교·현재 가격 확인 (초이스골프)\nhttps://choicegolf.unclepony.com/g/rangefinder-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-rangefinder-recommend-2\n\n그림은 초이스골프가 직접 그린 일러스트로 실제 제품과 다릅니다. 배경음도 직접 만들었으며, 한국어 내레이션은 음성 합성(TTS)입니다. 제조사·판매처의 사진·영상·로고는 사용하지 않았습니다.\n\n#골프 #거리측정기추천 #골프팁",
+  "tags": [
+    "거리측정기 추천",
+    "거리측정기 고르는 법",
+    "골프 팁",
+    "초이스골프"
+  ],
+  "categoryId": "17",
+  "link": "https://choicegolf.unclepony.com/g/rangefinder-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-rangefinder-recommend-2",
+  "linkLabel": "실력별 전체 비교"
+}

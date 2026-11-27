@@ -1,0 +1,35 @@
+{
+  "template": "tip-v3",
+  "scenes": [
+    {
+      "key": "intro",
+      "dur": 5.5
+    },
+    {
+      "key": "answer",
+      "dur": 14.7
+    },
+    {
+      "key": "outro",
+      "dur": 6.4
+    }
+  ],
+  "episode": "t-wedge-recommend-4",
+  "format": "shorts",
+  "type": "tip",
+  "guide": "wedge-recommend",
+  "madeAt": "2026-11-27",
+  "dataUpdated": "2026-10-16",
+  "voice": "ko-KR-Neural2-A",
+  "title": "초보, 60도 웨지 필요할까? | 샌드웨지부터 #shorts",
+  "description": "▶ 웨지 실력별 비교·현재 가격: https://choicegolf.unclepony.com/g/wedge-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-wedge-recommend-4\n\nQ. 초보도 60도 웨지가 필요한가요?\nA. 초보에게 꼭 필요하지는 않습니다. 로프트가 매우 높아 정확히 맞히기 어렵고, 조금만 빗맞아도 거리 차이가 크게 납니다. 샌드웨지에 익숙해진 뒤 높이 띄우는 샷이 필요할 때 더해도 늦지 않습니다.\n\n초이스골프 가이드 \"웨지 추천: 초보~프로 54종 비교 (RTZ·오퍼스·MG5·S159·보키)\" 의 FAQ 내용을 요약했습니다. 가격·사양은 바뀔 수 있으니 링크에서 확인해 주세요.\n\n▶ 웨지 비교·현재 가격 확인 (초이스골프)\nhttps://choicegolf.unclepony.com/g/wedge-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-wedge-recommend-4\n\n그림은 초이스골프가 직접 그린 일러스트로 실제 제품과 다릅니다. 배경음도 직접 만들었으며, 한국어 내레이션은 음성 합성(TTS)입니다. 제조사·판매처의 사진·영상·로고는 사용하지 않았습니다.\n\n#골프 #웨지추천 #골프팁",
+  "tags": [
+    "웨지 추천",
+    "웨지 고르는 법",
+    "골프 팁",
+    "초이스골프"
+  ],
+  "categoryId": "17",
+  "link": "https://choicegolf.unclepony.com/g/wedge-recommend?utm_source=youtube&utm_medium=video&utm_campaign=t-wedge-recommend-4",
+  "linkLabel": "실력별 전체 비교"
+}
