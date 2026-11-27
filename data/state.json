@@ -60,7 +60,7 @@
   "pick-womens-utility-recommend-advanced": "2026-11-02",
   "tour-pga-401850978": "2026-11-02",
   "pick-wedge-recommend-intermediate": "2026-11-02",
-  "pick-iron-recommend-pro": "2026-11-03",
+  "pick-iron-recommend-pro": "2026-11-27",
   "pick-womens-utility-recommend-pro": "2026-11-03",
   "pick-wedge-recommend-advanced": "2026-11-03",
   "pick-golf-ball-compare-beginner": "2026-11-03",
@@ -1444,6 +1444,15 @@
    "format": "reel",
    "mediaId": "18118410176116144",
    "permalink": "https://www.instagram.com/reel/DgN4xo5x-HM/"
+  },
+  {
+   "date": "2026-11-27",
+   "id": "pick-iron-recommend-pro",
+   "kind": "pick",
+   "category": "iron",
+   "format": "reel",
+   "mediaId": "18103087508537472",
+   "permalink": "https://www.instagram.com/reel/DgO55gVTjuz/"
   }
  ],
  "lastGearKind": "pick"
