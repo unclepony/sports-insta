@@ -1,9 +1,9 @@
 {
  "date": "2026-11-28",
- "capturedAt": "2026-11-27T19:42:27.549Z",
+ "capturedAt": "2026-11-27T21:49:40.993Z",
  "account": {
   "followers": 4,
-  "mediaCount": 152,
+  "mediaCount": 153,
   "username": "choicegolfgear",
   "reach": 401,
   "profile_views": 3,
@@ -21,6 +21,29 @@
   }
  },
  "posts": [
+  {
+   "id": "17955542577317055",
+   "at": "2026-11-27T21:48:39+0000",
+   "type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgQrnYctxOP/",
+   "post": "pick-womens-fairway-wood-recommend-advanced",
+   "kind": "pick",
+   "category": "wood",
+   "format": "reel",
+   "likes": 0,
+   "comments": 0,
+   "reach": 0,
+   "views": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0,
+   "ig_reels_avg_watch_time": 0,
+   "ig_reels_video_view_total_time": 0,
+   "reels_skip_rate": 0,
+   "profile_visits": null,
+   "follows": null,
+   "recentComments": []
+  },
   {
    "id": "17957503842324660",
    "at": "2026-11-27T13:02:09+0000",
@@ -654,26 +677,6 @@
    "ig_reels_avg_watch_time": 2913,
    "ig_reels_video_view_total_time": 323394,
    "reels_skip_rate": 74.8
-  },
-  {
-   "id": "18129803107873784",
-   "at": "2026-11-18T04:38:55+0000",
-   "type": "REELS",
-   "permalink": "https://www.instagram.com/reel/Df3qnhuAW-O/",
-   "post": "tips-bag",
-   "kind": "tips",
-   "category": "bag",
-   "format": "reel",
-   "likes": 0,
-   "comments": 0,
-   "reach": 105,
-   "views": 117,
-   "saved": 0,
-   "shares": 0,
-   "total_interactions": 0,
-   "ig_reels_avg_watch_time": 2673,
-   "ig_reels_video_view_total_time": 286096,
-   "reels_skip_rate": 79.4
   }
  ]
 }
