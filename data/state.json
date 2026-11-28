@@ -59,7 +59,7 @@
   "pick-iron-recommend-advanced": "2026-11-26",
   "pick-womens-utility-recommend-advanced": "2026-11-28",
   "tour-pga-401850978": "2026-11-02",
-  "pick-wedge-recommend-intermediate": "2026-11-02",
+  "pick-wedge-recommend-intermediate": "2026-11-28",
   "pick-iron-recommend-pro": "2026-11-27",
   "pick-womens-utility-recommend-pro": "2026-11-03",
   "pick-wedge-recommend-advanced": "2026-11-03",
@@ -1480,6 +1480,15 @@
    "format": "reel",
    "mediaId": "18030826007698593",
    "permalink": "https://www.instagram.com/reel/DgRb43ciYww/"
+  },
+  {
+   "date": "2026-11-28",
+   "id": "pick-wedge-recommend-intermediate",
+   "kind": "pick",
+   "category": "wedge",
+   "format": "reel",
+   "mediaId": "18187009090430032",
+   "permalink": "https://www.instagram.com/reel/DgSOrDmh9ZY/"
   }
  ],
  "lastGearKind": "pick"
